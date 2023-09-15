@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a2c2fa19e3c4faaa3edb8124280731d" Name="Diagram1">
+        <EntityTypeShape EntityType="software2023Model.ChuyenDi" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="software2023Model.DanhGia" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="software2023Model.DanhSachDangKy" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="software2023Model.DanhSachDuKhach" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="software2023Model.HuongDanVien" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="software2023Model.LichTrinh" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="software2023Model.TaiKhoan" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="software2023Model.ThongTinCaNhan" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="software2023Model.YeuCau" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="software2023Model.FK__DanhGia__MaChuye__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="software2023Model.FK__LichTrinh__MaChu__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="software2023Model.FK__DanhSachDangKy__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="software2023Model.FK__DanhSachDuKhach__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="software2023Model.FK__LichTrinh__MaHDV__5BE2A6F2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
