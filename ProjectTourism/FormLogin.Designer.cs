@@ -53,7 +53,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(114, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(111, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(231, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -62,19 +62,19 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(177)))), ((int)(((byte)(212)))));
             this.pictureBox3.Location = new System.Drawing.Point(33, 212);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(381, 59);
+            this.pictureBox3.Size = new System.Drawing.Size(389, 59);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(177)))), ((int)(((byte)(212)))));
             this.pictureBox4.Location = new System.Drawing.Point(33, 299);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(381, 59);
+            this.pictureBox4.Size = new System.Drawing.Size(389, 59);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
@@ -83,7 +83,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.pictureBox5.Location = new System.Drawing.Point(33, 212);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(381, 53);
+            this.pictureBox5.Size = new System.Drawing.Size(389, 53);
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             // 
@@ -92,7 +92,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.pictureBox2.Location = new System.Drawing.Point(33, 299);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(381, 53);
+            this.pictureBox2.Size = new System.Drawing.Size(389, 53);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
@@ -150,7 +150,7 @@
             this.btnDangnhap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDangnhap.Location = new System.Drawing.Point(33, 418);
             this.btnDangnhap.Name = "btnDangnhap";
-            this.btnDangnhap.Size = new System.Drawing.Size(381, 51);
+            this.btnDangnhap.Size = new System.Drawing.Size(389, 51);
             this.btnDangnhap.TabIndex = 11;
             this.btnDangnhap.Text = "Đăng nhập";
             this.btnDangnhap.UseVisualStyleBackColor = false;
@@ -167,7 +167,7 @@
             this.btnDangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangky.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangky.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnDangky.Location = new System.Drawing.Point(46, 486);
+            this.btnDangky.Location = new System.Drawing.Point(46, 475);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(89, 32);
             this.btnDangky.TabIndex = 12;
@@ -186,19 +186,20 @@
             this.btnForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnForgot.Location = new System.Drawing.Point(271, 486);
+            this.btnForgot.Location = new System.Drawing.Point(271, 475);
             this.btnForgot.Name = "btnForgot";
             this.btnForgot.Size = new System.Drawing.Size(135, 32);
             this.btnForgot.TabIndex = 13;
             this.btnForgot.Text = "Quên mật khẩu";
             this.btnForgot.UseVisualStyleBackColor = false;
+            this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click);
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(450, 546);
+            this.ClientSize = new System.Drawing.Size(452, 529);
             this.Controls.Add(this.btnForgot);
             this.Controls.Add(this.btnDangky);
             this.Controls.Add(this.btnDangnhap);
@@ -211,6 +212,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.Text = "FormLogin";
             this.Load += new System.EventHandler(this.FormLogin_Load);

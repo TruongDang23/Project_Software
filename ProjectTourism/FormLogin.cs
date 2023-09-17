@@ -25,7 +25,16 @@ namespace ProjectTourism
 
         private void btnDangky_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("A");
+            FormRegister formRegister = new FormRegister();
+            formRegister.ShowDialog();
+            Close();
+        }
+
+        private void btnForgot_Click(object sender, EventArgs e)
+        {
+            FormForgotPass formForgotPass = new FormForgotPass();
+            formForgotPass.ShowDialog();
+            Close();
         }
     }
 }
