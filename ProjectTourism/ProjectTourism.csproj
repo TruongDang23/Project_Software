@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -94,6 +95,12 @@
     <Compile Include="FormForgotPass.Designer.cs">
       <DependentUpon>FormForgotPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGuide.Designer.cs">
+      <DependentUpon>FormGuide.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormForgotPass.resx">
       <DependentUpon>FormForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGuide.resx">
+      <DependentUpon>FormGuide.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

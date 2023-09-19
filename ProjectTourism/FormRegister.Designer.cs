@@ -196,7 +196,7 @@
             this.btnDangky.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btnDangky.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangky.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDangky.Location = new System.Drawing.Point(33, 501);
+            this.btnDangky.Location = new System.Drawing.Point(33, 496);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(389, 51);
             this.btnDangky.TabIndex = 19;
