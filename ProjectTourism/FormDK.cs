@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectTourism
 {
-    public partial class FormRegister : Form
+    public partial class FormDK : Form
     {
-        public FormRegister()
+        public FormDK()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace ProjectTourism
 
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
-            FormLogin formLogin = new FormLogin();
+            FormDNhap formLogin = new FormDNhap();
             this.Hide();
             formLogin.ShowDialog();
             Close();

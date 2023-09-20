@@ -10,18 +10,28 @@ using System.Windows.Forms;
 
 namespace ProjectTourism
 {
-    public partial class FormNewPass : Form
+    public partial class FormQuenMK : Form
     {
-        public FormNewPass()
+        public FormQuenMK()
         {
             InitializeComponent();
         }
 
+        private void label1_Click(object sender, EventArgs e) { }
+
         private void btnQuaylai_Click(object sender, EventArgs e)
         {
-            FormLogin formLogin = new FormLogin();
+            FormDNhap formLogin = new FormDNhap();
             this.Hide();
             formLogin.ShowDialog();
+            this.Close();
+        }
+
+        private void btnXacnhan_Click(object sender, EventArgs e)
+        {
+            FormMKmoi formNewPass = new FormMKmoi();
+            this.Hide();
+            formNewPass.ShowDialog();
             Close();
         }
     }

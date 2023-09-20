@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace ProjectTourism
 {
-    public partial class FormLogin : Form
+    public partial class FormDNhap : Form
     {
-        public FormLogin()
+        public FormDNhap()
         {
             InitializeComponent();
         }
 
         private void FormLogin_Load(object sender, EventArgs e) {
-
+            
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e) { }
 
         private void btnDangky_Click(object sender, EventArgs e)
         {
-            FormRegister formRegister = new FormRegister();
+            FormDK formRegister = new FormDK();
             this.Hide();
             formRegister.ShowDialog();
             Close();
@@ -33,7 +33,7 @@ namespace ProjectTourism
 
         private void btnForgot_Click(object sender, EventArgs e)
         {
-            FormForgotPass formForgotPass = new FormForgotPass();
+            FormQuenMK formForgotPass = new FormQuenMK();
             this.Hide();
             formForgotPass.ShowDialog();
             Close();

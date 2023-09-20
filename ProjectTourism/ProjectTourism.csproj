@@ -89,11 +89,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormForgotPass.cs">
+    <Compile Include="FormQuenMK.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormForgotPass.Designer.cs">
-      <DependentUpon>FormForgotPass.cs</DependentUpon>
+    <Compile Include="FormQuenMK.Designer.cs">
+      <DependentUpon>FormQuenMK.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGuide.cs">
       <SubType>Form</SubType>
@@ -101,23 +101,23 @@
     <Compile Include="FormGuide.Designer.cs">
       <DependentUpon>FormGuide.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="FormDNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="FormDNhap.Designer.cs">
+      <DependentUpon>FormDNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNewPass.cs">
+    <Compile Include="FormMKmoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNewPass.Designer.cs">
-      <DependentUpon>FormNewPass.cs</DependentUpon>
+    <Compile Include="FormMKmoi.Designer.cs">
+      <DependentUpon>FormMKmoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegister.cs">
+    <Compile Include="FormDK.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegister.Designer.cs">
-      <DependentUpon>FormRegister.cs</DependentUpon>
+    <Compile Include="FormDK.Designer.cs">
+      <DependentUpon>FormDK.cs</DependentUpon>
     </Compile>
     <Compile Include="HuongDanVien.cs">
       <DependentUpon>DichVuDuLich.tt</DependentUpon>
@@ -139,20 +139,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormForgotPass.resx">
-      <DependentUpon>FormForgotPass.cs</DependentUpon>
+    <EmbeddedResource Include="FormQuenMK.resx">
+      <DependentUpon>FormQuenMK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGuide.resx">
       <DependentUpon>FormGuide.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <EmbeddedResource Include="FormDNhap.resx">
+      <DependentUpon>FormDNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNewPass.resx">
-      <DependentUpon>FormNewPass.cs</DependentUpon>
+    <EmbeddedResource Include="FormMKmoi.resx">
+      <DependentUpon>FormMKmoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegister.resx">
-      <DependentUpon>FormRegister.cs</DependentUpon>
+    <EmbeddedResource Include="FormDK.resx">
+      <DependentUpon>FormDK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
