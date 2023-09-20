@@ -1,6 +1,6 @@
 ﻿namespace ProjectTourism
 {
-    partial class FormRegister
+    partial class FormDK
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDK));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -226,7 +226,7 @@
             this.btnDangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangnhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangnhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnDangnhap.Location = new System.Drawing.Point(260, 553);
+            this.btnDangnhap.Location = new System.Drawing.Point(285, 553);
             this.btnDangnhap.Name = "btnDangnhap";
             this.btnDangnhap.Size = new System.Drawing.Size(109, 33);
             this.btnDangnhap.TabIndex = 21;
@@ -234,7 +234,7 @@
             this.btnDangnhap.UseVisualStyleBackColor = false;
             this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
-            // FormRegister
+            // FormDK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -256,8 +256,7 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormRegister";
+            this.Name = "FormDK";
             this.Text = "FormRegister";
             this.Load += new System.EventHandler(this.FormRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

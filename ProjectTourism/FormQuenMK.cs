@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectTourism
 {
-    public partial class FormForgotPass : Form
+    public partial class FormQuenMK : Form
     {
-        public FormForgotPass()
+        public FormQuenMK()
         {
             InitializeComponent();
         }
@@ -21,14 +21,16 @@ namespace ProjectTourism
 
         private void btnQuaylai_Click(object sender, EventArgs e)
         {
-            FormLogin formLogin = new FormLogin();
+            FormDNhap formLogin = new FormDNhap();
+            this.Hide();
             formLogin.ShowDialog();
             this.Close();
         }
 
         private void btnXacnhan_Click(object sender, EventArgs e)
         {
-            FormNewPass formNewPass = new FormNewPass();
+            FormMKmoi formNewPass = new FormMKmoi();
+            this.Hide();
             formNewPass.ShowDialog();
             Close();
         }

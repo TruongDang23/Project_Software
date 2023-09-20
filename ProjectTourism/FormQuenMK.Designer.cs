@@ -1,6 +1,6 @@
 ﻿namespace ProjectTourism
 {
-    partial class FormForgotPass
+    partial class FormQuenMK
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormForgotPass));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuenMK));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -139,7 +139,7 @@
             this.btnQuaylai.UseVisualStyleBackColor = false;
             this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
             // 
-            // FormForgotPass
+            // FormQuenMK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -153,8 +153,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormForgotPass";
+            this.Name = "FormQuenMK";
             this.ShowInTaskbar = false;
             this.Text = "FormForgotPass";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

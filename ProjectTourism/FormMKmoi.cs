@@ -10,21 +10,17 @@ using System.Windows.Forms;
 
 namespace ProjectTourism
 {
-    public partial class FormRegister : Form
+    public partial class FormMKmoi : Form
     {
-        public FormRegister()
+        public FormMKmoi()
         {
             InitializeComponent();
         }
 
-        private void FormRegister_Load(object sender, EventArgs e)
+        private void btnQuaylai_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDangnhap_Click(object sender, EventArgs e)
-        {
-            FormLogin formLogin = new FormLogin();
+            FormDNhap formLogin = new FormDNhap();
+            this.Hide();
             formLogin.ShowDialog();
             Close();
         }
