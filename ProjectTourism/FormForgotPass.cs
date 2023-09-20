@@ -22,6 +22,7 @@ namespace ProjectTourism
         private void btnQuaylai_Click(object sender, EventArgs e)
         {
             FormLogin formLogin = new FormLogin();
+            this.Hide();
             formLogin.ShowDialog();
             this.Close();
         }
@@ -29,6 +30,7 @@ namespace ProjectTourism
         private void btnXacnhan_Click(object sender, EventArgs e)
         {
             FormNewPass formNewPass = new FormNewPass();
+            this.Hide();
             formNewPass.ShowDialog();
             Close();
         }

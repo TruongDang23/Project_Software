@@ -26,6 +26,7 @@ namespace ProjectTourism
         private void btnDangky_Click(object sender, EventArgs e)
         {
             FormRegister formRegister = new FormRegister();
+            this.Hide();
             formRegister.ShowDialog();
             Close();
         }
@@ -33,6 +34,7 @@ namespace ProjectTourism
         private void btnForgot_Click(object sender, EventArgs e)
         {
             FormForgotPass formForgotPass = new FormForgotPass();
+            this.Hide();
             formForgotPass.ShowDialog();
             Close();
         }
