@@ -228,7 +228,7 @@
             this.button5.Location = new System.Drawing.Point(601, 484);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(121, 40);
+            this.button5.Size = new System.Drawing.Size(116, 40);
             this.button5.TabIndex = 24;
             this.button5.Text = "Thanh toán";
             this.button5.UseVisualStyleBackColor = false;
