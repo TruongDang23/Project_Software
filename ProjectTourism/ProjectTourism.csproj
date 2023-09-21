@@ -89,6 +89,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBoxNhieuNguoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBoxNhieuNguoi.Designer.cs">
+      <DependentUpon>FormBoxNhieuNguoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBoxThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBoxThanhToan.Designer.cs">
+      <DependentUpon>FormBoxThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDanhGiaChuyenDi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhGiaChuyenDi.Designer.cs">
+      <DependentUpon>FormDanhGiaChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhieuNguoiDi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhieuNguoiDi.Designer.cs">
+      <DependentUpon>FormNhieuNguoiDi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLyLichTrinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +155,14 @@
     <Compile Include="FormDK.Designer.cs">
       <DependentUpon>FormDK.cs</DependentUpon>
     </Compile>
+    <Compile Include="From.cs">
+      <DependentUpon>From.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="From.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>From.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HuongDanVien.cs">
       <DependentUpon>DichVuDuLich.tt</DependentUpon>
     </Compile>
@@ -150,6 +182,18 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBoxNhieuNguoi.resx">
+      <DependentUpon>FormBoxNhieuNguoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBoxThanhToan.resx">
+      <DependentUpon>FormBoxThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhGiaChuyenDi.resx">
+      <DependentUpon>FormDanhGiaChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhieuNguoiDi.resx">
+      <DependentUpon>FormNhieuNguoiDi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyLichTrinh.resx">
       <DependentUpon>FormQuanLyLichTrinh.cs</DependentUpon>
@@ -187,6 +231,17 @@
     </EntityDeploy>
     <None Include="DichVuDuLich.edmx.diagram">
       <DependentUpon>DichVuDuLich.edmx</DependentUpon>
+    </None>
+    <None Include="From.xsc">
+      <DependentUpon>From.xsd</DependentUpon>
+    </None>
+    <None Include="From.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>From.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="From.xss">
+      <DependentUpon>From.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
