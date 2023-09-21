@@ -16,7 +16,7 @@ namespace ProjectTourism
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormBoxNhieuNguoi());
+            Application.Run(new FormBoxThanhToan());
         }
     }
 }
