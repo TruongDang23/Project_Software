@@ -45,18 +45,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTicket = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvPaied = new System.Windows.Forms.DataGridView();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.btnSendRequest = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbbListTour = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cbbListTour = new System.Windows.Forms.ComboBox();
+            this.dgvPaied = new System.Windows.Forms.DataGridView();
+            this.btnSendRequest = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPaied)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaied)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_title
@@ -94,7 +94,7 @@
             // 
             // cbbStatus
             // 
-            this.cbbStatus.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.cbbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbStatus.FormattingEnabled = true;
             this.cbbStatus.Location = new System.Drawing.Point(470, 448);
@@ -104,7 +104,7 @@
             // 
             // numericQuantity
             // 
-            this.numericQuantity.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.numericQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.numericQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericQuantity.Location = new System.Drawing.Point(782, 382);
             this.numericQuantity.Name = "numericQuantity";
@@ -123,7 +123,7 @@
             // 
             // txtFindIDTour
             // 
-            this.txtFindIDTour.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtFindIDTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtFindIDTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFindIDTour.Location = new System.Drawing.Point(470, 384);
             this.txtFindIDTour.Name = "txtFindIDTour";
@@ -132,7 +132,7 @@
             // 
             // txtIDAcc
             // 
-            this.txtIDAcc.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtIDAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtIDAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDAcc.Location = new System.Drawing.Point(470, 320);
             this.txtIDAcc.Name = "txtIDAcc";
@@ -236,6 +236,26 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(31, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(229, 115);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
+            // cbbListTour
+            // 
+            this.cbbListTour.BackColor = System.Drawing.Color.White;
+            this.cbbListTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbListTour.FormattingEnabled = true;
+            this.cbbListTour.Location = new System.Drawing.Point(31, 232);
+            this.cbbListTour.Name = "cbbListTour";
+            this.cbbListTour.Size = new System.Drawing.Size(229, 33);
+            this.cbbListTour.TabIndex = 19;
+            // 
             // dgvPaied
             // 
             this.dgvPaied.BackgroundColor = System.Drawing.Color.White;
@@ -246,18 +266,6 @@
             this.dgvPaied.RowTemplate.Height = 24;
             this.dgvPaied.Size = new System.Drawing.Size(229, 94);
             this.dgvPaied.TabIndex = 19;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(31, 162);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(229, 64);
-            this.btnFilter.TabIndex = 12;
-            this.btnFilter.Text = "Lọc các tour trong một tháng tới";
-            this.btnFilter.UseVisualStyleBackColor = false;
             // 
             // btnSendRequest
             // 
@@ -271,6 +279,18 @@
             this.btnSendRequest.Text = "Gửi yêu cầu thanh toán";
             this.btnSendRequest.UseVisualStyleBackColor = false;
             // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.Color.White;
+            this.btnFilter.Location = new System.Drawing.Point(31, 162);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(229, 64);
+            this.btnFilter.TabIndex = 12;
+            this.btnFilter.Text = "Lọc các tour trong một tháng tới";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -281,26 +301,6 @@
             this.label7.Size = new System.Drawing.Size(234, 29);
             this.label7.TabIndex = 10;
             this.label7.Text = "Yêu cầu thanh toán";
-            // 
-            // cbbListTour
-            // 
-            this.cbbListTour.BackColor = System.Drawing.Color.White;
-            this.cbbListTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbListTour.FormattingEnabled = true;
-            this.cbbListTour.Location = new System.Drawing.Point(31, 232);
-            this.cbbListTour.Name = "cbbListTour";
-            this.cbbListTour.Size = new System.Drawing.Size(229, 33);
-            this.cbbListTour.TabIndex = 19;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(229, 115);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
             // 
             // FormQuanLyVe
             // 
@@ -318,8 +318,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPaied)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaied)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
