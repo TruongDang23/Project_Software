@@ -145,6 +145,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLyVe.resx">
+      <DependentUpon>FormQuanLyVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuenMK.resx">
       <DependentUpon>FormQuenMK.cs</DependentUpon>
     </EmbeddedResource>
