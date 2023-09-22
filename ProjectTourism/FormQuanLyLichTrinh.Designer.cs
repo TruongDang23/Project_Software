@@ -87,7 +87,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 19);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 32);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(304, 193);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,7 +103,7 @@
             this.panel1.Controls.Add(this.dateTimePicker5);
             this.panel1.Location = new System.Drawing.Point(12, 231);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 234);
+            this.panel1.Size = new System.Drawing.Size(304, 242);
             this.panel1.TabIndex = 22;
             // 
             // label15
@@ -124,7 +124,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(160, 167);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 45);
+            this.button5.Size = new System.Drawing.Size(135, 45);
             this.button5.TabIndex = 34;
             this.button5.Text = "Tuần Sau";
             this.button5.UseVisualStyleBackColor = false;
@@ -134,7 +134,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(3, 167);
+            this.button4.Location = new System.Drawing.Point(15, 167);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 45);
             this.button4.TabIndex = 33;
@@ -167,7 +167,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(77, 175);
+            this.button1.Location = new System.Drawing.Point(88, 175);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 46);
             this.button1.TabIndex = 24;
@@ -235,10 +235,10 @@
             // numericUpDown1
             // 
             this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.Location = new System.Drawing.Point(236, 160);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(175, 27);
+            this.numericUpDown1.Size = new System.Drawing.Size(175, 34);
             this.numericUpDown1.TabIndex = 32;
             // 
             // dateTimePicker2
@@ -264,7 +264,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(159, 229);
+            this.button2.Location = new System.Drawing.Point(171, 229);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 46);
             this.button2.TabIndex = 25;
@@ -416,7 +416,7 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(26, 229);
+            this.button3.Location = new System.Drawing.Point(45, 229);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(396, 46);
             this.button3.TabIndex = 33;
