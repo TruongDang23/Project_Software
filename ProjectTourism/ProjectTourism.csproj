@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -14,8 +13,6 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <UseWindowsForms>true</UseWindowsForms>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -104,12 +101,6 @@
     <Compile Include="FormBoxThanhToan.Designer.cs">
       <DependentUpon>FormBoxThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDanhGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDanhGia.Designer.cs">
-      <DependentUpon>FormDanhGia.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormDanhGiaChuyenDi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,12 +112,6 @@
     </Compile>
     <Compile Include="FormNhieuNguoiDi.Designer.cs">
       <DependentUpon>FormNhieuNguoiDi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormQuanLiTour.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormQuanLiTour.Designer.cs">
-      <DependentUpon>FormQuanLiTour.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQuanLyLichTrinh.cs">
       <SubType>Form</SubType>
@@ -176,12 +161,6 @@
     <Compile Include="FormDK.Designer.cs">
       <DependentUpon>FormDK.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTrangChu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTrangChu.Designer.cs">
-      <DependentUpon>FormTrangChu.cs</DependentUpon>
-    </Compile>
     <Compile Include="From.cs">
       <DependentUpon>From.xsd</DependentUpon>
     </Compile>
@@ -216,17 +195,11 @@
     <EmbeddedResource Include="FormBoxThanhToan.resx">
       <DependentUpon>FormBoxThanhToan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDanhGia.resx">
-      <DependentUpon>FormDanhGia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormDanhGiaChuyenDi.resx">
       <DependentUpon>FormDanhGiaChuyenDi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNhieuNguoiDi.resx">
       <DependentUpon>FormNhieuNguoiDi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormQuanLiTour.resx">
-      <DependentUpon>FormQuanLiTour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyLichTrinh.resx">
       <DependentUpon>FormQuanLyLichTrinh.cs</DependentUpon>
@@ -248,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDK.resx">
       <DependentUpon>FormDK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTrangChu.resx">
-      <DependentUpon>FormTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -313,12 +283,4 @@
     <Folder Include="BSLayer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
