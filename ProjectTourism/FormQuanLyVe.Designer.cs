@@ -62,11 +62,11 @@
             // lb_title
             // 
             this.lb_title.AutoSize = true;
-            this.lb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_title.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_title.Location = new System.Drawing.Point(461, 26);
+            this.lb_title.Location = new System.Drawing.Point(467, 9);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(225, 38);
+            this.lb_title.Size = new System.Drawing.Size(211, 45);
             this.lb_title.TabIndex = 5;
             this.lb_title.Text = "QUẢN LÝ VÉ";
             // 
@@ -87,66 +87,66 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dgvTicket);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(29, 84);
+            this.panel1.Location = new System.Drawing.Point(12, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 518);
+            this.panel1.Size = new System.Drawing.Size(1117, 564);
             this.panel1.TabIndex = 6;
             // 
             // cbbStatus
             // 
             this.cbbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.cbbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Location = new System.Drawing.Point(470, 448);
+            this.cbbStatus.Location = new System.Drawing.Point(492, 448);
             this.cbbStatus.Name = "cbbStatus";
-            this.cbbStatus.Size = new System.Drawing.Size(187, 33);
+            this.cbbStatus.Size = new System.Drawing.Size(201, 36);
             this.cbbStatus.TabIndex = 18;
             // 
             // numericQuantity
             // 
             this.numericQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.numericQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericQuantity.Location = new System.Drawing.Point(782, 382);
+            this.numericQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericQuantity.Location = new System.Drawing.Point(799, 382);
             this.numericQuantity.Name = "numericQuantity";
-            this.numericQuantity.Size = new System.Drawing.Size(120, 30);
+            this.numericQuantity.Size = new System.Drawing.Size(120, 34);
             this.numericQuantity.TabIndex = 17;
             // 
             // startDay
             // 
             this.startDay.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.startDay.CalendarMonthBackground = System.Drawing.Color.White;
-            this.startDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDay.Location = new System.Drawing.Point(782, 318);
+            this.startDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDay.Location = new System.Drawing.Point(799, 318);
             this.startDay.Name = "startDay";
-            this.startDay.Size = new System.Drawing.Size(282, 30);
+            this.startDay.Size = new System.Drawing.Size(282, 34);
             this.startDay.TabIndex = 16;
             // 
             // txtFindIDTour
             // 
             this.txtFindIDTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.txtFindIDTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFindIDTour.Location = new System.Drawing.Point(470, 384);
+            this.txtFindIDTour.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFindIDTour.Location = new System.Drawing.Point(492, 384);
             this.txtFindIDTour.Name = "txtFindIDTour";
-            this.txtFindIDTour.Size = new System.Drawing.Size(157, 30);
+            this.txtFindIDTour.Size = new System.Drawing.Size(157, 34);
             this.txtFindIDTour.TabIndex = 15;
             // 
             // txtIDAcc
             // 
             this.txtIDAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.txtIDAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDAcc.Location = new System.Drawing.Point(470, 320);
+            this.txtIDAcc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDAcc.Location = new System.Drawing.Point(492, 320);
             this.txtIDAcc.Name = "txtIDAcc";
-            this.txtIDAcc.Size = new System.Drawing.Size(157, 30);
+            this.txtIDAcc.Size = new System.Drawing.Size(157, 34);
             this.txtIDAcc.TabIndex = 14;
             // 
             // btnFind
             // 
             this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.White;
             this.btnFind.Location = new System.Drawing.Point(782, 441);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(282, 40);
+            this.btnFind.Size = new System.Drawing.Size(282, 43);
             this.btnFind.TabIndex = 12;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = false;
@@ -154,60 +154,60 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(322, 448);
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(323, 448);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 25);
+            this.label6.Size = new System.Drawing.Size(102, 28);
             this.label6.TabIndex = 9;
             this.label6.Text = "Trạng thái";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(665, 384);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 25);
+            this.label5.Size = new System.Drawing.Size(114, 28);
             this.label5.TabIndex = 8;
             this.label5.Text = "Số đăng ký";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(665, 320);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 25);
+            this.label4.Size = new System.Drawing.Size(82, 28);
             this.label4.TabIndex = 7;
             this.label4.Text = "Ngày đi";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 389);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(323, 384);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 25);
+            this.label3.Size = new System.Drawing.Size(135, 28);
             this.label3.TabIndex = 6;
             this.label3.Text = "Mã chuyến đi";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(322, 320);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 25);
+            this.label2.Size = new System.Drawing.Size(153, 28);
             this.label2.TabIndex = 5;
             this.label2.Text = "Mã người dùng";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(322, 278);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.Size = new System.Drawing.Size(114, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tìm kiếm";
             // 
@@ -249,11 +249,11 @@
             // cbbListTour
             // 
             this.cbbListTour.BackColor = System.Drawing.Color.White;
-            this.cbbListTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbListTour.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbListTour.FormattingEnabled = true;
             this.cbbListTour.Location = new System.Drawing.Point(31, 232);
             this.cbbListTour.Name = "cbbListTour";
-            this.cbbListTour.Size = new System.Drawing.Size(229, 33);
+            this.cbbListTour.Size = new System.Drawing.Size(229, 36);
             this.cbbListTour.TabIndex = 19;
             // 
             // dgvPaied
@@ -270,7 +270,7 @@
             // btnSendRequest
             // 
             this.btnSendRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnSendRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendRequest.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendRequest.ForeColor = System.Drawing.Color.White;
             this.btnSendRequest.Location = new System.Drawing.Point(31, 375);
             this.btnSendRequest.Name = "btnSendRequest";
@@ -282,7 +282,7 @@
             // btnFilter
             // 
             this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Location = new System.Drawing.Point(31, 162);
             this.btnFilter.Name = "btnFilter";
@@ -294,11 +294,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label7.Location = new System.Drawing.Point(26, 130);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.label7.Location = new System.Drawing.Point(35, 130);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(234, 29);
+            this.label7.Size = new System.Drawing.Size(219, 31);
             this.label7.TabIndex = 10;
             this.label7.Text = "Yêu cầu thanh toán";
             // 

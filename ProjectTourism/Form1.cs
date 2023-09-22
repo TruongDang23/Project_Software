@@ -19,8 +19,9 @@ namespace ProjectTourism
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.pictureBox1.ImageLocation = "../../../Details/HaLong001/AnhChiTiet2.jpg";
-            this.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img = new Bitmap("../../../Details/HaLong001/AnhChiTiet4.jpg");
+            this.BackgroundImage = img;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }
