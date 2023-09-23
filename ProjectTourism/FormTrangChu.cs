@@ -16,5 +16,12 @@ namespace ProjectTourism
         {
             InitializeComponent();
         }
+
+        private void FormTrangChu_Load(object sender, EventArgs e)
+        {
+            Image myimage = new Bitmap(@"../../../Details/TrangChu/background1.jpg");
+            this.BackgroundImage = myimage;
+            BackgroundImageLayout = ImageLayout.Stretch;
+        }
     }
 }
