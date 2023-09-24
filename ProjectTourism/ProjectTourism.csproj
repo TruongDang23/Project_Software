@@ -101,11 +101,29 @@
     <Compile Include="FormBoxThanhToan.Designer.cs">
       <DependentUpon>FormBoxThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChiTietChuyenDi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietChuyenDi.Designer.cs">
+      <DependentUpon>FormChiTietChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChuyenDi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChuyenDi.Designer.cs">
+      <DependentUpon>FormChuyenDi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDanhGiaChuyenDi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDanhGiaChuyenDi.Designer.cs">
       <DependentUpon>FormDanhGiaChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatChuyenDi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatChuyenDi.Designer.cs">
+      <DependentUpon>FormDatChuyenDi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormNhieuNguoiDi.cs">
       <SubType>Form</SubType>
@@ -213,8 +231,17 @@
     <EmbeddedResource Include="FormBoxThanhToan.resx">
       <DependentUpon>FormBoxThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormChiTietChuyenDi.resx">
+      <DependentUpon>FormChiTietChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChuyenDi.resx">
+      <DependentUpon>FormChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDanhGiaChuyenDi.resx">
       <DependentUpon>FormDanhGiaChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatChuyenDi.resx">
+      <DependentUpon>FormDatChuyenDi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNhieuNguoiDi.resx">
       <DependentUpon>FormNhieuNguoiDi.cs</DependentUpon>
