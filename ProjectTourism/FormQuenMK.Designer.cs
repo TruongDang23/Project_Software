@@ -46,7 +46,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(111, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(110, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(231, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -56,11 +56,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.label1.Location = new System.Drawing.Point(122, 194);
+            this.label1.Location = new System.Drawing.Point(120, 198);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 35);
+            this.label1.Size = new System.Drawing.Size(178, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Quên mật khẩu";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -68,18 +68,18 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(177)))), ((int)(((byte)(212)))));
-            this.pictureBox3.Location = new System.Drawing.Point(34, 243);
+            this.pictureBox3.Location = new System.Drawing.Point(24, 255);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(389, 59);
+            this.pictureBox3.Size = new System.Drawing.Size(389, 45);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.pictureBox2.Location = new System.Drawing.Point(34, 243);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 255);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(389, 53);
+            this.pictureBox2.Size = new System.Drawing.Size(389, 40);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
@@ -87,9 +87,9 @@
             // 
             this.txtMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMail.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMail.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtMail.Location = new System.Drawing.Point(111, 257);
+            this.txtMail.Location = new System.Drawing.Point(110, 261);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(296, 27);
             this.txtMail.TabIndex = 9;
@@ -99,9 +99,9 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(46, 250);
+            this.pictureBox6.Location = new System.Drawing.Point(45, 260);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox6.Size = new System.Drawing.Size(35, 30);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
@@ -109,11 +109,11 @@
             // btnXacnhan
             // 
             this.btnXacnhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnXacnhan.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacnhan.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXacnhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnXacnhan.Location = new System.Drawing.Point(34, 364);
+            this.btnXacnhan.Location = new System.Drawing.Point(24, 359);
             this.btnXacnhan.Name = "btnXacnhan";
-            this.btnXacnhan.Size = new System.Drawing.Size(389, 51);
+            this.btnXacnhan.Size = new System.Drawing.Size(389, 50);
             this.btnXacnhan.TabIndex = 12;
             this.btnXacnhan.Text = "Xác nhận";
             this.btnXacnhan.UseVisualStyleBackColor = false;
@@ -129,11 +129,11 @@
             this.btnQuaylai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnQuaylai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnQuaylai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuaylai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuaylai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuaylai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnQuaylai.Location = new System.Drawing.Point(34, 421);
+            this.btnQuaylai.Location = new System.Drawing.Point(31, 415);
             this.btnQuaylai.Name = "btnQuaylai";
-            this.btnQuaylai.Size = new System.Drawing.Size(89, 32);
+            this.btnQuaylai.Size = new System.Drawing.Size(93, 40);
             this.btnQuaylai.TabIndex = 13;
             this.btnQuaylai.Text = "Quay lại";
             this.btnQuaylai.UseVisualStyleBackColor = false;
@@ -144,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(452, 480);
+            this.ClientSize = new System.Drawing.Size(438, 476);
             this.Controls.Add(this.btnQuaylai);
             this.Controls.Add(this.btnXacnhan);
             this.Controls.Add(this.pictureBox6);
