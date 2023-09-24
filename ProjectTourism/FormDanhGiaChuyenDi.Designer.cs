@@ -123,7 +123,7 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Số sao:";
             // 
-            // richTextBox1
+            // label3
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -198,12 +198,13 @@
             // 
             // FormDanhGiaChuyenDi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(982, 510);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormDanhGiaChuyenDi";
             this.Text = "FormDanhGiaChuyenDi";
             this.panel1.ResumeLayout(false);

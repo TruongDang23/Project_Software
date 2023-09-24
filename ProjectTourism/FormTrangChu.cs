@@ -10,18 +10,19 @@ using System.Windows.Forms;
 
 namespace ProjectTourism
 {
-    public partial class Form1 : Form
+    public partial class FormTrangChu : Form
     {
-        public Form1()
+        public FormTrangChu()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            Image img = new Bitmap("../../../Details/HaLong001/AnhChiTiet4.jpg");
-            this.BackgroundImage = img;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
+            Image myimage = new Bitmap(@"../../../Details/TrangChu/background1.jpg");
+            this.BackgroundImage = myimage;
+            BackgroundImageLayout = ImageLayout.Stretch;
         }
+
     }
 }

@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBoxNhieuNguoi));
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.button2.Location = new System.Drawing.Point(207, 218);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 40);
+            this.button2.Size = new System.Drawing.Size(91, 32);
             this.button2.TabIndex = 12;
             this.button2.Text = "OK";
             this.button2.UseVisualStyleBackColor = false;
@@ -98,14 +98,25 @@
             this.button1.Location = new System.Drawing.Point(336, 218);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 40);
+            this.button1.Size = new System.Drawing.Size(91, 32);
             this.button1.TabIndex = 13;
             this.button1.Text = "Quay lại";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.label1.Location = new System.Drawing.Point(124, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 22);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "ĐI NHIỀU NGƯỜI ?";
+            // 
             // FormBoxNhieuNguoi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(470, 271);
@@ -114,6 +125,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBoxNhieuNguoi";
             this.Text = "FormBoxNhieuNguoi";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -125,8 +137,8 @@
         #endregion
         public System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }
