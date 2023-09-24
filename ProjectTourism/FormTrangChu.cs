@@ -23,5 +23,6 @@ namespace ProjectTourism
             this.BackgroundImage = myimage;
             BackgroundImageLayout = ImageLayout.Stretch;
         }
+
     }
 }
