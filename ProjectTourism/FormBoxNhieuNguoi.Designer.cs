@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBoxNhieuNguoi));
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_OK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_QuayLai = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btn_OK
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.button2.Location = new System.Drawing.Point(179, 268);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 39);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "OK";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_OK.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_OK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_OK.FlatAppearance.BorderSize = 2;
+            this.btn_OK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btn_OK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_OK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_OK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_OK.Location = new System.Drawing.Point(179, 268);
+            this.btn_OK.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_OK.Name = "btn_OK";
+            this.btn_OK.Size = new System.Drawing.Size(121, 39);
+            this.btn_OK.TabIndex = 12;
+            this.btn_OK.Text = "OK";
+            this.btn_OK.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -70,30 +70,30 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(145, 16);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(340, 153);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btn_QuayLai
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(332, 268);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 39);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "QUAY LẠI";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_QuayLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_QuayLai.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_QuayLai.FlatAppearance.BorderSize = 0;
+            this.btn_QuayLai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_QuayLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_QuayLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QuayLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuayLai.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_QuayLai.Location = new System.Drawing.Point(332, 268);
+            this.btn_QuayLai.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_QuayLai.Name = "btn_QuayLai";
+            this.btn_QuayLai.Size = new System.Drawing.Size(121, 39);
+            this.btn_QuayLai.TabIndex = 13;
+            this.btn_QuayLai.Text = "QUAY LẠI";
+            this.btn_QuayLai.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -113,8 +113,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(627, 334);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_QuayLai);
+            this.Controls.Add(this.btn_OK);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -128,10 +128,10 @@
         }
 
         #endregion
-        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button btn_OK;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btn_QuayLai;
         private System.Windows.Forms.Label label1;
     }
 }
