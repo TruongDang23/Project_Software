@@ -1,6 +1,6 @@
 ﻿namespace ProjectTourism
 {
-    partial class FormGuide
+    partial class FormHuongDanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGuide));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHuongDanVien));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_data = new System.Windows.Forms.Panel();
             this.pnl_changeinfo = new System.Windows.Forms.Panel();

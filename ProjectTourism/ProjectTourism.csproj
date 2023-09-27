@@ -161,11 +161,11 @@
     <Compile Include="FormQuenMK.Designer.cs">
       <DependentUpon>FormQuenMK.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGuide.cs">
+    <Compile Include="FormHuongDanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGuide.Designer.cs">
-      <DependentUpon>FormGuide.cs</DependentUpon>
+    <Compile Include="FormHuongDanVien.Designer.cs">
+      <DependentUpon>FormHuongDanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDNhap.cs">
       <SubType>Form</SubType>
@@ -243,6 +243,9 @@
     <EmbeddedResource Include="FormDatChuyenDi.resx">
       <DependentUpon>FormDatChuyenDi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormKhachHang.resx">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNhieuNguoiDi.resx">
       <DependentUpon>FormNhieuNguoiDi.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,8 +264,8 @@
     <EmbeddedResource Include="FormQuenMK.resx">
       <DependentUpon>FormQuenMK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGuide.resx">
-      <DependentUpon>FormGuide.cs</DependentUpon>
+    <EmbeddedResource Include="FormHuongDanVien.resx">
+      <DependentUpon>FormHuongDanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDNhap.resx">
       <DependentUpon>FormDNhap.cs</DependentUpon>
