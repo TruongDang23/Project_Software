@@ -195,6 +195,7 @@
             this.ClientSize = new System.Drawing.Size(1017, 544);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormTrangChu";
             this.Text = "FormTrangChu";
             this.Load += new System.EventHandler(this.FormTrangChu_Load);
