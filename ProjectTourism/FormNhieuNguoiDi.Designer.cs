@@ -66,7 +66,7 @@
             this.l.AutoSize = true;
             this.l.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.l.Location = new System.Drawing.Point(47, 132);
+            this.l.Location = new System.Drawing.Point(47, 141);
             this.l.Name = "l";
             this.l.Size = new System.Drawing.Size(116, 31);
             this.l.TabIndex = 10;
@@ -75,17 +75,19 @@
             // tb_HoVaTen
             // 
             this.tb_HoVaTen.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tb_HoVaTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_HoVaTen.Location = new System.Drawing.Point(169, 141);
             this.tb_HoVaTen.Name = "tb_HoVaTen";
-            this.tb_HoVaTen.Size = new System.Drawing.Size(176, 22);
+            this.tb_HoVaTen.Size = new System.Drawing.Size(176, 34);
             this.tb_HoVaTen.TabIndex = 14;
             // 
             // tbSDT
             // 
             this.tbSDT.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tbSDT.Location = new System.Drawing.Point(416, 141);
+            this.tbSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSDT.Location = new System.Drawing.Point(434, 141);
             this.tbSDT.Name = "tbSDT";
-            this.tbSDT.Size = new System.Drawing.Size(201, 22);
+            this.tbSDT.Size = new System.Drawing.Size(157, 34);
             this.tbSDT.TabIndex = 16;
             // 
             // label1
@@ -93,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(360, 134);
+            this.label1.Location = new System.Drawing.Point(369, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 31);
             this.label1.TabIndex = 15;
@@ -102,9 +104,10 @@
             // tb_CCCD
             // 
             this.tb_CCCD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tb_CCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_CCCD.Location = new System.Drawing.Point(725, 143);
             this.tb_CCCD.Name = "tb_CCCD";
-            this.tb_CCCD.Size = new System.Drawing.Size(200, 22);
+            this.tb_CCCD.Size = new System.Drawing.Size(200, 34);
             this.tb_CCCD.TabIndex = 18;
             // 
             // label2
@@ -112,7 +115,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(634, 134);
+            this.label2.Location = new System.Drawing.Point(622, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 31);
             this.label2.TabIndex = 17;

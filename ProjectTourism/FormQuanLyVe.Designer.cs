@@ -97,7 +97,7 @@
             this.cbbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.cbbStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Location = new System.Drawing.Point(492, 448);
+            this.cbbStatus.Location = new System.Drawing.Point(492, 483);
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(201, 36);
             this.cbbStatus.TabIndex = 18;
@@ -106,7 +106,7 @@
             // 
             this.numericQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.numericQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericQuantity.Location = new System.Drawing.Point(799, 382);
+            this.numericQuantity.Location = new System.Drawing.Point(799, 417);
             this.numericQuantity.Name = "numericQuantity";
             this.numericQuantity.Size = new System.Drawing.Size(120, 34);
             this.numericQuantity.TabIndex = 17;
@@ -115,17 +115,17 @@
             // 
             this.startDay.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.startDay.CalendarMonthBackground = System.Drawing.Color.White;
-            this.startDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDay.Location = new System.Drawing.Point(799, 318);
+            this.startDay.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDay.Location = new System.Drawing.Point(799, 353);
             this.startDay.Name = "startDay";
-            this.startDay.Size = new System.Drawing.Size(282, 34);
+            this.startDay.Size = new System.Drawing.Size(282, 30);
             this.startDay.TabIndex = 16;
             // 
             // txtFindIDTour
             // 
             this.txtFindIDTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtFindIDTour.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFindIDTour.Location = new System.Drawing.Point(492, 384);
+            this.txtFindIDTour.Location = new System.Drawing.Point(492, 419);
             this.txtFindIDTour.Name = "txtFindIDTour";
             this.txtFindIDTour.Size = new System.Drawing.Size(157, 34);
             this.txtFindIDTour.TabIndex = 15;
@@ -134,7 +134,7 @@
             // 
             this.txtIDAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtIDAcc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDAcc.Location = new System.Drawing.Point(492, 320);
+            this.txtIDAcc.Location = new System.Drawing.Point(492, 355);
             this.txtIDAcc.Name = "txtIDAcc";
             this.txtIDAcc.Size = new System.Drawing.Size(157, 34);
             this.txtIDAcc.TabIndex = 14;
@@ -144,7 +144,7 @@
             this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.White;
-            this.btnFind.Location = new System.Drawing.Point(782, 441);
+            this.btnFind.Location = new System.Drawing.Point(782, 476);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(282, 43);
             this.btnFind.TabIndex = 12;
@@ -155,7 +155,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(323, 448);
+            this.label6.Location = new System.Drawing.Point(323, 483);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 28);
             this.label6.TabIndex = 9;
@@ -165,7 +165,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(665, 384);
+            this.label5.Location = new System.Drawing.Point(665, 419);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 28);
             this.label5.TabIndex = 8;
@@ -175,7 +175,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(665, 320);
+            this.label4.Location = new System.Drawing.Point(665, 355);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 28);
             this.label4.TabIndex = 7;
@@ -185,7 +185,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(323, 384);
+            this.label3.Location = new System.Drawing.Point(323, 419);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 28);
             this.label3.TabIndex = 6;
@@ -195,7 +195,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(322, 320);
+            this.label2.Location = new System.Drawing.Point(322, 355);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 28);
             this.label2.TabIndex = 5;
@@ -205,7 +205,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(322, 278);
+            this.label1.Location = new System.Drawing.Point(322, 313);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 31);
             this.label1.TabIndex = 4;
@@ -219,7 +219,7 @@
             this.dgvTicket.Name = "dgvTicket";
             this.dgvTicket.RowHeadersWidth = 51;
             this.dgvTicket.RowTemplate.Height = 24;
-            this.dgvTicket.Size = new System.Drawing.Size(742, 238);
+            this.dgvTicket.Size = new System.Drawing.Size(759, 272);
             this.dgvTicket.TabIndex = 3;
             // 
             // groupBox1
@@ -230,7 +230,7 @@
             this.groupBox1.Controls.Add(this.btnSendRequest);
             this.groupBox1.Controls.Add(this.btnFilter);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(15, 14);
+            this.groupBox1.Location = new System.Drawing.Point(15, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(301, 475);
             this.groupBox1.TabIndex = 2;
