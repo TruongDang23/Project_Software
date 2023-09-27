@@ -40,19 +40,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tb_NgayKhoiHanh = new System.Windows.Forms.TextBox();
-            this.tb_Sao = new System.Windows.Forms.TextBox();
-            this.tb_GiaTrenNguoi = new System.Windows.Forms.TextBox();
-            this.tb_NguoiThamGia = new System.Windows.Forms.TextBox();
-            this.tb_SoNgay = new System.Windows.Forms.TextBox();
-            this.tb_LoaiHinh = new System.Windows.Forms.TextBox();
-            this.tb_HanhTrinh = new System.Windows.Forms.TextBox();
             this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_QuayLai = new System.Windows.Forms.Button();
-            this.tb_Ten = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,6 +55,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_Ten = new System.Windows.Forms.Label();
+            this.lb_HanhTrinh = new System.Windows.Forms.Label();
+            this.lb_LoaiHinh = new System.Windows.Forms.Label();
+            this.lb_SoNgayDi = new System.Windows.Forms.Label();
+            this.lb_NguoiThamGia = new System.Windows.Forms.Label();
+            this.lb_GiaTrenNguoi = new System.Windows.Forms.Label();
+            this.lb_SoSao = new System.Windows.Forms.Label();
+            this.lb_NgayKhoiHanh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -191,76 +191,6 @@
             this.label9.TabIndex = 89;
             this.label9.Text = "Thông tin của bạn";
             // 
-            // tb_NgayKhoiHanh
-            // 
-            this.tb_NgayKhoiHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tb_NgayKhoiHanh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NgayKhoiHanh.Location = new System.Drawing.Point(1018, 128);
-            this.tb_NgayKhoiHanh.Multiline = true;
-            this.tb_NgayKhoiHanh.Name = "tb_NgayKhoiHanh";
-            this.tb_NgayKhoiHanh.Size = new System.Drawing.Size(202, 36);
-            this.tb_NgayKhoiHanh.TabIndex = 88;
-            // 
-            // tb_Sao
-            // 
-            this.tb_Sao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tb_Sao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Sao.Location = new System.Drawing.Point(1018, 82);
-            this.tb_Sao.Multiline = true;
-            this.tb_Sao.Name = "tb_Sao";
-            this.tb_Sao.Size = new System.Drawing.Size(116, 36);
-            this.tb_Sao.TabIndex = 87;
-            // 
-            // tb_GiaTrenNguoi
-            // 
-            this.tb_GiaTrenNguoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tb_GiaTrenNguoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_GiaTrenNguoi.Location = new System.Drawing.Point(572, 172);
-            this.tb_GiaTrenNguoi.Multiline = true;
-            this.tb_GiaTrenNguoi.Name = "tb_GiaTrenNguoi";
-            this.tb_GiaTrenNguoi.Size = new System.Drawing.Size(202, 36);
-            this.tb_GiaTrenNguoi.TabIndex = 86;
-            // 
-            // tb_NguoiThamGia
-            // 
-            this.tb_NguoiThamGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tb_NguoiThamGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NguoiThamGia.Location = new System.Drawing.Point(572, 128);
-            this.tb_NguoiThamGia.Multiline = true;
-            this.tb_NguoiThamGia.Name = "tb_NguoiThamGia";
-            this.tb_NguoiThamGia.Size = new System.Drawing.Size(202, 36);
-            this.tb_NguoiThamGia.TabIndex = 85;
-            // 
-            // tb_SoNgay
-            // 
-            this.tb_SoNgay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tb_SoNgay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SoNgay.Location = new System.Drawing.Point(572, 81);
-            this.tb_SoNgay.Multiline = true;
-            this.tb_SoNgay.Name = "tb_SoNgay";
-            this.tb_SoNgay.Size = new System.Drawing.Size(202, 36);
-            this.tb_SoNgay.TabIndex = 84;
-            // 
-            // tb_LoaiHinh
-            // 
-            this.tb_LoaiHinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tb_LoaiHinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_LoaiHinh.Location = new System.Drawing.Point(137, 172);
-            this.tb_LoaiHinh.Multiline = true;
-            this.tb_LoaiHinh.Name = "tb_LoaiHinh";
-            this.tb_LoaiHinh.Size = new System.Drawing.Size(202, 36);
-            this.tb_LoaiHinh.TabIndex = 83;
-            // 
-            // tb_HanhTrinh
-            // 
-            this.tb_HanhTrinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tb_HanhTrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_HanhTrinh.Location = new System.Drawing.Point(137, 127);
-            this.tb_HanhTrinh.Multiline = true;
-            this.tb_HanhTrinh.Name = "tb_HanhTrinh";
-            this.tb_HanhTrinh.Size = new System.Drawing.Size(202, 36);
-            this.tb_HanhTrinh.TabIndex = 82;
-            // 
             // btn_ThanhToan
             // 
             this.btn_ThanhToan.BackColor = System.Drawing.Color.White;
@@ -292,7 +222,7 @@
             this.label1.Location = new System.Drawing.Point(506, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 46);
+            this.label1.Size = new System.Drawing.Size(272, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐẶT CHUYẾN ĐI";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -321,16 +251,6 @@
             this.btn_QuayLai.Text = "Quay lại";
             this.btn_QuayLai.UseVisualStyleBackColor = false;
             // 
-            // tb_Ten
-            // 
-            this.tb_Ten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tb_Ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Ten.Location = new System.Drawing.Point(137, 81);
-            this.tb_Ten.Multiline = true;
-            this.tb_Ten.Name = "tb_Ten";
-            this.tb_Ten.Size = new System.Drawing.Size(202, 36);
-            this.tb_Ten.TabIndex = 38;
-            // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
@@ -346,6 +266,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.lb_NgayKhoiHanh);
+            this.panel2.Controls.Add(this.lb_SoSao);
+            this.panel2.Controls.Add(this.lb_GiaTrenNguoi);
+            this.panel2.Controls.Add(this.lb_NguoiThamGia);
+            this.panel2.Controls.Add(this.lb_SoNgayDi);
+            this.panel2.Controls.Add(this.lb_LoaiHinh);
+            this.panel2.Controls.Add(this.lb_HanhTrinh);
+            this.panel2.Controls.Add(this.lb_Ten);
             this.panel2.Controls.Add(this.btn_Dien);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.tb_SoLuongNguoi);
@@ -357,13 +285,6 @@
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.tb_NgayKhoiHanh);
-            this.panel2.Controls.Add(this.tb_Sao);
-            this.panel2.Controls.Add(this.tb_GiaTrenNguoi);
-            this.panel2.Controls.Add(this.tb_NguoiThamGia);
-            this.panel2.Controls.Add(this.tb_SoNgay);
-            this.panel2.Controls.Add(this.tb_LoaiHinh);
-            this.panel2.Controls.Add(this.tb_HanhTrinh);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.btn_ThanhToan);
             this.panel2.Controls.Add(this.label8);
@@ -374,7 +295,6 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_QuayLai);
-            this.panel2.Controls.Add(this.tb_Ten);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Location = new System.Drawing.Point(28, 74);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -476,6 +396,102 @@
             this.panel1.Size = new System.Drawing.Size(1312, 594);
             this.panel1.TabIndex = 16;
             // 
+            // lb_Ten
+            // 
+            this.lb_Ten.AutoSize = true;
+            this.lb_Ten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lb_Ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Ten.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_Ten.Location = new System.Drawing.Point(137, 84);
+            this.lb_Ten.Name = "lb_Ten";
+            this.lb_Ten.Size = new System.Drawing.Size(52, 28);
+            this.lb_Ten.TabIndex = 100;
+            this.lb_Ten.Text = "(tên)";
+            // 
+            // lb_HanhTrinh
+            // 
+            this.lb_HanhTrinh.AutoSize = true;
+            this.lb_HanhTrinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lb_HanhTrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_HanhTrinh.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_HanhTrinh.Location = new System.Drawing.Point(137, 130);
+            this.lb_HanhTrinh.Name = "lb_HanhTrinh";
+            this.lb_HanhTrinh.Size = new System.Drawing.Size(113, 28);
+            this.lb_HanhTrinh.TabIndex = 101;
+            this.lb_HanhTrinh.Text = "(hành trình)";
+            // 
+            // lb_LoaiHinh
+            // 
+            this.lb_LoaiHinh.AutoSize = true;
+            this.lb_LoaiHinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lb_LoaiHinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_LoaiHinh.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_LoaiHinh.Location = new System.Drawing.Point(137, 175);
+            this.lb_LoaiHinh.Name = "lb_LoaiHinh";
+            this.lb_LoaiHinh.Size = new System.Drawing.Size(102, 28);
+            this.lb_LoaiHinh.TabIndex = 102;
+            this.lb_LoaiHinh.Text = "(loại trình)";
+            // 
+            // lb_SoNgayDi
+            // 
+            this.lb_SoNgayDi.AutoSize = true;
+            this.lb_SoNgayDi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lb_SoNgayDi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoNgayDi.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_SoNgayDi.Location = new System.Drawing.Point(572, 84);
+            this.lb_SoNgayDi.Name = "lb_SoNgayDi";
+            this.lb_SoNgayDi.Size = new System.Drawing.Size(114, 28);
+            this.lb_SoNgayDi.TabIndex = 103;
+            this.lb_SoNgayDi.Text = "(số ngày đi)";
+            // 
+            // lb_NguoiThamGia
+            // 
+            this.lb_NguoiThamGia.AutoSize = true;
+            this.lb_NguoiThamGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lb_NguoiThamGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NguoiThamGia.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_NguoiThamGia.Location = new System.Drawing.Point(572, 134);
+            this.lb_NguoiThamGia.Name = "lb_NguoiThamGia";
+            this.lb_NguoiThamGia.Size = new System.Drawing.Size(158, 28);
+            this.lb_NguoiThamGia.TabIndex = 104;
+            this.lb_NguoiThamGia.Text = "(người tham gia)";
+            // 
+            // lb_GiaTrenNguoi
+            // 
+            this.lb_GiaTrenNguoi.AutoSize = true;
+            this.lb_GiaTrenNguoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lb_GiaTrenNguoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_GiaTrenNguoi.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_GiaTrenNguoi.Location = new System.Drawing.Point(572, 179);
+            this.lb_GiaTrenNguoi.Name = "lb_GiaTrenNguoi";
+            this.lb_GiaTrenNguoi.Size = new System.Drawing.Size(136, 28);
+            this.lb_GiaTrenNguoi.TabIndex = 105;
+            this.lb_GiaTrenNguoi.Text = "(giá vé/người)";
+            // 
+            // lb_SoSao
+            // 
+            this.lb_SoSao.AutoSize = true;
+            this.lb_SoSao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lb_SoSao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoSao.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_SoSao.Location = new System.Drawing.Point(1018, 88);
+            this.lb_SoSao.Name = "lb_SoSao";
+            this.lb_SoSao.Size = new System.Drawing.Size(79, 28);
+            this.lb_SoSao.TabIndex = 106;
+            this.lb_SoSao.Text = "(số sao)";
+            // 
+            // lb_NgayKhoiHanh
+            // 
+            this.lb_NgayKhoiHanh.AutoSize = true;
+            this.lb_NgayKhoiHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lb_NgayKhoiHanh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NgayKhoiHanh.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_NgayKhoiHanh.Location = new System.Drawing.Point(1018, 130);
+            this.lb_NgayKhoiHanh.Name = "lb_NgayKhoiHanh";
+            this.lb_NgayKhoiHanh.Size = new System.Drawing.Size(158, 28);
+            this.lb_NgayKhoiHanh.TabIndex = 107;
+            this.lb_NgayKhoiHanh.Text = "(ngày khởi hành)";
+            // 
             // FormDatChuyenDi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -508,19 +524,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tb_NgayKhoiHanh;
-        private System.Windows.Forms.TextBox tb_Sao;
-        private System.Windows.Forms.TextBox tb_GiaTrenNguoi;
-        private System.Windows.Forms.TextBox tb_NguoiThamGia;
-        private System.Windows.Forms.TextBox tb_SoNgay;
-        private System.Windows.Forms.TextBox tb_LoaiHinh;
-        private System.Windows.Forms.TextBox tb_HanhTrinh;
         private System.Windows.Forms.Button btn_ThanhToan;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_QuayLai;
-        private System.Windows.Forms.TextBox tb_Ten;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label10;
@@ -531,5 +539,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lb_GiaTrenNguoi;
+        private System.Windows.Forms.Label lb_NguoiThamGia;
+        private System.Windows.Forms.Label lb_SoNgayDi;
+        private System.Windows.Forms.Label lb_LoaiHinh;
+        private System.Windows.Forms.Label lb_HanhTrinh;
+        private System.Windows.Forms.Label lb_Ten;
+        private System.Windows.Forms.Label lb_NgayKhoiHanh;
+        private System.Windows.Forms.Label lb_SoSao;
     }
 }
