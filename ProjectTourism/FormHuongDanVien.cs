@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectTourism
 {
-    public partial class FormGuide : Form
+    public partial class FormHuongDanVien : Form
     {
-        public FormGuide()
+        public FormHuongDanVien()
         {
             InitializeComponent();
         }
