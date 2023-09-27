@@ -19,7 +19,7 @@ namespace ProjectTourism
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            Image myimage = new Bitmap(@"../../../Details/TrangChu/background1.jpg");
+            Image myimage = new Bitmap(@"../../../ProjectTourism/Assets/background1.jpg");
             this.BackgroundImage = myimage;
             BackgroundImageLayout = ImageLayout.Stretch;
         }

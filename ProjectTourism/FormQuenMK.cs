@@ -34,5 +34,10 @@ namespace ProjectTourism
             formNewPass.ShowDialog();
             Close();
         }
+
+        private void FormQuenMK_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
