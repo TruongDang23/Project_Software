@@ -109,11 +109,12 @@
             // 
             // tbSoSao
             // 
-            this.tbSoSao.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbSoSao.Location = new System.Drawing.Point(886, 321);
+            this.tbSoSao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.tbSoSao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSoSao.Location = new System.Drawing.Point(883, 313);
             this.tbSoSao.Margin = new System.Windows.Forms.Padding(4);
             this.tbSoSao.Name = "tbSoSao";
-            this.tbSoSao.Size = new System.Drawing.Size(87, 22);
+            this.tbSoSao.Size = new System.Drawing.Size(107, 34);
             this.tbSoSao.TabIndex = 6;
             // 
             // label5
@@ -123,18 +124,19 @@
             this.label5.Location = new System.Drawing.Point(793, 313);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 31);
+            this.label5.Size = new System.Drawing.Size(82, 30);
             this.label5.TabIndex = 5;
             this.label5.Text = "Số sao:";
             // 
             // rtbNhanXet
             // 
-            this.rtbNhanXet.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.rtbNhanXet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.rtbNhanXet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbNhanXet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbNhanXet.Location = new System.Drawing.Point(168, 313);
             this.rtbNhanXet.Margin = new System.Windows.Forms.Padding(4);
             this.rtbNhanXet.Name = "rtbNhanXet";
-            this.rtbNhanXet.Size = new System.Drawing.Size(617, 117);
+            this.rtbNhanXet.Size = new System.Drawing.Size(622, 117);
             this.rtbNhanXet.TabIndex = 4;
             this.rtbNhanXet.Text = "";
             // 
@@ -145,7 +147,7 @@
             this.label4.Location = new System.Drawing.Point(49, 304);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 31);
+            this.label4.Size = new System.Drawing.Size(104, 30);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nhận xét:";
             // 
@@ -156,7 +158,7 @@
             this.label3.Location = new System.Drawing.Point(39, 269);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 31);
+            this.label3.Size = new System.Drawing.Size(198, 30);
             this.label3.TabIndex = 2;
             this.label3.Text = "Đánh giá của bạn:";
             // 
@@ -179,7 +181,7 @@
             this.label2.Location = new System.Drawing.Point(39, 23);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 31);
+            this.label2.Size = new System.Drawing.Size(216, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Các đánh giá trước:";
             // 
