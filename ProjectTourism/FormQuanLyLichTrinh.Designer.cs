@@ -33,43 +33,42 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.btn_Find = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.dt_AddTour = new System.Windows.Forms.DateTimePicker();
+            this.cbb_AddTours = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_Tours = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.numeric_Quantity = new System.Windows.Forms.NumericUpDown();
+            this.dt_FindTours = new System.Windows.Forms.DateTimePicker();
+            this.cbb_FindTours = new System.Windows.Forms.ComboBox();
+            this.btn_FindTour = new System.Windows.Forms.Button();
+            this.rbtn_NotEligible = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.dt_InfoTour = new System.Windows.Forms.DateTimePicker();
+            this.lbl_Quantity = new System.Windows.Forms.Label();
+            this.lbl_Type = new System.Windows.Forms.Label();
+            this.lbl_NameTour = new System.Windows.Forms.Label();
+            this.lbl_IDTour = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Tours)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_Quantity)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,9 +86,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 32);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 8);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(304, 193);
+            this.pictureBox2.Size = new System.Drawing.Size(343, 217);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
@@ -97,13 +96,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.monthCalendar);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.dateTimePicker5);
+            this.panel1.Controls.Add(this.btn_Find);
             this.panel1.Location = new System.Drawing.Point(12, 231);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 242);
+            this.panel1.Size = new System.Drawing.Size(343, 326);
             this.panel1.TabIndex = 22;
             // 
             // label15
@@ -111,178 +109,156 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.label15.Location = new System.Drawing.Point(57, 32);
+            this.label15.Location = new System.Drawing.Point(60, 12);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(188, 31);
             this.label15.TabIndex = 25;
             this.label15.Text = "TUẦN LÀM VIỆC";
             // 
-            // button5
+            // btn_Find
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(160, 167);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(135, 45);
-            this.button5.TabIndex = 34;
-            this.button5.Text = "Tuần Sau";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(15, 167);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 45);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "Tuần trước";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker5.Location = new System.Drawing.Point(20, 102);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(246, 27);
-            this.dateTimePicker5.TabIndex = 25;
+            this.btn_Find.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_Find.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Find.ForeColor = System.Drawing.Color.White;
+            this.btn_Find.Location = new System.Drawing.Point(95, 271);
+            this.btn_Find.Name = "btn_Find";
+            this.btn_Find.Size = new System.Drawing.Size(138, 45);
+            this.btn_Find.TabIndex = 33;
+            this.btn_Find.Text = "Tìm kiếm";
+            this.btn_Find.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.btn_Add);
+            this.panel2.Controls.Add(this.dt_AddTour);
+            this.panel2.Controls.Add(this.cbb_AddTours);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 479);
+            this.panel2.Location = new System.Drawing.Point(12, 563);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(304, 237);
+            this.panel2.Size = new System.Drawing.Size(343, 237);
             this.panel2.TabIndex = 23;
             // 
-            // button1
+            // btn_Add
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(88, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 46);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.ForeColor = System.Drawing.Color.White;
+            this.btn_Add.Location = new System.Drawing.Point(106, 183);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(110, 46);
+            this.btn_Add.TabIndex = 24;
+            this.btn_Add.Text = "Thêm";
+            this.btn_Add.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
+            // dt_AddTour
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(20, 127);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(246, 27);
-            this.dateTimePicker1.TabIndex = 24;
+            this.dt_AddTour.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.dt_AddTour.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_AddTour.Location = new System.Drawing.Point(42, 125);
+            this.dt_AddTour.Name = "dt_AddTour";
+            this.dt_AddTour.Size = new System.Drawing.Size(246, 27);
+            this.dt_AddTour.TabIndex = 24;
             // 
-            // comboBox1
+            // cbb_AddTours
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(20, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(246, 36);
-            this.comboBox1.TabIndex = 24;
+            this.cbb_AddTours.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.cbb_AddTours.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_AddTours.FormattingEnabled = true;
+            this.cbb_AddTours.Location = new System.Drawing.Point(42, 64);
+            this.cbb_AddTours.Name = "cbb_AddTours";
+            this.cbb_AddTours.Size = new System.Drawing.Size(246, 36);
+            this.cbb_AddTours.TabIndex = 24;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.label1.Location = new System.Drawing.Point(47, 14);
+            this.label1.Location = new System.Drawing.Point(60, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 31);
             this.label1.TabIndex = 24;
             this.label1.Text = "THÊM LỊCH TRÌNH";
             // 
-            // dataGridView1
+            // dgv_Tours
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(322, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(905, 362);
-            this.dataGridView1.TabIndex = 24;
+            this.dgv_Tours.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Tours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Tours.Location = new System.Drawing.Point(361, 62);
+            this.dgv_Tours.Name = "dgv_Tours";
+            this.dgv_Tours.RowHeadersWidth = 51;
+            this.dgv_Tours.RowTemplate.Height = 24;
+            this.dgv_Tours.Size = new System.Drawing.Size(905, 441);
+            this.dgv_Tours.TabIndex = 24;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.numericUpDown1);
-            this.panel3.Controls.Add(this.dateTimePicker2);
-            this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.radioButton1);
+            this.panel3.Controls.Add(this.numeric_Quantity);
+            this.panel3.Controls.Add(this.dt_FindTours);
+            this.panel3.Controls.Add(this.cbb_FindTours);
+            this.panel3.Controls.Add(this.btn_FindTour);
+            this.panel3.Controls.Add(this.rbtn_NotEligible);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(322, 425);
+            this.panel3.Location = new System.Drawing.Point(363, 509);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(434, 291);
             this.panel3.TabIndex = 23;
             // 
-            // numericUpDown1
+            // numeric_Quantity
             // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(236, 160);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(175, 34);
-            this.numericUpDown1.TabIndex = 32;
+            this.numeric_Quantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.numeric_Quantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeric_Quantity.Location = new System.Drawing.Point(236, 160);
+            this.numeric_Quantity.Name = "numeric_Quantity";
+            this.numeric_Quantity.Size = new System.Drawing.Size(175, 34);
+            this.numeric_Quantity.TabIndex = 32;
             // 
-            // dateTimePicker2
+            // dt_FindTours
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(171, 120);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(240, 27);
-            this.dateTimePicker2.TabIndex = 25;
+            this.dt_FindTours.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_FindTours.Location = new System.Drawing.Point(171, 120);
+            this.dt_FindTours.Name = "dt_FindTours";
+            this.dt_FindTours.Size = new System.Drawing.Size(240, 27);
+            this.dt_FindTours.TabIndex = 25;
             // 
-            // comboBox2
+            // cbb_FindTours
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(171, 76);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(240, 36);
-            this.comboBox2.TabIndex = 31;
+            this.cbb_FindTours.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.cbb_FindTours.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_FindTours.FormattingEnabled = true;
+            this.cbb_FindTours.Location = new System.Drawing.Point(171, 76);
+            this.cbb_FindTours.Name = "cbb_FindTours";
+            this.cbb_FindTours.Size = new System.Drawing.Size(240, 36);
+            this.cbb_FindTours.TabIndex = 31;
             // 
-            // button2
+            // btn_FindTour
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(171, 237);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 46);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Tìm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_FindTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_FindTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_FindTour.ForeColor = System.Drawing.Color.White;
+            this.btn_FindTour.Location = new System.Drawing.Point(171, 237);
+            this.btn_FindTour.Name = "btn_FindTour";
+            this.btn_FindTour.Size = new System.Drawing.Size(110, 46);
+            this.btn_FindTour.TabIndex = 25;
+            this.btn_FindTour.Text = "Tìm";
+            this.btn_FindTour.UseVisualStyleBackColor = false;
             // 
-            // radioButton1
+            // rbtn_NotEligible
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(40, 199);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(296, 32);
-            this.radioButton1.TabIndex = 30;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Chuyến đi không đủ yêu cầu";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtn_NotEligible.AutoSize = true;
+            this.rbtn_NotEligible.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtn_NotEligible.Location = new System.Drawing.Point(40, 199);
+            this.rbtn_NotEligible.Name = "rbtn_NotEligible";
+            this.rbtn_NotEligible.Size = new System.Drawing.Size(296, 32);
+            this.rbtn_NotEligible.TabIndex = 30;
+            this.rbtn_NotEligible.TabStop = true;
+            this.rbtn_NotEligible.Text = "Chuyến đi không đủ yêu cầu";
+            this.rbtn_NotEligible.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -328,69 +304,69 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.dateTimePicker3);
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.dt_InfoTour);
+            this.panel4.Controls.Add(this.lbl_Quantity);
+            this.panel4.Controls.Add(this.lbl_Type);
+            this.panel4.Controls.Add(this.lbl_NameTour);
+            this.panel4.Controls.Add(this.lbl_IDTour);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.btn_Cancel);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(760, 425);
+            this.panel4.Location = new System.Drawing.Point(799, 509);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(467, 291);
             this.panel4.TabIndex = 24;
             // 
-            // dateTimePicker3
+            // dt_InfoTour
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(131, 144);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(291, 27);
-            this.dateTimePicker3.TabIndex = 33;
+            this.dt_InfoTour.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_InfoTour.Location = new System.Drawing.Point(131, 144);
+            this.dt_InfoTour.Name = "dt_InfoTour";
+            this.dt_InfoTour.Size = new System.Drawing.Size(291, 30);
+            this.dt_InfoTour.TabIndex = 33;
             // 
-            // label14
+            // lbl_Quantity
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(174, 188);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(34, 28);
-            this.label14.TabIndex = 41;
-            this.label14.Text = "25";
+            this.lbl_Quantity.AutoSize = true;
+            this.lbl_Quantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Quantity.Location = new System.Drawing.Point(174, 188);
+            this.lbl_Quantity.Name = "lbl_Quantity";
+            this.lbl_Quantity.Size = new System.Drawing.Size(34, 28);
+            this.lbl_Quantity.TabIndex = 41;
+            this.lbl_Quantity.Text = "25";
             // 
-            // label13
+            // lbl_Type
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(153, 109);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 28);
-            this.label13.TabIndex = 40;
-            this.label13.Text = "Nghỉ dưỡng";
+            this.lbl_Type.AutoSize = true;
+            this.lbl_Type.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Type.Location = new System.Drawing.Point(153, 109);
+            this.lbl_Type.Name = "lbl_Type";
+            this.lbl_Type.Size = new System.Drawing.Size(119, 28);
+            this.lbl_Type.TabIndex = 40;
+            this.lbl_Type.Text = "Nghỉ dưỡng";
             // 
-            // label12
+            // lbl_NameTour
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(153, 68);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(288, 28);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Du lịch Nha Trang - Đà Lạt 2023";
+            this.lbl_NameTour.AutoSize = true;
+            this.lbl_NameTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NameTour.Location = new System.Drawing.Point(153, 68);
+            this.lbl_NameTour.Name = "lbl_NameTour";
+            this.lbl_NameTour.Size = new System.Drawing.Size(288, 28);
+            this.lbl_NameTour.TabIndex = 39;
+            this.lbl_NameTour.Text = "Du lịch Nha Trang - Đà Lạt 2023";
             // 
-            // label11
+            // lbl_IDTour
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(153, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(129, 28);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "NhaTrang001";
+            this.lbl_IDTour.AutoSize = true;
+            this.lbl_IDTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_IDTour.Location = new System.Drawing.Point(153, 34);
+            this.lbl_IDTour.Name = "lbl_IDTour";
+            this.lbl_IDTour.Size = new System.Drawing.Size(129, 28);
+            this.lbl_IDTour.TabIndex = 38;
+            this.lbl_IDTour.Text = "NhaTrang001";
             // 
             // label10
             // 
@@ -412,17 +388,17 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "Loại hình:";
             // 
-            // button3
+            // btn_Cancel
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(45, 237);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(396, 46);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Hủy chuyến đi và gửi thông báo";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.White;
+            this.btn_Cancel.Location = new System.Drawing.Point(45, 237);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(396, 46);
+            this.btn_Cancel.TabIndex = 33;
+            this.btn_Cancel.Text = "Hủy chuyến đi và gửi thông báo";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -454,15 +430,22 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "Ngày đi:";
             // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar.Location = new System.Drawing.Point(26, 52);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 25;
+            // 
             // FormQuanLyLichTrinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(1239, 730);
+            this.ClientSize = new System.Drawing.Size(1278, 812);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_Tours);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
@@ -474,10 +457,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Tours)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_Quantity)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -490,37 +473,36 @@
         private System.Windows.Forms.Label lb_title;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dt_AddTour;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.ComboBox cbb_AddTours;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_Tours;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.NumericUpDown numeric_Quantity;
+        private System.Windows.Forms.DateTimePicker dt_FindTours;
+        private System.Windows.Forms.ComboBox cbb_FindTours;
+        private System.Windows.Forms.Button btn_FindTour;
+        private System.Windows.Forms.RadioButton rbtn_NotEligible;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dt_InfoTour;
+        private System.Windows.Forms.Label lbl_Quantity;
+        private System.Windows.Forms.Label lbl_Type;
+        private System.Windows.Forms.Label lbl_NameTour;
+        private System.Windows.Forms.Label lbl_IDTour;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.Button btn_Find;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.MonthCalendar monthCalendar;
     }
 }
