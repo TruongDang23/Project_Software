@@ -191,6 +191,12 @@
     <Compile Include="FormDK.Designer.cs">
       <DependentUpon>FormDK.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTaoChuyenDiMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoChuyenDiMoi.Designer.cs">
+      <DependentUpon>FormTaoChuyenDiMoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDK.resx">
       <DependentUpon>FormDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoChuyenDiMoi.resx">
+      <DependentUpon>FormTaoChuyenDiMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
