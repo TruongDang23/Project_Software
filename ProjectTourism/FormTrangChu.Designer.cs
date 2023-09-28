@@ -44,10 +44,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 117);
+            this.pictureBox1.Size = new System.Drawing.Size(217, 144);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -63,8 +63,9 @@
             this.panel1.Controls.Add(this.btnKHang);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1029, 121);
+            this.panel1.Size = new System.Drawing.Size(1372, 149);
             this.panel1.TabIndex = 3;
             // 
             // btnDanhGia
@@ -79,13 +80,14 @@
             this.btnDanhGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDanhGia.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnDanhGia.Location = new System.Drawing.Point(874, 47);
-            this.btnDanhGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDanhGia.Location = new System.Drawing.Point(1165, 58);
+            this.btnDanhGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDanhGia.Name = "btnDanhGia";
-            this.btnDanhGia.Size = new System.Drawing.Size(138, 41);
+            this.btnDanhGia.Size = new System.Drawing.Size(184, 50);
             this.btnDanhGia.TabIndex = 18;
             this.btnDanhGia.Text = "ĐÁNH GIÁ";
             this.btnDanhGia.UseVisualStyleBackColor = false;
+            this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
             // 
             // btnHDV
             // 
@@ -99,13 +101,14 @@
             this.btnHDV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHDV.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHDV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnHDV.Location = new System.Drawing.Point(651, 47);
-            this.btnHDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHDV.Location = new System.Drawing.Point(868, 58);
+            this.btnHDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHDV.Name = "btnHDV";
-            this.btnHDV.Size = new System.Drawing.Size(236, 41);
+            this.btnHDV.Size = new System.Drawing.Size(315, 50);
             this.btnHDV.TabIndex = 17;
             this.btnHDV.Text = "HƯỚNG DẪN VIÊN";
             this.btnHDV.UseVisualStyleBackColor = false;
+            this.btnHDV.Click += new System.EventHandler(this.btnHDV_Click);
             // 
             // btnVe
             // 
@@ -119,13 +122,14 @@
             this.btnVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVe.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnVe.Location = new System.Drawing.Point(422, 47);
-            this.btnVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVe.Location = new System.Drawing.Point(563, 58);
+            this.btnVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVe.Name = "btnVe";
-            this.btnVe.Size = new System.Drawing.Size(68, 41);
+            this.btnVe.Size = new System.Drawing.Size(91, 50);
             this.btnVe.TabIndex = 15;
             this.btnVe.Text = "VÉ";
             this.btnVe.UseVisualStyleBackColor = false;
+            this.btnVe.Click += new System.EventHandler(this.btnVe_Click);
             // 
             // btnLichTour
             // 
@@ -139,13 +143,14 @@
             this.btnLichTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLichTour.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLichTour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnLichTour.Location = new System.Drawing.Point(272, 47);
-            this.btnLichTour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLichTour.Location = new System.Drawing.Point(363, 58);
+            this.btnLichTour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLichTour.Name = "btnLichTour";
-            this.btnLichTour.Size = new System.Drawing.Size(157, 41);
+            this.btnLichTour.Size = new System.Drawing.Size(209, 50);
             this.btnLichTour.TabIndex = 14;
             this.btnLichTour.Text = "LỊCH TOUR";
             this.btnLichTour.UseVisualStyleBackColor = false;
+            this.btnLichTour.Click += new System.EventHandler(this.btnLichTour_Click);
             // 
             // btnTour
             // 
@@ -159,13 +164,14 @@
             this.btnTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTour.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnTour.Location = new System.Drawing.Point(169, 47);
-            this.btnTour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTour.Location = new System.Drawing.Point(225, 58);
+            this.btnTour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTour.Name = "btnTour";
-            this.btnTour.Size = new System.Drawing.Size(113, 41);
+            this.btnTour.Size = new System.Drawing.Size(151, 50);
             this.btnTour.TabIndex = 13;
             this.btnTour.Text = "TOUR";
             this.btnTour.UseVisualStyleBackColor = false;
+            this.btnTour.Click += new System.EventHandler(this.btnTour_Click);
             // 
             // btnKHang
             // 
@@ -179,22 +185,24 @@
             this.btnKHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKHang.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnKHang.Location = new System.Drawing.Point(479, 47);
-            this.btnKHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKHang.Location = new System.Drawing.Point(639, 58);
+            this.btnKHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKHang.Name = "btnKHang";
-            this.btnKHang.Size = new System.Drawing.Size(190, 41);
+            this.btnKHang.Size = new System.Drawing.Size(253, 50);
             this.btnKHang.TabIndex = 16;
             this.btnKHang.Text = "KHÁCH HÀNG";
             this.btnKHang.UseVisualStyleBackColor = false;
+            this.btnKHang.Click += new System.EventHandler(this.btnKHang_Click);
             // 
             // FormTrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1017, 544);
+            this.ClientSize = new System.Drawing.Size(1356, 670);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FormTrangChu";
             this.Text = "FormTrangChu";

@@ -24,5 +24,52 @@ namespace ProjectTourism
             BackgroundImageLayout = ImageLayout.Stretch;
         }
 
+        private void btnTour_Click(object sender, EventArgs e)
+        {
+            FormQuanLyTour tour = new FormQuanLyTour();
+            this.Hide();
+            tour.ShowDialog();
+            this.Show();
+        }
+
+        private void btnLichTour_Click(object sender, EventArgs e)
+        {
+            FormQuanLyLichTrinh lichtour = new FormQuanLyLichTrinh();
+            this.Hide();
+            lichtour.ShowDialog();
+            this.Show();
+        }
+
+        private void btnVe_Click(object sender, EventArgs e)
+        {
+            FormQuanLyVe ve = new FormQuanLyVe();
+            this.Hide();
+            ve.ShowDialog();
+            this.Show();
+        }
+
+        private void btnKHang_Click(object sender, EventArgs e)
+        {
+            FormKhachHang formKhachHang = new FormKhachHang();
+            this.Hide();
+            formKhachHang.ShowDialog();
+            this.Show();
+        }
+
+        private void btnHDV_Click(object sender, EventArgs e)
+        {
+            FormHuongDanVien formHuongDanVien = new FormHuongDanVien();
+            this.Hide();
+            formHuongDanVien.ShowDialog();
+            this.Show();
+        }
+
+        private void btnDanhGia_Click(object sender, EventArgs e)
+        {
+            FormQuanLyDanhGia form = new FormQuanLyDanhGia();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }
