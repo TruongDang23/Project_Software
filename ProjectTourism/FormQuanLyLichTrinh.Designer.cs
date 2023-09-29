@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyLichTrinh));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_title = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.label15 = new System.Windows.Forms.Label();
             this.btn_Find = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -62,7 +65,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,12 +106,19 @@
             this.panel1.Size = new System.Drawing.Size(343, 326);
             this.panel1.TabIndex = 22;
             // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar.Location = new System.Drawing.Point(23, 52);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 25;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.label15.Location = new System.Drawing.Point(60, 12);
+            this.label15.Location = new System.Drawing.Point(76, 12);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(188, 31);
             this.label15.TabIndex = 25;
@@ -126,6 +135,7 @@
             this.btn_Find.TabIndex = 33;
             this.btn_Find.Text = "Tìm kiếm";
             this.btn_Find.UseVisualStyleBackColor = false;
+            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
             // 
             // panel2
             // 
@@ -150,6 +160,7 @@
             this.btn_Add.TabIndex = 24;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // dt_AddTour
             // 
@@ -183,8 +194,27 @@
             // 
             // dgv_Tours
             // 
+            this.dgv_Tours.AllowUserToAddRows = false;
+            this.dgv_Tours.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Tours.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Tours.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_Tours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.NullValue = "0";
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Tours.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_Tours.Location = new System.Drawing.Point(361, 62);
             this.dgv_Tours.Name = "dgv_Tours";
             this.dgv_Tours.RowHeadersWidth = 51;
@@ -252,7 +282,7 @@
             // 
             this.rbtn_NotEligible.AutoSize = true;
             this.rbtn_NotEligible.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtn_NotEligible.Location = new System.Drawing.Point(40, 199);
+            this.rbtn_NotEligible.Location = new System.Drawing.Point(20, 199);
             this.rbtn_NotEligible.Name = "rbtn_NotEligible";
             this.rbtn_NotEligible.Size = new System.Drawing.Size(296, 32);
             this.rbtn_NotEligible.TabIndex = 30;
@@ -264,7 +294,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 159);
+            this.label5.Location = new System.Drawing.Point(15, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(183, 28);
             this.label5.TabIndex = 28;
@@ -274,7 +304,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(35, 118);
+            this.label4.Location = new System.Drawing.Point(15, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 28);
             this.label4.TabIndex = 27;
@@ -284,11 +314,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 76);
+            this.label3.Location = new System.Drawing.Point(15, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 28);
+            this.label3.Size = new System.Drawing.Size(140, 28);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Tên:";
+            this.label3.Text = "Mã chuyến đi:";
             // 
             // label2
             // 
@@ -430,13 +460,6 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "Ngày đi:";
             // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthCalendar.Location = new System.Drawing.Point(26, 52);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 25;
-            // 
             // FormQuanLyLichTrinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,6 +475,7 @@
             this.Controls.Add(this.lb_title);
             this.Name = "FormQuanLyLichTrinh";
             this.Text = "FormQuanLyLichTrinh";
+            this.Load += new System.EventHandler(this.FormQuanLyLichTrinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

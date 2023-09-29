@@ -56,6 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BSLayer\BLManager.cs" />
+    <Compile Include="BSLayer\BLSystem.cs" />
+    <Compile Include="BSLayer\BLUser.cs" />
     <Compile Include="ChuyenDi.cs">
       <DependentUpon>DichVuDuLich.tt</DependentUpon>
     </Compile>
@@ -346,7 +349,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="BSLayer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -34,6 +34,7 @@
             this.dgv_dangky = new System.Windows.Forms.DataGridView();
             this.pnl_dataacc = new System.Windows.Forms.Panel();
             this.dgv_dataacc = new System.Windows.Forms.DataGridView();
+            this.btn_khluu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_accthem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.cbb_id = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.pnl_hanhkhach = new System.Windows.Forms.Panel();
+            this.btn_accluu = new System.Windows.Forms.Button();
             this.btn_khthem = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btn_khsua = new System.Windows.Forms.Button();
@@ -85,8 +87,6 @@
             this.btn_huy = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.btn_accluu = new System.Windows.Forms.Button();
-            this.btn_khluu = new System.Windows.Forms.Button();
             this.pnl_account.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dangky)).BeginInit();
             this.pnl_dataacc.SuspendLayout();
@@ -107,7 +107,7 @@
             this.lb_title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lb_title.Location = new System.Drawing.Point(414, 9);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(405, 46);
+            this.lb_title.Size = new System.Drawing.Size(392, 45);
             this.lb_title.TabIndex = 5;
             this.lb_title.Text = "QUẢN LÝ KHÁCH HÀNG";
             // 
@@ -182,6 +182,18 @@
             this.dgv_dataacc.RowTemplate.Height = 24;
             this.dgv_dataacc.Size = new System.Drawing.Size(355, 164);
             this.dgv_dataacc.TabIndex = 31;
+            // 
+            // btn_khluu
+            // 
+            this.btn_khluu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_khluu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_khluu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_khluu.Location = new System.Drawing.Point(266, 338);
+            this.btn_khluu.Name = "btn_khluu";
+            this.btn_khluu.Size = new System.Drawing.Size(82, 48);
+            this.btn_khluu.TabIndex = 44;
+            this.btn_khluu.Text = "Lưu";
+            this.btn_khluu.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -425,6 +437,18 @@
             this.pnl_hanhkhach.Size = new System.Drawing.Size(394, 474);
             this.pnl_hanhkhach.TabIndex = 53;
             // 
+            // btn_accluu
+            // 
+            this.btn_accluu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_accluu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_accluu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_accluu.Location = new System.Drawing.Point(275, 415);
+            this.btn_accluu.Name = "btn_accluu";
+            this.btn_accluu.Size = new System.Drawing.Size(90, 48);
+            this.btn_accluu.TabIndex = 43;
+            this.btn_accluu.Text = "Lưu";
+            this.btn_accluu.UseVisualStyleBackColor = false;
+            // 
             // btn_khthem
             // 
             this.btn_khthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
@@ -644,7 +668,7 @@
             this.label22.ForeColor = System.Drawing.Color.Black;
             this.label22.Location = new System.Drawing.Point(143, 450);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(232, 25);
+            this.label22.Size = new System.Drawing.Size(232, 38);
             this.label22.TabIndex = 58;
             this.label22.Text = "Nội dung";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -781,30 +805,6 @@
             this.entityCommand1.Connection = null;
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
-            // 
-            // btn_accluu
-            // 
-            this.btn_accluu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_accluu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_accluu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_accluu.Location = new System.Drawing.Point(275, 415);
-            this.btn_accluu.Name = "btn_accluu";
-            this.btn_accluu.Size = new System.Drawing.Size(90, 48);
-            this.btn_accluu.TabIndex = 43;
-            this.btn_accluu.Text = "Lưu";
-            this.btn_accluu.UseVisualStyleBackColor = false;
-            // 
-            // btn_khluu
-            // 
-            this.btn_khluu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_khluu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_khluu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_khluu.Location = new System.Drawing.Point(266, 338);
-            this.btn_khluu.Name = "btn_khluu";
-            this.btn_khluu.Size = new System.Drawing.Size(82, 48);
-            this.btn_khluu.TabIndex = 44;
-            this.btn_khluu.Text = "Lưu";
-            this.btn_khluu.UseVisualStyleBackColor = false;
             // 
             // FormKhachHang
             // 
