@@ -20,11 +20,13 @@ namespace ProjectTourism
 
         private void FormQuanLyLichTrinh_Load(object sender, EventArgs e)
         {
-            LoadItinerary(DateTime.Now, DateTime.Now.AddMonths(1));
+            LoadItinerary(DateTime.Now.Date, DateTime.Now.Date.AddMonths(1));
             this.cbb_AddTours.DataSource = tasks.LoadTours();
             this.cbb_AddTours.DisplayMember = "Mã Tour";
             this.cbb_FindTours.DataSource = tasks.LoadTours();
             this.cbb_FindTours.DisplayMember = "Mã Tour";
+            this.cbb_FindGuides.DataSource = tasks.LoadGuides();
+            this.cbb_FindGuides.DisplayMember = "Mã Hướng dẫn viên";
         }
         
         private void LoadItinerary(DateTime from, DateTime to)
@@ -32,6 +34,18 @@ namespace ProjectTourism
             try
             {
                 dgv_Tours.DataSource = tasks.LoadItinerary(from, to);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void LoadItinerary(string idTour, string idGuide, int quantity, bool not_eligible)
+        {
+            try
+            {
+                dgv_Tours.DataSource = tasks.FilterData(idTour, idGuide, quantity, not_eligible);
             }
             catch (Exception ex)
             {
@@ -49,7 +63,16 @@ namespace ProjectTourism
             string maChuyenDi = this.cbb_AddTours.Text;
             DateTime ngayBD = this.dt_AddTour.Value;
             tasks.AddItinerary(maChuyenDi, ngayBD);
-            LoadItinerary(DateTime.Now, DateTime.Now.AddMonths(1));
+            LoadItinerary(DateTime.Now.Date, DateTime.Now.Date.AddMonths(1));
+        }
+
+        private void btn_FindTour_Click(object sender, EventArgs e)
+        {
+            string idTour = this.cbb_FindTours.Text;
+            string idGuide = this.cbb_FindGuides.Text;
+            int quantity = Convert.ToInt32(this.numeric_Quantity.Value);
+            bool not_eligible = (this.cb_NotEligible.Checked) ? true : false;
+            LoadItinerary(idTour, idGuide, quantity, not_eligible);
         }
     }
 }

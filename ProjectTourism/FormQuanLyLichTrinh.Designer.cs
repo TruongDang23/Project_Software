@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyLichTrinh));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_title = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,13 +44,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_Tours = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.numeric_Quantity = new System.Windows.Forms.NumericUpDown();
-            this.dt_FindTours = new System.Windows.Forms.DateTimePicker();
             this.cbb_FindTours = new System.Windows.Forms.ComboBox();
             this.btn_FindTour = new System.Windows.Forms.Button();
-            this.rbtn_NotEligible = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -65,6 +63,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbb_FindGuides = new System.Windows.Forms.ComboBox();
+            this.cb_NotEligible = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -197,24 +197,24 @@
             this.dgv_Tours.AllowUserToAddRows = false;
             this.dgv_Tours.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Tours.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Tours.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Tours.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Tours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.NullValue = "0";
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Tours.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.NullValue = "0";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Tours.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Tours.Location = new System.Drawing.Point(361, 62);
             this.dgv_Tours.Name = "dgv_Tours";
             this.dgv_Tours.RowHeadersWidth = 51;
@@ -225,19 +225,29 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.cb_NotEligible);
+            this.panel3.Controls.Add(this.cbb_FindGuides);
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.numeric_Quantity);
-            this.panel3.Controls.Add(this.dt_FindTours);
             this.panel3.Controls.Add(this.cbb_FindTours);
             this.panel3.Controls.Add(this.btn_FindTour);
-            this.panel3.Controls.Add(this.rbtn_NotEligible);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(363, 509);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(434, 291);
             this.panel3.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 28);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Mã HDV:";
             // 
             // numeric_Quantity
             // 
@@ -247,14 +257,6 @@
             this.numeric_Quantity.Name = "numeric_Quantity";
             this.numeric_Quantity.Size = new System.Drawing.Size(175, 34);
             this.numeric_Quantity.TabIndex = 32;
-            // 
-            // dt_FindTours
-            // 
-            this.dt_FindTours.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dt_FindTours.Location = new System.Drawing.Point(171, 120);
-            this.dt_FindTours.Name = "dt_FindTours";
-            this.dt_FindTours.Size = new System.Drawing.Size(240, 27);
-            this.dt_FindTours.TabIndex = 25;
             // 
             // cbb_FindTours
             // 
@@ -277,18 +279,7 @@
             this.btn_FindTour.TabIndex = 25;
             this.btn_FindTour.Text = "Tìm";
             this.btn_FindTour.UseVisualStyleBackColor = false;
-            // 
-            // rbtn_NotEligible
-            // 
-            this.rbtn_NotEligible.AutoSize = true;
-            this.rbtn_NotEligible.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtn_NotEligible.Location = new System.Drawing.Point(20, 199);
-            this.rbtn_NotEligible.Name = "rbtn_NotEligible";
-            this.rbtn_NotEligible.Size = new System.Drawing.Size(296, 32);
-            this.rbtn_NotEligible.TabIndex = 30;
-            this.rbtn_NotEligible.TabStop = true;
-            this.rbtn_NotEligible.Text = "Chuyến đi không đủ yêu cầu";
-            this.rbtn_NotEligible.UseVisualStyleBackColor = true;
+            this.btn_FindTour.Click += new System.EventHandler(this.btn_FindTour_Click);
             // 
             // label5
             // 
@@ -296,19 +287,9 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(15, 160);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 28);
+            this.label5.Size = new System.Drawing.Size(158, 28);
             this.label5.TabIndex = 28;
-            this.label5.Text = "Số khách tối thiểu:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 28);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Ngày đi:";
+            this.label5.Text = "Số khách tối đa:";
             // 
             // label3
             // 
@@ -362,7 +343,7 @@
             // 
             this.lbl_Quantity.AutoSize = true;
             this.lbl_Quantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Quantity.Location = new System.Drawing.Point(174, 188);
+            this.lbl_Quantity.Location = new System.Drawing.Point(238, 188);
             this.lbl_Quantity.Name = "lbl_Quantity";
             this.lbl_Quantity.Size = new System.Drawing.Size(34, 28);
             this.lbl_Quantity.TabIndex = 41;
@@ -382,7 +363,7 @@
             // 
             this.lbl_NameTour.AutoSize = true;
             this.lbl_NameTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NameTour.Location = new System.Drawing.Point(153, 68);
+            this.lbl_NameTour.Location = new System.Drawing.Point(59, 73);
             this.lbl_NameTour.Name = "lbl_NameTour";
             this.lbl_NameTour.Size = new System.Drawing.Size(288, 28);
             this.lbl_NameTour.TabIndex = 39;
@@ -436,9 +417,9 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(4, 188);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 28);
+            this.label6.Size = new System.Drawing.Size(217, 28);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Số lượng khách:";
+            this.label6.Text = "Số lượng khách tối đa:";
             // 
             // label8
             // 
@@ -459,6 +440,27 @@
             this.label7.Size = new System.Drawing.Size(87, 28);
             this.label7.TabIndex = 34;
             this.label7.Text = "Ngày đi:";
+            // 
+            // cbb_FindGuides
+            // 
+            this.cbb_FindGuides.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.cbb_FindGuides.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_FindGuides.FormattingEnabled = true;
+            this.cbb_FindGuides.Location = new System.Drawing.Point(171, 118);
+            this.cbb_FindGuides.Name = "cbb_FindGuides";
+            this.cbb_FindGuides.Size = new System.Drawing.Size(240, 36);
+            this.cbb_FindGuides.TabIndex = 35;
+            // 
+            // cb_NotEligible
+            // 
+            this.cb_NotEligible.AutoSize = true;
+            this.cb_NotEligible.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_NotEligible.Location = new System.Drawing.Point(20, 200);
+            this.cb_NotEligible.Name = "cb_NotEligible";
+            this.cb_NotEligible.Size = new System.Drawing.Size(297, 32);
+            this.cb_NotEligible.TabIndex = 25;
+            this.cb_NotEligible.Text = "Chuyến đi không đủ yêu cầu";
+            this.cb_NotEligible.UseVisualStyleBackColor = true;
             // 
             // FormQuanLyLichTrinh
             // 
@@ -504,15 +506,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_Tours;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.NumericUpDown numeric_Quantity;
-        private System.Windows.Forms.DateTimePicker dt_FindTours;
         private System.Windows.Forms.ComboBox cbb_FindTours;
         private System.Windows.Forms.Button btn_FindTour;
-        private System.Windows.Forms.RadioButton rbtn_NotEligible;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_Cancel;
@@ -528,5 +527,8 @@
         private System.Windows.Forms.Button btn_Find;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.MonthCalendar monthCalendar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbb_FindGuides;
+        private System.Windows.Forms.CheckBox cb_NotEligible;
     }
 }
