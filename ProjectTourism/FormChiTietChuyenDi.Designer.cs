@@ -46,13 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_QuayLai = new System.Windows.Forms.Button();
-            this.btn_Dat = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lb_Ten = new System.Windows.Forms.Label();
             this.lb_NgayKhoiHanh = new System.Windows.Forms.Label();
             this.lb_SoSao = new System.Windows.Forms.Label();
             this.lb_GiaTrenNguoi = new System.Windows.Forms.Label();
@@ -60,6 +53,13 @@
             this.lb_SoNgayDi = new System.Windows.Forms.Label();
             this.lb_LoaiHinh = new System.Windows.Forms.Label();
             this.lb_HanhTrinh = new System.Windows.Forms.Label();
+            this.lb_Ten = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_QuayLai = new System.Windows.Forms.Button();
+            this.btn_Dat = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_2)).BeginInit();
@@ -287,90 +287,6 @@
             this.panel2.Size = new System.Drawing.Size(1261, 513);
             this.panel2.TabIndex = 1;
             // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(379, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(187, 36);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "Người tham gia:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btn_QuayLai
-            // 
-            this.btn_QuayLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_QuayLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuayLai.ForeColor = System.Drawing.Color.White;
-            this.btn_QuayLai.Location = new System.Drawing.Point(1127, 456);
-            this.btn_QuayLai.Name = "btn_QuayLai";
-            this.btn_QuayLai.Size = new System.Drawing.Size(118, 45);
-            this.btn_QuayLai.TabIndex = 57;
-            this.btn_QuayLai.Text = "Quay lại";
-            this.btn_QuayLai.UseVisualStyleBackColor = false;
-            // 
-            // btn_Dat
-            // 
-            this.btn_Dat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_Dat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Dat.ForeColor = System.Drawing.Color.White;
-            this.btn_Dat.Location = new System.Drawing.Point(769, 456);
-            this.btn_Dat.Name = "btn_Dat";
-            this.btn_Dat.Size = new System.Drawing.Size(118, 45);
-            this.btn_Dat.TabIndex = 56;
-            this.btn_Dat.Text = "Đặt";
-            this.btn_Dat.UseVisualStyleBackColor = false;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(26, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 36);
-            this.label11.TabIndex = 45;
-            this.label11.Text = "Tên:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(506, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(388, 45);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THÔNG TIN CHUYẾN ĐI";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lb_Ten
-            // 
-            this.lb_Ten.AutoSize = true;
-            this.lb_Ten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.lb_Ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Ten.ForeColor = System.Drawing.Color.Black;
-            this.lb_Ten.Location = new System.Drawing.Point(130, 20);
-            this.lb_Ten.Name = "lb_Ten";
-            this.lb_Ten.Size = new System.Drawing.Size(52, 28);
-            this.lb_Ten.TabIndex = 101;
-            this.lb_Ten.Text = "(tên)";
-            // 
             // lb_NgayKhoiHanh
             // 
             this.lb_NgayKhoiHanh.AutoSize = true;
@@ -454,6 +370,90 @@
             this.lb_HanhTrinh.Size = new System.Drawing.Size(113, 28);
             this.lb_HanhTrinh.TabIndex = 108;
             this.lb_HanhTrinh.Text = "(hành trình)";
+            // 
+            // lb_Ten
+            // 
+            this.lb_Ten.AutoSize = true;
+            this.lb_Ten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.lb_Ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Ten.ForeColor = System.Drawing.Color.Black;
+            this.lb_Ten.Location = new System.Drawing.Point(130, 20);
+            this.lb_Ten.Name = "lb_Ten";
+            this.lb_Ten.Size = new System.Drawing.Size(52, 28);
+            this.lb_Ten.TabIndex = 101;
+            this.lb_Ten.Text = "(tên)";
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(379, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(187, 36);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Người tham gia:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btn_QuayLai
+            // 
+            this.btn_QuayLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_QuayLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuayLai.ForeColor = System.Drawing.Color.White;
+            this.btn_QuayLai.Location = new System.Drawing.Point(1127, 456);
+            this.btn_QuayLai.Name = "btn_QuayLai";
+            this.btn_QuayLai.Size = new System.Drawing.Size(118, 45);
+            this.btn_QuayLai.TabIndex = 57;
+            this.btn_QuayLai.Text = "Quay lại";
+            this.btn_QuayLai.UseVisualStyleBackColor = false;
+            // 
+            // btn_Dat
+            // 
+            this.btn_Dat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_Dat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dat.ForeColor = System.Drawing.Color.White;
+            this.btn_Dat.Location = new System.Drawing.Point(769, 456);
+            this.btn_Dat.Name = "btn_Dat";
+            this.btn_Dat.Size = new System.Drawing.Size(118, 45);
+            this.btn_Dat.TabIndex = 56;
+            this.btn_Dat.Text = "Đặt";
+            this.btn_Dat.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(26, 12);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 36);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "Tên:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(506, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(388, 45);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "THÔNG TIN CHUYẾN ĐI";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(237, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // FormChiTietChuyenDi
             // 
