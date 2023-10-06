@@ -218,5 +218,32 @@ namespace ProjectTourism.BSLayer
             return n;
         }
 
+        public DataTable LoadTickets (string IDTour,DateTime date)
+        {
+            var datas = from sub in entity.DanhSachDangKies
+                        where sub.MaChuyenDi == IDTour && sub.NgayBatDau.Day == date.Day && 
+                        sub.NgayBatDau.Month == date.Month && sub.NgayBatDau.Year == date.Year
+                        select new { sub.MaChuyenDi, sub.MaTaiKhoan, sub.NgayBatDau, sub.SoLuong, sub.TrangThai };
+
+            DataTable n = new DataTable();
+            n.Columns.Add("Mã Chuyến Đi", typeof(string));
+            n.Columns.Add("Mã Tài Khoản", typeof(string));
+            n.Columns.Add("Ngày khởi hành", typeof(DateTime));
+            n.Columns.Add("Số lượng đăng ký", typeof(int));
+            n.Columns.Add("Trạng Thái", typeof(string));
+
+            foreach (var data in datas)
+            {
+                n.Rows.Add(
+                    data.MaChuyenDi,
+                    data.MaTaiKhoan,
+                    data.NgayBatDau,
+                    data.SoLuong,
+                    data.TrangThai
+                    );
+            }
+
+            return n;
+        }
     }
 }
