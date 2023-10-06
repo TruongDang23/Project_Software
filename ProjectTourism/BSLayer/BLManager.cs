@@ -185,5 +185,23 @@ namespace ProjectTourism.BSLayer
             entity.LichTrinhs.Add(lt);
             entity.SaveChanges();
         }
+
+        public DataTable GetNameOfTour(string IDTour)
+        {
+            var datas = from t in entity.ChuyenDis
+                    where t.MaChuyenDi == IDTour
+                    select new { t.TenChuyenDi, t.HinhThuc };
+
+            DataTable n = new DataTable();
+            n.Columns.Add("Ten", typeof(string));
+            n.Columns.Add("HinhThuc", typeof(string));
+
+            foreach (var data in datas)
+            {
+                n.Rows.Add(data.TenChuyenDi);
+                n.Rows.Add(data.HinhThuc);
+            }
+            return n;
+        }
     }
 }
