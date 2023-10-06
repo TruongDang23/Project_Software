@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyLichTrinh));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_title = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,6 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_Tours = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cb_NotEligible = new System.Windows.Forms.CheckBox();
+            this.cbb_FindGuides = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.numeric_Quantity = new System.Windows.Forms.NumericUpDown();
             this.cbb_FindTours = new System.Windows.Forms.ComboBox();
@@ -63,8 +65,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbb_FindGuides = new System.Windows.Forms.ComboBox();
-            this.cb_NotEligible = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -197,30 +197,31 @@
             this.dgv_Tours.AllowUserToAddRows = false;
             this.dgv_Tours.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Tours.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Tours.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Tours.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_Tours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.NullValue = "0";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Tours.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.NullValue = "0";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Tours.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_Tours.Location = new System.Drawing.Point(361, 62);
             this.dgv_Tours.Name = "dgv_Tours";
             this.dgv_Tours.RowHeadersWidth = 51;
             this.dgv_Tours.RowTemplate.Height = 24;
-            this.dgv_Tours.Size = new System.Drawing.Size(905, 441);
+            this.dgv_Tours.Size = new System.Drawing.Size(953, 441);
             this.dgv_Tours.TabIndex = 24;
+            this.dgv_Tours.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Tours_CellClick);
             // 
             // panel3
             // 
@@ -238,6 +239,27 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(434, 291);
             this.panel3.TabIndex = 23;
+            // 
+            // cb_NotEligible
+            // 
+            this.cb_NotEligible.AutoSize = true;
+            this.cb_NotEligible.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_NotEligible.Location = new System.Drawing.Point(20, 200);
+            this.cb_NotEligible.Name = "cb_NotEligible";
+            this.cb_NotEligible.Size = new System.Drawing.Size(297, 32);
+            this.cb_NotEligible.TabIndex = 25;
+            this.cb_NotEligible.Text = "Chuyến đi không đủ yêu cầu";
+            this.cb_NotEligible.UseVisualStyleBackColor = true;
+            // 
+            // cbb_FindGuides
+            // 
+            this.cbb_FindGuides.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.cbb_FindGuides.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_FindGuides.FormattingEnabled = true;
+            this.cbb_FindGuides.Location = new System.Drawing.Point(171, 118);
+            this.cbb_FindGuides.Name = "cbb_FindGuides";
+            this.cbb_FindGuides.Size = new System.Drawing.Size(240, 36);
+            this.cbb_FindGuides.TabIndex = 35;
             // 
             // label4
             // 
@@ -328,7 +350,7 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Location = new System.Drawing.Point(799, 509);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(467, 291);
+            this.panel4.Size = new System.Drawing.Size(516, 291);
             this.panel4.TabIndex = 24;
             // 
             // dt_InfoTour
@@ -345,9 +367,8 @@
             this.lbl_Quantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Quantity.Location = new System.Drawing.Point(238, 188);
             this.lbl_Quantity.Name = "lbl_Quantity";
-            this.lbl_Quantity.Size = new System.Drawing.Size(34, 28);
+            this.lbl_Quantity.Size = new System.Drawing.Size(0, 28);
             this.lbl_Quantity.TabIndex = 41;
-            this.lbl_Quantity.Text = "25";
             // 
             // lbl_Type
             // 
@@ -355,35 +376,31 @@
             this.lbl_Type.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Type.Location = new System.Drawing.Point(153, 109);
             this.lbl_Type.Name = "lbl_Type";
-            this.lbl_Type.Size = new System.Drawing.Size(119, 28);
+            this.lbl_Type.Size = new System.Drawing.Size(0, 28);
             this.lbl_Type.TabIndex = 40;
-            this.lbl_Type.Text = "Nghỉ dưỡng";
             // 
             // lbl_NameTour
             // 
-            this.lbl_NameTour.AutoSize = true;
-            this.lbl_NameTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NameTour.Location = new System.Drawing.Point(59, 73);
+            this.lbl_NameTour.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NameTour.Location = new System.Drawing.Point(59, 61);
             this.lbl_NameTour.Name = "lbl_NameTour";
-            this.lbl_NameTour.Size = new System.Drawing.Size(288, 28);
+            this.lbl_NameTour.Size = new System.Drawing.Size(421, 48);
             this.lbl_NameTour.TabIndex = 39;
-            this.lbl_NameTour.Text = "Du lịch Nha Trang - Đà Lạt 2023";
             // 
             // lbl_IDTour
             // 
             this.lbl_IDTour.AutoSize = true;
             this.lbl_IDTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_IDTour.Location = new System.Drawing.Point(153, 34);
+            this.lbl_IDTour.Location = new System.Drawing.Point(153, 21);
             this.lbl_IDTour.Name = "lbl_IDTour";
-            this.lbl_IDTour.Size = new System.Drawing.Size(129, 28);
+            this.lbl_IDTour.Size = new System.Drawing.Size(0, 28);
             this.lbl_IDTour.TabIndex = 38;
-            this.lbl_IDTour.Text = "NhaTrang001";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 34);
+            this.label10.Location = new System.Drawing.Point(4, 21);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(140, 28);
             this.label10.TabIndex = 37;
@@ -404,7 +421,7 @@
             this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancel.Location = new System.Drawing.Point(45, 237);
+            this.btn_Cancel.Location = new System.Drawing.Point(63, 237);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(396, 46);
             this.btn_Cancel.TabIndex = 33;
@@ -425,7 +442,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(4, 73);
+            this.label8.Location = new System.Drawing.Point(4, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 28);
             this.label8.TabIndex = 33;
@@ -441,33 +458,12 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "Ngày đi:";
             // 
-            // cbb_FindGuides
-            // 
-            this.cbb_FindGuides.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.cbb_FindGuides.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_FindGuides.FormattingEnabled = true;
-            this.cbb_FindGuides.Location = new System.Drawing.Point(171, 118);
-            this.cbb_FindGuides.Name = "cbb_FindGuides";
-            this.cbb_FindGuides.Size = new System.Drawing.Size(240, 36);
-            this.cbb_FindGuides.TabIndex = 35;
-            // 
-            // cb_NotEligible
-            // 
-            this.cb_NotEligible.AutoSize = true;
-            this.cb_NotEligible.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_NotEligible.Location = new System.Drawing.Point(20, 200);
-            this.cb_NotEligible.Name = "cb_NotEligible";
-            this.cb_NotEligible.Size = new System.Drawing.Size(297, 32);
-            this.cb_NotEligible.TabIndex = 25;
-            this.cb_NotEligible.Text = "Chuyến đi không đủ yêu cầu";
-            this.cb_NotEligible.UseVisualStyleBackColor = true;
-            // 
             // FormQuanLyLichTrinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(1278, 812);
+            this.ClientSize = new System.Drawing.Size(1327, 812);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgv_Tours);
