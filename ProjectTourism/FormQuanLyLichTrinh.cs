@@ -85,5 +85,14 @@ namespace ProjectTourism
             this.lbl_Type.Text = nametype.Rows[1][0].ToString();
             this.lbl_Quantity.Text = dgv_Tours.Rows[n].Cells[4].Value.ToString();
         }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            int n = this.dgv_Tours.CurrentCell.RowIndex;
+            string IDTour = dgv_Tours.Rows[n].Cells[0].Value.ToString();
+            DateTime StartDay = DateTime.Parse(dgv_Tours.Rows[n].Cells[1].Value.ToString());
+            tasks.DeleteItinerary(IDTour, StartDay);
+            LoadItinerary(DateTime.Now.Date, DateTime.Now.Date.AddMonths(1));
+        }
     }
 }

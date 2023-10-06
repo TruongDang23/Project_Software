@@ -47,7 +47,7 @@ namespace ProjectTourism.BSLayer
                 select new {
                     i.MaChuyenDi,
                     i.NgayBatDau,
-                    i.MaHDV,
+                    MaHDV = i.MaHDV ?? "",
                     SoLuongNow = (int?)lp.SoLuongNow ?? 0,
                     i.SoLuongMax
                 };
@@ -104,7 +104,7 @@ namespace ProjectTourism.BSLayer
                 select new {
                     i.MaChuyenDi,
                     i.NgayBatDau,
-                    i.MaHDV,
+                    MaHDV = i.MaHDV ?? "",
                     SoLuongHienTai = (int?)lp.SoLuongHienTai ?? 0,
                     i.SoLuongToiDa
                 };
@@ -122,7 +122,8 @@ namespace ProjectTourism.BSLayer
             if (not_eligible == true)
             {
                 datas = datas.Where(i => i.SoLuongToiDa * 0.5 > i.SoLuongHienTai
-                                    || i.SoLuongHienTai == (int?)i.SoLuongHienTai);
+                                    || i.SoLuongHienTai == (int?)i.SoLuongHienTai
+                                    || i.MaHDV == "");
             }
 
             if(not_eligible == false)
@@ -186,6 +187,19 @@ namespace ProjectTourism.BSLayer
             entity.SaveChanges();
         }
 
+        public void DeleteItinerary(string IDTour, DateTime StartDay)
+        {
+            LichTrinh lt = new LichTrinh
+            {
+                MaChuyenDi = IDTour,
+                NgayBatDau = StartDay
+            };
+
+            entity.LichTrinhs.Attach(lt);
+            entity.LichTrinhs.Remove(lt);
+            entity.SaveChanges();
+        }
+
         public DataTable GetNameOfTour(string IDTour)
         {
             var datas = from t in entity.ChuyenDis
@@ -203,5 +217,6 @@ namespace ProjectTourism.BSLayer
             }
             return n;
         }
+
     }
 }
