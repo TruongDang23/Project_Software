@@ -131,7 +131,8 @@ namespace ProjectTourism
                     tb_ID.Focus();
                 }
             }
-            
+            changeInfo = ChangeInfo.None;
+            ChangeState_pnlInfo();
         } 
     }
 }
