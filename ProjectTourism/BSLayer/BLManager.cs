@@ -245,5 +245,49 @@ namespace ProjectTourism.BSLayer
 
             return n;
         }
+        public DataTable LoadDataGuide()
+        {
+            DataTable dt = new DataTable();
+            var datas =
+                from hdv in entity.HuongDanViens
+                select hdv;
+            dt.Columns.Add("Mã Hướng dẫn viên", typeof(string));
+            dt.Columns.Add("Tên Hướng dẫn viên", typeof(string));
+            dt.Columns.Add("Số Điện Thoại", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaHDV, data.Ten, data.SDT,data.Email);
+            }
+            return dt;
+        }
+        public bool CheckIDGuide(string MaHDV)
+        {
+            var tpQuery = (from hdv in entity.HuongDanViens
+                           where hdv.MaHDV == MaHDV
+                           select hdv).SingleOrDefault();
+            if (tpQuery != null)
+                return true;
+            return false;
+        }
+        public void DeleteDataGuide(string MaHDV)
+        {
+            HuongDanVien hdv = new HuongDanVien();
+            hdv.MaHDV = MaHDV;
+            entity.HuongDanViens.Attach(hdv);
+            entity.HuongDanViens.Remove(hdv);
+            entity.SaveChanges();
+        }
+        public void AddDataGuide(string MaHDV, string Ten, string sdt, string email)
+        {
+            HuongDanVien hdv = new HuongDanVien();
+            hdv.MaHDV = MaHDV;
+            hdv.Ten = Ten;
+            hdv.SDT = sdt;
+            hdv.Email = email;
+
+            entity.HuongDanViens.Add(hdv);
+            entity.SaveChanges();
+        }
     }
 }
