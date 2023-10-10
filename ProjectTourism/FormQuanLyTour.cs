@@ -28,6 +28,14 @@ namespace ProjectTourism
             this.txtSoNgayDi.Enabled = false;
             this.txtGiaVe.Enabled = false;
             this.txtDiaDiemNoiTieng.Enabled = false;
+            this.btnThem1.Enabled = false;
+            this.btnThem2.Enabled = false;
+            this.btnThem3.Enabled = false;
+            this.btnThem4.Enabled = false;
+            this.btnDescrip.Enabled = false;
+            this.btnLuu.Enabled = false;
+            this.btnSua.Enabled = false;
+            this.btnXoa.Enabled = false;
             LoadTour_dgv();
         }
         private void LoadTour_dgv()
@@ -70,6 +78,67 @@ namespace ProjectTourism
             this.picAnh2.SizeMode = PictureBoxSizeMode.StretchImage;
             this.picAnh3.Image = Image.FromFile(path + "AnhChiTiet3.jpg");
             this.picAnh3.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void btnDescrip_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                string fileName;
+
+                fileName = dlg.FileName;
+                MessageBox.Show(fileName);
+            }
+        }
+        private void status_btn()
+        {
+            this.txtMaTour.Enabled = true;
+            this.txtTenTour.Enabled = true;
+            this.txtLoaiHinh.Enabled = true;
+            this.txtSoNgayDi.Enabled = true;
+            this.txtGiaVe.Enabled = true;
+            this.txtDiaDiemNoiTieng.Enabled = true;
+            this.btnThem1.Enabled = true;
+            this.btnThem2.Enabled = true;
+            this.btnThem3.Enabled = true;
+            this.btnThem4.Enabled = true;
+            this.btnDescrip.Enabled = true;
+            this.btnLuu.Enabled = true;
+            this.btnSua.Enabled = true;
+            this.btnXoa.Enabled = true;
+        }
+
+        private void btnThem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem0_Click(object sender, EventArgs e)
+        {
+            status_btn();
+            this.txtMaTour.Text = string.Empty;
+            this.txtTenTour.Text = string.Empty;
+            this.txtLoaiHinh.Text = string.Empty;
+            this.txtSoNgayDi.Text = string.Empty;
+            this.txtGiaVe.Text = string.Empty;
+            this.txtDiaDiemNoiTieng.Text = string.Empty;
+
         }
     }
 }

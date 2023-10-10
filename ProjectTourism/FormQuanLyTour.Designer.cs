@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyTour));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDescrip = new System.Windows.Forms.Button();
             this.labe14l = new System.Windows.Forms.Label();
             this.txtGiaVe = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -93,7 +93,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnDescrip);
             this.panel1.Controls.Add(this.labe14l);
             this.panel1.Controls.Add(this.txtGiaVe);
             this.panel1.Controls.Add(this.btnXoa);
@@ -127,19 +127,20 @@
             this.panel1.Size = new System.Drawing.Size(249, 687);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btnDescrip
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(119, 540);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 37);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDescrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.btnDescrip.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDescrip.FlatAppearance.BorderSize = 0;
+            this.btnDescrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescrip.ForeColor = System.Drawing.Color.Black;
+            this.btnDescrip.Location = new System.Drawing.Point(119, 540);
+            this.btnDescrip.Name = "btnDescrip";
+            this.btnDescrip.Size = new System.Drawing.Size(116, 37);
+            this.btnDescrip.TabIndex = 29;
+            this.btnDescrip.Text = "Thêm";
+            this.btnDescrip.UseVisualStyleBackColor = false;
+            this.btnDescrip.Click += new System.EventHandler(this.btnDescrip_Click);
             // 
             // labe14l
             // 
@@ -169,7 +170,7 @@
             this.btnXoa.FlatAppearance.BorderSize = 0;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoa.Location = new System.Drawing.Point(129, 635);
+            this.btnXoa.Location = new System.Drawing.Point(129, 632);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(107, 41);
             this.btnXoa.TabIndex = 26;
@@ -189,6 +190,7 @@
             this.btnThem4.TabIndex = 25;
             this.btnThem4.Text = "Thêm";
             this.btnThem4.UseVisualStyleBackColor = false;
+            this.btnThem4.Click += new System.EventHandler(this.btnThem4_Click);
             // 
             // btnSua
             // 
@@ -197,7 +199,7 @@
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSua.Location = new System.Drawing.Point(13, 635);
+            this.btnSua.Location = new System.Drawing.Point(13, 634);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(107, 39);
             this.btnSua.TabIndex = 25;
@@ -227,6 +229,7 @@
             this.btnThem0.TabIndex = 24;
             this.btnThem0.Text = "Thêm";
             this.btnThem0.UseVisualStyleBackColor = false;
+            this.btnThem0.Click += new System.EventHandler(this.btnThem0_Click);
             // 
             // btnLuu
             // 
@@ -255,6 +258,7 @@
             this.btnThem2.TabIndex = 24;
             this.btnThem2.Text = "Thêm";
             this.btnThem2.UseVisualStyleBackColor = false;
+            this.btnThem2.Click += new System.EventHandler(this.btnThem2_Click);
             // 
             // label7
             // 
@@ -280,6 +284,7 @@
             this.btnThem3.TabIndex = 23;
             this.btnThem3.Text = "Thêm";
             this.btnThem3.UseVisualStyleBackColor = false;
+            this.btnThem3.Click += new System.EventHandler(this.btnThem3_Click);
             // 
             // btnThem1
             // 
@@ -294,6 +299,7 @@
             this.btnThem1.TabIndex = 22;
             this.btnThem1.Text = "Thêm";
             this.btnThem1.UseVisualStyleBackColor = false;
+            this.btnThem1.Click += new System.EventHandler(this.btnThem1_Click);
             // 
             // label10
             // 
@@ -759,7 +765,7 @@
         private System.Windows.Forms.TextBox txtDiaDiemNoiTiengttt;
         private System.Windows.Forms.TextBox txtGiaVe;
         private System.Windows.Forms.DataGridView dgvQLTour;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnDescrip;
         private System.Windows.Forms.Label labe14l;
     }
 }
