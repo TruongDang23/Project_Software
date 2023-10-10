@@ -289,5 +289,27 @@ namespace ProjectTourism.BSLayer
             entity.HuongDanViens.Add(hdv);
             entity.SaveChanges();
         }
+        public DataTable Load_dgvQLTour()
+        {
+            DataTable dt = new DataTable();
+            var datas =
+                from cd in entity.ChuyenDis
+                select new { cd.MaChuyenDi, cd.TenChuyenDi, cd.HinhThuc, cd.HanhTrinh, cd.SoNgayDi, cd.Gia, cd.SoLuong, cd.ChiTiet };
+
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Tên Tour", typeof(string));
+            dt.Columns.Add("Hình Thức", typeof(string));
+            dt.Columns.Add("Hành Trình", typeof(string));
+            dt.Columns.Add("Số Ngày Đi", typeof(int));
+            dt.Columns.Add("Giá", typeof(string));
+            dt.Columns.Add("Số Lượng", typeof(int));
+            dt.Columns.Add("Chi Tiết", typeof(string));
+
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.TenChuyenDi, data.HinhThuc, data.HanhTrinh, data.SoNgayDi, data.Gia, data.SoLuong, data.ChiTiet) ;
+            }
+            return dt;
+        }
     }
 }
