@@ -40,7 +40,7 @@ namespace ProjectTourism
             lb_SoSao.Text = dt.Rows[0][6].ToString();
             lb_NgayKhoiHanh.Text = dt.Rows[0][7].ToString();
             string path = dt.Rows[0][8].ToString();
-            string contents = File.ReadAllText(path + "Desciption.txt");
+            string contents = File.ReadAllText(path + "Description.txt");
             rtb_MoTa.Text = contents;
 
             //Anh mo to
