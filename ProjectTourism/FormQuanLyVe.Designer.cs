@@ -48,12 +48,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTicket = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Statistics = new System.Windows.Forms.Button();
+            this.dt_Itinerary = new System.Windows.Forms.DateTimePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cbbListTour = new System.Windows.Forms.ComboBox();
             this.dgvPaied = new System.Windows.Forms.DataGridView();
-            this.btnSendRequest = new System.Windows.Forms.Button();
-            this.dt_Itinerary = new System.Windows.Forms.DateTimePicker();
-            this.btn_Statistics = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
@@ -250,12 +249,35 @@
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.cbbListTour);
             this.groupBox1.Controls.Add(this.dgvPaied);
-            this.groupBox1.Controls.Add(this.btnSendRequest);
             this.groupBox1.Location = new System.Drawing.Point(21, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(328, 572);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // btn_Statistics
+            // 
+            this.btn_Statistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_Statistics.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Statistics.ForeColor = System.Drawing.Color.White;
+            this.btn_Statistics.Location = new System.Drawing.Point(20, 451);
+            this.btn_Statistics.Name = "btn_Statistics";
+            this.btn_Statistics.Size = new System.Drawing.Size(275, 69);
+            this.btn_Statistics.TabIndex = 21;
+            this.btn_Statistics.Text = "Thống kê vé theo lịch trình";
+            this.btn_Statistics.UseVisualStyleBackColor = false;
+            this.btn_Statistics.Click += new System.EventHandler(this.btn_Statistics_Click);
+            // 
+            // dt_Itinerary
+            // 
+            this.dt_Itinerary.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_Itinerary.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dt_Itinerary.CalendarMonthBackground = System.Drawing.Color.White;
+            this.dt_Itinerary.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_Itinerary.Location = new System.Drawing.Point(31, 217);
+            this.dt_Itinerary.Name = "dt_Itinerary";
+            this.dt_Itinerary.Size = new System.Drawing.Size(253, 30);
+            this.dt_Itinerary.TabIndex = 19;
             // 
             // pictureBox2
             // 
@@ -272,7 +294,7 @@
             this.cbbListTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.cbbListTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbListTour.FormattingEnabled = true;
-            this.cbbListTour.Location = new System.Drawing.Point(31, 232);
+            this.cbbListTour.Location = new System.Drawing.Point(31, 165);
             this.cbbListTour.Name = "cbbListTour";
             this.cbbListTour.Size = new System.Drawing.Size(253, 36);
             this.cbbListTour.TabIndex = 19;
@@ -281,48 +303,12 @@
             // 
             this.dgvPaied.BackgroundColor = System.Drawing.Color.White;
             this.dgvPaied.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPaied.Location = new System.Drawing.Point(31, 323);
+            this.dgvPaied.Location = new System.Drawing.Point(31, 278);
             this.dgvPaied.Name = "dgvPaied";
             this.dgvPaied.RowHeadersWidth = 51;
             this.dgvPaied.RowTemplate.Height = 24;
             this.dgvPaied.Size = new System.Drawing.Size(253, 137);
             this.dgvPaied.TabIndex = 19;
-            // 
-            // btnSendRequest
-            // 
-            this.btnSendRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnSendRequest.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendRequest.ForeColor = System.Drawing.Color.White;
-            this.btnSendRequest.Location = new System.Drawing.Point(31, 482);
-            this.btnSendRequest.Name = "btnSendRequest";
-            this.btnSendRequest.Size = new System.Drawing.Size(252, 69);
-            this.btnSendRequest.TabIndex = 11;
-            this.btnSendRequest.Text = "Gửi yêu cầu thanh toán";
-            this.btnSendRequest.UseVisualStyleBackColor = false;
-            // 
-            // dt_Itinerary
-            // 
-            this.dt_Itinerary.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dt_Itinerary.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dt_Itinerary.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dt_Itinerary.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dt_Itinerary.Location = new System.Drawing.Point(31, 274);
-            this.dt_Itinerary.Name = "dt_Itinerary";
-            this.dt_Itinerary.Size = new System.Drawing.Size(253, 30);
-            this.dt_Itinerary.TabIndex = 19;
-            // 
-            // btn_Statistics
-            // 
-            this.btn_Statistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_Statistics.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Statistics.ForeColor = System.Drawing.Color.White;
-            this.btn_Statistics.Location = new System.Drawing.Point(20, 150);
-            this.btn_Statistics.Name = "btn_Statistics";
-            this.btn_Statistics.Size = new System.Drawing.Size(275, 69);
-            this.btn_Statistics.TabIndex = 21;
-            this.btn_Statistics.Text = "Thống kê vé theo lịch trình";
-            this.btn_Statistics.UseVisualStyleBackColor = false;
-            this.btn_Statistics.Click += new System.EventHandler(this.btn_Statistics_Click);
             // 
             // FormQuanLyVe
             // 
@@ -360,7 +346,6 @@
         private System.Windows.Forms.DataGridView dgvTicket;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.Button btnSendRequest;
         private System.Windows.Forms.ComboBox cbbStatus;
         private System.Windows.Forms.NumericUpDown numericQuantity;
         private System.Windows.Forms.DateTimePicker startDay;
