@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace ProjectTourism
         private string MaChuyenDi;
         private DateTime NgayBatDau;
         private string MaTaiKhoan;
+        private int SoLuong;
 
         public FormDatChuyenDi(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
         {
@@ -49,10 +51,33 @@ namespace ProjectTourism
                 string Ten = this.tb_HoVaTen.Text;
                 string CCCD = this.tb_CCCD.Text;
                 string SDT = this.tb_SDT.Text;
-                int SoLuong = this.tb_SoLuongNguoi.TextLength;
-                tasks.ThemDuKhachDK(this.MaChuyenDi,this.NgayBatDau,CCCD,Ten,SDT);
-                ResetData();
-            }catch(Exception ex) { MessageBox.Show("Chua dien day du thong tin"); }
+                SoLuong = Int32.Parse(this.tb_SoLuongNguoi.Text);
+                if (string.IsNullOrEmpty(this.tb_HoVaTen.Text) || string.IsNullOrEmpty(this.tb_CCCD.Text) || string.IsNullOrEmpty(this.tb_SDT.Text) || string.IsNullOrEmpty(this.tb_SoLuongNguoi.Text) || this.tb_SoLuongNguoi.Text == "0")
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                }
+                else
+                {
+                    if(this.SoLuong == 1)
+                    {
+                        string trangthai = "Chưa thanh toán";
+                        tasks.ThemDuKhachDK(this.MaChuyenDi, this.NgayBatDau, CCCD, Ten, SDT);
+                        tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, trangthai);
+                        ResetData();
+                        FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau,this.SoLuong);
+                        this.Hide();
+                        formBoxThanhToan.ShowDialog();
+                        Close();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Vui lòng chọn ĐIỀN để điền thông tin cho nhiều du khách");
+                        btn_Dien.Enabled = true;
+                    }
+                }
+                
+            }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
         }
 
         private void ResetData()
@@ -61,6 +86,23 @@ namespace ProjectTourism
             tb_SDT.ResetText();
             tb_HoVaTen.ResetText();
             tb_SoLuongNguoi.ResetText();
+        }
+
+        private void btn_Dien_Click(object sender, EventArgs e)
+        {
+            FormBoxNhieuNguoi formBoxNhieuNguoi = new FormBoxNhieuNguoi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong);
+            this.Hide();
+            formBoxNhieuNguoi.ShowDialog();
+            Close();
+            btn_Dien.Enabled=false;
+        }
+
+        private void btn_QuayLai_Click(object sender, EventArgs e)
+        {
+            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau);
+            this.Hide();
+            formChiTietChuyenDi.ShowDialog(); 
+            Close();
         }
     }
 }

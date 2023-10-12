@@ -79,6 +79,7 @@
             this.btn_Dien.TabIndex = 99;
             this.btn_Dien.Text = "Điền";
             this.btn_Dien.UseVisualStyleBackColor = false;
+            this.btn_Dien.Click += new System.EventHandler(this.btn_Dien_Click);
             // 
             // label16
             // 
@@ -251,6 +252,7 @@
             this.btn_QuayLai.TabIndex = 57;
             this.btn_QuayLai.Text = "Quay lại";
             this.btn_QuayLai.UseVisualStyleBackColor = false;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // label11
             // 

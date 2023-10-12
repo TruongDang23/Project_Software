@@ -54,6 +54,7 @@
             this.btn_OK.TabIndex = 12;
             this.btn_OK.Text = "OK";
             this.btn_OK.UseVisualStyleBackColor = false;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // label2
             // 
@@ -94,6 +95,7 @@
             this.btn_QuayLai.TabIndex = 13;
             this.btn_QuayLai.Text = "QUAY LẠI";
             this.btn_QuayLai.UseVisualStyleBackColor = false;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // label1
             // 
