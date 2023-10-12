@@ -17,16 +17,21 @@ namespace ProjectTourism
         private BLUser tasks = new BLUser();
         private string MaChuyenDi;
         private DateTime NgayBatDau;
-        public FormChiTietChuyenDi(string MaChuyenDi, DateTime NgayBatDau)
+        private string MaTaiKhoan;
+
+        public FormChiTietChuyenDi(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
         {
             InitializeComponent();
             this.MaChuyenDi = MaChuyenDi;
             this.NgayBatDau = NgayBatDau;
+            this.MaTaiKhoan = MaTaiKhoan;
         }
+
         private void FormChiTietChuyenDi_Load(object sender, EventArgs e)
         {
             Loadata();
         }
+
         private void Loadata()
         {
             DataTable dt = new DataTable();
@@ -56,8 +61,33 @@ namespace ProjectTourism
 
         private void btn_Dat_Click(object sender, EventArgs e)
         {
-            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.MaChuyenDi, this.NgayBatDau);
+            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            this.Hide();
             formDatChuyenDi.ShowDialog();
+            Close();
+        }
+
+        private void btn_QuayLai_Click(object sender, EventArgs e)
+        {
+            FormChuyenDi formChuyenDi = new FormChuyenDi();
+            this.Hide();
+            formChuyenDi.ShowDialog();
+            Close();
+        }
+
+        private void btn_DanhGia_Click(object sender, EventArgs e)
+        {
+            FormDanhGiaChuyenDi formDanhGiaChuyenDi = new FormDanhGiaChuyenDi();
+            this.Hide();
+            formDanhGiaChuyenDi.ShowDialog();
+            Close();
+        }
+
+        private void btn_Tao_Click(object sender, EventArgs e)
+        {
+            FormTaoChuyenDiMoi formTaoChuyenDiMoi = new FormTaoChuyenDiMoi();
+            this.Hide();
+            formTaoChuyenDiMoi.ShowDialog();
             Close();
         }
     }

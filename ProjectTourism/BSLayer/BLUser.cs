@@ -4,6 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProjectTourism.BSLayer
 {
@@ -35,6 +38,34 @@ namespace ProjectTourism.BSLayer
                 dt.Rows.Add(ct.TenChuyenDi, ct.HanhTrinh, ct.HinhThuc, ct.SoNgayDi, ct.SoLuong, ct.Gia, ct.Sao, ct.NgayBatDau, ct.ChiTiet);
             }
             return dt;
+        }
+
+        public void ThemDuKhachDK(string MaChuyenDi, DateTime NgayBatDau, string CCCD, string Ten, string SDT)
+        {
+            DanhSachDuKhach dukhach = new DanhSachDuKhach();
+
+            dukhach.MaChuyenDi = MaChuyenDi;
+            dukhach.NgayBatDau = NgayBatDau;
+            dukhach.CCCD = CCCD;
+            dukhach.Ten = Ten;
+            dukhach.SDT = SDT;
+
+            entity.DanhSachDuKhaches.Add(dukhach);
+            entity.SaveChanges();
+        }
+
+        public void ThemDanhSachDK(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau, int SoLuong, string TrangThai)
+        {
+            DanhSachDangKy dky = new DanhSachDangKy();
+
+            dky.MaTaiKhoan = MaTaiKhoan;
+            dky.MaChuyenDi = MaChuyenDi;
+            dky.NgayBatDau = NgayBatDau;
+            dky.SoLuong = SoLuong;
+            dky.TrangThai = TrangThai;
+
+            entity.DanhSachDangKies.Add(dky);
+            entity.SaveChanges();
         }
 
     }

@@ -219,31 +219,123 @@ namespace ProjectTourism.BSLayer
 
         public DataTable LoadTickets (string IDTour,DateTime date)
         {
-            var datas = from sub in entity.DanhSachDangKies
+            var datas = from sub in entity.DanhSachDuKhaches
                         where sub.MaChuyenDi == IDTour && sub.NgayBatDau.Day == date.Day && 
                         sub.NgayBatDau.Month == date.Month && sub.NgayBatDau.Year == date.Year
-                        select new { sub.MaChuyenDi, sub.MaTaiKhoan, sub.NgayBatDau, sub.SoLuong, sub.TrangThai };
+                        select new { sub.MaChuyenDi, sub.NgayBatDau, sub.CCCD, sub.Ten, sub.SDT };
 
             DataTable n = new DataTable();
             n.Columns.Add("Mã Chuyến Đi", typeof(string));
-            n.Columns.Add("Mã Tài Khoản", typeof(string));
-            n.Columns.Add("Ngày khởi hành", typeof(DateTime));
-            n.Columns.Add("Số lượng đăng ký", typeof(int));
-            n.Columns.Add("Trạng Thái", typeof(string));
+            n.Columns.Add("Ngày khởi hành", typeof(string));
+            n.Columns.Add("CCCD", typeof(string));
+            n.Columns.Add("Tên Du khách", typeof(string));
+            n.Columns.Add("Số điện thoại", typeof(string));
 
             foreach (var data in datas)
             {
                 n.Rows.Add(
                     data.MaChuyenDi,
-                    data.MaTaiKhoan,
                     data.NgayBatDau,
-                    data.SoLuong,
-                    data.TrangThai
+                    data.CCCD,
+                    data.Ten,
+                    data.SDT
                     );
             }
 
             return n;
         }
+
+        public DataTable CountTickets(string IDTour, DateTime date)
+        {
+            DataTable dt = new DataTable();
+            var subscriber = from dk in entity.DanhSachDuKhaches
+                             group dk by new { dk.MaChuyenDi, dk.NgayBatDau } into g
+                             select new
+                             {
+                                 MaChuyenDi = g.Key.MaChuyenDi,
+                                 NgayBatDau = g.Key.NgayBatDau,
+                                 SoLuongHienTai = g.Count()
+                             };
+
+            var datas = from sub in subscriber
+                        join cd in entity.ChuyenDis on sub.MaChuyenDi equals cd.MaChuyenDi
+                        where sub.MaChuyenDi == IDTour && sub.NgayBatDau.Day == date.Day && sub.NgayBatDau.Month == date.Month
+                        && sub.NgayBatDau.Year == date.Year
+                        select new
+                        {
+                            sub.SoLuongHienTai,
+                            cd.SoLuong
+                        };
+
+            dt.Columns.Add("Số lượng hiện tại", typeof(string));
+            dt.Columns.Add("Số lượng tối đa", typeof(string));
+            foreach(var data in datas)
+            {
+                dt.Rows.Add(data.SoLuongHienTai, data.SoLuong);
+            }
+
+            return dt;
+        }
+
+        public void DeletePassenger(string iDTour, DateTime startDay, string CCCD)
+        {
+            DanhSachDuKhach dk = new DanhSachDuKhach
+            {
+                MaChuyenDi = iDTour,
+                NgayBatDau = startDay,
+                CCCD = CCCD,
+            };
+
+            entity.DanhSachDuKhaches.Attach(dk);
+            entity.DanhSachDuKhaches.Remove(dk);
+            entity.SaveChanges();
+        }
+
+        public void AddPassenger(string iDTour, DateTime startDay, string CCCD, string name, string sdt)
+        {
+            DanhSachDuKhach dk = new DanhSachDuKhach();
+            dk.MaChuyenDi = iDTour;
+            dk.NgayBatDau = startDay;
+            dk.CCCD = CCCD;
+            dk.Ten = name;
+            dk.SDT = sdt;
+
+            entity.DanhSachDuKhaches.Add(dk);
+            entity.SaveChanges();
+        }
+
+        public DataTable FindPassenger(string name, string cccd, string sdt)
+        {
+            var pass = from dk in entity.DanhSachDuKhaches
+                       select new { dk.Ten, dk.CCCD, dk.SDT };
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                pass = pass.Where(p => p.Ten == name);
+            }
+
+            if (!string.IsNullOrEmpty(cccd))
+            {
+                pass = pass.Where(p => p.CCCD == cccd);
+            }
+
+            if (!string.IsNullOrEmpty(sdt))
+            {
+                pass = pass.Where(p => p.SDT == sdt);
+            }
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Tên du khách", typeof(string));
+            dt.Columns.Add("CCCD", typeof(string));
+            dt.Columns.Add("Số điện thoại", typeof(string));
+            foreach (var p in pass)
+            {
+                dt.Rows.Add(p.Ten, p.CCCD, p.SDT);
+            }
+
+            return dt;
+        }
+
         public DataTable LoadDataGuide()
         {
             DataTable dt = new DataTable();
@@ -260,6 +352,7 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+
         public bool CheckIDGuide(string MaHDV)
         {
             var tpQuery = (from hdv in entity.HuongDanViens
@@ -269,6 +362,7 @@ namespace ProjectTourism.BSLayer
                 return true;
             return false;
         }
+
         public void DeleteDataGuide(string MaHDV)
         {
             HuongDanVien hdv = new HuongDanVien();
@@ -277,6 +371,7 @@ namespace ProjectTourism.BSLayer
             entity.HuongDanViens.Remove(hdv);
             entity.SaveChanges();
         }
+
         public void AddDataGuide(string MaHDV, string Ten, string sdt, string email)
         {
             HuongDanVien hdv = new HuongDanVien();
@@ -288,6 +383,7 @@ namespace ProjectTourism.BSLayer
             entity.HuongDanViens.Add(hdv);
             entity.SaveChanges();
         }
+
         public DataTable Load_dgvQLTour()
         {
             DataTable dt = new DataTable();
