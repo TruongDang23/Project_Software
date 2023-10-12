@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_data = new System.Windows.Forms.Panel();
             this.pnl_changeinfo = new System.Windows.Forms.Panel();
+            this.btn_huy = new System.Windows.Forms.Button();
             this.btn_luutt = new System.Windows.Forms.Button();
             this.tb_email = new System.Windows.Forms.TextBox();
             this.lb_id = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.dgv_IDguide = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_Idtour = new System.Windows.Forms.DataGridView();
-            this.btn_huy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_data.SuspendLayout();
             this.pnl_changeinfo.SuspendLayout();
@@ -115,6 +115,19 @@
             this.pnl_changeinfo.Name = "pnl_changeinfo";
             this.pnl_changeinfo.Size = new System.Drawing.Size(985, 116);
             this.pnl_changeinfo.TabIndex = 30;
+            // 
+            // btn_huy
+            // 
+            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_huy.Location = new System.Drawing.Point(851, 9);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(94, 48);
+            this.btn_huy.TabIndex = 26;
+            this.btn_huy.Text = "Hủy";
+            this.btn_huy.UseVisualStyleBackColor = false;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luutt
             // 
@@ -461,19 +474,6 @@
             this.dgv_Idtour.RowTemplate.Height = 24;
             this.dgv_Idtour.Size = new System.Drawing.Size(209, 207);
             this.dgv_Idtour.TabIndex = 26;
-            // 
-            // btn_huy
-            // 
-            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_huy.Location = new System.Drawing.Point(851, 9);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(94, 48);
-            this.btn_huy.TabIndex = 26;
-            this.btn_huy.Text = "Hủy";
-            this.btn_huy.UseVisualStyleBackColor = false;
-            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // FormHuongDanVien
             // 
