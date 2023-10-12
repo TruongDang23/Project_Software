@@ -47,6 +47,14 @@
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lb_NgayKhoiHanh = new System.Windows.Forms.Label();
+            this.lb_SoSao = new System.Windows.Forms.Label();
+            this.lb_GiaTrenNguoi = new System.Windows.Forms.Label();
+            this.lb_NguoiThamGia = new System.Windows.Forms.Label();
+            this.lb_SoNgayDi = new System.Windows.Forms.Label();
+            this.lb_HinhThuc = new System.Windows.Forms.Label();
+            this.lb_HanhTrinh = new System.Windows.Forms.Label();
+            this.lb_Ten = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,14 +63,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_Ten = new System.Windows.Forms.Label();
-            this.lb_HanhTrinh = new System.Windows.Forms.Label();
-            this.lb_LoaiHinh = new System.Windows.Forms.Label();
-            this.lb_SoNgayDi = new System.Windows.Forms.Label();
-            this.lb_NguoiThamGia = new System.Windows.Forms.Label();
-            this.lb_GiaTrenNguoi = new System.Windows.Forms.Label();
-            this.lb_SoSao = new System.Windows.Forms.Label();
-            this.lb_NgayKhoiHanh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -202,6 +202,7 @@
             this.btn_ThanhToan.TabIndex = 80;
             this.btn_ThanhToan.Text = "Thanh toán";
             this.btn_ThanhToan.UseVisualStyleBackColor = false;
+            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
             // 
             // pictureBox1
             // 
@@ -230,9 +231,9 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(379, 127);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(1004, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(187, 36);
             this.label5.TabIndex = 64;
@@ -254,8 +255,8 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(33, 80);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 36);
@@ -271,7 +272,7 @@
             this.panel2.Controls.Add(this.lb_GiaTrenNguoi);
             this.panel2.Controls.Add(this.lb_NguoiThamGia);
             this.panel2.Controls.Add(this.lb_SoNgayDi);
-            this.panel2.Controls.Add(this.lb_LoaiHinh);
+            this.panel2.Controls.Add(this.lb_HinhThuc);
             this.panel2.Controls.Add(this.lb_HanhTrinh);
             this.panel2.Controls.Add(this.lb_Ten);
             this.panel2.Controls.Add(this.btn_Dien);
@@ -302,6 +303,102 @@
             this.panel2.Size = new System.Drawing.Size(1261, 491);
             this.panel2.TabIndex = 1;
             // 
+            // lb_NgayKhoiHanh
+            // 
+            this.lb_NgayKhoiHanh.AutoSize = true;
+            this.lb_NgayKhoiHanh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_NgayKhoiHanh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NgayKhoiHanh.ForeColor = System.Drawing.Color.Black;
+            this.lb_NgayKhoiHanh.Location = new System.Drawing.Point(463, 175);
+            this.lb_NgayKhoiHanh.Name = "lb_NgayKhoiHanh";
+            this.lb_NgayKhoiHanh.Size = new System.Drawing.Size(158, 28);
+            this.lb_NgayKhoiHanh.TabIndex = 107;
+            this.lb_NgayKhoiHanh.Text = "(ngày khởi hành)";
+            // 
+            // lb_SoSao
+            // 
+            this.lb_SoSao.AutoSize = true;
+            this.lb_SoSao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_SoSao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoSao.ForeColor = System.Drawing.Color.Black;
+            this.lb_SoSao.Location = new System.Drawing.Point(1192, 227);
+            this.lb_SoSao.Name = "lb_SoSao";
+            this.lb_SoSao.Size = new System.Drawing.Size(57, 28);
+            this.lb_SoSao.TabIndex = 106;
+            this.lb_SoSao.Text = "(Sao)";
+            // 
+            // lb_GiaTrenNguoi
+            // 
+            this.lb_GiaTrenNguoi.AutoSize = true;
+            this.lb_GiaTrenNguoi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_GiaTrenNguoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_GiaTrenNguoi.ForeColor = System.Drawing.Color.Black;
+            this.lb_GiaTrenNguoi.Location = new System.Drawing.Point(927, 223);
+            this.lb_GiaTrenNguoi.Name = "lb_GiaTrenNguoi";
+            this.lb_GiaTrenNguoi.Size = new System.Drawing.Size(136, 28);
+            this.lb_GiaTrenNguoi.TabIndex = 105;
+            this.lb_GiaTrenNguoi.Text = "(giá vé/người)";
+            // 
+            // lb_NguoiThamGia
+            // 
+            this.lb_NguoiThamGia.AutoSize = true;
+            this.lb_NguoiThamGia.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_NguoiThamGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NguoiThamGia.ForeColor = System.Drawing.Color.Black;
+            this.lb_NguoiThamGia.Location = new System.Drawing.Point(1192, 175);
+            this.lb_NguoiThamGia.Name = "lb_NguoiThamGia";
+            this.lb_NguoiThamGia.Size = new System.Drawing.Size(80, 28);
+            this.lb_NguoiThamGia.TabIndex = 104;
+            this.lb_NguoiThamGia.Text = "(Người)";
+            // 
+            // lb_SoNgayDi
+            // 
+            this.lb_SoNgayDi.AutoSize = true;
+            this.lb_SoNgayDi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_SoNgayDi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoNgayDi.ForeColor = System.Drawing.Color.Black;
+            this.lb_SoNgayDi.Location = new System.Drawing.Point(927, 175);
+            this.lb_SoNgayDi.Name = "lb_SoNgayDi";
+            this.lb_SoNgayDi.Size = new System.Drawing.Size(71, 28);
+            this.lb_SoNgayDi.TabIndex = 103;
+            this.lb_SoNgayDi.Text = "(Ngày)";
+            // 
+            // lb_HinhThuc
+            // 
+            this.lb_HinhThuc.AutoSize = true;
+            this.lb_HinhThuc.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_HinhThuc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_HinhThuc.ForeColor = System.Drawing.Color.Black;
+            this.lb_HinhThuc.Location = new System.Drawing.Point(137, 175);
+            this.lb_HinhThuc.Name = "lb_HinhThuc";
+            this.lb_HinhThuc.Size = new System.Drawing.Size(102, 28);
+            this.lb_HinhThuc.TabIndex = 102;
+            this.lb_HinhThuc.Text = "(loại trình)";
+            // 
+            // lb_HanhTrinh
+            // 
+            this.lb_HanhTrinh.AutoSize = true;
+            this.lb_HanhTrinh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_HanhTrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_HanhTrinh.ForeColor = System.Drawing.Color.Black;
+            this.lb_HanhTrinh.Location = new System.Drawing.Point(137, 130);
+            this.lb_HanhTrinh.Name = "lb_HanhTrinh";
+            this.lb_HanhTrinh.Size = new System.Drawing.Size(113, 28);
+            this.lb_HanhTrinh.TabIndex = 101;
+            this.lb_HanhTrinh.Text = "(hành trình)";
+            // 
+            // lb_Ten
+            // 
+            this.lb_Ten.AutoSize = true;
+            this.lb_Ten.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_Ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Ten.ForeColor = System.Drawing.Color.Black;
+            this.lb_Ten.Location = new System.Drawing.Point(137, 84);
+            this.lb_Ten.Name = "lb_Ten";
+            this.lb_Ten.Size = new System.Drawing.Size(52, 28);
+            this.lb_Ten.TabIndex = 100;
+            this.lb_Ten.Text = "(tên)";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -316,11 +413,11 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(808, 126);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(256, 171);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(204, 36);
+            this.label8.Size = new System.Drawing.Size(201, 36);
             this.label8.TabIndex = 70;
             this.label8.Text = "Ngày khởi hành:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -328,11 +425,11 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(887, 81);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(1096, 223);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 36);
+            this.label7.Size = new System.Drawing.Size(95, 36);
             this.label7.TabIndex = 68;
             this.label7.Text = "Số sao:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -340,11 +437,11 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(404, 171);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(747, 223);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 36);
+            this.label6.Size = new System.Drawing.Size(174, 36);
             this.label6.TabIndex = 66;
             this.label6.Text = "Giá vé/người:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -352,9 +449,9 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(441, 80);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(796, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 36);
             this.label4.TabIndex = 62;
@@ -364,8 +461,8 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(14, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 36);
@@ -376,11 +473,11 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(7, 126);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(-14, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 36);
+            this.label2.Size = new System.Drawing.Size(145, 36);
             this.label2.TabIndex = 58;
             this.label2.Text = "Hành trình:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -395,102 +492,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1312, 594);
             this.panel1.TabIndex = 16;
-            // 
-            // lb_Ten
-            // 
-            this.lb_Ten.AutoSize = true;
-            this.lb_Ten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lb_Ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Ten.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_Ten.Location = new System.Drawing.Point(137, 84);
-            this.lb_Ten.Name = "lb_Ten";
-            this.lb_Ten.Size = new System.Drawing.Size(52, 28);
-            this.lb_Ten.TabIndex = 100;
-            this.lb_Ten.Text = "(tên)";
-            // 
-            // lb_HanhTrinh
-            // 
-            this.lb_HanhTrinh.AutoSize = true;
-            this.lb_HanhTrinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lb_HanhTrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_HanhTrinh.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_HanhTrinh.Location = new System.Drawing.Point(137, 130);
-            this.lb_HanhTrinh.Name = "lb_HanhTrinh";
-            this.lb_HanhTrinh.Size = new System.Drawing.Size(113, 28);
-            this.lb_HanhTrinh.TabIndex = 101;
-            this.lb_HanhTrinh.Text = "(hành trình)";
-            // 
-            // lb_LoaiHinh
-            // 
-            this.lb_LoaiHinh.AutoSize = true;
-            this.lb_LoaiHinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lb_LoaiHinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_LoaiHinh.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_LoaiHinh.Location = new System.Drawing.Point(137, 175);
-            this.lb_LoaiHinh.Name = "lb_LoaiHinh";
-            this.lb_LoaiHinh.Size = new System.Drawing.Size(102, 28);
-            this.lb_LoaiHinh.TabIndex = 102;
-            this.lb_LoaiHinh.Text = "(loại trình)";
-            // 
-            // lb_SoNgayDi
-            // 
-            this.lb_SoNgayDi.AutoSize = true;
-            this.lb_SoNgayDi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lb_SoNgayDi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_SoNgayDi.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_SoNgayDi.Location = new System.Drawing.Point(572, 84);
-            this.lb_SoNgayDi.Name = "lb_SoNgayDi";
-            this.lb_SoNgayDi.Size = new System.Drawing.Size(114, 28);
-            this.lb_SoNgayDi.TabIndex = 103;
-            this.lb_SoNgayDi.Text = "(số ngày đi)";
-            // 
-            // lb_NguoiThamGia
-            // 
-            this.lb_NguoiThamGia.AutoSize = true;
-            this.lb_NguoiThamGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lb_NguoiThamGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NguoiThamGia.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_NguoiThamGia.Location = new System.Drawing.Point(572, 134);
-            this.lb_NguoiThamGia.Name = "lb_NguoiThamGia";
-            this.lb_NguoiThamGia.Size = new System.Drawing.Size(158, 28);
-            this.lb_NguoiThamGia.TabIndex = 104;
-            this.lb_NguoiThamGia.Text = "(người tham gia)";
-            // 
-            // lb_GiaTrenNguoi
-            // 
-            this.lb_GiaTrenNguoi.AutoSize = true;
-            this.lb_GiaTrenNguoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lb_GiaTrenNguoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_GiaTrenNguoi.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_GiaTrenNguoi.Location = new System.Drawing.Point(572, 179);
-            this.lb_GiaTrenNguoi.Name = "lb_GiaTrenNguoi";
-            this.lb_GiaTrenNguoi.Size = new System.Drawing.Size(136, 28);
-            this.lb_GiaTrenNguoi.TabIndex = 105;
-            this.lb_GiaTrenNguoi.Text = "(giá vé/người)";
-            // 
-            // lb_SoSao
-            // 
-            this.lb_SoSao.AutoSize = true;
-            this.lb_SoSao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lb_SoSao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_SoSao.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_SoSao.Location = new System.Drawing.Point(1018, 88);
-            this.lb_SoSao.Name = "lb_SoSao";
-            this.lb_SoSao.Size = new System.Drawing.Size(79, 28);
-            this.lb_SoSao.TabIndex = 106;
-            this.lb_SoSao.Text = "(số sao)";
-            // 
-            // lb_NgayKhoiHanh
-            // 
-            this.lb_NgayKhoiHanh.AutoSize = true;
-            this.lb_NgayKhoiHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lb_NgayKhoiHanh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NgayKhoiHanh.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_NgayKhoiHanh.Location = new System.Drawing.Point(1018, 130);
-            this.lb_NgayKhoiHanh.Name = "lb_NgayKhoiHanh";
-            this.lb_NgayKhoiHanh.Size = new System.Drawing.Size(158, 28);
-            this.lb_NgayKhoiHanh.TabIndex = 107;
-            this.lb_NgayKhoiHanh.Text = "(ngày khởi hành)";
             // 
             // FormDatChuyenDi
             // 
@@ -542,7 +543,7 @@
         private System.Windows.Forms.Label lb_GiaTrenNguoi;
         private System.Windows.Forms.Label lb_NguoiThamGia;
         private System.Windows.Forms.Label lb_SoNgayDi;
-        private System.Windows.Forms.Label lb_LoaiHinh;
+        private System.Windows.Forms.Label lb_HinhThuc;
         private System.Windows.Forms.Label lb_HanhTrinh;
         private System.Windows.Forms.Label lb_Ten;
         private System.Windows.Forms.Label lb_NgayKhoiHanh;

@@ -16,7 +16,9 @@ namespace ProjectTourism
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDatChuyenDi());
+            //Application.Run(new FormChiTietChuyenDi("U001","PhuQuoc001",new DateTime(2023,10,11)));
+            Application.Run(new FormHuongDanVien());
+
         }
     }
 }
