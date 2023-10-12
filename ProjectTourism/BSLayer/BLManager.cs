@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -365,9 +366,7 @@ namespace ProjectTourism.BSLayer
 
         public void DeleteDataGuide(string MaHDV)
         {
-            HuongDanVien hdv = new HuongDanVien();
-            hdv.MaHDV = MaHDV;
-            entity.HuongDanViens.Attach(hdv);
+            HuongDanVien hdv = entity.HuongDanViens.Where(x => x.MaHDV == MaHDV).Single<HuongDanVien>();
             entity.HuongDanViens.Remove(hdv);
             entity.SaveChanges();
         }
@@ -383,7 +382,19 @@ namespace ProjectTourism.BSLayer
             entity.HuongDanViens.Add(hdv);
             entity.SaveChanges();
         }
-
+        public void ChangeInfoGuide(string MaHDV, string Ten, string sdt, string email)
+        {
+            var tpQuery = (from hdv in entity.HuongDanViens
+                           where hdv.MaHDV == MaHDV
+                           select hdv).SingleOrDefault();
+            if (tpQuery != null)
+            {
+                tpQuery.Ten = Ten;
+                tpQuery.SDT = sdt;
+                tpQuery.Email = email;
+                entity.SaveChanges();
+            }
+        }
         public DataTable Load_dgvQLTour()
         {
             DataTable dt = new DataTable();

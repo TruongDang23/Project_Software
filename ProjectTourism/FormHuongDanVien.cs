@@ -45,6 +45,7 @@ namespace ProjectTourism
         }
         private void ResetTextbox()
         {
+            tb_ID.Enabled = true;
             tb_ID.ResetText();
             tb_email.ResetText();
             tb_ten.ResetText();
@@ -102,6 +103,7 @@ namespace ProjectTourism
         {
             changeInfo = ChangeInfo.Sua;
             ChangeState_pnlInfo();
+            tb_ID.Enabled = false;
         }
         private void btn_huy_Click(object sender, EventArgs e)
         {
@@ -128,6 +130,19 @@ namespace ProjectTourism
                 else
                 {
                     MessageBox.Show("Nhập ID!");
+                    tb_ID.Focus();
+                }
+            }
+            else if (changeInfo == ChangeInfo.Sua)
+            {
+                if (!tb_ID.Text.Trim().Equals(""))
+                {
+                    bl.AddDataGuide(tb_ID.Text, tb_ten.Text, tb_sdt.Text, tb_email.Text);
+                    LoadDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Chọn ID bạn muốn chỉnh sửa!");
                     tb_ID.Focus();
                 }
             }
