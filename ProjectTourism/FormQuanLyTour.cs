@@ -103,6 +103,7 @@ namespace ProjectTourism
                     }
                 }
             }
+        }
         private void status_btn()
         {
             this.txtMaTour.Enabled = true;
@@ -170,6 +171,9 @@ namespace ProjectTourism
                 MessageBox.Show("Mã tour đã tồn tại");
             }
         }
+
+
+
 
         private void btnLuu_Click(object sender, EventArgs e)
         {

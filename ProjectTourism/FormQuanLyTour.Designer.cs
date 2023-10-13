@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyTour));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnDescrip = new System.Windows.Forms.Button();
             this.labe14l = new System.Windows.Forms.Label();
             this.txtGiaVe = new System.Windows.Forms.TextBox();
@@ -37,6 +39,7 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.txtDiaDiemNoiTieng = new System.Windows.Forms.TextBox();
             this.btnThem0 = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnThem1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,9 +75,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -118,6 +118,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(249, 719);
             this.panel1.TabIndex = 0;
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Location = new System.Drawing.Point(15, 475);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(222, 29);
+            this.txtSoLuong.TabIndex = 31;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(10, 452);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 21);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Số Lượng";
             // 
             // btnDescrip
             // 
@@ -208,6 +229,21 @@
             this.btnThem0.Text = "Thêm";
             this.btnThem0.UseVisualStyleBackColor = false;
             this.btnThem0.Click += new System.EventHandler(this.btnThem0_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLuu.Location = new System.Drawing.Point(18, 611);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(71, 32);
+            this.btnLuu.TabIndex = 23;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label7
             // 
@@ -586,42 +622,6 @@
             this.label1.Size = new System.Drawing.Size(252, 45);
             this.label1.TabIndex = 10;
             this.label1.Text = "QUẢN LÝ TOUR";
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLuu.FlatAppearance.BorderSize = 0;
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLuu.Location = new System.Drawing.Point(18, 611);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(71, 32);
-            this.btnLuu.TabIndex = 23;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(15, 475);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(222, 29);
-            this.txtSoLuong.TabIndex = 31;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(10, 452);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 21);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "Số Lượng";
             // 
             // FormQuanLyTour
             // 
