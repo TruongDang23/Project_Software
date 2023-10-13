@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyTour));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThemAnh3 = new System.Windows.Forms.Button();
+            this.btnThemAnh2 = new System.Windows.Forms.Button();
+            this.btnThemAnh1 = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnDescrip = new System.Windows.Forms.Button();
@@ -41,11 +44,10 @@
             this.btnThem0 = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnThem1 = new System.Windows.Forms.Button();
+            this.btnThemBia = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoNgayDi = new System.Windows.Forms.TextBox();
             this.lbSoNgayDi = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtLoaiHinh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenTour = new System.Windows.Forms.TextBox();
@@ -89,6 +91,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnThemAnh3);
+            this.panel1.Controls.Add(this.btnThemAnh2);
+            this.panel1.Controls.Add(this.btnThemAnh1);
             this.panel1.Controls.Add(this.txtSoLuong);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.btnDescrip);
@@ -100,11 +105,10 @@
             this.panel1.Controls.Add(this.btnThem0);
             this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnThem1);
+            this.panel1.Controls.Add(this.btnThemBia);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtSoNgayDi);
             this.panel1.Controls.Add(this.lbSoNgayDi);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtLoaiHinh);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtTenTour);
@@ -116,8 +120,53 @@
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(10, -4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 719);
+            this.panel1.Size = new System.Drawing.Size(249, 731);
             this.panel1.TabIndex = 0;
+            // 
+            // btnThemAnh3
+            // 
+            this.btnThemAnh3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.btnThemAnh3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThemAnh3.FlatAppearance.BorderSize = 0;
+            this.btnThemAnh3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemAnh3.ForeColor = System.Drawing.Color.Black;
+            this.btnThemAnh3.Location = new System.Drawing.Point(129, 556);
+            this.btnThemAnh3.Name = "btnThemAnh3";
+            this.btnThemAnh3.Size = new System.Drawing.Size(110, 36);
+            this.btnThemAnh3.TabIndex = 34;
+            this.btnThemAnh3.Text = "Thêm Ảnh 3";
+            this.btnThemAnh3.UseVisualStyleBackColor = false;
+            this.btnThemAnh3.Click += new System.EventHandler(this.btnThemAnh3_Click);
+            // 
+            // btnThemAnh2
+            // 
+            this.btnThemAnh2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.btnThemAnh2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThemAnh2.FlatAppearance.BorderSize = 0;
+            this.btnThemAnh2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemAnh2.ForeColor = System.Drawing.Color.Black;
+            this.btnThemAnh2.Location = new System.Drawing.Point(14, 556);
+            this.btnThemAnh2.Name = "btnThemAnh2";
+            this.btnThemAnh2.Size = new System.Drawing.Size(115, 36);
+            this.btnThemAnh2.TabIndex = 33;
+            this.btnThemAnh2.Text = "Thêm Ảnh 2";
+            this.btnThemAnh2.UseVisualStyleBackColor = false;
+            this.btnThemAnh2.Click += new System.EventHandler(this.btnThemAnh2_Click);
+            // 
+            // btnThemAnh1
+            // 
+            this.btnThemAnh1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.btnThemAnh1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThemAnh1.FlatAppearance.BorderSize = 0;
+            this.btnThemAnh1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemAnh1.ForeColor = System.Drawing.Color.Black;
+            this.btnThemAnh1.Location = new System.Drawing.Point(129, 511);
+            this.btnThemAnh1.Name = "btnThemAnh1";
+            this.btnThemAnh1.Size = new System.Drawing.Size(110, 36);
+            this.btnThemAnh1.TabIndex = 32;
+            this.btnThemAnh1.Text = "Thêm Ảnh 1";
+            this.btnThemAnh1.UseVisualStyleBackColor = false;
+            this.btnThemAnh1.Click += new System.EventHandler(this.btnThemAnh1_Click);
             // 
             // txtSoLuong
             // 
@@ -147,9 +196,9 @@
             this.btnDescrip.FlatAppearance.BorderSize = 0;
             this.btnDescrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescrip.ForeColor = System.Drawing.Color.Black;
-            this.btnDescrip.Location = new System.Drawing.Point(120, 564);
+            this.btnDescrip.Location = new System.Drawing.Point(127, 598);
             this.btnDescrip.Name = "btnDescrip";
-            this.btnDescrip.Size = new System.Drawing.Size(116, 37);
+            this.btnDescrip.Size = new System.Drawing.Size(112, 37);
             this.btnDescrip.TabIndex = 29;
             this.btnDescrip.Text = "Thêm";
             this.btnDescrip.UseVisualStyleBackColor = false;
@@ -160,7 +209,7 @@
             this.labe14l.AutoSize = true;
             this.labe14l.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labe14l.ForeColor = System.Drawing.Color.Black;
-            this.labe14l.Location = new System.Drawing.Point(9, 572);
+            this.labe14l.Location = new System.Drawing.Point(10, 606);
             this.labe14l.Name = "labe14l";
             this.labe14l.Size = new System.Drawing.Size(111, 21);
             this.labe14l.TabIndex = 28;
@@ -183,7 +232,7 @@
             this.btnXoa.FlatAppearance.BorderSize = 0;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoa.Location = new System.Drawing.Point(95, 611);
+            this.btnXoa.Location = new System.Drawing.Point(97, 641);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(67, 32);
             this.btnXoa.TabIndex = 26;
@@ -198,7 +247,7 @@
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSua.Location = new System.Drawing.Point(168, 611);
+            this.btnSua.Location = new System.Drawing.Point(170, 641);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(69, 32);
             this.btnSua.TabIndex = 25;
@@ -222,7 +271,7 @@
             this.btnThem0.FlatAppearance.BorderSize = 0;
             this.btnThem0.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem0.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnThem0.Location = new System.Drawing.Point(30, 649);
+            this.btnThem0.Location = new System.Drawing.Point(32, 679);
             this.btnThem0.Name = "btnThem0";
             this.btnThem0.Size = new System.Drawing.Size(193, 49);
             this.btnThem0.TabIndex = 24;
@@ -237,7 +286,7 @@
             this.btnLuu.FlatAppearance.BorderSize = 0;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLuu.Location = new System.Drawing.Point(18, 611);
+            this.btnLuu.Location = new System.Drawing.Point(20, 641);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(71, 32);
             this.btnLuu.TabIndex = 23;
@@ -256,20 +305,20 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Địa Điểm Nổi Tiếng";
             // 
-            // btnThem1
+            // btnThemBia
             // 
-            this.btnThem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.btnThem1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnThem1.FlatAppearance.BorderSize = 0;
-            this.btnThem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem1.ForeColor = System.Drawing.Color.Black;
-            this.btnThem1.Location = new System.Drawing.Point(121, 514);
-            this.btnThem1.Name = "btnThem1";
-            this.btnThem1.Size = new System.Drawing.Size(116, 41);
-            this.btnThem1.TabIndex = 22;
-            this.btnThem1.Text = "Thêm";
-            this.btnThem1.UseVisualStyleBackColor = false;
-            this.btnThem1.Click += new System.EventHandler(this.btnThem1_Click);
+            this.btnThemBia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.btnThemBia.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThemBia.FlatAppearance.BorderSize = 0;
+            this.btnThemBia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemBia.ForeColor = System.Drawing.Color.Black;
+            this.btnThemBia.Location = new System.Drawing.Point(14, 511);
+            this.btnThemBia.Name = "btnThemBia";
+            this.btnThemBia.Size = new System.Drawing.Size(115, 36);
+            this.btnThemBia.TabIndex = 22;
+            this.btnThemBia.Text = "Thêm Bìa";
+            this.btnThemBia.UseVisualStyleBackColor = false;
+            this.btnThemBia.Click += new System.EventHandler(this.btnThemBia_Click);
             // 
             // label8
             // 
@@ -302,17 +351,6 @@
             this.lbSoNgayDi.Size = new System.Drawing.Size(95, 21);
             this.lbSoNgayDi.TabIndex = 17;
             this.lbSoNgayDi.Text = "Số Ngày Đi";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(16, 524);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 21);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Thêm Ảnh";
             // 
             // txtLoaiHinh
             // 
@@ -440,7 +478,7 @@
             this.panel3.Controls.Add(this.label12);
             this.panel3.Location = new System.Drawing.Point(265, 212);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(718, 503);
+            this.panel3.Size = new System.Drawing.Size(718, 515);
             this.panel3.TabIndex = 0;
             // 
             // txtDiaDiemNoiTiengttt
@@ -451,7 +489,7 @@
             this.txtDiaDiemNoiTiengttt.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaDiemNoiTiengttt.Multiline = true;
             this.txtDiaDiemNoiTiengttt.Name = "txtDiaDiemNoiTiengttt";
-            this.txtDiaDiemNoiTiengttt.Size = new System.Drawing.Size(430, 140);
+            this.txtDiaDiemNoiTiengttt.Size = new System.Drawing.Size(430, 153);
             this.txtDiaDiemNoiTiengttt.TabIndex = 32;
             // 
             // txtMaTourttt
@@ -629,7 +667,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(989, 716);
+            this.ClientSize = new System.Drawing.Size(989, 729);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -675,8 +713,7 @@
         private System.Windows.Forms.TextBox txtTenTour;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaTour;
-        private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.Button btnThem1;
+        public System.Windows.Forms.Button btnThemBia;
         public System.Windows.Forms.Button btnXoa;
         public System.Windows.Forms.Button btnSua;
         public System.Windows.Forms.Button btnThem0;
@@ -704,5 +741,8 @@
         public System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Button btnThemAnh1;
+        public System.Windows.Forms.Button btnThemAnh3;
+        public System.Windows.Forms.Button btnThemAnh2;
     }
 }
