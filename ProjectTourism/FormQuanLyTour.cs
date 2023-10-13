@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using ProjectTourism.BSLayer;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
+using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Collections;
 
 namespace ProjectTourism
 {
     public partial class FormQuanLyTour : Form
     {
         private BLManager tasks = new BLManager();
+        private string path;
         public FormQuanLyTour()
         {
             InitializeComponent();
@@ -22,20 +26,15 @@ namespace ProjectTourism
 
         private void FormQuanLyTour_Load(object sender, EventArgs e)
         {
-            this.txtMaTour.Enabled = false;
+            this.txtMaTour.Enabled = true;
             this.txtTenTour.Enabled = false;
             this.txtLoaiHinh.Enabled = false;
             this.txtSoNgayDi.Enabled = false;
             this.txtGiaVe.Enabled = false;
             this.txtDiaDiemNoiTieng.Enabled = false;
+            this.txtSoLuong.Enabled = false;
             this.btnThem1.Enabled = false;
-            this.btnThem2.Enabled = false;
-            this.btnThem3.Enabled = false;
-            this.btnThem4.Enabled = false;
             this.btnDescrip.Enabled = false;
-            this.btnLuu.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
             LoadTour_dgv();
         }
         private void LoadTour_dgv()
@@ -55,12 +54,6 @@ namespace ProjectTourism
             int n = this.dgvQLTour.CurrentCell.RowIndex;
             DataTable nametype = tasks.GetNameOfTour(dgvQLTour.Rows[n].Cells[0].Value.ToString());
             // Panel tạo tour
-            this.txtMaTour.Text = dgvQLTour.Rows[n].Cells[0].Value.ToString();
-            this.txtTenTour.Text = dgvQLTour.Rows[n].Cells[1].Value.ToString();
-            this.txtLoaiHinh.Text = dgvQLTour.Rows[n].Cells[2].Value.ToString();
-            this.txtSoNgayDi.Text = dgvQLTour.Rows[n].Cells[4].Value.ToString();
-            this.txtGiaVe.Text = dgvQLTour.Rows[n].Cells[5].Value.ToString();
-            this.txtDiaDiemNoiTieng.Text = dgvQLTour.Rows[n].Cells[3].Value.ToString();
             // Panel thông tin chi tiết tour
             this.txtMaTourttt.Text = dgvQLTour.Rows[n].Cells[0].Value.ToString();
             this.txtTenTourttt.Text = dgvQLTour.Rows[n].Cells[1].Value.ToString();
@@ -82,63 +75,119 @@ namespace ProjectTourism
 
         private void btnDescrip_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                string fileName;
+            OpenFileDialog sourceDialog = new OpenFileDialog();
+            sourceDialog.Filter = "Text Files|*.txt";
+            sourceDialog.Title = "Select an Text File to Move";
 
-                fileName = dlg.FileName;
-                MessageBox.Show(fileName);
+            if (sourceDialog.ShowDialog() == DialogResult.OK)
+            {
+                SaveFileDialog destinationDialog = new SaveFileDialog();
+                destinationDialog.Filter = "Text Files|*.txt";
+                destinationDialog.Title = "Save the Text File";
+
+                if (destinationDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Đọc dữ liệu từ file nguồn
+                        byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
+
+                        // Ghi dữ liệu vào file đích
+                        File.WriteAllBytes(destinationDialog.FileName, fileBytes);
+
+                        MessageBox.Show("Image moved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-        }
         private void status_btn()
         {
             this.txtMaTour.Enabled = true;
-            this.txtTenTour.Enabled = true;
-            this.txtLoaiHinh.Enabled = true;
-            this.txtSoNgayDi.Enabled = true;
-            this.txtGiaVe.Enabled = true;
-            this.txtDiaDiemNoiTieng.Enabled = true;
-            this.btnThem1.Enabled = true;
-            this.btnThem2.Enabled = true;
-            this.btnThem3.Enabled = true;
-            this.btnThem4.Enabled = true;
-            this.btnDescrip.Enabled = true;
-            this.btnLuu.Enabled = true;
-            this.btnSua.Enabled = true;
-            this.btnXoa.Enabled = true;
         }
 
         private void btnThem1_Click(object sender, EventArgs e)
         {
+            OpenFileDialog sourceDialog = new OpenFileDialog();
+            sourceDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            sourceDialog.Title = "Select an Image File to Move";
 
-        }
+            if (sourceDialog.ShowDialog() == DialogResult.OK)
+            {
+                SaveFileDialog destinationDialog = new SaveFileDialog();
+                destinationDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                destinationDialog.Title = "Save the Image File";
 
-        private void btnThem3_Click(object sender, EventArgs e)
-        {
+                if (destinationDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Đọc dữ liệu từ file nguồn
+                        byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
 
-        }
+                        // Ghi dữ liệu vào file đích
+                        File.WriteAllBytes(destinationDialog.FileName, fileBytes);
 
-        private void btnThem2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThem4_Click(object sender, EventArgs e)
-        {
-
+                        MessageBox.Show("Image moved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnThem0_Click(object sender, EventArgs e)
         {
             status_btn();
-            this.txtMaTour.Text = string.Empty;
-            this.txtTenTour.Text = string.Empty;
-            this.txtLoaiHinh.Text = string.Empty;
-            this.txtSoNgayDi.Text = string.Empty;
-            this.txtGiaVe.Text = string.Empty;
-            this.txtDiaDiemNoiTieng.Text = string.Empty;
+            string Ma_Tour = txtMaTour.Text;
+            string dirPath = "../../../Details/";
+            this.path = dirPath + Ma_Tour + "/";
+            bool exist = Directory.Exists(path);
+            // Kiểm tra xem đường dẫn thư mục tồn tại không.
+            // Nếu không tồn tại, tạo thư mục này.
+            if (!exist)
+            {
+                // Tạo thư mục.
+                Directory.CreateDirectory(path);
+                MessageBox.Show("Đã tạo thư mục thành công");
+                this.txtMaTour.Enabled = false;
+                this.txtTenTour.Enabled = true;
+                this.txtLoaiHinh.Enabled = true;
+                this.txtSoNgayDi.Enabled = true;
+                this.txtGiaVe.Enabled = true;
+                this.txtSoLuong.Enabled = true;
+                this.txtDiaDiemNoiTieng.Enabled = true;
+                this.btnThem1.Enabled = true;
+                this.btnDescrip.Enabled = true;
+                this.btnLuu.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Mã tour đã tồn tại");
+            }
+        }
 
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string IDTour = this.txtMaTour.Text;
+            string TenTour = this.txtTenTour.Text;
+            string HinhThuc = this.txtLoaiHinh.Text;
+            string HanhTrinh = this.txtDiaDiemNoiTieng.Text;
+            int SoNgayDi = int.Parse(this.txtSoNgayDi.Text);
+            string Gia = this.txtGiaVe.Text;
+            int SoLuong = int.Parse(this.txtSoNgayDi.Text);
+            string ChiTiet = path;
+            tasks.Add_QLTour(IDTour, TenTour, HinhThuc, HanhTrinh, SoNgayDi, Gia, SoLuong, ChiTiet);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string IDTour = this.txtMaTour.Text;
+            tasks.Delete_QlTour(IDTour);
         }
     }
 }

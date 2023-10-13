@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 namespace ProjectTourism.BSLayer
@@ -416,6 +417,33 @@ namespace ProjectTourism.BSLayer
                 dt.Rows.Add(data.MaChuyenDi, data.TenChuyenDi, data.HinhThuc, data.HanhTrinh, data.SoNgayDi, data.Gia, data.SoLuong, data.ChiTiet) ;
             }
             return dt;
+        }
+        public void Add_QLTour(string iDTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi, string Gia, int SoLuong, string ChiTiet)
+        {
+            ChuyenDi new_tour = new ChuyenDi();
+
+            new_tour.MaChuyenDi = iDTour;
+            new_tour.TenChuyenDi = TenTour;
+            new_tour.HinhThuc = HinhThuc;
+            new_tour.HanhTrinh = HanhTrinh;
+            new_tour.SoNgayDi = SoNgayDi;
+            new_tour.Gia = Gia;
+            new_tour.SoLuong = SoLuong;
+            new_tour.ChiTiet = ChiTiet;
+
+            entity.ChuyenDis.Add(new_tour);
+            entity.SaveChanges();
+        }
+        public void Delete_QlTour(string iDTour)
+        {
+            ChuyenDi Tour = new ChuyenDi
+            {
+                MaChuyenDi = iDTour 
+            };
+
+            entity.ChuyenDis.Attach(Tour);
+            entity.ChuyenDis.Remove(Tour);
+            entity.SaveChanges();
         }
     }
 }
