@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 namespace ProjectTourism.BSLayer
@@ -418,6 +419,25 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+        public DataTable Load_dgvQLDanhGia()
+        {
+            DataTable dt = new DataTable();
+            var datas =
+                from cd in entity.DanhGias
+                select new { cd.MaChuyenDi, cd.MaTaiKhoan, cd.Sao, cd.BinhLuan};
+
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Mã Tài Khoản", typeof(string));
+            dt.Columns.Add("Số Sao", typeof(int));
+            dt.Columns.Add("Bình Luận", typeof(string));
+
+
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.MaTaiKhoan, data.Sao, data.BinhLuan);
+            }
+            return dt;
+        }
         public void Add_QLTour(string iDTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi, string Gia, int SoLuong, string ChiTiet)
         {
             ChuyenDi new_tour = new ChuyenDi();
@@ -444,6 +464,33 @@ namespace ProjectTourism.BSLayer
             entity.ChuyenDis.Attach(Tour);
             entity.ChuyenDis.Remove(Tour);
             entity.SaveChanges();
+        }
+        public DataTable FilterRate(string IDTour)
+        {
+            DataTable dt = new DataTable();
+            var datas = from cd in entity.DanhGias
+                        where cd.MaChuyenDi == IDTour
+                        select  new { cd.MaChuyenDi, cd.MaTaiKhoan, cd.Sao, cd.BinhLuan };
+
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Mã Tài Khoản", typeof(string));
+            dt.Columns.Add("Số Sao", typeof(int));
+            dt.Columns.Add("Bình Luận", typeof(string));
+
+
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.MaTaiKhoan, data.Sao, data.BinhLuan);
+            }
+            return dt;
+
+        }
+        public string AvgRate(string IDTour)
+        {
+            var rate = (from cd in entity.DanhGias
+                             where cd.MaChuyenDi == IDTour
+                             select cd.Sao).Average();
+            return rate.ToString();
         }
     }
 }
