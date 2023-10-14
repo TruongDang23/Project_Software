@@ -137,7 +137,7 @@ namespace ProjectTourism
             {
                 if (!tb_ID.Text.Trim().Equals(""))
                 {
-                    bl.AddDataGuide(tb_ID.Text, tb_ten.Text, tb_sdt.Text, tb_email.Text);
+                    bl.ChangeInfoGuide(tb_ID.Text, tb_ten.Text, tb_sdt.Text, tb_email.Text);
                     LoadDataGridView();
                 }
                 else
