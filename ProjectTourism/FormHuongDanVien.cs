@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjectTourism.BSLayer;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
+
 namespace ProjectTourism
 {
     public partial class FormHuongDanVien : Form
@@ -26,18 +29,37 @@ namespace ProjectTourism
             InitializeComponent();
             changeInfo = ChangeInfo.None;
         }
-
         private void FormGuide_Load(object sender, EventArgs e)
         {
             LoadDataGridView();
+            this.cbb_ID.DataSource = bl.LoadGuides();
+            this.cbb_ID.DisplayMember = "Mã Hướng dẫn viên";
+            this.cbb_IdGuide.DataSource = bl.LoadGuides();
+            this.cbb_IdGuide.DisplayMember = "Mã Hướng dẫn viên";
+            DateTime myVacation1 = new DateTime(2023, 10, 16);
+            DateTime myVacation2 = new DateTime(2023, 10, 19);
+
+            monthCalendar_hdv.SelectionRange = new SelectionRange(myVacation2, myVacation2);
+            monthCalendar_hdv.SelectionRange = new SelectionRange(myVacation1, myVacation1);
 
         }
         private void LoadDataGridView()
         {
             try
             {
+                dgv_hdv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dgv_hdv.AutoResizeColumns();
+                dgv_hdv.AllowUserToResizeColumns = true;
+                dgv_hdv.AllowUserToOrderColumns = true;
                 dgv_hdv.DataSource = bl.LoadDataGuide();
-                dgv_hdv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+                dgv_Idtour.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dgv_Idtour.AutoResizeColumns();
+                dgv_Idtour.AllowUserToResizeColumns = true;
+                dgv_Idtour.AllowUserToOrderColumns = true;
+                dgv_Idtour.DataSource = bl.Load_dgv_Idtour();
+
             }
             catch(Exception ex) {
                 MessageBox.Show(ex.ToString());
@@ -148,6 +170,50 @@ namespace ProjectTourism
             }
             changeInfo = ChangeInfo.None;
             ChangeState_pnlInfo();
-        } 
+        }
+
+        private void monthCalendar_hdv_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            var startDate = monthCalendar_hdv.SelectionRange.Start.ToString("dd MMM yyyy");
+            var endDate = monthCalendar_hdv.SelectionRange.End.ToString("dd MMM yyyy");
+        }
+
+        private void btn_phancong_Click(object sender, EventArgs e)
+        {
+            int n = this.dgv_Idtour.CurrentCell.RowIndex;
+            string IDTour = dgv_Idtour.Rows[n].Cells[0].Value.ToString();
+            DateTime StartDay = DateTime.Parse(dgv_Idtour.Rows[n].Cells[1].Value.ToString());
+            string IDGuide = cbb_IdGuide.Text;
+            try
+            {
+                bl.Update_LichTrinh(IDTour, StartDay, IDGuide);
+                MessageBox.Show("Phân công thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDataGridView();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnhuypc_Click(object sender, EventArgs e)
+        {
+            int n = this.dgv_Idtour.CurrentCell.RowIndex;
+            string IDTour = dgv_Idtour.Rows[n].Cells[0].Value.ToString();
+            DateTime StartDay = DateTime.Parse(dgv_Idtour.Rows[n].Cells[1].Value.ToString());
+            string IDGuide = cbb_IdGuide.Text;
+            try
+            {
+                bl.Huy_PhanCong(IDTour, StartDay);
+                MessageBox.Show("Hủy phân công thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDataGridView();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

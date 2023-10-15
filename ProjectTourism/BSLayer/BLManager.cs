@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Infrastructure;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -438,6 +440,21 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+        public DataTable Load_dgv_Idtour()
+        {
+            DataTable dt = new DataTable();
+            var datas = from lt in entity.LichTrinhs
+                        select new { lt.MaChuyenDi, lt.NgayBatDau,lt.MaHDV};
+            dt.Columns.Add("Mã Chuyến Đi", typeof(string));
+            dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
+            dt.Columns.Add("Mã HDV", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.NgayBatDau, data.MaHDV);
+            }
+            return dt;
+
+        }
         public void Add_QLTour(string iDTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi, string Gia, int SoLuong, string ChiTiet)
         {
             ChuyenDi new_tour = new ChuyenDi();
@@ -491,6 +508,32 @@ namespace ProjectTourism.BSLayer
                              where cd.MaChuyenDi == IDTour
                              select cd.Sao).Average();
             return rate.ToString();
+        }
+        public void Update_LichTrinh(string MaChuyenDi, DateTime NgayBatDau, string MaHDV)
+        {
+            var tpQuery = entity.LichTrinhs.SingleOrDefault(lt => lt.MaChuyenDi == MaChuyenDi &&
+            lt.NgayBatDau.Year == NgayBatDau.Year && lt.NgayBatDau.Month == NgayBatDau.Month && lt.NgayBatDau.Day == NgayBatDau.Day);
+
+            if (tpQuery != null)
+            {
+                tpQuery.MaChuyenDi = MaChuyenDi;
+                tpQuery.NgayBatDau = NgayBatDau;
+                tpQuery.MaHDV = MaHDV;
+                entity.SaveChanges();
+            }
+        }
+        public void Huy_PhanCong(string MaChuyenDi, DateTime NgayBatDau)
+        {
+            var tpQuery = entity.LichTrinhs.SingleOrDefault(lt => lt.MaChuyenDi == MaChuyenDi &&
+            lt.NgayBatDau.Year == NgayBatDau.Year && lt.NgayBatDau.Month == NgayBatDau.Month && lt.NgayBatDau.Day == NgayBatDau.Day);
+
+            if (tpQuery != null)
+            {
+                tpQuery.MaChuyenDi = MaChuyenDi;
+                tpQuery.NgayBatDau = NgayBatDau;
+                tpQuery.MaHDV = null;
+                entity.SaveChanges();
+            }
         }
     }
 }

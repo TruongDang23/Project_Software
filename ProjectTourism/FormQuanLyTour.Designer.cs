@@ -447,10 +447,12 @@
             // 
             // dgvQLTour
             // 
+            this.dgvQLTour.AllowUserToAddRows = false;
             this.dgvQLTour.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.dgvQLTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLTour.Location = new System.Drawing.Point(3, 3);
             this.dgvQLTour.Name = "dgvQLTour";
+            this.dgvQLTour.RowHeadersVisible = false;
             this.dgvQLTour.RowHeadersWidth = 51;
             this.dgvQLTour.Size = new System.Drawing.Size(712, 141);
             this.dgvQLTour.TabIndex = 28;
@@ -523,9 +525,9 @@
             // 
             this.txtGiaVettt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGiaVettt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaVettt.Location = new System.Drawing.Point(492, 39);
+            this.txtGiaVettt.Location = new System.Drawing.Point(24, 392);
             this.txtGiaVettt.Name = "txtGiaVettt";
-            this.txtGiaVettt.Size = new System.Drawing.Size(217, 19);
+            this.txtGiaVettt.Size = new System.Drawing.Size(192, 19);
             this.txtGiaVettt.TabIndex = 28;
             // 
             // txtTenTourttt
@@ -534,7 +536,7 @@
             this.txtTenTourttt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTourttt.Location = new System.Drawing.Point(100, 38);
             this.txtTenTourttt.Name = "txtTenTourttt";
-            this.txtTenTourttt.Size = new System.Drawing.Size(255, 19);
+            this.txtTenTourttt.Size = new System.Drawing.Size(609, 19);
             this.txtTenTourttt.TabIndex = 27;
             // 
             // label17
@@ -575,7 +577,7 @@
             this.lbGiaVe.AutoSize = true;
             this.lbGiaVe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGiaVe.ForeColor = System.Drawing.Color.Black;
-            this.lbGiaVe.Location = new System.Drawing.Point(375, 37);
+            this.lbGiaVe.Location = new System.Drawing.Point(20, 365);
             this.lbGiaVe.Name = "lbGiaVe";
             this.lbGiaVe.Size = new System.Drawing.Size(122, 21);
             this.lbGiaVe.TabIndex = 18;
