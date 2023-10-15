@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
@@ -11,6 +12,8 @@ using System.Web;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
+
 namespace ProjectTourism.BSLayer
 {
     internal class BLManager
@@ -471,17 +474,6 @@ namespace ProjectTourism.BSLayer
             entity.ChuyenDis.Add(new_tour);
             entity.SaveChanges();
         }
-        public void Delete_QlTour(string iDTour)
-        {
-            ChuyenDi Tour = new ChuyenDi
-            {
-                MaChuyenDi = iDTour 
-            };
-
-            entity.ChuyenDis.Attach(Tour);
-            entity.ChuyenDis.Remove(Tour);
-            entity.SaveChanges();
-        }
         public DataTable FilterRate(string IDTour)
         {
             DataTable dt = new DataTable();
@@ -550,5 +542,46 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+        public void Delete(string MaChuyenDi)
+        {
+
+            var danhSachDuKhachToRemove = entity.DanhSachDuKhaches.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.DanhSachDuKhaches.RemoveRange(danhSachDuKhachToRemove);
+
+            var danhSachDangKiToRemove = entity.DanhSachDangKies.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.DanhSachDangKies.RemoveRange(danhSachDangKiToRemove);
+
+            var YeuCauToRemove = entity.YeuCaus.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.YeuCaus.RemoveRange(YeuCauToRemove);
+
+            var DanhGiaToRemove = entity.DanhGias.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.DanhGias.RemoveRange(DanhGiaToRemove);
+
+            var LichTrinhToRemove = entity.LichTrinhs.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.LichTrinhs.RemoveRange(LichTrinhToRemove);
+
+            var ChuyenDiToRemove = entity.ChuyenDis.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.ChuyenDis.RemoveRange(ChuyenDiToRemove);
+
+            entity.SaveChanges();
+        }
+        public void Update_Tour(string MaTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi,string Gia, int SoLuong)
+        {
+            var tpQuery = (from idtour in entity.ChuyenDis
+                           where idtour.MaChuyenDi == MaTour
+                           select idtour).SingleOrDefault();
+
+            if (tpQuery != null)
+            {
+                tpQuery.TenChuyenDi = TenTour;
+                tpQuery.HinhThuc = HinhThuc;
+                tpQuery.HanhTrinh = HanhTrinh;
+                tpQuery.SoNgayDi = SoNgayDi;
+                tpQuery.Gia = Gia;
+                tpQuery.SoLuong = SoLuong;
+                entity.SaveChanges();
+            }
+        }
+
     }
 }
