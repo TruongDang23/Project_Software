@@ -535,5 +535,20 @@ namespace ProjectTourism.BSLayer
                 entity.SaveChanges();
             }
         }
+        public DataTable LichTrinhHD(string MaHDV)
+        {
+            DataTable dt = new DataTable();
+            var datas = from lt in entity.LichTrinhs
+                        where lt.MaHDV == MaHDV
+                        select new { lt.MaChuyenDi, lt.NgayBatDau, lt.MaHDV };
+            dt.Columns.Add("Mã Chuyến Đi", typeof(string));
+            dt.Columns.Add("NgayBatDau", typeof(DateTime));
+            dt.Columns.Add("Mã HDV", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.NgayBatDau, data.MaHDV);
+            }
+            return dt;
+        }
     }
 }

@@ -48,6 +48,7 @@
             this.btnThaydoi = new System.Windows.Forms.Button();
             this.lb_title = new System.Windows.Forms.Label();
             this.pnl_tools = new System.Windows.Forms.Panel();
+            this.btn_Xem = new System.Windows.Forms.Button();
             this.monthCalendar_hdv = new System.Windows.Forms.MonthCalendar();
             this.cbb_ID = new System.Windows.Forms.ComboBox();
             this.lb_lichtrinh = new System.Windows.Forms.Label();
@@ -303,6 +304,7 @@
             // pnl_tools
             // 
             this.pnl_tools.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnl_tools.Controls.Add(this.btn_Xem);
             this.pnl_tools.Controls.Add(this.monthCalendar_hdv);
             this.pnl_tools.Controls.Add(this.cbb_ID);
             this.pnl_tools.Controls.Add(this.lb_lichtrinh);
@@ -313,6 +315,20 @@
             this.pnl_tools.Size = new System.Drawing.Size(382, 235);
             this.pnl_tools.TabIndex = 4;
             // 
+            // btn_Xem
+            // 
+            this.btn_Xem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_Xem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Xem.Location = new System.Drawing.Point(41, 170);
+            this.btn_Xem.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Xem.Name = "btn_Xem";
+            this.btn_Xem.Size = new System.Drawing.Size(70, 39);
+            this.btn_Xem.TabIndex = 32;
+            this.btn_Xem.Text = "Xem";
+            this.btn_Xem.UseVisualStyleBackColor = false;
+            this.btn_Xem.Click += new System.EventHandler(this.btn_Xem_Click);
+            // 
             // monthCalendar_hdv
             // 
             this.monthCalendar_hdv.BackColor = System.Drawing.SystemColors.Window;
@@ -321,13 +337,12 @@
             this.monthCalendar_hdv.Name = "monthCalendar_hdv";
             this.monthCalendar_hdv.TabIndex = 28;
             this.monthCalendar_hdv.TrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(178)))), ((int)(((byte)(213)))));
-            this.monthCalendar_hdv.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_hdv_DateSelected);
             // 
             // cbb_ID
             // 
             this.cbb_ID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_ID.FormattingEnabled = true;
-            this.cbb_ID.Location = new System.Drawing.Point(20, 144);
+            this.cbb_ID.Location = new System.Drawing.Point(20, 135);
             this.cbb_ID.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_ID.Name = "cbb_ID";
             this.cbb_ID.Size = new System.Drawing.Size(110, 29);
@@ -341,7 +356,7 @@
             this.lb_lichtrinh.Location = new System.Drawing.Point(10, 22);
             this.lb_lichtrinh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_lichtrinh.Name = "lb_lichtrinh";
-            this.lb_lichtrinh.Size = new System.Drawing.Size(138, 94);
+            this.lb_lichtrinh.Size = new System.Drawing.Size(138, 81);
             this.lb_lichtrinh.TabIndex = 5;
             this.lb_lichtrinh.Text = "Lịch trình hoạt động";
             this.lb_lichtrinh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -352,7 +367,7 @@
             this.label3.Location = new System.Drawing.Point(11, 103);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 39);
+            this.label3.Size = new System.Drawing.Size(128, 30);
             this.label3.TabIndex = 31;
             this.label3.Text = "Mã HDV:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -508,5 +523,6 @@
         private System.Windows.Forms.Button btn_huy;
         private System.Windows.Forms.ComboBox cbb_IdGuide;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_Xem;
     }
 }

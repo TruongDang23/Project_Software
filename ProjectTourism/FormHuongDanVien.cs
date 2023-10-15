@@ -36,11 +36,25 @@ namespace ProjectTourism
             this.cbb_ID.DisplayMember = "Mã Hướng dẫn viên";
             this.cbb_IdGuide.DataSource = bl.LoadGuides();
             this.cbb_IdGuide.DisplayMember = "Mã Hướng dẫn viên";
-            DateTime myVacation1 = new DateTime(2023, 10, 16);
-            DateTime myVacation2 = new DateTime(2023, 10, 19);
 
-            monthCalendar_hdv.SelectionRange = new SelectionRange(myVacation2, myVacation2);
-            monthCalendar_hdv.SelectionRange = new SelectionRange(myVacation1, myVacation1);
+            // Thêm các ngày cần in đậm và thay đổi màu vào CustomMonthCalendar
+
+            // Thêm CustomMonthCalendar vào Controls của Form hoặc container khác
+        }
+        private void Highlight()
+        {
+            int i = 0;
+            DataTable lt = new DataTable();
+            string IDGuide_1 = this.cbb_ID.Text;
+            lt = bl.LichTrinhHD(IDGuide_1);
+            foreach (DataRow row in lt.Rows)
+            {
+                DateTime rowDateTime = Convert.ToDateTime(row["NgayBatDau"]);
+                if (rowDateTime != null) // So sánh theo ngày (bỏ qua phần thời gian)
+                {
+                    monthCalendar_hdv.AddBoldedDate(rowDateTime.Date);
+                }
+            }
 
         }
         private void LoadDataGridView()
@@ -61,7 +75,7 @@ namespace ProjectTourism
                 dgv_Idtour.DataSource = bl.Load_dgv_Idtour();
 
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -79,6 +93,7 @@ namespace ProjectTourism
             btnThaydoi.Enabled = enable;
             btnXoa.Enabled = enable;
         }
+
         private void ChangeState_pnlInfo()
         {
             if (changeInfo == ChangeInfo.Them || changeInfo == ChangeInfo.Sua) { 
@@ -172,11 +187,6 @@ namespace ProjectTourism
             ChangeState_pnlInfo();
         }
 
-        private void monthCalendar_hdv_DateSelected(object sender, DateRangeEventArgs e)
-        {
-            var startDate = monthCalendar_hdv.SelectionRange.Start.ToString("dd MMM yyyy");
-            var endDate = monthCalendar_hdv.SelectionRange.End.ToString("dd MMM yyyy");
-        }
 
         private void btn_phancong_Click(object sender, EventArgs e)
         {
@@ -214,6 +224,11 @@ namespace ProjectTourism
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void btn_Xem_Click(object sender, EventArgs e)
+        {
+            Highlight();
+            monthCalendar_hdv.UpdateBoldedDates();
         }
     }
 }
