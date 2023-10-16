@@ -12,9 +12,15 @@ namespace ProjectTourism
 {
     public partial class FormDanhGiaChuyenDi : Form
     {
-        public FormDanhGiaChuyenDi()
+        private string MaChuyenDi;
+        private string MaTaiKhoan;
+        private DateTime NgayBatDau;
+        public FormDanhGiaChuyenDi(string MaChuyenDi, string MaTaiKhoan, DateTime NgayBatDau)
         {
             InitializeComponent();
+            this.MaChuyenDi = MaChuyenDi;
+            this.MaTaiKhoan = MaTaiKhoan;
+            this.NgayBatDau = NgayBatDau;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

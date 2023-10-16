@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectTourism.BSLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,23 +13,26 @@ namespace ProjectTourism
 {
     public partial class FormBoxNhieuNguoi : Form
     {
+        private BLUser tasks = new BLUser();
         private string MaTaiKhoan;
         private string MaChuyenDi;
         private DateTime NgayBatDau;
         private int SoLuong;
+        private string CCCD;
 
-        public FormBoxNhieuNguoi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong)
+        public FormBoxNhieuNguoi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong, string CCCD)
         {
             InitializeComponent();
-            MaTaiKhoan = maTaiKhoan;
-            MaChuyenDi = maChuyenDi;
-            NgayBatDau = ngayBatDau;
-            SoLuong = soLuong;
+            this.MaTaiKhoan = maTaiKhoan;
+            this.MaChuyenDi = maChuyenDi;
+            this.NgayBatDau = ngayBatDau;
+            this.SoLuong = soLuong;
+            this.CCCD = CCCD;
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
-            FormNhieuNguoiDi formNhieuNguoiDi = new FormNhieuNguoiDi(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau,this.SoLuong);
+            FormNhieuNguoiDi formNhieuNguoiDi = new FormNhieuNguoiDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, this.CCCD);
             this.Hide();
             formNhieuNguoiDi.ShowDialog();
             Close();
@@ -36,7 +40,7 @@ namespace ProjectTourism
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau); 
             this.Hide();
             formDatChuyenDi.ShowDialog();
             Close();

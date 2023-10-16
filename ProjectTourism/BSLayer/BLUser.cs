@@ -24,16 +24,16 @@ namespace ProjectTourism.BSLayer
                            where cd.MaChuyenDi == MaChuyenDi && lt.NgayBatDau == NgayBatDau
                            select new { cd.TenChuyenDi, cd.HanhTrinh, cd.HinhThuc, cd.SoNgayDi, cd.SoLuong, cd.Gia, dg.Sao, lt.NgayBatDau, cd.ChiTiet };
             dt.Columns.Add("TenChuyenDi", typeof(string));
-            dt.Columns.Add("HanhTrinh",typeof(string));
-            dt.Columns.Add("HinhThuc",typeof(string));
-            dt.Columns.Add("SoNgayDi",typeof(int));
+            dt.Columns.Add("HanhTrinh", typeof(string));
+            dt.Columns.Add("HinhThuc", typeof(string));
+            dt.Columns.Add("SoNgayDi", typeof(int));
             dt.Columns.Add("SoLuong", typeof(int));
             dt.Columns.Add("Gia", typeof(string));
-            dt.Columns.Add("Sao",typeof (int));
+            dt.Columns.Add("Sao", typeof(int));
             dt.Columns.Add("NgayBatDau", typeof(DateTime));
             dt.Columns.Add("ChiTiet", typeof(string));
 
-            foreach(var ct in chuyendi)
+            foreach (var ct in chuyendi)
             {
                 dt.Rows.Add(ct.TenChuyenDi, ct.HanhTrinh, ct.HinhThuc, ct.SoNgayDi, ct.SoLuong, ct.Gia, ct.Sao, ct.NgayBatDau, ct.ChiTiet);
             }
@@ -68,5 +68,32 @@ namespace ProjectTourism.BSLayer
             entity.SaveChanges();
         }
 
+        public void XoaDanhSachDK(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
+        {
+            DanhSachDangKy dk = new DanhSachDangKy
+            {
+                MaTaiKhoan = MaTaiKhoan,
+                MaChuyenDi = MaChuyenDi,
+                NgayBatDau = NgayBatDau,
+            };
+
+            entity.DanhSachDangKies.Attach(dk);
+            entity.DanhSachDangKies.Remove(dk);
+            entity.SaveChanges();
+        }
+
+        public void XoaDuKhachDK(string MaChuyenDi, DateTime NgayBatDau, string CCCD)
+        {
+            DanhSachDuKhach dk = new DanhSachDuKhach
+            {
+                MaChuyenDi = MaChuyenDi,
+                NgayBatDau = NgayBatDau,
+                CCCD = CCCD,
+            };
+
+            entity.DanhSachDuKhaches.Attach(dk);
+            entity.DanhSachDuKhaches.Remove(dk);
+            entity.SaveChanges();
+        }
     }
 }

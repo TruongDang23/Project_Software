@@ -41,11 +41,11 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgv_DanhSachNguoiDi = new System.Windows.Forms.DataGridView();
-            this.Hovaten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.btn_ThanhToan = new System.Windows.Forms.Button();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_DanhSachNguoiDi)).BeginInit();
             this.SuspendLayout();
@@ -133,6 +133,7 @@
             this.btn_Them.TabIndex = 19;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn_Xoa
             // 
@@ -146,6 +147,7 @@
             this.btn_Xoa.TabIndex = 20;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Sua
             // 
@@ -159,6 +161,7 @@
             this.btn_Sua.TabIndex = 21;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // label3
             // 
@@ -172,39 +175,21 @@
             // 
             // dtgv_DanhSachNguoiDi
             // 
+            this.dtgv_DanhSachNguoiDi.AllowUserToDeleteRows = false;
             this.dtgv_DanhSachNguoiDi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgv_DanhSachNguoiDi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_DanhSachNguoiDi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Hovaten,
-            this.sdt,
-            this.CCCD});
+            this.HoTen,
+            this.SDT,
+            this.ccd});
             this.dtgv_DanhSachNguoiDi.Location = new System.Drawing.Point(53, 266);
             this.dtgv_DanhSachNguoiDi.Name = "dtgv_DanhSachNguoiDi";
+            this.dtgv_DanhSachNguoiDi.ReadOnly = true;
             this.dtgv_DanhSachNguoiDi.RowHeadersWidth = 51;
             this.dtgv_DanhSachNguoiDi.RowTemplate.Height = 24;
             this.dtgv_DanhSachNguoiDi.Size = new System.Drawing.Size(872, 184);
             this.dtgv_DanhSachNguoiDi.TabIndex = 23;
-            // 
-            // Hovaten
-            // 
-            this.Hovaten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Hovaten.HeaderText = "Họ và tên";
-            this.Hovaten.MinimumWidth = 6;
-            this.Hovaten.Name = "Hovaten";
-            // 
-            // sdt
-            // 
-            this.sdt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sdt.HeaderText = "SĐT";
-            this.sdt.MinimumWidth = 6;
-            this.sdt.Name = "sdt";
-            // 
-            // CCCD
-            // 
-            this.CCCD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CCCD.HeaderText = "CCCD";
-            this.CCCD.MinimumWidth = 6;
-            this.CCCD.Name = "CCCD";
+            this.dtgv_DanhSachNguoiDi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_DanhSachNguoiDi_CellClick);
             // 
             // btn_QuayLai
             // 
@@ -220,6 +205,7 @@
             this.btn_QuayLai.TabIndex = 25;
             this.btn_QuayLai.Text = "Quay lại";
             this.btn_QuayLai.UseVisualStyleBackColor = false;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // btn_ThanhToan
             // 
@@ -235,6 +221,31 @@
             this.btn_ThanhToan.TabIndex = 24;
             this.btn_ThanhToan.Text = "Thanh toán";
             this.btn_ThanhToan.UseVisualStyleBackColor = false;
+            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 200;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 200;
+            // 
+            // ccd
+            // 
+            this.ccd.HeaderText = "CCCD";
+            this.ccd.MinimumWidth = 6;
+            this.ccd.Name = "ccd";
+            this.ccd.ReadOnly = true;
+            this.ccd.Width = 200;
             // 
             // FormNhieuNguoiDi
             // 
@@ -279,10 +290,10 @@
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtgv_DanhSachNguoiDi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hovaten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
         public System.Windows.Forms.Button btn_QuayLai;
         public System.Windows.Forms.Button btn_ThanhToan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccd;
     }
 }

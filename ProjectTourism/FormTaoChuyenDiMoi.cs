@@ -12,9 +12,15 @@ namespace ProjectTourism
 {
     public partial class FormTaoChuyenDiMoi : Form
     {
-        public FormTaoChuyenDiMoi()
+        private string MaTaiKhoan;
+        private string MaChuyenDi;
+        private DateTime NgayBatDau;
+        public FormTaoChuyenDiMoi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
         {
             InitializeComponent();
+            MaTaiKhoan = maTaiKhoan;
+            MaChuyenDi = maChuyenDi;
+            NgayBatDau = ngayBatDau;
         }
     }
 }

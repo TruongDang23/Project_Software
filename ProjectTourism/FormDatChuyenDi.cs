@@ -19,6 +19,7 @@ namespace ProjectTourism
         private DateTime NgayBatDau;
         private string MaTaiKhoan;
         private int SoLuong;
+        private string CCCD;
 
         public FormDatChuyenDi(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
         {
@@ -48,11 +49,11 @@ namespace ProjectTourism
         {
             try
             {
-                string Ten = this.tb_HoVaTen.Text;
-                string CCCD = this.tb_CCCD.Text;
-                string SDT = this.tb_SDT.Text;
+                string ten = this.tb_HoVaTen.Text;
+                string cccd = this.tb_CCCD.Text;
+                string sdt = this.tb_SDT.Text;
                 SoLuong = Int32.Parse(this.tb_SoLuongNguoi.Text);
-                if (string.IsNullOrEmpty(this.tb_HoVaTen.Text) || string.IsNullOrEmpty(this.tb_CCCD.Text) || string.IsNullOrEmpty(this.tb_SDT.Text) || string.IsNullOrEmpty(this.tb_SoLuongNguoi.Text) || this.tb_SoLuongNguoi.Text == "0")
+                if (string.IsNullOrEmpty(ten) || string.IsNullOrEmpty(cccd) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(this.tb_SoLuongNguoi.Text) || this.tb_SoLuongNguoi.Text == "0")
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
                 }
@@ -60,9 +61,8 @@ namespace ProjectTourism
                 {
                     if(this.SoLuong == 1)
                     {
-                        string trangthai = "Chưa thanh toán";
-                        tasks.ThemDuKhachDK(this.MaChuyenDi, this.NgayBatDau, CCCD, Ten, SDT);
-                        tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, trangthai);
+                        tasks.ThemDuKhachDK(this.MaChuyenDi, this.NgayBatDau, this.CCCD, ten, sdt);
+                        tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, "Chưa thanh toán");
                         ResetData();
                         FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau,this.SoLuong);
                         this.Hide();
@@ -90,7 +90,7 @@ namespace ProjectTourism
 
         private void btn_Dien_Click(object sender, EventArgs e)
         {
-            FormBoxNhieuNguoi formBoxNhieuNguoi = new FormBoxNhieuNguoi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong);
+            FormBoxNhieuNguoi formBoxNhieuNguoi = new FormBoxNhieuNguoi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, this.CCCD);
             this.Hide();
             formBoxNhieuNguoi.ShowDialog();
             Close();
@@ -104,5 +104,6 @@ namespace ProjectTourism
             formChiTietChuyenDi.ShowDialog(); 
             Close();
         }
+
     }
 }
