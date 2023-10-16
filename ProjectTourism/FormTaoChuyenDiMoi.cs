@@ -21,9 +21,9 @@ namespace ProjectTourism
         public FormTaoChuyenDiMoi()
         {
             InitializeComponent();
-            MaTaiKhoan = maTaiKhoan;
-            MaChuyenDi = maChuyenDi;
-            NgayBatDau = ngayBatDau;
+            //MaTaiKhoan = maTaiKhoan;
+            //MaChuyenDi = maChuyenDi;
+            //NgayBatDau = ngayBatDau;
         }
         public FormTaoChuyenDiMoi(string MaTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
         {

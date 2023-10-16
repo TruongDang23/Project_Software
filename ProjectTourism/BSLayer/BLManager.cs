@@ -582,6 +582,53 @@ namespace ProjectTourism.BSLayer
                 entity.SaveChanges();
             }
         }
-
+        public DataTable GetAllDataAccount()
+        {
+            DataTable dt = new DataTable();
+            var datas = from tk in entity.TaiKhoans                 
+                        select new { tk.TenDangNhap, tk.MatKhau, tk.MaTaiKhoan };
+            dt.Columns.Add("Tên đăng nhập", typeof(string));
+            dt.Columns.Add("Mật khẩu", typeof(string));
+            dt.Columns.Add("Mã tài khoản", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.TenDangNhap, data.MatKhau, data.MaTaiKhoan);
+            }
+            return dt;
+        }
+        public DataTable GetDataPersonal(string matk)
+        {
+            DataTable dt = new DataTable();
+            var datas = from per in entity.ThongTinCaNhans
+                        where per.MaTaiKhoan == matk
+                        select new { per.MaTaiKhoan, per.Ten, per.SDT, per.DiaChi, per.Email };
+            dt.Columns.Add("Mã tài khoản", typeof(string));
+            dt.Columns.Add("Tên", typeof(string));
+            dt.Columns.Add("SDT", typeof(string));
+            dt.Columns.Add("Địa chỉ", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaTaiKhoan, data.Ten, data.SDT, data.DiaChi, data.Email);
+            }
+            return dt;
+        }
+        public DataTable GetDataJoinTour(string matk)
+        {
+            DataTable dt = new DataTable();
+            var datas = from per in entity.DanhSachDangKies
+                        where per.MaTaiKhoan == matk
+                        select new { per.MaTaiKhoan, per.MaChuyenDi, per.NgayBatDau, per.SoLuong, per.TrangThai };
+            dt.Columns.Add("Mã tài khoản", typeof(string));
+            dt.Columns.Add("Mã chuyến đi", typeof(string));
+            dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
+            dt.Columns.Add("Số Lượng", typeof(int));
+            dt.Columns.Add("Trạng thái", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaTaiKhoan, data.MaChuyenDi, data.NgayBatDau, data.SoLuong, data.TrangThai);
+            }
+            return dt;
+        }
     }
 }
