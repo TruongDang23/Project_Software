@@ -77,7 +77,7 @@ namespace ProjectTourism
 
         private void btn_DanhGia_Click(object sender, EventArgs e)
         {
-            FormDanhGiaChuyenDi formDanhGiaChuyenDi = new FormDanhGiaChuyenDi();
+            FormDanhGiaChuyenDi formDanhGiaChuyenDi = new FormDanhGiaChuyenDi(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau);
             this.Hide();
             formDanhGiaChuyenDi.ShowDialog();
             Close();
