@@ -97,7 +97,7 @@
             // 
             this.tb_SoLuongNguoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_SoLuongNguoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SoLuongNguoi.Location = new System.Drawing.Point(577, 324);
+            this.tb_SoLuongNguoi.Location = new System.Drawing.Point(670, 326);
             this.tb_SoLuongNguoi.Multiline = true;
             this.tb_SoLuongNguoi.Name = "tb_SoLuongNguoi";
             this.tb_SoLuongNguoi.Size = new System.Drawing.Size(202, 36);
@@ -107,7 +107,7 @@
             // 
             this.tb_SDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_SDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SDT.Location = new System.Drawing.Point(577, 277);
+            this.tb_SDT.Location = new System.Drawing.Point(670, 279);
             this.tb_SDT.Multiline = true;
             this.tb_SDT.Name = "tb_SDT";
             this.tb_SDT.Size = new System.Drawing.Size(202, 36);
@@ -120,7 +120,7 @@
             this.tb_CCCD.Location = new System.Drawing.Point(171, 324);
             this.tb_CCCD.Multiline = true;
             this.tb_CCCD.Name = "tb_CCCD";
-            this.tb_CCCD.Size = new System.Drawing.Size(202, 36);
+            this.tb_CCCD.Size = new System.Drawing.Size(286, 36);
             this.tb_CCCD.TabIndex = 95;
             // 
             // tb_HoVaTen
@@ -130,7 +130,7 @@
             this.tb_HoVaTen.Location = new System.Drawing.Point(171, 278);
             this.tb_HoVaTen.Multiline = true;
             this.tb_HoVaTen.Name = "tb_HoVaTen";
-            this.tb_HoVaTen.Size = new System.Drawing.Size(202, 36);
+            this.tb_HoVaTen.Size = new System.Drawing.Size(286, 36);
             this.tb_HoVaTen.TabIndex = 94;
             // 
             // label15
@@ -138,7 +138,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(441, 323);
+            this.label15.Location = new System.Drawing.Point(534, 325);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(130, 36);
             this.label15.TabIndex = 93;
@@ -150,7 +150,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(441, 277);
+            this.label14.Location = new System.Drawing.Point(534, 279);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(130, 36);
             this.label14.TabIndex = 92;
@@ -197,7 +197,7 @@
             this.btn_ThanhToan.BackColor = System.Drawing.Color.White;
             this.btn_ThanhToan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_ThanhToan.Location = new System.Drawing.Point(813, 319);
+            this.btn_ThanhToan.Location = new System.Drawing.Point(952, 319);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
             this.btn_ThanhToan.Size = new System.Drawing.Size(144, 45);
             this.btn_ThanhToan.TabIndex = 80;

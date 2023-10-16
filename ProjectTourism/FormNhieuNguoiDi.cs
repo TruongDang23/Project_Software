@@ -23,7 +23,7 @@ namespace ProjectTourism
         private string MaChuyenDi;
         private DateTime NgayBatDau;
         private int SoLuong;
-        private string CCCD;
+        private string cCCD;
         private int dem = 0;
 
         public FormNhieuNguoiDi(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau, int SoLuong, string CCCD)
@@ -33,7 +33,7 @@ namespace ProjectTourism
             this.MaChuyenDi = MaChuyenDi;
             this.NgayBatDau = NgayBatDau;
             this.SoLuong = SoLuong;
-            this.CCCD = CCCD;
+            this.cCCD = CCCD;
         }
 
         private void btn_Them_Click(object sender, EventArgs e)

@@ -61,7 +61,7 @@ namespace ProjectTourism
                 {
                     if(this.SoLuong == 1)
                     {
-                        tasks.ThemDuKhachDK(this.MaChuyenDi, this.NgayBatDau, this.CCCD, ten, sdt);
+                        tasks.ThemDuKhachDK(this.MaChuyenDi, this.NgayBatDau, cccd, ten, sdt);
                         tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, "Chưa thanh toán");
                         ResetData();
                         FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau,this.SoLuong);

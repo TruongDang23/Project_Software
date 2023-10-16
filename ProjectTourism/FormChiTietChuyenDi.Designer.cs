@@ -151,7 +151,7 @@
             // 
             this.rtb_MoTa.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rtb_MoTa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtb_MoTa.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_MoTa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtb_MoTa.Location = new System.Drawing.Point(845, 142);
             this.rtb_MoTa.Margin = new System.Windows.Forms.Padding(4);
             this.rtb_MoTa.Name = "rtb_MoTa";
