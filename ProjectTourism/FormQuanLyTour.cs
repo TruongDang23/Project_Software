@@ -12,13 +12,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Collections;
+using System.Data.Entity.Infrastructure;
 
 namespace ProjectTourism
 {
     public partial class FormQuanLyTour : Form
     {
+
         private BLManager tasks = new BLManager();
         private string path;
+        private bool capnhat = false;
         public FormQuanLyTour()
         {
             InitializeComponent();
@@ -26,15 +29,6 @@ namespace ProjectTourism
 
         private void FormQuanLyTour_Load(object sender, EventArgs e)
         {
-            this.txtMaTour.Enabled = true;
-            this.txtTenTour.Enabled = false;
-            this.txtLoaiHinh.Enabled = false;
-            this.txtSoNgayDi.Enabled = false;
-            this.txtGiaVe.Enabled = false;
-            this.txtDiaDiemNoiTieng.Enabled = false;
-            this.txtSoLuong.Enabled = false;
-            this.btnThem1.Enabled = false;
-            this.btnDescrip.Enabled = false;
             LoadTour_dgv();
         }
         private void LoadTour_dgv()
@@ -54,13 +48,20 @@ namespace ProjectTourism
             int n = this.dgvQLTour.CurrentCell.RowIndex;
             DataTable nametype = tasks.GetNameOfTour(dgvQLTour.Rows[n].Cells[0].Value.ToString());
             // Panel tạo tour
+            this.txtMaTour.Text = dgvQLTour.Rows[n].Cells[0].Value.ToString();
+            this.txtTenTour.Text = dgvQLTour.Rows[n].Cells[1].Value.ToString();
+            this.txtLoaiHinh.Text = dgvQLTour.Rows[n].Cells[2].Value.ToString();
+            this.txtSoNgayDi.Text = dgvQLTour.Rows[n].Cells[4].Value.ToString();
+            this.txtGiaVe.Text = dgvQLTour.Rows[n].Cells[5].Value.ToString();
+            this.txtHanhTrinh.Text = dgvQLTour.Rows[n].Cells[3].Value.ToString();
+            this.txtSoLuong.Text = dgvQLTour.Rows[n].Cells[6].Value.ToString();
             // Panel thông tin chi tiết tour
             this.txtMaTourttt.Text = dgvQLTour.Rows[n].Cells[0].Value.ToString();
             this.txtTenTourttt.Text = dgvQLTour.Rows[n].Cells[1].Value.ToString();
             this.txtLoaiHinhttt.Text = dgvQLTour.Rows[n].Cells[2].Value.ToString();
             this.txtSoNgayDittt.Text = dgvQLTour.Rows[n].Cells[4].Value.ToString();
             this.txtGiaVettt.Text = dgvQLTour.Rows[n].Cells[5].Value.ToString();
-            this.txtDiaDiemNoiTiengttt.Text = dgvQLTour.Rows[n].Cells[3].Value.ToString();
+            this.txtHanhTrinhttt.Text = dgvQLTour.Rows[n].Cells[3].Value.ToString();
             // 4 Ảnh 
             string path = dgvQLTour.Rows[n].Cells[7].Value.ToString();
             this.picAnhBia.Image = Image.FromFile(path + "AnhBia.jpg");
@@ -81,26 +82,24 @@ namespace ProjectTourism
 
             if (sourceDialog.ShowDialog() == DialogResult.OK)
             {
-                SaveFileDialog destinationDialog = new SaveFileDialog();
-                destinationDialog.Filter = "Text Files|*.txt";
-                destinationDialog.Title = "Save the Text File";
+                // Đường dẫn đến thư mục bạn muốn lưu tệp
 
-                if (destinationDialog.ShowDialog() == DialogResult.OK)
+                // Kết hợp đường dẫn và tên tệp đích
+                string destinationFilePath = Path.Combine(path, "Description.txt");
+
+                try
                 {
-                    try
-                    {
-                        // Đọc dữ liệu từ file nguồn
-                        byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
+                    // Đọc dữ liệu từ file nguồn
+                    byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
 
-                        // Ghi dữ liệu vào file đích
-                        File.WriteAllBytes(destinationDialog.FileName, fileBytes);
+                    // Ghi dữ liệu vào file đích
+                    File.WriteAllBytes(destinationFilePath, fileBytes);
 
-                        MessageBox.Show("Image moved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Thêm Mô Tả Chi Tiết Thành Công", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -108,8 +107,18 @@ namespace ProjectTourism
         {
             this.txtMaTour.Enabled = true;
         }
+        private void status_txt()
+        {
+            this.txtMaTour.Text = String.Empty;
+            this.txtTenTour.Text = String.Empty;
+            this.txtLoaiHinh.Text = String.Empty;
+            this.txtSoNgayDi.Text = String.Empty;
+            this.txtGiaVe.Text = String.Empty;
+            this.txtHanhTrinh.Text = String.Empty;
+            this.txtSoLuong.Text = String.Empty;
+        }
 
-        private void btnThem1_Click(object sender, EventArgs e)
+        private void btnThemBia_Click(object sender, EventArgs e)
         {
             OpenFileDialog sourceDialog = new OpenFileDialog();
             sourceDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
@@ -117,26 +126,24 @@ namespace ProjectTourism
 
             if (sourceDialog.ShowDialog() == DialogResult.OK)
             {
-                SaveFileDialog destinationDialog = new SaveFileDialog();
-                destinationDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                destinationDialog.Title = "Save the Image File";
+                // Đường dẫn đến thư mục bạn muốn lưu tệp
 
-                if (destinationDialog.ShowDialog() == DialogResult.OK)
+                // Kết hợp đường dẫn và tên tệp đích
+                string destinationFilePath = Path.Combine(path, "AnhBia.jpg");
+
+                try
                 {
-                    try
-                    {
-                        // Đọc dữ liệu từ file nguồn
-                        byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
+                    // Đọc dữ liệu từ file nguồn
+                    byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
 
-                        // Ghi dữ liệu vào file đích
-                        File.WriteAllBytes(destinationDialog.FileName, fileBytes);
+                    // Ghi dữ liệu vào file đích
+                    File.WriteAllBytes(destinationFilePath, fileBytes);
 
-                        MessageBox.Show("Image moved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Thêm Ảnh Bìa Thành Công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -155,16 +162,12 @@ namespace ProjectTourism
                 // Tạo thư mục.
                 Directory.CreateDirectory(path);
                 MessageBox.Show("Đã tạo thư mục thành công");
-                this.txtMaTour.Enabled = false;
-                this.txtTenTour.Enabled = true;
-                this.txtLoaiHinh.Enabled = true;
-                this.txtSoNgayDi.Enabled = true;
-                this.txtGiaVe.Enabled = true;
-                this.txtSoLuong.Enabled = true;
-                this.txtDiaDiemNoiTieng.Enabled = true;
-                this.btnThem1.Enabled = true;
-                this.btnDescrip.Enabled = true;
-                this.btnLuu.Enabled = true;
+                this.txtTenTour.Text = string.Empty;
+                this.txtLoaiHinh.Text = string.Empty;
+                this.txtSoNgayDi.Text = string.Empty; ;
+                this.txtGiaVe.Text = string.Empty; ;
+                this.txtHanhTrinh.Text = string.Empty;
+                this.txtSoLuong.Text = string.Empty;
             }
             else
             {
@@ -177,21 +180,166 @@ namespace ProjectTourism
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string IDTour = this.txtMaTour.Text;
-            string TenTour = this.txtTenTour.Text;
-            string HinhThuc = this.txtLoaiHinh.Text;
-            string HanhTrinh = this.txtDiaDiemNoiTieng.Text;
-            int SoNgayDi = int.Parse(this.txtSoNgayDi.Text);
-            string Gia = this.txtGiaVe.Text;
-            int SoLuong = int.Parse(this.txtSoNgayDi.Text);
-            string ChiTiet = path;
-            tasks.Add_QLTour(IDTour, TenTour, HinhThuc, HanhTrinh, SoNgayDi, Gia, SoLuong, ChiTiet);
+            try
+            {
+                string IDTour = this.txtMaTour.Text;
+                string TenTour = this.txtTenTour.Text;
+                string HinhThuc = this.txtLoaiHinh.Text;
+                int SoNgayDi = int.Parse(this.txtSoNgayDi.Text);
+                string Gia = this.txtGiaVe.Text;
+                string HanhTrinh = this.txtHanhTrinh.Text;
+                int SoLuong = int.Parse(this.txtSoLuong.Text);
+                string ChiTiet = path;
+                if (capnhat == true)
+                {
+                    tasks.Update_Tour(IDTour, TenTour, HinhThuc, HanhTrinh, SoNgayDi, Gia, SoLuong);
+                    MessageBox.Show("Cập nhật thành công");
+                    LoadTour_dgv();
+                    capnhat = false;
+                }
+                else
+                {
+                    tasks.Add_QLTour(IDTour, TenTour, HinhThuc, HanhTrinh, SoNgayDi, Gia, SoLuong, ChiTiet);
+                    MessageBox.Show("Lưu thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadTour_dgv();
+                    status_txt();
+                    if (capnhat == true)
+                    {
+                        tasks.Update_Tour(IDTour, TenTour, HinhThuc, HanhTrinh, SoNgayDi, Gia, SoLuong);
+                        MessageBox.Show("Cập nhật thành công");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string IDTour = this.txtMaTour.Text;
-            tasks.Delete_QlTour(IDTour);
+            try
+            {
+                int n = this.dgvQLTour.CurrentCell.RowIndex;
+                string IDTour = dgvQLTour.Rows[n].Cells[0].Value.ToString();
+                tasks.Delete(IDTour);
+                MessageBox.Show("Xóa tour thành công");
+            }
+            catch (DbUpdateException ex)
+            {
+                // Xem inner exception để biết chi tiết lỗi
+                Exception innerException = ex.InnerException;
+                while (innerException != null)
+                {
+                    innerException = innerException.InnerException;
+                    MessageBox.Show(innerException.Message);
+                }
+                // Ghi log hoặc xử lý lỗi ở đây
+            }
+        }
+
+        private void btnThemAnh1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog sourceDialog = new OpenFileDialog();
+            sourceDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            sourceDialog.Title = "Select an Image File to Move";
+
+            if (sourceDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Đường dẫn đến thư mục bạn muốn lưu tệp
+
+                // Kết hợp đường dẫn và tên tệp đích
+                string destinationFilePath = Path.Combine(path, "AnhChiTiet1.jpg");
+
+                try
+                {
+                    // Đọc dữ liệu từ file nguồn
+                    byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
+
+                    // Ghi dữ liệu vào file đích
+                    File.WriteAllBytes(destinationFilePath, fileBytes);
+
+                    MessageBox.Show("Thêm Ảnh 1 Thành Công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnThemAnh2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog sourceDialog = new OpenFileDialog();
+            sourceDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            sourceDialog.Title = "Select an Image File to Move";
+
+            if (sourceDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Đường dẫn đến thư mục bạn muốn lưu tệp
+
+                // Kết hợp đường dẫn và tên tệp đích
+                string destinationFilePath = Path.Combine(path, "AnhChiTiet2.jpg");
+
+                try
+                {
+                    // Đọc dữ liệu từ file nguồn
+                    byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
+
+                    // Ghi dữ liệu vào file đích
+                    File.WriteAllBytes(destinationFilePath, fileBytes);
+
+                    MessageBox.Show("Thêm Ảnh 2 Thành Công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnThemAnh3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog sourceDialog = new OpenFileDialog();
+            sourceDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            sourceDialog.Title = "Select an Image File to Move";
+
+            if (sourceDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Đường dẫn đến thư mục bạn muốn lưu tệp
+
+                // Kết hợp đường dẫn và tên tệp đích
+                string destinationFilePath = Path.Combine(path, "AnhChiTiet3.jpg");
+
+                try
+                {
+                    // Đọc dữ liệu từ file nguồn
+                    byte[] fileBytes = File.ReadAllBytes(sourceDialog.FileName);
+
+                    // Ghi dữ liệu vào file đích
+                    File.WriteAllBytes(destinationFilePath, fileBytes);
+
+                    MessageBox.Show("Thêm Ảnh 3 Thành Công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.capnhat = true;
+                this.txtMaTour.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
+
 namespace ProjectTourism.BSLayer
 {
     internal class BLManager
@@ -418,6 +424,40 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+        public DataTable Load_dgvQLDanhGia()
+        {
+            DataTable dt = new DataTable();
+            var datas =
+                from cd in entity.DanhGias
+                select new { cd.MaChuyenDi, cd.MaTaiKhoan, cd.Sao, cd.BinhLuan};
+
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Mã Tài Khoản", typeof(string));
+            dt.Columns.Add("Số Sao", typeof(int));
+            dt.Columns.Add("Bình Luận", typeof(string));
+
+
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.MaTaiKhoan, data.Sao, data.BinhLuan);
+            }
+            return dt;
+        }
+        public DataTable Load_dgv_Idtour()
+        {
+            DataTable dt = new DataTable();
+            var datas = from lt in entity.LichTrinhs
+                        select new { lt.MaChuyenDi, lt.NgayBatDau,lt.MaHDV};
+            dt.Columns.Add("Mã Chuyến Đi", typeof(string));
+            dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
+            dt.Columns.Add("Mã HDV", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.NgayBatDau, data.MaHDV);
+            }
+            return dt;
+
+        }
         public void Add_QLTour(string iDTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi, string Gia, int SoLuong, string ChiTiet)
         {
             ChuyenDi new_tour = new ChuyenDi();
@@ -434,16 +474,114 @@ namespace ProjectTourism.BSLayer
             entity.ChuyenDis.Add(new_tour);
             entity.SaveChanges();
         }
-        public void Delete_QlTour(string iDTour)
+        public DataTable FilterRate(string IDTour)
         {
-            ChuyenDi Tour = new ChuyenDi
-            {
-                MaChuyenDi = iDTour 
-            };
+            DataTable dt = new DataTable();
+            var datas = from cd in entity.DanhGias
+                        where cd.MaChuyenDi == IDTour
+                        select  new { cd.MaChuyenDi, cd.MaTaiKhoan, cd.Sao, cd.BinhLuan };
 
-            entity.ChuyenDis.Attach(Tour);
-            entity.ChuyenDis.Remove(Tour);
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Mã Tài Khoản", typeof(string));
+            dt.Columns.Add("Số Sao", typeof(int));
+            dt.Columns.Add("Bình Luận", typeof(string));
+
+
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.MaTaiKhoan, data.Sao, data.BinhLuan);
+            }
+            return dt;
+
+        }
+        public string AvgRate(string IDTour)
+        {
+            var rate = (from cd in entity.DanhGias
+                             where cd.MaChuyenDi == IDTour
+                             select cd.Sao).Average();
+            return rate.ToString();
+        }
+        public void Update_LichTrinh(string MaChuyenDi, DateTime NgayBatDau, string MaHDV)
+        {
+            var tpQuery = entity.LichTrinhs.SingleOrDefault(lt => lt.MaChuyenDi == MaChuyenDi &&
+            lt.NgayBatDau.Year == NgayBatDau.Year && lt.NgayBatDau.Month == NgayBatDau.Month && lt.NgayBatDau.Day == NgayBatDau.Day);
+
+            if (tpQuery != null)
+            {
+                tpQuery.MaChuyenDi = MaChuyenDi;
+                tpQuery.NgayBatDau = NgayBatDau;
+                tpQuery.MaHDV = MaHDV;
+                entity.SaveChanges();
+            }
+        }
+        public void Huy_PhanCong(string MaChuyenDi, DateTime NgayBatDau)
+        {
+            var tpQuery = entity.LichTrinhs.SingleOrDefault(lt => lt.MaChuyenDi == MaChuyenDi &&
+            lt.NgayBatDau.Year == NgayBatDau.Year && lt.NgayBatDau.Month == NgayBatDau.Month && lt.NgayBatDau.Day == NgayBatDau.Day);
+
+            if (tpQuery != null)
+            {
+                tpQuery.MaChuyenDi = MaChuyenDi;
+                tpQuery.NgayBatDau = NgayBatDau;
+                tpQuery.MaHDV = null;
+                entity.SaveChanges();
+            }
+        }
+        public DataTable LichTrinhHD(string MaHDV)
+        {
+            DataTable dt = new DataTable();
+            var datas = from lt in entity.LichTrinhs
+                        where lt.MaHDV == MaHDV
+                        select new { lt.MaChuyenDi, lt.NgayBatDau, lt.MaHDV };
+            dt.Columns.Add("Mã Chuyến Đi", typeof(string));
+            dt.Columns.Add("NgayBatDau", typeof(DateTime));
+            dt.Columns.Add("Mã HDV", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.NgayBatDau, data.MaHDV);
+            }
+            return dt;
+        }
+        public void Delete(string MaChuyenDi)
+        {
+
+            var danhSachDuKhachToRemove = entity.DanhSachDuKhaches.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.DanhSachDuKhaches.RemoveRange(danhSachDuKhachToRemove);
+
+            var danhSachDangKiToRemove = entity.DanhSachDangKies.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.DanhSachDangKies.RemoveRange(danhSachDangKiToRemove);
+
+            var YeuCauToRemove = entity.YeuCaus.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.YeuCaus.RemoveRange(YeuCauToRemove);
+
+            var DanhGiaToRemove = entity.DanhGias.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.DanhGias.RemoveRange(DanhGiaToRemove);
+
+            var LichTrinhToRemove = entity.LichTrinhs.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.LichTrinhs.RemoveRange(LichTrinhToRemove);
+
+            var ChuyenDiToRemove = entity.ChuyenDis.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
+            entity.ChuyenDis.RemoveRange(ChuyenDiToRemove);
+
             entity.SaveChanges();
         }
+        public void Update_Tour(string MaTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi,string Gia, int SoLuong)
+        {
+            var tpQuery = (from idtour in entity.ChuyenDis
+                           where idtour.MaChuyenDi == MaTour
+                           select idtour).SingleOrDefault();
+
+            if (tpQuery != null)
+            {
+                tpQuery.TenChuyenDi = TenTour;
+                tpQuery.HinhThuc = HinhThuc;
+                tpQuery.HanhTrinh = HanhTrinh;
+                tpQuery.SoNgayDi = SoNgayDi;
+                tpQuery.Gia = Gia;
+                tpQuery.SoLuong = SoLuong;
+                entity.SaveChanges();
+            }
+        }
+
     }
 }

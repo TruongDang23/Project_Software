@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjectTourism.BSLayer;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
+
 namespace ProjectTourism
 {
     public partial class FormHuongDanVien : Form
@@ -26,20 +29,53 @@ namespace ProjectTourism
             InitializeComponent();
             changeInfo = ChangeInfo.None;
         }
-
         private void FormGuide_Load(object sender, EventArgs e)
         {
             LoadDataGridView();
+            this.cbb_ID.DataSource = bl.LoadGuides();
+            this.cbb_ID.DisplayMember = "Mã Hướng dẫn viên";
+            this.cbb_IdGuide.DataSource = bl.LoadGuides();
+            this.cbb_IdGuide.DisplayMember = "Mã Hướng dẫn viên";
+
+            // Thêm các ngày cần in đậm và thay đổi màu vào CustomMonthCalendar
+
+            // Thêm CustomMonthCalendar vào Controls của Form hoặc container khác
+        }
+        private void Highlight()
+        {
+            int i = 0;
+            DataTable lt = new DataTable();
+            string IDGuide_1 = this.cbb_ID.Text;
+            lt = bl.LichTrinhHD(IDGuide_1);
+            foreach (DataRow row in lt.Rows)
+            {
+                DateTime rowDateTime = Convert.ToDateTime(row["NgayBatDau"]);
+                if (rowDateTime != null) // So sánh theo ngày (bỏ qua phần thời gian)
+                {
+                    monthCalendar_hdv.AddBoldedDate(rowDateTime.Date);
+                }
+            }
 
         }
         private void LoadDataGridView()
         {
             try
             {
+                dgv_hdv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dgv_hdv.AutoResizeColumns();
+                dgv_hdv.AllowUserToResizeColumns = true;
+                dgv_hdv.AllowUserToOrderColumns = true;
                 dgv_hdv.DataSource = bl.LoadDataGuide();
-                dgv_hdv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+                dgv_Idtour.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dgv_Idtour.AutoResizeColumns();
+                dgv_Idtour.AllowUserToResizeColumns = true;
+                dgv_Idtour.AllowUserToOrderColumns = true;
+                dgv_Idtour.DataSource = bl.Load_dgv_Idtour();
+
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -57,6 +93,7 @@ namespace ProjectTourism
             btnThaydoi.Enabled = enable;
             btnXoa.Enabled = enable;
         }
+
         private void ChangeState_pnlInfo()
         {
             if (changeInfo == ChangeInfo.Them || changeInfo == ChangeInfo.Sua) { 
@@ -137,7 +174,7 @@ namespace ProjectTourism
             {
                 if (!tb_ID.Text.Trim().Equals(""))
                 {
-                    bl.AddDataGuide(tb_ID.Text, tb_ten.Text, tb_sdt.Text, tb_email.Text);
+                    bl.ChangeInfoGuide(tb_ID.Text, tb_ten.Text, tb_sdt.Text, tb_email.Text);
                     LoadDataGridView();
                 }
                 else
@@ -148,6 +185,50 @@ namespace ProjectTourism
             }
             changeInfo = ChangeInfo.None;
             ChangeState_pnlInfo();
-        } 
+        }
+
+
+        private void btn_phancong_Click(object sender, EventArgs e)
+        {
+            int n = this.dgv_Idtour.CurrentCell.RowIndex;
+            string IDTour = dgv_Idtour.Rows[n].Cells[0].Value.ToString();
+            DateTime StartDay = DateTime.Parse(dgv_Idtour.Rows[n].Cells[1].Value.ToString());
+            string IDGuide = cbb_IdGuide.Text;
+            try
+            {
+                bl.Update_LichTrinh(IDTour, StartDay, IDGuide);
+                MessageBox.Show("Phân công thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDataGridView();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnhuypc_Click(object sender, EventArgs e)
+        {
+            int n = this.dgv_Idtour.CurrentCell.RowIndex;
+            string IDTour = dgv_Idtour.Rows[n].Cells[0].Value.ToString();
+            DateTime StartDay = DateTime.Parse(dgv_Idtour.Rows[n].Cells[1].Value.ToString());
+            string IDGuide = cbb_IdGuide.Text;
+            try
+            {
+                bl.Huy_PhanCong(IDTour, StartDay);
+                MessageBox.Show("Hủy phân công thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDataGridView();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btn_Xem_Click(object sender, EventArgs e)
+        {
+            Highlight();
+            monthCalendar_hdv.UpdateBoldedDates();
+        }
     }
 }
