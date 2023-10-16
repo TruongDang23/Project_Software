@@ -32,7 +32,7 @@
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.btn_GuiYeuCau = new System.Windows.Forms.Button();
             this.dateTimePicker_KhoiHanh = new System.Windows.Forms.DateTimePicker();
-            this.tb_HoVaTen = new System.Windows.Forms.TextBox();
+            this.tb_SoLuong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.btn_QuayLai.TabIndex = 106;
             this.btn_QuayLai.Text = "Quay lại";
             this.btn_QuayLai.UseVisualStyleBackColor = false;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // btn_GuiYeuCau
             // 
@@ -63,6 +64,7 @@
             this.btn_GuiYeuCau.TabIndex = 105;
             this.btn_GuiYeuCau.Text = "Gửi yêu cầu";
             this.btn_GuiYeuCau.UseVisualStyleBackColor = false;
+            this.btn_GuiYeuCau.Click += new System.EventHandler(this.btn_GuiYeuCau_Click);
             // 
             // dateTimePicker_KhoiHanh
             // 
@@ -75,15 +77,15 @@
             this.dateTimePicker_KhoiHanh.Size = new System.Drawing.Size(293, 31);
             this.dateTimePicker_KhoiHanh.TabIndex = 104;
             // 
-            // tb_HoVaTen
+            // tb_SoLuong
             // 
-            this.tb_HoVaTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.tb_HoVaTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_HoVaTen.Location = new System.Drawing.Point(260, 252);
-            this.tb_HoVaTen.Multiline = true;
-            this.tb_HoVaTen.Name = "tb_HoVaTen";
-            this.tb_HoVaTen.Size = new System.Drawing.Size(90, 36);
-            this.tb_HoVaTen.TabIndex = 103;
+            this.tb_SoLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.tb_SoLuong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SoLuong.Location = new System.Drawing.Point(260, 252);
+            this.tb_SoLuong.Multiline = true;
+            this.tb_SoLuong.Name = "tb_SoLuong";
+            this.tb_SoLuong.Size = new System.Drawing.Size(90, 36);
+            this.tb_SoLuong.TabIndex = 103;
             // 
             // label2
             // 
@@ -141,13 +143,14 @@
             this.Controls.Add(this.btn_QuayLai);
             this.Controls.Add(this.btn_GuiYeuCau);
             this.Controls.Add(this.dateTimePicker_KhoiHanh);
-            this.Controls.Add(this.tb_HoVaTen);
+            this.Controls.Add(this.tb_SoLuong);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormTaoChuyenDiMoi";
             this.Text = "FormTaoChuyenDiMoi";
+            this.Load += new System.EventHandler(this.FormTaoChuyenDiMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,7 +162,7 @@
         private System.Windows.Forms.Button btn_QuayLai;
         private System.Windows.Forms.Button btn_GuiYeuCau;
         private System.Windows.Forms.DateTimePicker dateTimePicker_KhoiHanh;
-        private System.Windows.Forms.TextBox tb_HoVaTen;
+        private System.Windows.Forms.TextBox tb_SoLuong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label1;

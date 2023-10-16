@@ -40,7 +40,7 @@
             this.txtGiaVe = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.txtDiaDiemNoiTieng = new System.Windows.Forms.TextBox();
+            this.txtHanhTrinh = new System.Windows.Forms.TextBox();
             this.btnThem0 = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvQLTour = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDiaDiemNoiTiengttt = new System.Windows.Forms.TextBox();
+            this.txtHanhTrinhttt = new System.Windows.Forms.TextBox();
             this.txtMaTourttt = new System.Windows.Forms.TextBox();
             this.txtSoNgayDittt = new System.Windows.Forms.TextBox();
             this.txtLoaiHinhttt = new System.Windows.Forms.TextBox();
@@ -101,7 +101,7 @@
             this.panel1.Controls.Add(this.txtGiaVe);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnSua);
-            this.panel1.Controls.Add(this.txtDiaDiemNoiTieng);
+            this.panel1.Controls.Add(this.txtHanhTrinh);
             this.panel1.Controls.Add(this.btnThem0);
             this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.label7);
@@ -196,9 +196,9 @@
             this.btnDescrip.FlatAppearance.BorderSize = 0;
             this.btnDescrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescrip.ForeColor = System.Drawing.Color.Black;
-            this.btnDescrip.Location = new System.Drawing.Point(127, 598);
+            this.btnDescrip.Location = new System.Drawing.Point(129, 598);
             this.btnDescrip.Name = "btnDescrip";
-            this.btnDescrip.Size = new System.Drawing.Size(112, 37);
+            this.btnDescrip.Size = new System.Drawing.Size(110, 37);
             this.btnDescrip.TabIndex = 29;
             this.btnDescrip.Text = "Thêm";
             this.btnDescrip.UseVisualStyleBackColor = false;
@@ -253,16 +253,17 @@
             this.btnSua.TabIndex = 25;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // txtDiaDiemNoiTieng
+            // txtHanhTrinh
             // 
-            this.txtDiaDiemNoiTieng.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.txtDiaDiemNoiTieng.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaDiemNoiTieng.Location = new System.Drawing.Point(14, 420);
-            this.txtDiaDiemNoiTieng.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDiaDiemNoiTieng.Name = "txtDiaDiemNoiTieng";
-            this.txtDiaDiemNoiTieng.Size = new System.Drawing.Size(222, 29);
-            this.txtDiaDiemNoiTieng.TabIndex = 22;
+            this.txtHanhTrinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.txtHanhTrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHanhTrinh.Location = new System.Drawing.Point(14, 420);
+            this.txtHanhTrinh.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHanhTrinh.Name = "txtHanhTrinh";
+            this.txtHanhTrinh.Size = new System.Drawing.Size(222, 29);
+            this.txtHanhTrinh.TabIndex = 22;
             // 
             // btnThem0
             // 
@@ -301,9 +302,9 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(9, 397);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 21);
+            this.label7.Size = new System.Drawing.Size(94, 21);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Địa Điểm Nổi Tiếng";
+            this.label7.Text = "Hành Trinh";
             // 
             // btnThemBia
             // 
@@ -447,10 +448,12 @@
             // 
             // dgvQLTour
             // 
+            this.dgvQLTour.AllowUserToAddRows = false;
             this.dgvQLTour.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.dgvQLTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLTour.Location = new System.Drawing.Point(3, 3);
             this.dgvQLTour.Name = "dgvQLTour";
+            this.dgvQLTour.RowHeadersVisible = false;
             this.dgvQLTour.RowHeadersWidth = 51;
             this.dgvQLTour.Size = new System.Drawing.Size(712, 141);
             this.dgvQLTour.TabIndex = 28;
@@ -459,7 +462,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txtDiaDiemNoiTiengttt);
+            this.panel3.Controls.Add(this.txtHanhTrinhttt);
             this.panel3.Controls.Add(this.txtMaTourttt);
             this.panel3.Controls.Add(this.txtSoNgayDittt);
             this.panel3.Controls.Add(this.txtLoaiHinhttt);
@@ -481,16 +484,16 @@
             this.panel3.Size = new System.Drawing.Size(718, 515);
             this.panel3.TabIndex = 0;
             // 
-            // txtDiaDiemNoiTiengttt
+            // txtHanhTrinhttt
             // 
-            this.txtDiaDiemNoiTiengttt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.txtDiaDiemNoiTiengttt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaDiemNoiTiengttt.Location = new System.Drawing.Point(226, 353);
-            this.txtDiaDiemNoiTiengttt.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDiaDiemNoiTiengttt.Multiline = true;
-            this.txtDiaDiemNoiTiengttt.Name = "txtDiaDiemNoiTiengttt";
-            this.txtDiaDiemNoiTiengttt.Size = new System.Drawing.Size(430, 153);
-            this.txtDiaDiemNoiTiengttt.TabIndex = 32;
+            this.txtHanhTrinhttt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.txtHanhTrinhttt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHanhTrinhttt.Location = new System.Drawing.Point(226, 353);
+            this.txtHanhTrinhttt.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHanhTrinhttt.Multiline = true;
+            this.txtHanhTrinhttt.Name = "txtHanhTrinhttt";
+            this.txtHanhTrinhttt.Size = new System.Drawing.Size(430, 153);
+            this.txtHanhTrinhttt.TabIndex = 32;
             // 
             // txtMaTourttt
             // 
@@ -523,9 +526,9 @@
             // 
             this.txtGiaVettt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGiaVettt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaVettt.Location = new System.Drawing.Point(492, 39);
+            this.txtGiaVettt.Location = new System.Drawing.Point(24, 392);
             this.txtGiaVettt.Name = "txtGiaVettt";
-            this.txtGiaVettt.Size = new System.Drawing.Size(217, 19);
+            this.txtGiaVettt.Size = new System.Drawing.Size(192, 19);
             this.txtGiaVettt.TabIndex = 28;
             // 
             // txtTenTourttt
@@ -534,7 +537,7 @@
             this.txtTenTourttt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTourttt.Location = new System.Drawing.Point(100, 38);
             this.txtTenTourttt.Name = "txtTenTourttt";
-            this.txtTenTourttt.Size = new System.Drawing.Size(255, 19);
+            this.txtTenTourttt.Size = new System.Drawing.Size(609, 19);
             this.txtTenTourttt.TabIndex = 27;
             // 
             // label17
@@ -575,7 +578,7 @@
             this.lbGiaVe.AutoSize = true;
             this.lbGiaVe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGiaVe.ForeColor = System.Drawing.Color.Black;
-            this.lbGiaVe.Location = new System.Drawing.Point(375, 37);
+            this.lbGiaVe.Location = new System.Drawing.Point(20, 368);
             this.lbGiaVe.Name = "lbGiaVe";
             this.lbGiaVe.Size = new System.Drawing.Size(122, 21);
             this.lbGiaVe.TabIndex = 18;
@@ -703,7 +706,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDiaDiemNoiTieng;
+        private System.Windows.Forms.TextBox txtHanhTrinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSoNgayDi;
@@ -733,7 +736,7 @@
         private System.Windows.Forms.TextBox txtSoNgayDittt;
         private System.Windows.Forms.TextBox txtLoaiHinhttt;
         private System.Windows.Forms.TextBox txtGiaVettt;
-        private System.Windows.Forms.TextBox txtDiaDiemNoiTiengttt;
+        private System.Windows.Forms.TextBox txtHanhTrinhttt;
         private System.Windows.Forms.TextBox txtGiaVe;
         private System.Windows.Forms.DataGridView dgvQLTour;
         public System.Windows.Forms.Button btnDescrip;
