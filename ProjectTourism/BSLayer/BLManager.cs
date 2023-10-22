@@ -176,7 +176,19 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
-
+        public DataTable LoadDateFollowTours(string macd)
+        {
+            DataTable dt = new DataTable();
+            var datas = (from cd in entity.DanhSachDuKhaches
+                         where cd.MaChuyenDi == macd
+                         select cd.NgayBatDau).Distinct();
+            dt.Columns.Add("Ngày khởi hành", typeof(DateTime));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data);
+            }
+            return dt;
+        }
         public DataTable LoadGuides()
         {
             DataTable dt = new DataTable();
@@ -231,7 +243,31 @@ namespace ProjectTourism.BSLayer
             }
             return n;
         }
+        public DataTable LoadAllTickets()
+        {
+            var datas = from sub in entity.DanhSachDuKhaches
+                        select new { sub.MaChuyenDi, sub.NgayBatDau, sub.CCCD, sub.Ten, sub.SDT };
 
+            DataTable n = new DataTable();
+            n.Columns.Add("Mã Chuyến Đi", typeof(string));
+            n.Columns.Add("Ngày khởi hành", typeof(DateTime));
+            n.Columns.Add("CCCD", typeof(string));
+            n.Columns.Add("Tên Du khách", typeof(string));
+            n.Columns.Add("Số điện thoại", typeof(string));
+
+            foreach (var data in datas)
+            {
+                n.Rows.Add(
+                    data.MaChuyenDi,
+                    data.NgayBatDau,
+                    data.CCCD,
+                    data.Ten,
+                    data.SDT
+                    );
+            }
+
+            return n;
+        }
         public DataTable LoadTickets(string IDTour, DateTime date)
         {
             var datas = from sub in entity.DanhSachDuKhaches
@@ -241,7 +277,7 @@ namespace ProjectTourism.BSLayer
 
             DataTable n = new DataTable();
             n.Columns.Add("Mã Chuyến Đi", typeof(string));
-            n.Columns.Add("Ngày khởi hành", typeof(string));
+            n.Columns.Add("Ngày khởi hành", typeof(DateTime));
             n.Columns.Add("CCCD", typeof(string));
             n.Columns.Add("Tên Du khách", typeof(string));
             n.Columns.Add("Số điện thoại", typeof(string));
@@ -294,15 +330,8 @@ namespace ProjectTourism.BSLayer
 
         public void DeletePassenger(string iDTour, DateTime startDay, string CCCD)
         {
-            DanhSachDuKhach dk = new DanhSachDuKhach
-            {
-                MaChuyenDi = iDTour,
-                NgayBatDau = startDay,
-                CCCD = CCCD,
-            };
-
-            entity.DanhSachDuKhaches.Attach(dk);
-            entity.DanhSachDuKhaches.Remove(dk);
+            DanhSachDuKhach yc = entity.DanhSachDuKhaches.Where(x => x.MaChuyenDi == iDTour && x.NgayBatDau == startDay && x.CCCD == CCCD).FirstOrDefault<DanhSachDuKhach>();
+            entity.DanhSachDuKhaches.Remove(yc);
             entity.SaveChanges();
         }
 
@@ -319,33 +348,22 @@ namespace ProjectTourism.BSLayer
             entity.SaveChanges();
         }
 
-        public DataTable FindPassenger(string name, string cccd, string sdt)
+        public DataTable FindPassenger(string id, DateTime ngaydi, string cccd, string name, string sdt)
         {
             var pass = from dk in entity.DanhSachDuKhaches
-                       select new { dk.Ten, dk.CCCD, dk.SDT };
-
-            if (!string.IsNullOrEmpty(name))
-            {
-                pass = pass.Where(p => p.Ten == name);
-            }
-
-            if (!string.IsNullOrEmpty(cccd))
-            {
-                pass = pass.Where(p => p.CCCD == cccd);
-            }
-
-            if (!string.IsNullOrEmpty(sdt))
-            {
-                pass = pass.Where(p => p.SDT == sdt);
-            }
+                       where ((dk.MaChuyenDi == id || id == "") && (dk.NgayBatDau == ngaydi || ngaydi == new DateTime(1, 1, 1))
+                       && (dk.CCCD == cccd || cccd == "") && (dk.Ten == name || name == "") && (dk.SDT == sdt || sdt == ""))
+                       select dk;
 
             DataTable dt = new DataTable();
-            dt.Columns.Add("Tên du khách", typeof(string));
+            dt.Columns.Add("Mã Chuyến Đi", typeof(string));
+            dt.Columns.Add("Ngày khởi hành", typeof(DateTime));
             dt.Columns.Add("CCCD", typeof(string));
+            dt.Columns.Add("Tên Du khách", typeof(string));
             dt.Columns.Add("Số điện thoại", typeof(string));
             foreach (var p in pass)
             {
-                dt.Rows.Add(p.Ten, p.CCCD, p.SDT);
+                dt.Rows.Add(p.MaChuyenDi, p.NgayBatDau, p.CCCD, p.Ten, p.SDT);
             }
 
             return dt;
