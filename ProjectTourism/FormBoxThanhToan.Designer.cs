@@ -89,6 +89,7 @@
             this.btn_QuayLai.TabIndex = 4;
             this.btn_QuayLai.Text = "Quay lại";
             this.btn_QuayLai.UseVisualStyleBackColor = false;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // btn_XacNhan
             // 
@@ -107,6 +108,7 @@
             this.btn_XacNhan.TabIndex = 5;
             this.btn_XacNhan.Text = "Xác nhận";
             this.btn_XacNhan.UseVisualStyleBackColor = false;
+            this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
             // 
             // lb_SoTien
             // 

@@ -91,6 +91,7 @@
             this.btnQuayLai.TabIndex = 14;
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = false;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // btnDanhGia
             // 
@@ -106,6 +107,7 @@
             this.btnDanhGia.TabIndex = 13;
             this.btnDanhGia.Text = "Đánh giá";
             this.btnDanhGia.UseVisualStyleBackColor = false;
+            this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
             // 
             // tbSoSao
             // 

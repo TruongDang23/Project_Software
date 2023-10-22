@@ -95,5 +95,47 @@ namespace ProjectTourism.BSLayer
             entity.DanhSachDuKhaches.Remove(dk);
             entity.SaveChanges();
         }
+        public int SoTienThanhToan(string MaChuyenDi, DateTime NgayBatDau, int SoLuong)
+        {
+            int gia = 0;
+            var chuyendi = from cd in entity.ChuyenDis
+                           where cd.MaChuyenDi == MaChuyenDi
+                           select new { cd.Gia };
+            foreach (var ct in chuyendi)
+            {
+                gia = Int32.Parse(ct.Gia);
+            }
+            return gia * SoLuong;
+        }
+        public DataTable DanhSachDanhGia(string MaChuyenDi, DateTime NgayBatDau)
+        {
+            DataTable dt = new DataTable();
+            // Gộp hai bảng ThongTinCaNhan và DanhGia, để lấy các cột Ten, BinhLuan, Sao
+            var danhgia = from dg in entity.DanhGias
+                          join ttcn in entity.ThongTinCaNhans on dg.MaTaiKhoan equals ttcn.MaTaiKhoan
+                          where dg.MaChuyenDi == MaChuyenDi
+                          select new { ttcn.Ten, dg.BinhLuan, dg.Sao };
+            dt.Columns.Add("Ten", typeof(string));
+            dt.Columns.Add("BinhLuan", typeof(string));
+            dt.Columns.Add("Sao", typeof(int));
+            
+            foreach (var ct in danhgia)
+            {
+                dt.Rows.Add(ct.Ten, ct.BinhLuan, ct.Sao);
+            }
+            return dt;
+        }
+        public void ThemDanhGia(string MaTaiKhoan, string MaChuyenDi, string BinhLuan, int Sao)
+        {
+            DanhGia dg = new DanhGia();
+
+            dg.MaTaiKhoan = MaTaiKhoan;
+            dg.MaChuyenDi = MaChuyenDi;
+            dg.BinhLuan = BinhLuan;
+            dg.Sao = Sao;
+
+            entity.DanhGias.Add(dg);
+            entity.SaveChanges();
+        }
     }
 }
