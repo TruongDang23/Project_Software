@@ -23,5 +23,17 @@ namespace ProjectTourism
             this.BackgroundImage = img;
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
+        // Code của btn_LogOut
+        private void btn_LogOut_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OpenLoginForm));
+            this.Close(); 
+            t.Start();  
+        }
+        public static void OpenLoginForm()
+        {
+            Application.Run(new FormDNhap()); 
+        }
+        // Code của btn_LogOut
     }
 }
