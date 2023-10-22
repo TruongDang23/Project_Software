@@ -28,7 +28,8 @@ namespace ProjectTourism.BSLayer
             var list_passenger =
                 from dk in entity.DanhSachDuKhaches
                 group dk by new { dk.MaChuyenDi, dk.NgayBatDau } into g
-                select new {
+                select new
+                {
                     MaChuyenDi = g.Key.MaChuyenDi,
                     NgayBatDau = g.Key.NgayBatDau,
                     SoLuongNow = g.Count()
@@ -38,7 +39,8 @@ namespace ProjectTourism.BSLayer
                 from l in entity.LichTrinhs
                 join cd in entity.ChuyenDis
                 on l.MaChuyenDi equals cd.MaChuyenDi
-                select new {
+                select new
+                {
                     MaChuyenDi = l.MaChuyenDi,
                     NgayBatDau = l.NgayBatDau,
                     MaHDV = l.MaHDV,
@@ -51,7 +53,8 @@ namespace ProjectTourism.BSLayer
                 on new { i.MaChuyenDi, i.NgayBatDau } equals new { lp.MaChuyenDi, lp.NgayBatDau } into g
                 from lp in g.DefaultIfEmpty()
                 where i.NgayBatDau >= fromdate && i.NgayBatDau <= todate
-                select new {
+                select new
+                {
                     i.MaChuyenDi,
                     i.NgayBatDau,
                     MaHDV = i.MaHDV ?? "",
@@ -72,8 +75,8 @@ namespace ProjectTourism.BSLayer
                     data.NgayBatDau,
                     data.MaHDV,
                     data.SoLuongNow,
-                    data.SoLuongMax 
-                    ); 
+                    data.SoLuongMax
+                    );
             }
             return dt;
         }
@@ -85,7 +88,8 @@ namespace ProjectTourism.BSLayer
             var list_passenger =
                 from dk in entity.DanhSachDuKhaches
                 group dk by new { dk.MaChuyenDi, dk.NgayBatDau } into g
-                select new {
+                select new
+                {
                     MaChuyenDi = g.Key.MaChuyenDi,
                     NgayBatDau = g.Key.NgayBatDau,
                     SoLuongHienTai = g.Count()
@@ -95,11 +99,13 @@ namespace ProjectTourism.BSLayer
                 from l in entity.LichTrinhs
                 join cd in entity.ChuyenDis
                 on l.MaChuyenDi equals cd.MaChuyenDi
-                select new {
+                select new
+                {
                     MaChuyenDi = l.MaChuyenDi,
                     NgayBatDau = l.NgayBatDau,
                     MaHDV = l.MaHDV,
-                    SoLuongToiDa = cd.SoLuong };
+                    SoLuongToiDa = cd.SoLuong
+                };
 
             var datas =
                 from i in information
@@ -108,7 +114,8 @@ namespace ProjectTourism.BSLayer
                 from lp in g.DefaultIfEmpty()
                 where i.SoLuongToiDa <= quantity
 
-                select new {
+                select new
+                {
                     i.MaChuyenDi,
                     i.NgayBatDau,
                     MaHDV = i.MaHDV ?? "",
@@ -133,7 +140,7 @@ namespace ProjectTourism.BSLayer
                                     || i.MaHDV == "");
             }
 
-            if(not_eligible == false)
+            if (not_eligible == false)
             {
                 datas = datas.Where(i => i.SoLuongToiDa * 0.5 <= i.SoLuongHienTai);
             }
@@ -158,12 +165,12 @@ namespace ProjectTourism.BSLayer
         }
         public DataTable LoadTours()
         {
-            DataTable dt= new DataTable();
+            DataTable dt = new DataTable();
             var datas =
                 from cd in entity.ChuyenDis
                 select cd.MaChuyenDi;
             dt.Columns.Add("Mã Tour", typeof(string));
-            foreach ( var data in datas)
+            foreach (var data in datas)
             {
                 dt.Rows.Add(data);
             }
@@ -210,8 +217,8 @@ namespace ProjectTourism.BSLayer
         public DataTable GetNameOfTour(string IDTour)
         {
             var datas = from t in entity.ChuyenDis
-                    where t.MaChuyenDi == IDTour
-                    select new { t.TenChuyenDi, t.HinhThuc };
+                        where t.MaChuyenDi == IDTour
+                        select new { t.TenChuyenDi, t.HinhThuc };
 
             DataTable n = new DataTable();
             n.Columns.Add("Ten", typeof(string));
@@ -225,10 +232,10 @@ namespace ProjectTourism.BSLayer
             return n;
         }
 
-        public DataTable LoadTickets (string IDTour,DateTime date)
+        public DataTable LoadTickets(string IDTour, DateTime date)
         {
             var datas = from sub in entity.DanhSachDuKhaches
-                        where sub.MaChuyenDi == IDTour && sub.NgayBatDau.Day == date.Day && 
+                        where sub.MaChuyenDi == IDTour && sub.NgayBatDau.Day == date.Day &&
                         sub.NgayBatDau.Month == date.Month && sub.NgayBatDau.Year == date.Year
                         select new { sub.MaChuyenDi, sub.NgayBatDau, sub.CCCD, sub.Ten, sub.SDT };
 
@@ -277,7 +284,7 @@ namespace ProjectTourism.BSLayer
 
             dt.Columns.Add("Số lượng hiện tại", typeof(string));
             dt.Columns.Add("Số lượng tối đa", typeof(string));
-            foreach(var data in datas)
+            foreach (var data in datas)
             {
                 dt.Rows.Add(data.SoLuongHienTai, data.SoLuong);
             }
@@ -356,7 +363,7 @@ namespace ProjectTourism.BSLayer
             dt.Columns.Add("Email", typeof(string));
             foreach (var data in datas)
             {
-                dt.Rows.Add(data.MaHDV, data.Ten, data.SDT,data.Email);
+                dt.Rows.Add(data.MaHDV, data.Ten, data.SDT, data.Email);
             }
             return dt;
         }
@@ -420,7 +427,7 @@ namespace ProjectTourism.BSLayer
 
             foreach (var data in datas)
             {
-                dt.Rows.Add(data.MaChuyenDi, data.TenChuyenDi, data.HinhThuc, data.HanhTrinh, data.SoNgayDi, data.Gia, data.SoLuong, data.ChiTiet) ;
+                dt.Rows.Add(data.MaChuyenDi, data.TenChuyenDi, data.HinhThuc, data.HanhTrinh, data.SoNgayDi, data.Gia, data.SoLuong, data.ChiTiet);
             }
             return dt;
         }
@@ -429,7 +436,7 @@ namespace ProjectTourism.BSLayer
             DataTable dt = new DataTable();
             var datas =
                 from cd in entity.DanhGias
-                select new { cd.MaChuyenDi, cd.MaTaiKhoan, cd.Sao, cd.BinhLuan};
+                select new { cd.MaChuyenDi, cd.MaTaiKhoan, cd.Sao, cd.BinhLuan };
 
             dt.Columns.Add("Mã Tour", typeof(string));
             dt.Columns.Add("Mã Tài Khoản", typeof(string));
@@ -447,7 +454,7 @@ namespace ProjectTourism.BSLayer
         {
             DataTable dt = new DataTable();
             var datas = from lt in entity.LichTrinhs
-                        select new { lt.MaChuyenDi, lt.NgayBatDau,lt.MaHDV};
+                        select new { lt.MaChuyenDi, lt.NgayBatDau, lt.MaHDV };
             dt.Columns.Add("Mã Chuyến Đi", typeof(string));
             dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
             dt.Columns.Add("Mã HDV", typeof(string));
@@ -479,7 +486,7 @@ namespace ProjectTourism.BSLayer
             DataTable dt = new DataTable();
             var datas = from cd in entity.DanhGias
                         where cd.MaChuyenDi == IDTour
-                        select  new { cd.MaChuyenDi, cd.MaTaiKhoan, cd.Sao, cd.BinhLuan };
+                        select new { cd.MaChuyenDi, cd.MaTaiKhoan, cd.Sao, cd.BinhLuan };
 
             dt.Columns.Add("Mã Tour", typeof(string));
             dt.Columns.Add("Mã Tài Khoản", typeof(string));
@@ -497,8 +504,8 @@ namespace ProjectTourism.BSLayer
         public string AvgRate(string IDTour)
         {
             var rate = (from cd in entity.DanhGias
-                             where cd.MaChuyenDi == IDTour
-                             select cd.Sao).Average();
+                        where cd.MaChuyenDi == IDTour
+                        select cd.Sao).Average();
             return rate.ToString();
         }
         public void Update_LichTrinh(string MaChuyenDi, DateTime NgayBatDau, string MaHDV)
@@ -565,7 +572,7 @@ namespace ProjectTourism.BSLayer
 
             entity.SaveChanges();
         }
-        public void Update_Tour(string MaTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi,string Gia, int SoLuong)
+        public void Update_Tour(string MaTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi, string Gia, int SoLuong)
         {
             var tpQuery = (from idtour in entity.ChuyenDis
                            where idtour.MaChuyenDi == MaTour
@@ -585,7 +592,7 @@ namespace ProjectTourism.BSLayer
         public DataTable GetAllDataAccount()
         {
             DataTable dt = new DataTable();
-            var datas = from tk in entity.TaiKhoans                 
+            var datas = from tk in entity.TaiKhoans
                         select new { tk.TenDangNhap, tk.MatKhau, tk.MaTaiKhoan };
             dt.Columns.Add("Tên đăng nhập", typeof(string));
             dt.Columns.Add("Mật khẩu", typeof(string));
@@ -630,5 +637,206 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
-    }
+        public void AddAccount(string tentk, string mk, string matk)
+        {
+            TaiKhoan new_acc = new TaiKhoan();
+
+            new_acc.TenDangNhap = tentk;
+            new_acc.MatKhau = mk;
+            new_acc.MaTaiKhoan = matk;
+
+
+            entity.TaiKhoans.Add(new_acc);
+            entity.SaveChanges();
+        }
+        public void AddInfoPersonal(string matk, string ten, string sdt, string diachi, string email)
+        {
+            ThongTinCaNhan new_tt = new ThongTinCaNhan();
+
+            new_tt.MaTaiKhoan = matk;
+            new_tt.Ten = ten;
+            new_tt.SDT = sdt;
+            new_tt.DiaChi = diachi;
+            new_tt.Email = email;
+
+
+            entity.ThongTinCaNhans.Add(new_tt);
+            entity.SaveChanges();
+        }
+        public void UpdateInfoPersonal(string matk, string ten, string sdt, string diachi, string email)
+        {
+            var tpQuery = (from info_per in entity.ThongTinCaNhans
+                           where info_per.MaTaiKhoan == matk
+                           select info_per).SingleOrDefault();
+
+            if (tpQuery != null)
+            {
+                tpQuery.Ten = ten;
+                tpQuery.SDT = sdt;
+                tpQuery.DiaChi = diachi;
+                tpQuery.Email = email;
+                entity.SaveChanges();
+            }
+        }
+        public void DeleteAccount(string tentk, string matk)
+        {
+            ThongTinCaNhan ttcn = entity.ThongTinCaNhans.Where(x => x.MaTaiKhoan == matk).FirstOrDefault<ThongTinCaNhan>();
+            entity.ThongTinCaNhans.Remove(ttcn);
+            entity.SaveChanges();
+
+            TaiKhoan tk = entity.TaiKhoans.Where(x => x.TenDangNhap == tentk).FirstOrDefault<TaiKhoan>();
+            entity.TaiKhoans.Remove(tk);
+            entity.SaveChanges();
+        }
+        public string GetNewIdAccount()
+        {
+            int[] id_num = { 0, 0, 1 };
+            while (true)
+            {
+                string matk = "U" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
+                var tpQuery = (from info_per in entity.ThongTinCaNhans
+                               where info_per.MaTaiKhoan == matk
+                               select info_per).SingleOrDefault();
+                if (tpQuery != null)
+                {
+                    id_num[2] = id_num[2] + 1;
+                    id_num[1] = id_num[1] + id_num[2] / 10;
+                    id_num[0] = id_num[0] + id_num[1] / 10;
+
+                    id_num[2] = id_num[2] % 10;
+                    id_num[1] = id_num[1] % 10;
+                    id_num[0] = id_num[0] % 10;
+                }
+                else { break; }
+            }
+            return "U" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
+        }
+        public DataTable GetAllDataCustomer()
+        {
+            DataTable dt = new DataTable();
+            var datas = from per in entity.DanhSachDuKhaches
+                        select new { per.MaChuyenDi, per.NgayBatDau, per.CCCD, per.Ten, per.SDT };
+            dt.Columns.Add("Mã chuyến đi", typeof(string));
+            dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
+            dt.Columns.Add("CCCD", typeof(string));
+            dt.Columns.Add("Tên du khách", typeof(string));
+            dt.Columns.Add("SDT", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.NgayBatDau, data.CCCD, data.Ten, data.SDT);
+            }
+            return dt;
+        }
+        public DataTable FillterCustomer_IDTour()
+        {
+            DataTable dt = new DataTable();
+            var datas = (from per in entity.DanhSachDuKhaches
+                         select new { per.MaChuyenDi }).Distinct();
+            dt.Columns.Add("Mã chuyến đi", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi);
+            }
+            return dt;
+        }
+        public DataTable FillterCustomer_Date()
+        {
+            DataTable dt = new DataTable();
+            var datas = (from per in entity.DanhSachDuKhaches
+                         select new { per.NgayBatDau }).Distinct();
+            dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.NgayBatDau);
+            }
+            return dt;
+        }
+        public DataTable FillterCustomer_CCCD()
+        {
+            DataTable dt = new DataTable();
+            var datas = (from per in entity.DanhSachDuKhaches
+                         select new { per.CCCD }).Distinct();
+            dt.Columns.Add("CCCD", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.CCCD);
+            }
+            return dt;
+        }
+        public DataTable FillterCustomer_Ten()
+        {
+            DataTable dt = new DataTable();
+            var datas = (from per in entity.DanhSachDuKhaches
+                         select new { per.Ten }).Distinct();
+            dt.Columns.Add("Tên", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.Ten);
+            }
+            return dt;
+        }
+        public DataTable Fillter_Customer(bool att1, bool att2, bool att3, bool att4, string ma, DateTime date, string cccd, string ten)
+        {
+            DataTable dt = new DataTable();
+            var datas = (from per in entity.DanhSachDuKhaches
+                         where (per.MaChuyenDi == ma || !att1) && (per.NgayBatDau ==date || !att2) 
+                                && (per.CCCD == cccd || !att3) && (per.Ten == ten || !att4)
+                         select new { per.MaChuyenDi, per.NgayBatDau, per.CCCD, per.Ten, per.SDT });
+
+            dt.Columns.Add("Mã chuyến đi", typeof(string));
+            dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
+            dt.Columns.Add("CCCD", typeof(string));
+            dt.Columns.Add("Tên du khách", typeof(string));
+            dt.Columns.Add("SDT", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.NgayBatDau, data.CCCD, data.Ten, data.SDT);
+            }
+            return dt;
+        }
+        public void AddCustomer(string ma, DateTime date, string cccd, string ten, string sdt)
+        {
+            DanhSachDuKhach new_dk = new DanhSachDuKhach();
+
+            new_dk.MaChuyenDi = ma;
+            new_dk.NgayBatDau = date;
+            new_dk.CCCD = cccd;
+            new_dk.Ten = ten;
+            new_dk.SDT = sdt;
+
+            entity.DanhSachDuKhaches.Add(new_dk);
+            entity.SaveChanges();
+        }
+        public void UpdateCustomer(string ma, DateTime date, string cccd, string ten, string sdt)
+        {
+            var tpQuery = (from info_cus in entity.DanhSachDuKhaches
+                           where info_cus.MaChuyenDi == ma && info_cus.NgayBatDau == date && info_cus.CCCD == cccd
+                           select info_cus).SingleOrDefault();
+
+            if (tpQuery != null)
+            {
+                tpQuery.Ten = ten;
+                tpQuery.SDT = sdt;
+                entity.SaveChanges();
+            }
+        }
+        public void DeleteCustomer(string ma, DateTime ngay, string cccd)
+        {
+            DanhSachDuKhach dk = entity.DanhSachDuKhaches.Where(x => x.MaChuyenDi == ma && x.NgayBatDau == ngay && x.CCCD == cccd).FirstOrDefault<DanhSachDuKhach>();
+            entity.DanhSachDuKhaches.Remove(dk);
+            entity.SaveChanges();
+        }
+        public int Count_Customer(string ma, DateTime ngaydi)
+        {
+            var tpQuery = (from info_cus in entity.DanhSachDuKhaches
+                           where info_cus.MaChuyenDi == ma && info_cus.NgayBatDau == ngaydi
+                           select info_cus);
+            int count = 0;
+            foreach (var info_cus in tpQuery)
+            {
+                count++;
+            }
+            return count;
+        }
+    }   
 }
