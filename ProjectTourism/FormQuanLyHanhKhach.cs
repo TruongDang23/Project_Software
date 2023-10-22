@@ -51,6 +51,7 @@ namespace ProjectTourism
 
             dtp_ngaydi.ResetText();
         }
+
         private void LoadData()
         {
             try
@@ -72,13 +73,13 @@ namespace ProjectTourism
             this.cbb_id_tk.DisplayMember = "Mã chuyến đi";
             cbb_date.DataSource =  bl.FillterCustomer_Date();
             this.cbb_date.DisplayMember = "Ngày bắt đầu";
-            cbb_ngaydi_tk.DataSource = bl.FillterCustomer_Date();
-            this.cbb_ngaydi_tk.DisplayMember = "Ngày bắt đầu";
             cbb_cccd.DataSource = bl.FillterCustomer_CCCD();
             this.cbb_cccd.DisplayMember = "CCCD";
             cbb_ten.DataSource = bl.FillterCustomer_Ten();
             this.cbb_ten.DisplayMember = "Tên";
 
+            cbb_ngaydi_tk.DataSource = bl.FillterCustomer_Date_Follow_ID(cbb_id_tk.Text);
+            this.cbb_ngaydi_tk.DisplayMember = "Ngày bắt đầu";
             starting = false;
             Count_Customer(cbb_id_tk.Text, Convert.ToDateTime(cbb_ngaydi_tk.Text));
         }
@@ -118,7 +119,7 @@ namespace ProjectTourism
         private void dgv_hanhkhach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgv_hanhkhach.CurrentCell.RowIndex;
-            if (r < dgv_hanhkhach.Rows.Count - 1 && r >= 0)
+            if (r < dgv_hanhkhach.Rows.Count - 1 && r >= 0 && Modify != Modify.them)
             {
                 tb_id.Text = dukhack.MaChuyenDi = dgv_hanhkhach.Rows[r].Cells[0].Value.ToString();
                 dtp_ngaydi.Value = dukhack.NgayBatDau = Convert.ToDateTime(dgv_hanhkhach.Rows[r].Cells[1].Value);
@@ -159,7 +160,7 @@ namespace ProjectTourism
                     LoadData();
                 }
             }
-            else { MessageBox.Show("Bạn chưa chọn tài khoản muốn xóa!"); }
+            else { MessageBox.Show("Bạn chưa chọn du khách muốn xóa!"); }
         }
 
         private void btn_huy_Click(object sender, EventArgs e)
@@ -174,14 +175,20 @@ namespace ProjectTourism
             {
                 if (!tb_id.Text.Trim().Equals("") && !tb_cccd.Text.Trim().Equals(""))
                 {
-                    try
+                    if (!bl.Is_Customer_Exist(tb_id.Text, dtp_ngaydi.Value, tb_cccd.Text))
                     {
-                        bl.AddCustomer(tb_id.Text,dtp_ngaydi.Value, tb_cccd.Text, tb_ten.Text, tb_sdt.Text);
+                        try
+                        {
+                            bl.AddCustomer(tb_id.Text, dtp_ngaydi.Value, tb_cccd.Text, tb_ten.Text, tb_sdt.Text);
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Không thêm được. Lỗi rồi!!!");
+                        }
+                        Modify = Modify.none;
                     }
-                    catch (SqlException)
-                    {
-                        MessageBox.Show("Không thêm được. Lỗi rồi!!!");
-                    }
+                    else MessageBox.Show("Chuyến đi " + tb_id.Text + " khởi hành ngày " + dtp_ngaydi.Value + "\n"
+                                         + "Của du khách CCCD: " + tb_cccd.Text + " đã tồn tại!");
                 }
                 else
                 {
@@ -200,6 +207,7 @@ namespace ProjectTourism
                     {
                         MessageBox.Show("Không thêm được. Lỗi rồi!!!");
                     }
+                    Modify = Modify.none;
                 }
                 else
                 {
@@ -207,8 +215,8 @@ namespace ProjectTourism
                 }
             }
             LoadData();
-            Modify = Modify.none;
-            Enable_Info_text(false);
+            if (Modify == Modify.none)
+                Enable_Info_text(false);
         }
         private void Count_Customer(string ma, DateTime  ngaydi)
         {
@@ -218,7 +226,11 @@ namespace ProjectTourism
         private void cbb_id_tk_SelectedValueChanged(object sender, EventArgs e)
         {
             if (!starting)
+            {
                 Count_Customer(cbb_id_tk.Text, Convert.ToDateTime(cbb_ngaydi_tk.Text));
+                cbb_ngaydi_tk.DataSource = bl.FillterCustomer_Date_Follow_ID(cbb_id_tk.Text);
+                this.cbb_ngaydi_tk.DisplayMember = "Ngày bắt đầu";
+            }
         }
 
         private void cbb_ngaydi_tk_SelectedValueChanged(object sender, EventArgs e)

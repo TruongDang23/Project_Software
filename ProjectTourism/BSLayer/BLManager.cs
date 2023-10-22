@@ -649,6 +649,14 @@ namespace ProjectTourism.BSLayer
             entity.TaiKhoans.Add(new_acc);
             entity.SaveChanges();
         }
+        public bool Is_Account_Exist(string tendn)
+        {
+            var acc = (from tk in entity.TaiKhoans
+                       where tk.TenDangNhap == tendn
+                       select tk).SingleOrDefault();
+            if (acc == null) { return  false; }
+            return true;
+        }
         public void AddInfoPersonal(string matk, string ten, string sdt, string diachi, string email)
         {
             ThongTinCaNhan new_tt = new ThongTinCaNhan();
@@ -751,6 +759,19 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+        public DataTable FillterCustomer_Date_Follow_ID(string id)
+        {
+            DataTable dt = new DataTable();
+            var datas = (from per in entity.DanhSachDuKhaches
+                         where per.MaChuyenDi == id
+                         select new { per.NgayBatDau }).Distinct();
+            dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.NgayBatDau);
+            }
+            return dt;
+        }
         public DataTable FillterCustomer_CCCD()
         {
             DataTable dt = new DataTable();
@@ -807,6 +828,14 @@ namespace ProjectTourism.BSLayer
             entity.DanhSachDuKhaches.Add(new_dk);
             entity.SaveChanges();
         }
+        public bool Is_Customer_Exist(string id, DateTime ngaydi, string cccd)
+        {
+            var acc = (from tk in entity.DanhSachDuKhaches
+                       where tk.MaChuyenDi == id && tk.NgayBatDau == ngaydi && tk.CCCD == cccd
+                       select tk).SingleOrDefault();
+            if (acc == null) { return false; }
+            return true;
+        }
         public void UpdateCustomer(string ma, DateTime date, string cccd, string ten, string sdt)
         {
             var tpQuery = (from info_cus in entity.DanhSachDuKhaches
@@ -837,6 +866,53 @@ namespace ProjectTourism.BSLayer
                 count++;
             }
             return count;
+        }
+        public DataTable GetDataRequest()
+        {
+            DataTable dt = new DataTable();
+            var datas = from req in entity.YeuCaus
+                        select new { req.MaTaiKhoan, req.MaChuyenDi, req.NgayBatDau, req.SoLuong};
+            dt.Columns.Add("Mã tài khoản", typeof(string));
+            dt.Columns.Add("Mã chuyến đi", typeof(string));
+            dt.Columns.Add("Ngày bắt đầu", typeof(DateTime));
+            dt.Columns.Add("Số lượng", typeof(int));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.MaTaiKhoan, data.MaChuyenDi,data.NgayBatDau, data.SoLuong);
+            }
+            return dt;
+        }
+        public void DeleteRequest(string matk, string macd, DateTime ngaydi)
+        {
+            YeuCau yc = entity.YeuCaus.Where(x => x.MaTaiKhoan == matk && x.MaChuyenDi == macd && x.NgayBatDau == ngaydi).FirstOrDefault<YeuCau>();
+            entity.YeuCaus.Remove(yc);
+            entity.SaveChanges();
+        }
+        public DataTable GetDataUsername()
+        {
+            DataTable dt = new DataTable();
+            var datas = from tk in entity.TaiKhoans
+                        select new { tk.TenDangNhap };
+            dt.Columns.Add("Tên người dùng", typeof(string));
+            foreach (var data in datas)
+            {
+                dt.Rows.Add(data.TenDangNhap);
+            }
+            return dt;
+        }
+        public string GetIDAccount(string username)
+        {
+            var datas = (from tk in entity.TaiKhoans
+                         where tk.TenDangNhap == username
+                         select tk.MaTaiKhoan).SingleOrDefault();
+            return datas;
+        }
+        public string GetEmail(string matk)
+        {
+            var datas = (from tk in entity.ThongTinCaNhans
+                         where tk.MaTaiKhoan == matk
+                         select tk.Email ).SingleOrDefault();
+            return datas;
         }
     }   
 }

@@ -31,6 +31,7 @@
             this.pnl_tour = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_hanhkhach = new System.Windows.Forms.Panel();
+            this.btn_reload = new System.Windows.Forms.Button();
             this.pnl_modify = new System.Windows.Forms.Panel();
             this.tb_sdt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.cbb_id_tk = new System.Windows.Forms.ComboBox();
             this.dgv_hanhkhach = new System.Windows.Forms.DataGridView();
             this.dgv_hdv = new System.Windows.Forms.DataGridView();
-            this.btn_reload = new System.Windows.Forms.Button();
             this.pnl_tour.SuspendLayout();
             this.pnl_hanhkhach.SuspendLayout();
             this.pnl_modify.SuspendLayout();
@@ -120,6 +120,20 @@
             this.pnl_hanhkhach.Name = "pnl_hanhkhach";
             this.pnl_hanhkhach.Size = new System.Drawing.Size(996, 543);
             this.pnl_hanhkhach.TabIndex = 53;
+            // 
+            // btn_reload
+            // 
+            this.btn_reload.BackColor = System.Drawing.Color.White;
+            this.btn_reload.BackgroundImage = global::ProjectTourism.Properties.Resources.reload;
+            this.btn_reload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_reload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_reload.Location = new System.Drawing.Point(691, 8);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(40, 40);
+            this.btn_reload.TabIndex = 57;
+            this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // pnl_modify
             // 
@@ -565,11 +579,11 @@
             // 
             this.tb_kh.BackColor = System.Drawing.Color.White;
             this.tb_kh.Enabled = false;
-            this.tb_kh.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_kh.Location = new System.Drawing.Point(122, 181);
+            this.tb_kh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_kh.Location = new System.Drawing.Point(153, 158);
             this.tb_kh.Multiline = true;
             this.tb_kh.Name = "tb_kh";
-            this.tb_kh.Size = new System.Drawing.Size(109, 25);
+            this.tb_kh.Size = new System.Drawing.Size(59, 48);
             this.tb_kh.TabIndex = 43;
             // 
             // label16
@@ -620,20 +634,6 @@
             this.dgv_hdv.RowTemplate.Height = 24;
             this.dgv_hdv.Size = new System.Drawing.Size(207, 256);
             this.dgv_hdv.TabIndex = 31;
-            // 
-            // btn_reload
-            // 
-            this.btn_reload.BackColor = System.Drawing.Color.White;
-            this.btn_reload.BackgroundImage = global::ProjectTourism.Properties.Resources.reload;
-            this.btn_reload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_reload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_reload.Location = new System.Drawing.Point(691, 8);
-            this.btn_reload.Name = "btn_reload";
-            this.btn_reload.Size = new System.Drawing.Size(40, 40);
-            this.btn_reload.TabIndex = 57;
-            this.btn_reload.UseVisualStyleBackColor = false;
-            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // FormQuanLyHanhKhach
             // 

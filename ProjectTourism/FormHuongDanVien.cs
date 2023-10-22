@@ -107,7 +107,7 @@ namespace ProjectTourism
         private void dgv_hdv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgv_hdv.CurrentCell.RowIndex;
-            if (r < dgv_hdv.Rows.Count - 1 && r>=0)
+            if (r < dgv_hdv.Rows.Count && r>=0)
             {
                 tb_ID.Text = dgv_hdv.Rows[r].Cells[0].Value.ToString();
                 tb_ten.Text = dgv_hdv.Rows[r].Cells[1].Value.ToString();

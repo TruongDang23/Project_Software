@@ -46,6 +46,8 @@ namespace ProjectTourism
         }
         private void ChangeStateModify()
         {
+            ResetTextPnlAccount();
+            ResetTextPnlInfo();
             if (state == Modify.Khong || state == Modify.Them) {
                 ResetTextPnlAccount();
                 ResetTextPnlInfo();
@@ -151,16 +153,21 @@ namespace ProjectTourism
             {
                 if (!tb_modify_tendn.Text.Trim().Equals("") && !tb_modify_mk.Text.Trim().Equals(""))
                 {
-                    try
+                    if (!bl.Is_Account_Exist(tb_modify_tendn.Text))
                     {
-                        string matk = bl.GetNewIdAccount();
-                        bl.AddAccount(tb_modify_tendn.Text, tb_modify_mk.Text,matk);
-                        bl.AddInfoPersonal(matk, tb_ten.Text, tb_sdt.Text, tb_diachi.Text, tb_email.Text);
+                        try
+                        {
+                            string matk = bl.GetNewIdAccount();
+                            bl.AddAccount(tb_modify_tendn.Text, tb_modify_mk.Text, matk);
+                            bl.AddInfoPersonal(matk, tb_ten.Text, tb_sdt.Text, tb_diachi.Text, tb_email.Text);
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Không thêm được. Lỗi rồi!!!");
+                        }
+                        state = Modify.Khong;
                     }
-                    catch (SqlException)
-                    {
-                        MessageBox.Show("Không thêm được. Lỗi rồi!!!");
-                    }
+                    else MessageBox.Show("Tên đăng nhập đã tồn tại!");
                 }
                 else
                 {
@@ -169,18 +176,30 @@ namespace ProjectTourism
             }
             else if (state == Modify.Sua)
             {
-                try
+                if (!tb_modify_tendn.Text.Trim().Equals("") && !tb_modify_mk.Text.Trim().Equals(""))
                 {
-                    bl.UpdateInfoPersonal(current.MaTaiKhoan, tb_ten.Text, tb_sdt.Text, tb_diachi.Text, tb_email.Text);
+                    if (bl.Is_Account_Exist(tb_modify_tendn.Text))
+                    {
+                        try
+                        {
+                            bl.UpdateInfoPersonal(current.MaTaiKhoan, tb_ten.Text, tb_sdt.Text, tb_diachi.Text, tb_email.Text);
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Không sửa được. Lỗi rồi!!!");
+                        }
+                        state = Modify.Khong;
+                    }
+                    else MessageBox.Show("Tên đăng nhập không tồn tại!");
                 }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không sửa được. Lỗi rồi!!!");
-                }
+                else MessageBox.Show("Chọn người dùng để thay đổi thông tin");
+
             }
-            state = Modify.Khong;
-            ChangeStateModify();
-            LoadData();
+            if (state == Modify.Khong)
+            {
+                ChangeStateModify();
+                LoadData();
+            }
         }
 
         private void btn_huy_Click(object sender, EventArgs e)

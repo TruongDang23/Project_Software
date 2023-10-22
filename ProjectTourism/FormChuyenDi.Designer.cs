@@ -135,8 +135,11 @@
             // 
             // dataGridView_DSChuyenDi
             // 
+            this.dataGridView_DSChuyenDi.AllowUserToResizeColumns = false;
+            this.dataGridView_DSChuyenDi.AllowUserToResizeRows = false;
             this.dataGridView_DSChuyenDi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView_DSChuyenDi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_DSChuyenDi.ColumnHeadersVisible = false;
             this.dataGridView_DSChuyenDi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tên,
             this.Column1,
@@ -147,6 +150,7 @@
             this.Column6});
             this.dataGridView_DSChuyenDi.Location = new System.Drawing.Point(35, 183);
             this.dataGridView_DSChuyenDi.Name = "dataGridView_DSChuyenDi";
+            this.dataGridView_DSChuyenDi.RowHeadersVisible = false;
             this.dataGridView_DSChuyenDi.RowHeadersWidth = 51;
             this.dataGridView_DSChuyenDi.RowTemplate.Height = 24;
             this.dataGridView_DSChuyenDi.Size = new System.Drawing.Size(1167, 160);
@@ -272,7 +276,7 @@
             this.label1.Location = new System.Drawing.Point(347, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(744, 46);
+            this.label1.Size = new System.Drawing.Size(719, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "HÃY TRẢI NGHIỆM VÀ KHÁM PHÁ VIỆT NAM";
             // 
