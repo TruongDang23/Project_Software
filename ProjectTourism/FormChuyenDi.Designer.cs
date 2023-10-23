@@ -30,15 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChuyenDi));
             this.btn_LienHe = new System.Windows.Forms.Button();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tên = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_ChiTiet = new System.Windows.Forms.Button();
-            this.dataGridView_DSChuyenDi = new System.Windows.Forms.DataGridView();
+            this.dgv_DSChuyenDi = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.tb_Sao = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,7 +47,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tb_Gia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DSChuyenDi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSChuyenDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,55 +65,6 @@
             this.btn_LienHe.Text = "Liên hệ";
             this.btn_LienHe.UseVisualStyleBackColor = false;
             // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Số sao";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Giá vé";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Người tham gia";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Số ngày";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Khởi hành";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Hành trình";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Tên
-            // 
-            this.Tên.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tên.HeaderText = "Tên";
-            this.Tên.MinimumWidth = 6;
-            this.Tên.Name = "Tên";
-            // 
             // btn_ChiTiet
             // 
             this.btn_ChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
@@ -133,24 +77,16 @@
             this.btn_ChiTiet.Text = "Chi tiết";
             this.btn_ChiTiet.UseVisualStyleBackColor = false;
             // 
-            // dataGridView_DSChuyenDi
+            // dgv_DSChuyenDi
             // 
-            this.dataGridView_DSChuyenDi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView_DSChuyenDi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_DSChuyenDi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Tên,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView_DSChuyenDi.Location = new System.Drawing.Point(35, 183);
-            this.dataGridView_DSChuyenDi.Name = "dataGridView_DSChuyenDi";
-            this.dataGridView_DSChuyenDi.RowHeadersWidth = 51;
-            this.dataGridView_DSChuyenDi.RowTemplate.Height = 24;
-            this.dataGridView_DSChuyenDi.Size = new System.Drawing.Size(1167, 160);
-            this.dataGridView_DSChuyenDi.TabIndex = 55;
+            this.dgv_DSChuyenDi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_DSChuyenDi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DSChuyenDi.Location = new System.Drawing.Point(35, 183);
+            this.dgv_DSChuyenDi.Name = "dgv_DSChuyenDi";
+            this.dgv_DSChuyenDi.RowHeadersWidth = 51;
+            this.dgv_DSChuyenDi.RowTemplate.Height = 24;
+            this.dgv_DSChuyenDi.Size = new System.Drawing.Size(1167, 160);
+            this.dgv_DSChuyenDi.TabIndex = 55;
             // 
             // label10
             // 
@@ -272,7 +208,7 @@
             this.label1.Location = new System.Drawing.Point(347, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(744, 46);
+            this.label1.Size = new System.Drawing.Size(719, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "HÃY TRẢI NGHIỆM VÀ KHÁM PHÁ VIỆT NAM";
             // 
@@ -292,7 +228,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.btn_LienHe);
             this.panel2.Controls.Add(this.btn_ChiTiet);
-            this.panel2.Controls.Add(this.dataGridView_DSChuyenDi);
+            this.panel2.Controls.Add(this.dgv_DSChuyenDi);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.tb_Sao);
             this.panel2.Controls.Add(this.label9);
@@ -341,7 +277,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormChuyenDi";
             this.Text = "FormChuyenDi";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DSChuyenDi)).EndInit();
+            this.Load += new System.EventHandler(this.FormChuyenDi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSChuyenDi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -354,15 +291,8 @@
         #endregion
 
         private System.Windows.Forms.Button btn_LienHe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tên;
         private System.Windows.Forms.Button btn_ChiTiet;
-        private System.Windows.Forms.DataGridView dataGridView_DSChuyenDi;
+        private System.Windows.Forms.DataGridView dgv_DSChuyenDi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tb_Sao;
         private System.Windows.Forms.Label label9;

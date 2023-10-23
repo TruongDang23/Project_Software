@@ -41,6 +41,8 @@
             this.btnDangky = new System.Windows.Forms.Button();
             this.btnForgot = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rdbUser = new System.Windows.Forms.RadioButton();
+            this.rdbMag = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -144,6 +146,7 @@
             this.btnDangnhap.TabIndex = 11;
             this.btnDangnhap.Text = "Đăng nhập";
             this.btnDangnhap.UseVisualStyleBackColor = false;
+            this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
             // btnDangky
             // 
@@ -194,12 +197,37 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // rdbUser
+            // 
+            this.rdbUser.AutoSize = true;
+            this.rdbUser.Location = new System.Drawing.Point(68, 333);
+            this.rdbUser.Name = "rdbUser";
+            this.rdbUser.Size = new System.Drawing.Size(97, 20);
+            this.rdbUser.TabIndex = 14;
+            this.rdbUser.TabStop = true;
+            this.rdbUser.Text = "Người dùng";
+            this.rdbUser.UseVisualStyleBackColor = true;
+            // 
+            // rdbMag
+            // 
+            this.rdbMag.AutoSize = true;
+            this.rdbMag.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rdbMag.Location = new System.Drawing.Point(276, 333);
+            this.rdbMag.Name = "rdbMag";
+            this.rdbMag.Size = new System.Drawing.Size(73, 20);
+            this.rdbMag.TabIndex = 15;
+            this.rdbMag.TabStop = true;
+            this.rdbMag.Text = "Quản lý";
+            this.rdbMag.UseVisualStyleBackColor = false;
+            // 
             // FormDNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(438, 476);
+            this.Controls.Add(this.rdbMag);
+            this.Controls.Add(this.rdbUser);
             this.Controls.Add(this.btnForgot);
             this.Controls.Add(this.btnDangky);
             this.Controls.Add(this.btnDangnhap);
@@ -240,5 +268,7 @@
         private System.Windows.Forms.Button btnDangky;
         private System.Windows.Forms.Button btnForgot;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton rdbUser;
+        private System.Windows.Forms.RadioButton rdbMag;
     }
 }

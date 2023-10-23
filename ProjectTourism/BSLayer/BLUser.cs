@@ -36,6 +36,28 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+        public DataTable Load_dgvDSChuyenDi()
+        {
+            DataTable dt = new DataTable();
+            var chuyendi = from cd in entity.ChuyenDis
+                           join lt in entity.LichTrinhs on cd.MaChuyenDi equals lt.MaChuyenDi
+                           join dg in entity.DanhGias on cd.MaChuyenDi equals dg.MaChuyenDi
+                           where cd.MaChuyenDi == lt.MaChuyenDi && lt.NgayBatDau == lt.NgayBatDau
+                           select new { cd.MaChuyenDi,cd.TenChuyenDi, cd.HanhTrinh, lt.NgayBatDau, cd.SoNgayDi, cd.SoLuong, cd.Gia, dg.Sao };
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Tên Tour", typeof(string));
+            dt.Columns.Add("Hành Trình", typeof(string));
+            dt.Columns.Add("Khởi Hành", typeof(string));
+            dt.Columns.Add("Số Ngày Đi", typeof(int));
+            dt.Columns.Add("Số Lượng", typeof(int));
+            dt.Columns.Add("Giá", typeof(string));
+            dt.Columns.Add("Số sao", typeof(string));
 
+            foreach (var data in chuyendi)
+            {
+                dt.Rows.Add( data.MaChuyenDi,data.TenChuyenDi, data.HanhTrinh,data.NgayBatDau, data.SoNgayDi, data.SoLuong, data.Gia, data.Sao);
+            }
+            return dt;
+        }
     }
 }
