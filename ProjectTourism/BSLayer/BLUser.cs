@@ -160,7 +160,7 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
-        public DataTable FilterData(string diemden ,DateTime ngaybatdau, string gia, int sao, bool not_eligible)
+        public DataTable FilterData(string diemden, DateTime ngaybatdau, string gia, int sao, bool not_eligible)
         {
             DataTable dt = new DataTable();
 
@@ -191,7 +191,7 @@ namespace ProjectTourism.BSLayer
                 join lp in list_passenger
                 on new { i.MaChuyenDi, i.NgayBatDau } equals new { lp.MaChuyenDi, lp.NgayBatDau } into g
                 from lp in g.DefaultIfEmpty()
-                where i.SoLuongToiDa <= quantity
+                where i.SoLuongToiDa <= 25
 
                 select new
                 {
@@ -201,7 +201,7 @@ namespace ProjectTourism.BSLayer
                     SoLuongHienTai = (int?)lp.SoLuongHienTai ?? 0,
                     i.SoLuongToiDa
                 };
-
-            
+            return dt;
+        } 
     }
 }

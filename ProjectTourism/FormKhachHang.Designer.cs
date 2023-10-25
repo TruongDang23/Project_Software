@@ -31,9 +31,9 @@
             this.lb_title = new System.Windows.Forms.Label();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnquanlytaikhoan = new System.Windows.Forms.Button();
+            this.btnlienlac = new System.Windows.Forms.Button();
             this.btnquanlyhanhkhach = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnquanlytaikhoan = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnlienlac);
             this.panel1.Controls.Add(this.btnquanlyhanhkhach);
             this.panel1.Controls.Add(this.btnquanlytaikhoan);
             this.panel1.Location = new System.Drawing.Point(12, 57);
@@ -67,19 +67,19 @@
             this.panel1.Size = new System.Drawing.Size(568, 193);
             this.panel1.TabIndex = 34;
             // 
-            // btnquanlytaikhoan
+            // btnlienlac
             // 
-            this.btnquanlytaikhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnquanlytaikhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnquanlytaikhoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnquanlytaikhoan.Location = new System.Drawing.Point(69, 16);
-            this.btnquanlytaikhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnquanlytaikhoan.Name = "btnquanlytaikhoan";
-            this.btnquanlytaikhoan.Size = new System.Drawing.Size(438, 43);
-            this.btnquanlytaikhoan.TabIndex = 34;
-            this.btnquanlytaikhoan.Text = "Quản lý tài khoản";
-            this.btnquanlytaikhoan.UseVisualStyleBackColor = false;
-            this.btnquanlytaikhoan.Click += new System.EventHandler(this.btnquanlytaikhoan_Click);
+            this.btnlienlac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btnlienlac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlienlac.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnlienlac.Location = new System.Drawing.Point(69, 131);
+            this.btnlienlac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnlienlac.Name = "btnlienlac";
+            this.btnlienlac.Size = new System.Drawing.Size(438, 43);
+            this.btnlienlac.TabIndex = 36;
+            this.btnlienlac.Text = "Quản lý yêu cầu và liên lạc khách hàng\r\n";
+            this.btnlienlac.UseVisualStyleBackColor = false;
+            this.btnlienlac.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnquanlyhanhkhach
             // 
@@ -95,19 +95,19 @@
             this.btnquanlyhanhkhach.UseVisualStyleBackColor = false;
             this.btnquanlyhanhkhach.Click += new System.EventHandler(this.btnquanlyhanhkhach_Click);
             // 
-            // button2
+            // btnquanlytaikhoan
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(69, 131);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(438, 43);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Quản lý yêu cầu và liên lạc khách hàng\r\n";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnquanlytaikhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btnquanlytaikhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnquanlytaikhoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnquanlytaikhoan.Location = new System.Drawing.Point(69, 16);
+            this.btnquanlytaikhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnquanlytaikhoan.Name = "btnquanlytaikhoan";
+            this.btnquanlytaikhoan.Size = new System.Drawing.Size(438, 43);
+            this.btnquanlytaikhoan.TabIndex = 34;
+            this.btnquanlytaikhoan.Text = "Quản lý tài khoản";
+            this.btnquanlytaikhoan.UseVisualStyleBackColor = false;
+            this.btnquanlytaikhoan.Click += new System.EventHandler(this.btnquanlytaikhoan_Click);
             // 
             // FormKhachHang
             // 
@@ -130,7 +130,7 @@
         private System.Windows.Forms.Label lb_title;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnlienlac;
         private System.Windows.Forms.Button btnquanlyhanhkhach;
         private System.Windows.Forms.Button btnquanlytaikhoan;
     }
