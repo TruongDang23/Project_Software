@@ -43,6 +43,7 @@ namespace ProjectTourism
         }
         private void Highlight()
         {
+            int i = 0;
             DataTable lt = new DataTable();
             string IDGuide_1 = this.cbb_ID.Text;
             lt = bl.LichTrinhHD(IDGuide_1);
