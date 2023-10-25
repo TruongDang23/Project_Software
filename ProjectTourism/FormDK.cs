@@ -21,11 +21,6 @@ namespace ProjectTourism
             InitializeComponent();
         }
 
-        private void FormRegister_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
             FormDNhap formLogin = new FormDNhap();
@@ -38,11 +33,8 @@ namespace ProjectTourism
         {
             string tk = txtUser.Text;
             string mk = txtPass.Text;
-            string email = txtEmail.Text;
-            string ten=txtTen.Text;
-            string sdt = txtSoDienThoai.Text;
-            string diachi = txtDiaChi.Text;
-
+            string nhaplaimk = txtNhapLaiMatKhau.Text;
+            
             try
             {
                 if (blSystem.ExistAccount(tk) == false)
@@ -51,10 +43,9 @@ namespace ProjectTourism
                     check = MessageBox.Show("Do you want to add this Account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (check == DialogResult.Yes)
                     {
-                        blSystem.AddUser(tk, mk, email,ten, diachi,sdt, ref err);
+                        blSystem.AddUser(tk, mk,nhaplaimk, ref err);
                         MessageBox.Show("Added Successfully!");
-
-                        FormDNhap form = new FormDNhap();
+                        FormThongTinCaNhan form = new FormThongTinCaNhan();
                         form.ShowDialog();
                         this.Close();
                     }
