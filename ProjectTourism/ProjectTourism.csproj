@@ -212,6 +212,12 @@
     <Compile Include="FormTaoChuyenDiMoi.Designer.cs">
       <DependentUpon>FormTaoChuyenDiMoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongTinCaNhan.Designer.cs">
+      <DependentUpon>FormThongTinCaNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoChuyenDiMoi.resx">
       <DependentUpon>FormTaoChuyenDiMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongTinCaNhan.resx">
+      <DependentUpon>FormThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>

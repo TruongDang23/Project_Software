@@ -86,7 +86,7 @@
             this.pnl_account.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.pnl_account.Location = new System.Drawing.Point(23, 19);
             this.pnl_account.Name = "pnl_account";
-            this.pnl_account.Size = new System.Drawing.Size(1138, 674);
+            this.pnl_account.Size = new System.Drawing.Size(1166, 674);
             this.pnl_account.TabIndex = 32;
             // 
             // pnl_modify_account
@@ -100,7 +100,7 @@
             this.pnl_modify_account.Controls.Add(this.btn_accxoa);
             this.pnl_modify_account.Location = new System.Drawing.Point(748, 63);
             this.pnl_modify_account.Name = "pnl_modify_account";
-            this.pnl_modify_account.Size = new System.Drawing.Size(373, 597);
+            this.pnl_modify_account.Size = new System.Drawing.Size(403, 597);
             this.pnl_modify_account.TabIndex = 44;
             // 
             // pnl_change_info
@@ -117,7 +117,7 @@
             this.pnl_change_info.Controls.Add(this.label14);
             this.pnl_change_info.Location = new System.Drawing.Point(-1, 301);
             this.pnl_change_info.Name = "pnl_change_info";
-            this.pnl_change_info.Size = new System.Drawing.Size(355, 291);
+            this.pnl_change_info.Size = new System.Drawing.Size(399, 291);
             this.pnl_change_info.TabIndex = 54;
             // 
             // btn_huy
@@ -135,18 +135,20 @@
             // 
             // tb_email
             // 
+            this.tb_email.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_email.Location = new System.Drawing.Point(90, 178);
             this.tb_email.Multiline = true;
             this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(255, 35);
+            this.tb_email.Size = new System.Drawing.Size(293, 35);
             this.tb_email.TabIndex = 57;
             // 
             // tb_diachi
             // 
+            this.tb_diachi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_diachi.Location = new System.Drawing.Point(90, 91);
             this.tb_diachi.Multiline = true;
             this.tb_diachi.Name = "tb_diachi";
-            this.tb_diachi.Size = new System.Drawing.Size(255, 81);
+            this.tb_diachi.Size = new System.Drawing.Size(293, 81);
             this.tb_diachi.TabIndex = 56;
             // 
             // btn_luu
@@ -164,15 +166,17 @@
             // 
             // tb_sdt
             // 
+            this.tb_sdt.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_sdt.Location = new System.Drawing.Point(90, 50);
             this.tb_sdt.Multiline = true;
             this.tb_sdt.Name = "tb_sdt";
-            this.tb_sdt.Size = new System.Drawing.Size(255, 35);
+            this.tb_sdt.Size = new System.Drawing.Size(293, 35);
             this.tb_sdt.TabIndex = 55;
             // 
             // tb_ten
             // 
-            this.tb_ten.Location = new System.Drawing.Point(91, 9);
+            this.tb_ten.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_ten.Location = new System.Drawing.Point(128, 8);
             this.tb_ten.Multiline = true;
             this.tb_ten.Name = "tb_ten";
             this.tb_ten.Size = new System.Drawing.Size(255, 35);
@@ -181,7 +185,7 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(4, 108);
             this.label11.Name = "label11";
@@ -193,9 +197,9 @@
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(4, 47);
+            this.label12.Location = new System.Drawing.Point(5, 52);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(80, 30);
             this.label12.TabIndex = 52;
@@ -205,7 +209,7 @@
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(4, 178);
             this.label13.Name = "label13";
@@ -217,11 +221,11 @@
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(4, 13);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 25);
+            this.label14.Size = new System.Drawing.Size(116, 30);
             this.label14.TabIndex = 51;
             this.label14.Text = "Họ Tên:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -235,21 +239,23 @@
             this.pnl_change_account.Controls.Add(this.label3);
             this.pnl_change_account.Location = new System.Drawing.Point(-1, 188);
             this.pnl_change_account.Name = "pnl_change_account";
-            this.pnl_change_account.Size = new System.Drawing.Size(355, 107);
+            this.pnl_change_account.Size = new System.Drawing.Size(387, 107);
             this.pnl_change_account.TabIndex = 51;
             // 
             // tb_modify_mk
             // 
-            this.tb_modify_mk.Location = new System.Drawing.Point(105, 53);
+            this.tb_modify_mk.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_modify_mk.Location = new System.Drawing.Point(174, 53);
             this.tb_modify_mk.Multiline = true;
             this.tb_modify_mk.Name = "tb_modify_mk";
             this.tb_modify_mk.PasswordChar = '*';
-            this.tb_modify_mk.Size = new System.Drawing.Size(241, 36);
+            this.tb_modify_mk.Size = new System.Drawing.Size(208, 36);
             this.tb_modify_mk.TabIndex = 53;
             // 
             // tb_modify_tendn
             // 
-            this.tb_modify_tendn.Location = new System.Drawing.Point(138, 11);
+            this.tb_modify_tendn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_modify_tendn.Location = new System.Drawing.Point(174, 11);
             this.tb_modify_tendn.Multiline = true;
             this.tb_modify_tendn.Name = "tb_modify_tendn";
             this.tb_modify_tendn.Size = new System.Drawing.Size(208, 36);
@@ -258,7 +264,7 @@
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(4, 59);
             this.label10.Name = "label10";
@@ -270,11 +276,11 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(4, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 25);
+            this.label3.Size = new System.Drawing.Size(167, 39);
             this.label3.TabIndex = 50;
             this.label3.Text = "Tên đăng nhập:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -373,7 +379,7 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(3, 147);
             this.label7.Name = "label7";
@@ -385,7 +391,7 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(3, 86);
             this.label6.Name = "label6";
@@ -397,7 +403,7 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(3, 210);
             this.label8.Name = "label8";
@@ -409,7 +415,7 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(3, 52);
             this.label5.Name = "label5";
@@ -421,7 +427,7 @@
             // lb_value_email
             // 
             this.lb_value_email.BackColor = System.Drawing.Color.Transparent;
-            this.lb_value_email.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_value_email.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lb_value_email.ForeColor = System.Drawing.Color.Black;
             this.lb_value_email.Location = new System.Drawing.Point(93, 217);
             this.lb_value_email.Name = "lb_value_email";
@@ -433,7 +439,7 @@
             // lb_value_diachi
             // 
             this.lb_value_diachi.BackColor = System.Drawing.Color.Transparent;
-            this.lb_value_diachi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_value_diachi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lb_value_diachi.ForeColor = System.Drawing.Color.Black;
             this.lb_value_diachi.Location = new System.Drawing.Point(93, 129);
             this.lb_value_diachi.Name = "lb_value_diachi";
@@ -445,7 +451,7 @@
             // lb_value_ten
             // 
             this.lb_value_ten.BackColor = System.Drawing.Color.Transparent;
-            this.lb_value_ten.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_value_ten.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lb_value_ten.ForeColor = System.Drawing.Color.Black;
             this.lb_value_ten.Location = new System.Drawing.Point(93, 52);
             this.lb_value_ten.Name = "lb_value_ten";
@@ -457,7 +463,7 @@
             // lb_value_sdt
             // 
             this.lb_value_sdt.BackColor = System.Drawing.Color.Transparent;
-            this.lb_value_sdt.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_value_sdt.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lb_value_sdt.ForeColor = System.Drawing.Color.Black;
             this.lb_value_sdt.Location = new System.Drawing.Point(93, 86);
             this.lb_value_sdt.Name = "lb_value_sdt";
@@ -526,7 +532,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(1173, 713);
+            this.ClientSize = new System.Drawing.Size(1201, 713);
             this.Controls.Add(this.pnl_account);
             this.Name = "FormQuanLyTaiKhoan";
             this.Text = "FormQuanLyTaiKhoan";

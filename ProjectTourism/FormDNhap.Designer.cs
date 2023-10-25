@@ -200,9 +200,10 @@
             // rdbUser
             // 
             this.rdbUser.AutoSize = true;
+            this.rdbUser.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbUser.Location = new System.Drawing.Point(68, 333);
             this.rdbUser.Name = "rdbUser";
-            this.rdbUser.Size = new System.Drawing.Size(97, 20);
+            this.rdbUser.Size = new System.Drawing.Size(104, 21);
             this.rdbUser.TabIndex = 14;
             this.rdbUser.TabStop = true;
             this.rdbUser.Text = "Người dùng";
@@ -212,9 +213,10 @@
             // 
             this.rdbMag.AutoSize = true;
             this.rdbMag.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rdbMag.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbMag.Location = new System.Drawing.Point(276, 333);
             this.rdbMag.Name = "rdbMag";
-            this.rdbMag.Size = new System.Drawing.Size(73, 20);
+            this.rdbMag.Size = new System.Drawing.Size(77, 21);
             this.rdbMag.TabIndex = 15;
             this.rdbMag.TabStop = true;
             this.rdbMag.Text = "Quản lý";

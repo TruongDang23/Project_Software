@@ -42,27 +42,44 @@ namespace ProjectTourism.BSLayer
                         select tk.MatKhau).FirstOrDefault();
             return pass;
         }
-        public bool AddUser(string UserName, string Pass, string email,string ten,string diachi,string sdt, ref string err)
+        public bool AddUser(string tk, string mk, string nhaplaimk, ref string err)
         {
-            long id = CountUser() + 1;
-            TaiKhoan taikhoan = new TaiKhoan()
+            if (mk == nhaplaimk)
             {
-                TenDangNhap = UserName,
-                MatKhau = Pass,
-                MaTaiKhoan = "U" + id.ToString(),
-            };
-            ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan()
-            {
-                MaTaiKhoan = "U" + id.ToString(),
-                Ten = ten,
-                SDT = sdt,
-                DiaChi = diachi,
-                Email= email,
-            };
-            entity.TaiKhoans.Add(taikhoan);
-          //  entity.ThongTinCaNhans.Add(thongTinCaNhan);
-            entity.SaveChanges();
-            return true;
+                long id = CountUser() + 1;
+                TaiKhoan taikhoan = new TaiKhoan()
+                {
+                    TenDangNhap = tk,
+                    MatKhau = mk,
+                    MaTaiKhoan = "U" + id.ToString(),
+                };
+
+                entity.TaiKhoans.Add(taikhoan);
+                entity.SaveChanges();
+                return true;
+            }
+            else { return false; }
+            
+        }
+        public bool AddThongTin(string hovaten, string sdt, string diachi, string email, ref string err)
+        {
+            
+                long id = CountUser() + 1;
+                ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan()
+                {
+                    MaTaiKhoan = "U" + id.ToString(),
+                    Ten=hovaten,
+                    SDT=sdt,
+                    DiaChi=diachi,
+                    Email=email,
+                    
+                };
+
+                entity.ThongTinCaNhans.Add(thongTinCaNhan);
+                entity.SaveChanges();
+                return true;
+            
+
         }
         public long CountUser()
         {
