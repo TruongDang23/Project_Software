@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectTourism.BSLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,48 @@ namespace ProjectTourism
 {
     public partial class FormDanhGiaChuyenDi : Form
     {
-        public FormDanhGiaChuyenDi()
+        BLUser task = new BLUser();
+        private string MaChuyenDi;
+        private string MaTaiKhoan;
+        private DateTime NgayBatDau;
+        public FormDanhGiaChuyenDi(string MaChuyenDi, string MaTaiKhoan, DateTime NgayBatDau)
         {
             InitializeComponent();
+            this.MaChuyenDi = MaChuyenDi;
+            this.MaTaiKhoan = MaTaiKhoan;
+            this.NgayBatDau = NgayBatDau;
+            LoadData();
+        }
+        private void LoadData()
+        {
+            DataTable dt = new DataTable();
+            dt = task.DanhSachDanhGia(MaChuyenDi, NgayBatDau);
+            dgvCacDanhGia.DataSource = dt;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            this.Hide();
+            formChiTietChuyenDi.ShowDialog();
+            this.Close();
+        }
+
+        private void btnDanhGia_Click(object sender, EventArgs e)
+        {
+            int sao = Int32.Parse(tbSoSao.Text);
+            string BinhLuan = rtbNhanXet.Text;
+            task.ThemDanhGia(MaTaiKhoan, MaChuyenDi, BinhLuan, sao);
+            MessageBox.Show("Đã gửi đánh giá thành công!");
+            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            this.Hide();
+            formChiTietChuyenDi.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -140,6 +140,12 @@
     <Compile Include="FormQuanLyDanhGia.Designer.cs">
       <DependentUpon>FormQuanLyDanhGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuanLyHanhKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyHanhKhach.Designer.cs">
+      <DependentUpon>FormQuanLyHanhKhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLyLichTrinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,11 +158,23 @@
     <Compile Include="FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuanLyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>FormQuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLyTour.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormQuanLyTour.Designer.cs">
       <DependentUpon>FormQuanLyTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQuanLyYeuCau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyYeuCau.Designer.cs">
+      <DependentUpon>FormQuanLyYeuCau.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQuenMK.cs">
       <SubType>Form</SubType>
@@ -261,14 +279,23 @@
     <EmbeddedResource Include="FormQuanLyDanhGia.resx">
       <DependentUpon>FormQuanLyDanhGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLyHanhKhach.resx">
+      <DependentUpon>FormQuanLyHanhKhach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyLichTrinh.resx">
       <DependentUpon>FormQuanLyLichTrinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLyTaiKhoan.resx">
+      <DependentUpon>FormQuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyTour.resx">
       <DependentUpon>FormQuanLyTour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyVe.resx">
       <DependentUpon>FormQuanLyVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLyYeuCau.resx">
+      <DependentUpon>FormQuanLyYeuCau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuenMK.resx">
       <DependentUpon>FormQuenMK.cs</DependentUpon>
@@ -299,6 +326,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="DichVuDuLich.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -343,6 +371,8 @@
       <DependentUpon>DichVuDuLich.edmx</DependentUpon>
       <LastGenOutput>DichVuDuLich.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\kinhlup.jpg" />
+    <None Include="Resources\reload.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

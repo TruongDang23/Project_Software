@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_data = new System.Windows.Forms.Panel();
             this.pnl_changeinfo = new System.Windows.Forms.Panel();
+            this.btn_huy = new System.Windows.Forms.Button();
             this.btn_luutt = new System.Windows.Forms.Button();
             this.tb_email = new System.Windows.Forms.TextBox();
             this.lb_id = new System.Windows.Forms.Label();
@@ -47,37 +48,32 @@
             this.btnThaydoi = new System.Windows.Forms.Button();
             this.lb_title = new System.Windows.Forms.Label();
             this.pnl_tools = new System.Windows.Forms.Panel();
+            this.btn_Xem = new System.Windows.Forms.Button();
             this.monthCalendar_hdv = new System.Windows.Forms.MonthCalendar();
-            this.btn_thangsau = new System.Windows.Forms.Button();
-            this.btn_thangtruoc = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbb_ID = new System.Windows.Forms.ComboBox();
             this.lb_lichtrinh = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnhuypc = new System.Windows.Forms.Button();
-            this.btn_luupc = new System.Windows.Forms.Button();
-            this.cbb_idguide = new System.Windows.Forms.ComboBox();
-            this.cbb_idtour = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbb_IdGuide = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgv_IDguide = new System.Windows.Forms.DataGridView();
+            this.btnhuypc = new System.Windows.Forms.Button();
+            this.btn_phancong = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_Idtour = new System.Windows.Forms.DataGridView();
-            this.btn_huy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_data.SuspendLayout();
             this.pnl_changeinfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hdv)).BeginInit();
             this.pnl_tools.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_IDguide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Idtour)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 25);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -93,13 +89,15 @@
             this.pnl_data.Controls.Add(this.btnXoa);
             this.pnl_data.Controls.Add(this.btnThaydoi);
             this.pnl_data.Controls.Add(this.pictureBox1);
-            this.pnl_data.Location = new System.Drawing.Point(38, 77);
+            this.pnl_data.Location = new System.Drawing.Point(12, 49);
+            this.pnl_data.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_data.Name = "pnl_data";
-            this.pnl_data.Size = new System.Drawing.Size(1067, 405);
+            this.pnl_data.Size = new System.Drawing.Size(1138, 352);
             this.pnl_data.TabIndex = 3;
             // 
             // pnl_changeinfo
             // 
+            this.pnl_changeinfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_changeinfo.Controls.Add(this.btn_huy);
             this.pnl_changeinfo.Controls.Add(this.btn_luutt);
             this.pnl_changeinfo.Controls.Add(this.tb_email);
@@ -111,19 +109,35 @@
             this.pnl_changeinfo.Controls.Add(this.lb_SDT);
             this.pnl_changeinfo.Controls.Add(this.tb_ten);
             this.pnl_changeinfo.Enabled = false;
-            this.pnl_changeinfo.Location = new System.Drawing.Point(82, 286);
+            this.pnl_changeinfo.Location = new System.Drawing.Point(772, 25);
+            this.pnl_changeinfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_changeinfo.Name = "pnl_changeinfo";
-            this.pnl_changeinfo.Size = new System.Drawing.Size(985, 116);
+            this.pnl_changeinfo.Size = new System.Drawing.Size(343, 312);
             this.pnl_changeinfo.TabIndex = 30;
+            // 
+            // btn_huy
+            // 
+            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_huy.Location = new System.Drawing.Point(49, 247);
+            this.btn_huy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(93, 48);
+            this.btn_huy.TabIndex = 26;
+            this.btn_huy.Text = "Hủy";
+            this.btn_huy.UseVisualStyleBackColor = false;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luutt
             // 
             this.btn_luutt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btn_luutt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_luutt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_luutt.Location = new System.Drawing.Point(851, 63);
+            this.btn_luutt.Location = new System.Drawing.Point(198, 247);
+            this.btn_luutt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_luutt.Name = "btn_luutt";
-            this.btn_luutt.Size = new System.Drawing.Size(94, 48);
+            this.btn_luutt.Size = new System.Drawing.Size(93, 48);
             this.btn_luutt.TabIndex = 25;
             this.btn_luutt.Text = "Lưu";
             this.btn_luutt.UseVisualStyleBackColor = false;
@@ -133,17 +147,18 @@
             // 
             this.tb_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_email.Location = new System.Drawing.Point(462, 77);
+            this.tb_email.Location = new System.Drawing.Point(26, 213);
+            this.tb_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_email.Multiline = true;
             this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(366, 30);
+            this.tb_email.Size = new System.Drawing.Size(290, 30);
             this.tb_email.TabIndex = 24;
             // 
             // lb_id
             // 
             this.lb_id.AutoSize = true;
             this.lb_id.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_id.Location = new System.Drawing.Point(8, 14);
+            this.lb_id.Location = new System.Drawing.Point(21, 14);
             this.lb_id.Name = "lb_id";
             this.lb_id.Size = new System.Drawing.Size(99, 28);
             this.lb_id.TabIndex = 17;
@@ -153,7 +168,7 @@
             // 
             this.lb_email.AutoSize = true;
             this.lb_email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_email.Location = new System.Drawing.Point(362, 79);
+            this.lb_email.Location = new System.Drawing.Point(21, 178);
             this.lb_email.Name = "lb_email";
             this.lb_email.Size = new System.Drawing.Size(69, 28);
             this.lb_email.TabIndex = 23;
@@ -163,7 +178,8 @@
             // 
             this.tb_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_ID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ID.Location = new System.Drawing.Point(134, 14);
+            this.tb_ID.Location = new System.Drawing.Point(132, 14);
+            this.tb_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_ID.Multiline = true;
             this.tb_ID.Name = "tb_ID";
             this.tb_ID.Size = new System.Drawing.Size(184, 30);
@@ -173,7 +189,8 @@
             // 
             this.tb_sdt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_sdt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sdt.Location = new System.Drawing.Point(134, 77);
+            this.tb_sdt.Location = new System.Drawing.Point(132, 57);
+            this.tb_sdt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_sdt.Multiline = true;
             this.tb_sdt.Name = "tb_sdt";
             this.tb_sdt.Size = new System.Drawing.Size(184, 29);
@@ -183,7 +200,7 @@
             // 
             this.lb_ten.AutoSize = true;
             this.lb_ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ten.Location = new System.Drawing.Point(381, 16);
+            this.lb_ten.Location = new System.Drawing.Point(21, 94);
             this.lb_ten.Name = "lb_ten";
             this.lb_ten.Size = new System.Drawing.Size(50, 28);
             this.lb_ten.TabIndex = 19;
@@ -193,7 +210,7 @@
             // 
             this.lb_SDT.AutoSize = true;
             this.lb_SDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_SDT.Location = new System.Drawing.Point(8, 73);
+            this.lb_SDT.Location = new System.Drawing.Point(21, 57);
             this.lb_SDT.Name = "lb_SDT";
             this.lb_SDT.Size = new System.Drawing.Size(54, 28);
             this.lb_SDT.TabIndex = 21;
@@ -203,22 +220,29 @@
             // 
             this.tb_ten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ten.Location = new System.Drawing.Point(458, 16);
+            this.tb_ten.Location = new System.Drawing.Point(26, 140);
+            this.tb_ten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_ten.Multiline = true;
             this.tb_ten.Name = "tb_ten";
-            this.tb_ten.Size = new System.Drawing.Size(370, 30);
+            this.tb_ten.Size = new System.Drawing.Size(290, 30);
             this.tb_ten.TabIndex = 20;
             // 
             // dgv_hdv
             // 
+            this.dgv_hdv.AllowUserToAddRows = false;
+            this.dgv_hdv.AllowUserToResizeColumns = false;
+            this.dgv_hdv.AllowUserToResizeRows = false;
+            this.dgv_hdv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_hdv.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_hdv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_hdv.GridColor = System.Drawing.Color.Black;
-            this.dgv_hdv.Location = new System.Drawing.Point(204, 24);
+            this.dgv_hdv.Location = new System.Drawing.Point(204, 25);
+            this.dgv_hdv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_hdv.Name = "dgv_hdv";
+            this.dgv_hdv.RowHeadersVisible = false;
             this.dgv_hdv.RowHeadersWidth = 51;
             this.dgv_hdv.RowTemplate.Height = 24;
-            this.dgv_hdv.Size = new System.Drawing.Size(823, 256);
+            this.dgv_hdv.Size = new System.Drawing.Size(561, 312);
             this.dgv_hdv.TabIndex = 16;
             this.dgv_hdv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_hdv_CellClick);
             // 
@@ -228,6 +252,7 @@
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThem.Location = new System.Drawing.Point(37, 140);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(136, 43);
             this.btnThem.TabIndex = 15;
@@ -240,7 +265,8 @@
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnXoa.Location = new System.Drawing.Point(37, 189);
+            this.btnXoa.Location = new System.Drawing.Point(37, 190);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(136, 43);
             this.btnXoa.TabIndex = 14;
@@ -254,6 +280,7 @@
             this.btnThaydoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThaydoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThaydoi.Location = new System.Drawing.Point(37, 238);
+            this.btnThaydoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThaydoi.Name = "btnThaydoi";
             this.btnThaydoi.Size = new System.Drawing.Size(136, 43);
             this.btnThaydoi.TabIndex = 13;
@@ -266,7 +293,7 @@
             this.lb_title.AutoSize = true;
             this.lb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_title.Location = new System.Drawing.Point(334, 20);
+            this.lb_title.Location = new System.Drawing.Point(335, 9);
             this.lb_title.Name = "lb_title";
             this.lb_title.Size = new System.Drawing.Size(481, 38);
             this.lb_title.TabIndex = 4;
@@ -275,168 +302,133 @@
             // pnl_tools
             // 
             this.pnl_tools.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnl_tools.Controls.Add(this.btn_Xem);
             this.pnl_tools.Controls.Add(this.monthCalendar_hdv);
-            this.pnl_tools.Controls.Add(this.btn_thangsau);
-            this.pnl_tools.Controls.Add(this.btn_thangtruoc);
-            this.pnl_tools.Controls.Add(this.textBox1);
             this.pnl_tools.Controls.Add(this.cbb_ID);
             this.pnl_tools.Controls.Add(this.lb_lichtrinh);
-            this.pnl_tools.Location = new System.Drawing.Point(38, 488);
+            this.pnl_tools.Controls.Add(this.label3);
+            this.pnl_tools.Location = new System.Drawing.Point(12, 406);
+            this.pnl_tools.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_tools.Name = "pnl_tools";
             this.pnl_tools.Size = new System.Drawing.Size(509, 289);
             this.pnl_tools.TabIndex = 4;
             // 
+            // btn_Xem
+            // 
+            this.btn_Xem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_Xem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Xem.Location = new System.Drawing.Point(37, 186);
+            this.btn_Xem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Xem.Name = "btn_Xem";
+            this.btn_Xem.Size = new System.Drawing.Size(93, 48);
+            this.btn_Xem.TabIndex = 32;
+            this.btn_Xem.Text = "Xem";
+            this.btn_Xem.UseVisualStyleBackColor = false;
+            this.btn_Xem.Click += new System.EventHandler(this.btn_Xem_Click);
+            // 
             // monthCalendar_hdv
             // 
-            this.monthCalendar_hdv.Location = new System.Drawing.Point(195, 54);
+            this.monthCalendar_hdv.BackColor = System.Drawing.SystemColors.Window;
+            this.monthCalendar_hdv.Location = new System.Drawing.Point(182, 27);
             this.monthCalendar_hdv.Name = "monthCalendar_hdv";
             this.monthCalendar_hdv.TabIndex = 28;
             this.monthCalendar_hdv.TrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(178)))), ((int)(((byte)(213)))));
-            // 
-            // btn_thangsau
-            // 
-            this.btn_thangsau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_thangsau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_thangsau.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_thangsau.Location = new System.Drawing.Point(32, 218);
-            this.btn_thangsau.Name = "btn_thangsau";
-            this.btn_thangsau.Size = new System.Drawing.Size(137, 43);
-            this.btn_thangsau.TabIndex = 27;
-            this.btn_thangsau.Text = "Tháng sau";
-            this.btn_thangsau.UseVisualStyleBackColor = false;
-            // 
-            // btn_thangtruoc
-            // 
-            this.btn_thangtruoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_thangtruoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_thangtruoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_thangtruoc.Location = new System.Drawing.Point(31, 169);
-            this.btn_thangtruoc.Name = "btn_thangtruoc";
-            this.btn_thangtruoc.Size = new System.Drawing.Size(137, 43);
-            this.btn_thangtruoc.TabIndex = 26;
-            this.btn_thangtruoc.Text = "Tháng trước";
-            this.btn_thangtruoc.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.textBox1.Location = new System.Drawing.Point(32, 133);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 30);
-            this.textBox1.TabIndex = 19;
             // 
             // cbb_ID
             // 
             this.cbb_ID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_ID.FormattingEnabled = true;
-            this.cbb_ID.Location = new System.Drawing.Point(31, 91);
+            this.cbb_ID.Location = new System.Drawing.Point(16, 138);
+            this.cbb_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbb_ID.Name = "cbb_ID";
-            this.cbb_ID.Size = new System.Drawing.Size(136, 36);
+            this.cbb_ID.Size = new System.Drawing.Size(129, 36);
             this.cbb_ID.TabIndex = 6;
             // 
             // lb_lichtrinh
             // 
             this.lb_lichtrinh.BackColor = System.Drawing.Color.White;
-            this.lb_lichtrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_lichtrinh.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_lichtrinh.ForeColor = System.Drawing.Color.Black;
-            this.lb_lichtrinh.Location = new System.Drawing.Point(32, 14);
+            this.lb_lichtrinh.Location = new System.Drawing.Point(0, 0);
             this.lb_lichtrinh.Name = "lb_lichtrinh";
-            this.lb_lichtrinh.Size = new System.Drawing.Size(135, 74);
+            this.lb_lichtrinh.Size = new System.Drawing.Size(145, 100);
             this.lb_lichtrinh.TabIndex = 5;
             this.lb_lichtrinh.Text = "Lịch trình hoạt động";
             this.lb_lichtrinh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 37);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Mã HDV:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.btnhuypc);
-            this.panel1.Controls.Add(this.btn_luupc);
-            this.panel1.Controls.Add(this.cbb_idguide);
-            this.panel1.Controls.Add(this.cbb_idtour);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.cbb_IdGuide);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dgv_IDguide);
+            this.panel1.Controls.Add(this.btnhuypc);
+            this.panel1.Controls.Add(this.btn_phancong);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dgv_Idtour);
-            this.panel1.Location = new System.Drawing.Point(548, 488);
+            this.panel1.Location = new System.Drawing.Point(527, 406);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(557, 289);
+            this.panel1.Size = new System.Drawing.Size(623, 289);
             this.panel1.TabIndex = 29;
+            // 
+            // cbb_IdGuide
+            // 
+            this.cbb_IdGuide.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_IdGuide.FormattingEnabled = true;
+            this.cbb_IdGuide.Location = new System.Drawing.Point(467, 70);
+            this.cbb_IdGuide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbb_IdGuide.Name = "cbb_IdGuide";
+            this.cbb_IdGuide.Size = new System.Drawing.Size(133, 36);
+            this.cbb_IdGuide.TabIndex = 34;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(462, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 48);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Mã HDV:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnhuypc
             // 
             this.btnhuypc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btnhuypc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnhuypc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnhuypc.Location = new System.Drawing.Point(442, 217);
+            this.btnhuypc.Location = new System.Drawing.Point(467, 206);
+            this.btnhuypc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnhuypc.Name = "btnhuypc";
-            this.btnhuypc.Size = new System.Drawing.Size(100, 43);
+            this.btnhuypc.Size = new System.Drawing.Size(135, 54);
             this.btnhuypc.TabIndex = 33;
             this.btnhuypc.Text = "Hủy";
             this.btnhuypc.UseVisualStyleBackColor = false;
+            this.btnhuypc.Click += new System.EventHandler(this.btnhuypc_Click);
             // 
-            // btn_luupc
+            // btn_phancong
             // 
-            this.btn_luupc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_luupc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_luupc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_luupc.Location = new System.Drawing.Point(338, 217);
-            this.btn_luupc.Name = "btn_luupc";
-            this.btn_luupc.Size = new System.Drawing.Size(98, 43);
-            this.btn_luupc.TabIndex = 26;
-            this.btn_luupc.Text = "Lưu";
-            this.btn_luupc.UseVisualStyleBackColor = false;
-            // 
-            // cbb_idguide
-            // 
-            this.cbb_idguide.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_idguide.FormattingEnabled = true;
-            this.cbb_idguide.Location = new System.Drawing.Point(368, 166);
-            this.cbb_idguide.Name = "cbb_idguide";
-            this.cbb_idguide.Size = new System.Drawing.Size(136, 36);
-            this.cbb_idguide.TabIndex = 32;
-            // 
-            // cbb_idtour
-            // 
-            this.cbb_idtour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_idtour.FormattingEnabled = true;
-            this.cbb_idtour.Location = new System.Drawing.Point(368, 80);
-            this.cbb_idtour.Name = "cbb_idtour";
-            this.cbb_idtour.Size = new System.Drawing.Size(136, 36);
-            this.cbb_idtour.TabIndex = 29;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(329, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(221, 33);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Mã hướng dẫn viên:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(329, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 33);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Mã chuyến đi:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgv_IDguide
-            // 
-            this.dgv_IDguide.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_IDguide.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_IDguide.GridColor = System.Drawing.Color.Black;
-            this.dgv_IDguide.Location = new System.Drawing.Point(249, 53);
-            this.dgv_IDguide.Name = "dgv_IDguide";
-            this.dgv_IDguide.RowHeadersWidth = 51;
-            this.dgv_IDguide.RowTemplate.Height = 24;
-            this.dgv_IDguide.Size = new System.Drawing.Size(74, 207);
-            this.dgv_IDguide.TabIndex = 30;
+            this.btn_phancong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_phancong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_phancong.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_phancong.Location = new System.Drawing.Point(467, 127);
+            this.btn_phancong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_phancong.Name = "btn_phancong";
+            this.btn_phancong.Size = new System.Drawing.Size(135, 57);
+            this.btn_phancong.TabIndex = 26;
+            this.btn_phancong.Text = "Phân Công";
+            this.btn_phancong.UseVisualStyleBackColor = false;
+            this.btn_phancong.Click += new System.EventHandler(this.btn_phancong_Click);
             // 
             // label1
             // 
@@ -445,46 +437,39 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(20, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(323, 42);
+            this.label1.Size = new System.Drawing.Size(381, 42);
             this.label1.TabIndex = 29;
             this.label1.Text = "Phân công hướng dẫn viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgv_Idtour
             // 
+            this.dgv_Idtour.AllowUserToAddRows = false;
+            this.dgv_Idtour.AllowUserToResizeColumns = false;
+            this.dgv_Idtour.AllowUserToResizeRows = false;
             this.dgv_Idtour.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_Idtour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Idtour.GridColor = System.Drawing.Color.Black;
-            this.dgv_Idtour.Location = new System.Drawing.Point(25, 53);
+            this.dgv_Idtour.Location = new System.Drawing.Point(24, 54);
+            this.dgv_Idtour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Idtour.Name = "dgv_Idtour";
+            this.dgv_Idtour.RowHeadersVisible = false;
             this.dgv_Idtour.RowHeadersWidth = 51;
             this.dgv_Idtour.RowTemplate.Height = 24;
-            this.dgv_Idtour.Size = new System.Drawing.Size(209, 207);
+            this.dgv_Idtour.Size = new System.Drawing.Size(432, 207);
             this.dgv_Idtour.TabIndex = 26;
-            // 
-            // btn_huy
-            // 
-            this.btn_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_huy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_huy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_huy.Location = new System.Drawing.Point(851, 9);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(94, 48);
-            this.btn_huy.TabIndex = 26;
-            this.btn_huy.Text = "Hủy";
-            this.btn_huy.UseVisualStyleBackColor = false;
-            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // FormHuongDanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(1141, 789);
+            this.ClientSize = new System.Drawing.Size(1162, 708);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_tools);
             this.Controls.Add(this.lb_title);
             this.Controls.Add(this.pnl_data);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormHuongDanVien";
             this.Text = "FormGuide";
             this.Load += new System.EventHandler(this.FormGuide_Load);
@@ -494,9 +479,7 @@
             this.pnl_changeinfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hdv)).EndInit();
             this.pnl_tools.ResumeLayout(false);
-            this.pnl_tools.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_IDguide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Idtour)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -523,22 +506,18 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThaydoi;
         private System.Windows.Forms.MonthCalendar monthCalendar_hdv;
-        private System.Windows.Forms.Button btn_thangsau;
-        private System.Windows.Forms.Button btn_thangtruoc;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cbb_ID;
         private System.Windows.Forms.Label lb_lichtrinh;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnhuypc;
-        private System.Windows.Forms.Button btn_luupc;
-        private System.Windows.Forms.ComboBox cbb_idguide;
-        private System.Windows.Forms.ComboBox cbb_idtour;
+        private System.Windows.Forms.Button btn_phancong;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgv_IDguide;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_Idtour;
         private System.Windows.Forms.Panel pnl_changeinfo;
         private System.Windows.Forms.Button btn_huy;
+        private System.Windows.Forms.ComboBox cbb_IdGuide;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_Xem;
     }
 }

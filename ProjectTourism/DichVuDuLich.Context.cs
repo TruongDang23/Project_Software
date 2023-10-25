@@ -25,9 +25,9 @@ namespace ProjectTourism
             throw new UnintentionalCodeFirstException();
         }
 
-        internal void SaveChanges()
+        public new void SaveChanges()
         {
-            throw new NotImplementedException();
+            base.SaveChanges();
         }
 
         public virtual DbSet<ChuyenDi> ChuyenDis { get; set; }
