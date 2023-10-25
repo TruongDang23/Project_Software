@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectTourism.BSLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,30 @@ namespace ProjectTourism
 {
     public partial class FormDNhap : Form
     {
+        BLSystem blSystem = new BLSystem();
+        public void LoginMag(string tk, string mk)
+        {
+
+            if (blSystem.GetLoginMag(tk, mk))
+            {
+                FormTrangChu manag = new FormTrangChu();
+                manag.ShowDialog();
+            }
+            else
+                MessageBox.Show("Account/Password is incorrect!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public void LoginUser(string tk, string mk)
+        {
+            if (blSystem.GetLoginUser(tk, mk))
+            {
+                string ID = blSystem.GetID(tk, mk);
+                FormChuyenDi emp = new FormChuyenDi(ID);
+                emp.ShowDialog();
+            }
+            else
+                MessageBox.Show("Account/Password is incorrect!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
         public FormDNhap()
         {
             InitializeComponent();
@@ -37,6 +62,17 @@ namespace ProjectTourism
             this.Hide();
             formForgotPass.ShowDialog();
             Close();
+        }
+
+        private void btnDangnhap_Click(object sender, EventArgs e)
+        {
+
+            string tk = txtUser.Text;
+            string mk = txtPass.Text;
+            if (rdbMag.Checked)
+                LoginMag(tk, mk);
+            else if (rdbUser.Checked)
+                LoginUser(tk, mk);
         }
     }
 }

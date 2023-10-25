@@ -30,17 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChuyenDi));
             this.btn_LienHe = new System.Windows.Forms.Button();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tên = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_ChiTiet = new System.Windows.Forms.Button();
-            this.dataGridView_DSChuyenDi = new System.Windows.Forms.DataGridView();
+            this.dgv_DSChuyenDi = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.tb_Sao = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker_KhoiHanh = new System.Windows.Forms.DateTimePicker();
@@ -54,10 +46,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tb_Gia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DSChuyenDi)).BeginInit();
+            this.nudSao = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSChuyenDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSao)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_LienHe
@@ -72,55 +66,6 @@
             this.btn_LienHe.Text = "Liên hệ";
             this.btn_LienHe.UseVisualStyleBackColor = false;
             // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Số sao";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Giá vé";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Người tham gia";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Số ngày";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Khởi hành";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Hành trình";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Tên
-            // 
-            this.Tên.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tên.HeaderText = "Tên";
-            this.Tên.MinimumWidth = 6;
-            this.Tên.Name = "Tên";
-            // 
             // btn_ChiTiet
             // 
             this.btn_ChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
@@ -133,28 +78,16 @@
             this.btn_ChiTiet.Text = "Chi tiết";
             this.btn_ChiTiet.UseVisualStyleBackColor = false;
             // 
-            // dataGridView_DSChuyenDi
+            // dgv_DSChuyenDi
             // 
-            this.dataGridView_DSChuyenDi.AllowUserToResizeColumns = false;
-            this.dataGridView_DSChuyenDi.AllowUserToResizeRows = false;
-            this.dataGridView_DSChuyenDi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView_DSChuyenDi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_DSChuyenDi.ColumnHeadersVisible = false;
-            this.dataGridView_DSChuyenDi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Tên,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView_DSChuyenDi.Location = new System.Drawing.Point(35, 183);
-            this.dataGridView_DSChuyenDi.Name = "dataGridView_DSChuyenDi";
-            this.dataGridView_DSChuyenDi.RowHeadersVisible = false;
-            this.dataGridView_DSChuyenDi.RowHeadersWidth = 51;
-            this.dataGridView_DSChuyenDi.RowTemplate.Height = 24;
-            this.dataGridView_DSChuyenDi.Size = new System.Drawing.Size(1167, 160);
-            this.dataGridView_DSChuyenDi.TabIndex = 55;
+            this.dgv_DSChuyenDi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_DSChuyenDi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DSChuyenDi.Location = new System.Drawing.Point(35, 183);
+            this.dgv_DSChuyenDi.Name = "dgv_DSChuyenDi";
+            this.dgv_DSChuyenDi.RowHeadersWidth = 51;
+            this.dgv_DSChuyenDi.RowTemplate.Height = 24;
+            this.dgv_DSChuyenDi.Size = new System.Drawing.Size(1167, 160);
+            this.dgv_DSChuyenDi.TabIndex = 55;
             // 
             // label10
             // 
@@ -166,16 +99,6 @@
             this.label10.Size = new System.Drawing.Size(235, 31);
             this.label10.TabIndex = 54;
             this.label10.Text = "Danh sách chuyến đi";
-            // 
-            // tb_Sao
-            // 
-            this.tb_Sao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.tb_Sao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Sao.Location = new System.Drawing.Point(1100, 77);
-            this.tb_Sao.Multiline = true;
-            this.tb_Sao.Name = "tb_Sao";
-            this.tb_Sao.Size = new System.Drawing.Size(65, 36);
-            this.tb_Sao.TabIndex = 53;
             // 
             // label9
             // 
@@ -294,11 +217,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.nudSao);
             this.panel2.Controls.Add(this.btn_LienHe);
             this.panel2.Controls.Add(this.btn_ChiTiet);
-            this.panel2.Controls.Add(this.dataGridView_DSChuyenDi);
+            this.panel2.Controls.Add(this.dgv_DSChuyenDi);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.tb_Sao);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.tb_Gia);
             this.panel2.Controls.Add(this.label8);
@@ -335,6 +258,13 @@
             this.panel1.Size = new System.Drawing.Size(1312, 567);
             this.panel1.TabIndex = 12;
             // 
+            // nudSao
+            // 
+            this.nudSao.Location = new System.Drawing.Point(1104, 86);
+            this.nudSao.Name = "nudSao";
+            this.nudSao.Size = new System.Drawing.Size(120, 22);
+            this.nudSao.TabIndex = 58;
+            // 
             // FormChuyenDi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,12 +275,14 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormChuyenDi";
             this.Text = "FormChuyenDi";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DSChuyenDi)).EndInit();
+            this.Load += new System.EventHandler(this.FormChuyenDi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSChuyenDi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,17 +290,9 @@
         #endregion
 
         private System.Windows.Forms.Button btn_LienHe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tên;
         private System.Windows.Forms.Button btn_ChiTiet;
-        private System.Windows.Forms.DataGridView dataGridView_DSChuyenDi;
+        private System.Windows.Forms.DataGridView dgv_DSChuyenDi;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_Sao;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker_KhoiHanh;
@@ -382,5 +306,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tb_Gia;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown nudSao;
     }
 }

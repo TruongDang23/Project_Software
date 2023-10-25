@@ -45,6 +45,9 @@
             this.btnDangky = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDangnhap = new System.Windows.Forms.Button();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -60,7 +63,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(103, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(280, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(231, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -196,19 +199,20 @@
             this.btnDangky.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btnDangky.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangky.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDangky.Location = new System.Drawing.Point(23, 394);
+            this.btnDangky.Location = new System.Drawing.Point(210, 397);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(389, 50);
             this.btnDangky.TabIndex = 19;
             this.btnDangky.Text = "Đăng ký";
             this.btnDangky.UseVisualStyleBackColor = false;
+            this.btnDangky.Click += new System.EventHandler(this.btnDangky_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.label1.Location = new System.Drawing.Point(46, 461);
+            this.label1.Location = new System.Drawing.Point(233, 464);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 23);
             this.label1.TabIndex = 20;
@@ -226,7 +230,7 @@
             this.btnDangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangnhap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangnhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnDangnhap.Location = new System.Drawing.Point(255, 450);
+            this.btnDangnhap.Location = new System.Drawing.Point(442, 453);
             this.btnDangnhap.Name = "btnDangnhap";
             this.btnDangnhap.Size = new System.Drawing.Size(141, 41);
             this.btnDangnhap.TabIndex = 21;
@@ -234,12 +238,39 @@
             this.btnDangnhap.UseVisualStyleBackColor = false;
             this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
+            // txtTen
+            // 
+            this.txtTen.Location = new System.Drawing.Point(518, 192);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(225, 22);
+            this.txtTen.TabIndex = 22;
+            this.txtTen.Text = "Tên";
+            // 
+            // txtSoDienThoai
+            // 
+            this.txtSoDienThoai.Location = new System.Drawing.Point(518, 255);
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.Size = new System.Drawing.Size(225, 22);
+            this.txtSoDienThoai.TabIndex = 23;
+            this.txtSoDienThoai.Text = "Số điện thoại";
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(518, 308);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(225, 22);
+            this.txtDiaChi.TabIndex = 24;
+            this.txtDiaChi.Text = "Địa chỉ";
+            // 
             // FormDK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(438, 509);
+            this.ClientSize = new System.Drawing.Size(819, 509);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.txtSoDienThoai);
+            this.Controls.Add(this.txtTen);
             this.Controls.Add(this.btnDangnhap);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangky);
@@ -292,5 +323,8 @@
         private System.Windows.Forms.Button btnDangky;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDangnhap;
+        private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.TextBox txtSoDienThoai;
+        private System.Windows.Forms.TextBox txtDiaChi;
     }
 }
