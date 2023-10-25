@@ -160,6 +160,7 @@
             // 
             // tb_sdt
             // 
+            this.tb_sdt.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_sdt.Location = new System.Drawing.Point(234, 221);
             this.tb_sdt.Multiline = true;
             this.tb_sdt.Name = "tb_sdt";
@@ -222,6 +223,7 @@
             // 
             // tb_cccd
             // 
+            this.tb_cccd.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_cccd.Location = new System.Drawing.Point(234, 137);
             this.tb_cccd.Multiline = true;
             this.tb_cccd.Name = "tb_cccd";
@@ -230,6 +232,7 @@
             // 
             // tb_ten
             // 
+            this.tb_ten.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_ten.Location = new System.Drawing.Point(234, 180);
             this.tb_ten.Multiline = true;
             this.tb_ten.Name = "tb_ten";
@@ -238,6 +241,7 @@
             // 
             // tb_id
             // 
+            this.tb_id.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_id.Location = new System.Drawing.Point(234, 46);
             this.tb_id.Multiline = true;
             this.tb_id.Name = "tb_id";

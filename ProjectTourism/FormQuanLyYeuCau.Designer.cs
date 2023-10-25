@@ -30,6 +30,7 @@
         {
             this.pnl_mess = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_send = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tb_noidung = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.btn_huy = new System.Windows.Forms.Button();
             this.dgv_yeucau = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_send = new System.Windows.Forms.Button();
             this.pnl_mess.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_phanhoi.SuspendLayout();
@@ -76,6 +76,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(422, 491);
             this.panel1.TabIndex = 60;
+            // 
+            // btn_send
+            // 
+            this.btn_send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btn_send.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_send.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_send.Location = new System.Drawing.Point(280, 444);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Size = new System.Drawing.Size(107, 37);
+            this.btn_send.TabIndex = 55;
+            this.btn_send.Text = "Gửi";
+            this.btn_send.UseVisualStyleBackColor = false;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
             // label19
             // 
@@ -120,7 +133,7 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(114, 38);
             this.label22.TabIndex = 58;
-            this.label22.Text = "Nội dung";
+            this.label22.Text = "Nội dung:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cbb_idacc
@@ -139,19 +152,19 @@
             this.label21.ForeColor = System.Drawing.Color.Black;
             this.label21.Location = new System.Drawing.Point(12, 122);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(79, 38);
+            this.label21.Size = new System.Drawing.Size(101, 38);
             this.label21.TabIndex = 57;
-            this.label21.Text = "Tiêu đề";
+            this.label21.Text = "Tiêu đề:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tb_tieude
             // 
             this.tb_tieude.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tb_tieude.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_tieude.Location = new System.Drawing.Point(112, 129);
+            this.tb_tieude.Location = new System.Drawing.Point(134, 129);
             this.tb_tieude.Multiline = true;
             this.tb_tieude.Name = "tb_tieude";
-            this.tb_tieude.Size = new System.Drawing.Size(275, 31);
+            this.tb_tieude.Size = new System.Drawing.Size(253, 31);
             this.tb_tieude.TabIndex = 43;
             // 
             // pnl_phanhoi
@@ -215,19 +228,6 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Yêu cầu của người dùng";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_send
-            // 
-            this.btn_send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_send.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_send.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_send.Location = new System.Drawing.Point(280, 444);
-            this.btn_send.Name = "btn_send";
-            this.btn_send.Size = new System.Drawing.Size(107, 37);
-            this.btn_send.TabIndex = 55;
-            this.btn_send.Text = "Gửi";
-            this.btn_send.UseVisualStyleBackColor = false;
-            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
             // FormQuanLyYeuCau
             // 

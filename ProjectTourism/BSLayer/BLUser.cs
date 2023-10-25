@@ -118,7 +118,7 @@ namespace ProjectTourism.BSLayer
             dt.Columns.Add("Ten", typeof(string));
             dt.Columns.Add("BinhLuan", typeof(string));
             dt.Columns.Add("Sao", typeof(int));
-            
+
             foreach (var ct in danhgia)
             {
                 dt.Rows.Add(ct.Ten, ct.BinhLuan, ct.Sao);
@@ -136,6 +136,93 @@ namespace ProjectTourism.BSLayer
 
             entity.DanhGias.Add(dg);
             entity.SaveChanges();
+        }
+        public DataTable Load_dgvDSChuyenDi()
+        {
+            DataTable dt = new DataTable();
+
+            var average_star = from dg in entity.DanhGias
+                               group dg by new { dg.MaChuyenDi } into g
+                               select new
+                               {
+                                   MaChuyenDi = g.Key.MaChuyenDi,
+                                   Sao = g.Average(dg => dg.Sao)
+                               };
+
+            var chuyendi = from cd in entity.ChuyenDis
+                           join lt in entity.LichTrinhs on cd.MaChuyenDi equals lt.MaChuyenDi
+                           join avg_s in average_star on cd.MaChuyenDi equals avg_s.MaChuyenDi
+                           where cd.MaChuyenDi == lt.MaChuyenDi && cd.MaChuyenDi == avg_s.MaChuyenDi
+                           select new { cd.MaChuyenDi, cd.TenChuyenDi, cd.HanhTrinh, lt.NgayBatDau, cd.SoNgayDi, cd.SoLuong, cd.Gia, avg_s.Sao };
+
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Tên Tour", typeof(string));
+            dt.Columns.Add("Hành Trình", typeof(string));
+            dt.Columns.Add("Khởi Hành", typeof(string));
+            dt.Columns.Add("Số Ngày Đi", typeof(int));
+            dt.Columns.Add("Số Lượng", typeof(int));
+            dt.Columns.Add("Giá", typeof(string));
+            dt.Columns.Add("Số sao", typeof(string));
+
+            foreach (var data in chuyendi)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.TenChuyenDi, data.HanhTrinh, data.NgayBatDau, data.SoNgayDi, data.SoLuong, data.Gia, data.Sao);
+            }
+            return dt;
+        }
+
+        public DataTable FindTour(string dest, DateTime start, int price, int rate)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Tên Tour", typeof(string));
+            dt.Columns.Add("Hành Trình", typeof(string));
+            dt.Columns.Add("Khởi Hành", typeof(string));
+            dt.Columns.Add("Số Ngày Đi", typeof(int));
+            dt.Columns.Add("Số Lượng", typeof(int));
+            dt.Columns.Add("Giá", typeof(string));
+            dt.Columns.Add("Số sao", typeof(string));
+
+
+            var average_star = from dg in entity.DanhGias
+                               group dg by new { dg.MaChuyenDi } into g
+                               select new
+                               {
+                                   MaChuyenDi = g.Key.MaChuyenDi,
+                                   Sao = g.Average(dg => dg.Sao)
+                               };
+
+            var chuyendi = from cd in entity.ChuyenDis
+                           join lt in entity.LichTrinhs on cd.MaChuyenDi equals lt.MaChuyenDi
+                           join avg_s in average_star on cd.MaChuyenDi equals avg_s.MaChuyenDi
+                           where cd.MaChuyenDi == lt.MaChuyenDi && cd.MaChuyenDi == avg_s.MaChuyenDi
+                           select new { cd.MaChuyenDi, cd.TenChuyenDi, cd.HanhTrinh, lt.NgayBatDau, cd.SoNgayDi, cd.SoLuong, cd.Gia, avg_s.Sao };
+
+            if (!string.IsNullOrEmpty(dest))
+            {
+                chuyendi = chuyendi.Where(cd => cd.HanhTrinh.Contains(dest));
+            }
+
+            if (rate != 0)
+            {
+                chuyendi = chuyendi.Where(avg_s => avg_s.Sao <= rate);
+            }
+
+            if (start != new DateTime(1000,1,1))
+            {
+                chuyendi = chuyendi.Where(lt => start.Day == lt.NgayBatDau.Day && start.Month == lt.NgayBatDau.Month && start.Year == lt.NgayBatDau.Year);
+            }
+
+            //if (price != 0)
+            //{
+            //    chuyendi = chuyendi.Where(cd => int.Parse(cd.Gia) <= price);
+            //}
+
+            foreach (var data in chuyendi)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.TenChuyenDi, data.HanhTrinh, data.NgayBatDau, data.SoNgayDi, data.SoLuong, data.Gia, data.Sao);
+            }
+            return dt;
         }
     }
 }

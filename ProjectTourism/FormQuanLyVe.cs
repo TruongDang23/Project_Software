@@ -144,6 +144,11 @@ namespace ProjectTourism
         private void btn_reload_Click(object sender, EventArgs e)
         {
             LoadData();
+            this.lblNow.Text = "0";
+            this.lblMax.Text = "0";
+            this.txtName.Text = String.Empty;
+            this.txtCCCD.Text = String.Empty;
+            this.txtSDT.Text = String.Empty;
         }
 
         private void btn_find_Click(object sender, EventArgs e)

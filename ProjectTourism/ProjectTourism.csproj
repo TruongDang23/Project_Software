@@ -86,12 +86,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DichVuDuLich.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormBoxNhieuNguoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +212,12 @@
     <Compile Include="FormTaoChuyenDiMoi.Designer.cs">
       <DependentUpon>FormTaoChuyenDiMoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongTinCaNhan.Designer.cs">
+      <DependentUpon>FormThongTinCaNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,9 +249,6 @@
     <Compile Include="YeuCau.cs">
       <DependentUpon>DichVuDuLich.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBoxNhieuNguoi.resx">
       <DependentUpon>FormBoxNhieuNguoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoChuyenDiMoi.resx">
       <DependentUpon>FormTaoChuyenDiMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongTinCaNhan.resx">
+      <DependentUpon>FormThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
