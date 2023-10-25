@@ -59,5 +59,48 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+        public DataTable FilterData(string diemden ,DateTime ngaybatdau, string gia, int sao, bool not_eligible)
+        {
+            DataTable dt = new DataTable();
+
+            var list_passenger =
+                from dk in entity.DanhSachDuKhaches
+                group dk by new { dk.MaChuyenDi, dk.NgayBatDau } into g
+                select new
+                {
+                    MaChuyenDi = g.Key.MaChuyenDi,
+                    NgayBatDau = g.Key.NgayBatDau,
+                    SoLuongHienTai = g.Count()
+                };
+
+            var information =
+                from l in entity.LichTrinhs
+                join cd in entity.ChuyenDis
+                on l.MaChuyenDi equals cd.MaChuyenDi
+                select new
+                {
+                    MaChuyenDi = l.MaChuyenDi,
+                    NgayBatDau = l.NgayBatDau,
+                    MaHDV = l.MaHDV,
+                    SoLuongToiDa = cd.SoLuong
+                };
+
+            var datas =
+                from i in information
+                join lp in list_passenger
+                on new { i.MaChuyenDi, i.NgayBatDau } equals new { lp.MaChuyenDi, lp.NgayBatDau } into g
+                from lp in g.DefaultIfEmpty()
+                where i.SoLuongToiDa <= quantity
+
+                select new
+                {
+                    i.MaChuyenDi,
+                    i.NgayBatDau,
+                    MaHDV = i.MaHDV ?? "",
+                    SoLuongHienTai = (int?)lp.SoLuongHienTai ?? 0,
+                    i.SoLuongToiDa
+                };
+
+            
     }
 }

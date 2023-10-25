@@ -33,7 +33,6 @@
             this.btn_ChiTiet = new System.Windows.Forms.Button();
             this.dgv_DSChuyenDi = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.tb_Sao = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker_KhoiHanh = new System.Windows.Forms.DateTimePicker();
@@ -47,10 +46,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tb_Gia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nudSao = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSChuyenDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSao)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_LienHe
@@ -98,16 +99,6 @@
             this.label10.Size = new System.Drawing.Size(235, 31);
             this.label10.TabIndex = 54;
             this.label10.Text = "Danh sách chuyến đi";
-            // 
-            // tb_Sao
-            // 
-            this.tb_Sao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.tb_Sao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Sao.Location = new System.Drawing.Point(1100, 77);
-            this.tb_Sao.Multiline = true;
-            this.tb_Sao.Name = "tb_Sao";
-            this.tb_Sao.Size = new System.Drawing.Size(65, 36);
-            this.tb_Sao.TabIndex = 53;
             // 
             // label9
             // 
@@ -226,11 +217,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.nudSao);
             this.panel2.Controls.Add(this.btn_LienHe);
             this.panel2.Controls.Add(this.btn_ChiTiet);
             this.panel2.Controls.Add(this.dgv_DSChuyenDi);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.tb_Sao);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.tb_Gia);
             this.panel2.Controls.Add(this.label8);
@@ -267,6 +258,13 @@
             this.panel1.Size = new System.Drawing.Size(1312, 567);
             this.panel1.TabIndex = 12;
             // 
+            // nudSao
+            // 
+            this.nudSao.Location = new System.Drawing.Point(1104, 86);
+            this.nudSao.Name = "nudSao";
+            this.nudSao.Size = new System.Drawing.Size(120, 22);
+            this.nudSao.TabIndex = 58;
+            // 
             // FormChuyenDi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,6 +282,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,7 +293,6 @@
         private System.Windows.Forms.Button btn_ChiTiet;
         private System.Windows.Forms.DataGridView dgv_DSChuyenDi;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_Sao;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker_KhoiHanh;
@@ -308,5 +306,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tb_Gia;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown nudSao;
     }
 }
