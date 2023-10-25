@@ -119,6 +119,7 @@
             this.Controls.Add(this.lb_title);
             this.Name = "FormKhachHang";
             this.Text = "FormKhachHang";
+            this.Load += new System.EventHandler(this.FormKhachHang_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

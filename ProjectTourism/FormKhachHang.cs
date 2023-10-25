@@ -14,7 +14,6 @@ namespace ProjectTourism
 {
     public partial class FormKhachHang : Form
     {
-        private BLManager bl = new BLManager();
         public FormKhachHang()
         {
             InitializeComponent();
