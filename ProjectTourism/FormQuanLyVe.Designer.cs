@@ -34,6 +34,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyVe));
             this.lb_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btn_reload = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -54,12 +56,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_Statistics = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cbbListTour = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btn_reload = new System.Windows.Forms.Button();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_find = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,10 +92,37 @@
             this.panel1.Size = new System.Drawing.Size(1215, 598);
             this.panel1.TabIndex = 6;
             // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.White;
+            this.btnFind.BackgroundImage = global::ProjectTourism.Properties.Resources.kinhlup;
+            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.Color.White;
+            this.btnFind.Location = new System.Drawing.Point(1124, 79);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(40, 40);
+            this.btnFind.TabIndex = 12;
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // btn_reload
+            // 
+            this.btn_reload.BackColor = System.Drawing.Color.White;
+            this.btn_reload.BackgroundImage = global::ProjectTourism.Properties.Resources.reload;
+            this.btn_reload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_reload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_reload.Location = new System.Drawing.Point(1124, 33);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(40, 40);
+            this.btn_reload.TabIndex = 58;
+            this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.btn_find);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnAdd);
@@ -191,7 +217,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(663, 46);
+            this.btnAdd.Location = new System.Drawing.Point(660, 78);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(117, 43);
             this.btnAdd.TabIndex = 21;
@@ -204,7 +230,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(663, 110);
+            this.btnDelete.Location = new System.Drawing.Point(660, 142);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(117, 43);
             this.btnDelete.TabIndex = 20;
@@ -329,45 +355,6 @@
             this.btn_Statistics.UseVisualStyleBackColor = false;
             this.btn_Statistics.Click += new System.EventHandler(this.btn_Statistics_Click);
             // 
-            // cbbListTour
-            // 
-            this.cbbListTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.cbbListTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbListTour.FormattingEnabled = true;
-            this.cbbListTour.Location = new System.Drawing.Point(31, 165);
-            this.cbbListTour.Name = "cbbListTour";
-            this.cbbListTour.Size = new System.Drawing.Size(253, 36);
-            this.cbbListTour.TabIndex = 19;
-            this.cbbListTour.SelectedValueChanged += new System.EventHandler(this.cbbListTour_SelectedValueChanged);
-            // 
-            // btn_reload
-            // 
-            this.btn_reload.BackColor = System.Drawing.Color.White;
-            this.btn_reload.BackgroundImage = global::ProjectTourism.Properties.Resources.reload;
-            this.btn_reload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_reload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reload.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_reload.Location = new System.Drawing.Point(1124, 33);
-            this.btn_reload.Name = "btn_reload";
-            this.btn_reload.Size = new System.Drawing.Size(40, 40);
-            this.btn_reload.TabIndex = 58;
-            this.btn_reload.UseVisualStyleBackColor = false;
-            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
-            // 
-            // btnFind
-            // 
-            this.btnFind.BackColor = System.Drawing.Color.White;
-            this.btnFind.BackgroundImage = global::ProjectTourism.Properties.Resources.kinhlup;
-            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.ForeColor = System.Drawing.Color.White;
-            this.btnFind.Location = new System.Drawing.Point(1124, 79);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(40, 40);
-            this.btnFind.TabIndex = 12;
-            this.btnFind.UseVisualStyleBackColor = false;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -378,18 +365,16 @@
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             // 
-            // btn_find
+            // cbbListTour
             // 
-            this.btn_find.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btn_find.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_find.ForeColor = System.Drawing.Color.White;
-            this.btn_find.Location = new System.Drawing.Point(663, 164);
-            this.btn_find.Name = "btn_find";
-            this.btn_find.Size = new System.Drawing.Size(117, 43);
-            this.btn_find.TabIndex = 24;
-            this.btn_find.Text = "Tìm";
-            this.btn_find.UseVisualStyleBackColor = false;
-            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
+            this.cbbListTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.cbbListTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbListTour.FormattingEnabled = true;
+            this.cbbListTour.Location = new System.Drawing.Point(31, 165);
+            this.cbbListTour.Name = "cbbListTour";
+            this.cbbListTour.Size = new System.Drawing.Size(253, 36);
+            this.cbbListTour.TabIndex = 19;
+            this.cbbListTour.SelectedValueChanged += new System.EventHandler(this.cbbListTour_SelectedValueChanged);
             // 
             // FormQuanLyVe
             // 
@@ -446,6 +431,5 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_reload;
-        private System.Windows.Forms.Button btn_find;
     }
 }
