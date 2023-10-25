@@ -15,7 +15,7 @@ namespace ProjectTourism.BSLayer
         private software2023Entities entity = new software2023Entities();
         public BLUser() { }
 
-        public DataTable layChiTietChuyenDi(string MaChuyenDi, DateTime NgayBatDau)
+        public DataTable LayChiTietChuyenDi(string MaChuyenDi, DateTime NgayBatDau)
         {
             DataTable dt = new DataTable();
             var chuyendi = from cd in entity.ChuyenDis

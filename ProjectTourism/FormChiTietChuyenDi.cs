@@ -15,16 +15,16 @@ namespace ProjectTourism
     public partial class FormChiTietChuyenDi : Form
     {
         private BLUser tasks = new BLUser();
-        private string MaChuyenDi;
-        private DateTime NgayBatDau;
-        private string MaTaiKhoan;
+        private string maChuyenDi;
+        private DateTime ngayBatDau;
+        private string maTaiKhoan;
 
-        public FormChiTietChuyenDi(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
+        public FormChiTietChuyenDi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
         {
             InitializeComponent();
-            this.MaChuyenDi = MaChuyenDi;
-            this.NgayBatDau = NgayBatDau;
-            this.MaTaiKhoan = MaTaiKhoan;
+            this.maChuyenDi = maChuyenDi;
+            this.ngayBatDau = ngayBatDau;
+            this.maTaiKhoan = maTaiKhoan;
         }
 
         private void FormChiTietChuyenDi_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace ProjectTourism
         private void Loadata()
         {
             DataTable dt = new DataTable();
-            dt = tasks.layChiTietChuyenDi(this.MaChuyenDi, this.NgayBatDau);
+            dt = tasks.LayChiTietChuyenDi(this.maChuyenDi, this.ngayBatDau);
             lb_Ten.Text = dt.Rows[0][0].ToString();
             lb_HanhTrinh.Text = dt.Rows[0][1].ToString();
             lb_HinhThuc.Text = dt.Rows[0][2].ToString();
@@ -61,7 +61,7 @@ namespace ProjectTourism
 
         private void btn_Dat_Click(object sender, EventArgs e)
         {
-            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             this.Hide();
             formDatChuyenDi.ShowDialog();
             Close();
@@ -77,7 +77,7 @@ namespace ProjectTourism
 
         private void btn_DanhGia_Click(object sender, EventArgs e)
         {
-            FormDanhGiaChuyenDi formDanhGiaChuyenDi = new FormDanhGiaChuyenDi(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau);
+            FormDanhGiaChuyenDi formDanhGiaChuyenDi = new FormDanhGiaChuyenDi(this.maTaiKhoan,this.maChuyenDi,this.ngayBatDau);
             this.Hide();
             formDanhGiaChuyenDi.ShowDialog();
             Close();
@@ -85,7 +85,7 @@ namespace ProjectTourism
 
         private void btn_Tao_Click(object sender, EventArgs e)
         {
-            FormTaoChuyenDiMoi formTaoChuyenDiMoi = new FormTaoChuyenDiMoi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            FormTaoChuyenDiMoi formTaoChuyenDiMoi = new FormTaoChuyenDiMoi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             this.Hide();
             formTaoChuyenDiMoi.ShowDialog();
             Close();

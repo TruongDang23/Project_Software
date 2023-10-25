@@ -14,31 +14,31 @@ namespace ProjectTourism
     public partial class FormBoxThanhToan : Form
     {
         BLUser tasks = new BLUser();
-        private string MaTaiKhoan;
-        private string MaChuyenDi;
-        private DateTime NgayBatDau;
-        private int SoLuong;
+        private string maTaiKhoan;
+        private string maChuyenDi;
+        private DateTime ngayBatDau;
+        private int soLuong;
         public FormBoxThanhToan(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong)
         {
             InitializeComponent();
-            MaTaiKhoan = maTaiKhoan;
-            MaChuyenDi = maChuyenDi;
-            NgayBatDau = ngayBatDau;
-            SoLuong = soLuong;
-            LoadSoTien();
+            this.maTaiKhoan = maTaiKhoan;
+            this.maChuyenDi = maChuyenDi;
+            this.ngayBatDau = ngayBatDau;
+            this.soLuong = soLuong;
+            //LoadSoTien();
         }
         private void LoadSoTien()
         {
             
-            DataTable dt = tasks.layChiTietChuyenDi(this.MaChuyenDi, this.NgayBatDau);
+            DataTable dt = tasks.LayChiTietChuyenDi(this.maChuyenDi, this.ngayBatDau);
             int gia = int.Parse(dt.Rows[0]["Gia"].ToString());
-            int tongTien = gia * SoLuong;
+            int tongTien = gia * soLuong;
             lb_SoTien.Text = tongTien.ToString();
         }
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             this.Hide();
             formChiTietChuyenDi.ShowDialog();
             this.Close();
@@ -46,10 +46,10 @@ namespace ProjectTourism
 
         private void btn_XacNhan_Click(object sender, EventArgs e)
         {
-            tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, "ChuaDuyet");
+            tasks.ThemDanhSachDK(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong, "ChuaDuyet");
             MessageBox.Show("Đã gửi yêu cầu thành công!");
 
-            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             this.Hide();
             formChiTietChuyenDi.ShowDialog();
             this.Close();
@@ -57,7 +57,7 @@ namespace ProjectTourism
 
         private void FormBoxThanhToan_Load(object sender, EventArgs e)
         {
-            FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong);
+            FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong);
             
         }
     }
