@@ -86,12 +86,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DichVuDuLich.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormBoxNhieuNguoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,9 +243,6 @@
     <Compile Include="YeuCau.cs">
       <DependentUpon>DichVuDuLich.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBoxNhieuNguoi.resx">
       <DependentUpon>FormBoxNhieuNguoi.cs</DependentUpon>
     </EmbeddedResource>

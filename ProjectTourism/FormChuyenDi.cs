@@ -15,20 +15,20 @@ namespace ProjectTourism
     public partial class FormChuyenDi : Form
     {
         private BLUser tasks = new BLUser();
-        private string MaChuyenDi;
-        private DateTime NgayBatDau;
-        private string MaTaiKhoan;
+        private string maChuyenDi;
+        private DateTime ngayBatDau;
+        private string maTaiKhoan;
         public FormChuyenDi(string mataikhoan)
         {
-            this.MaTaiKhoan= mataikhoan;
+            this.maTaiKhoan= mataikhoan;
             InitializeComponent();
         }
 
-        private void LoadDSChuyenDi_dgv()
+        private void LoadDSChuyenDi_dgv(DataTable Source)
         {
             try
             {
-                dgv_DSChuyenDi.DataSource = tasks.Load_dgvDSChuyenDi();
+                dgv_DSChuyenDi.DataSource = Source;
             }
             catch (Exception ex)
             {
@@ -38,7 +38,29 @@ namespace ProjectTourism
 
         private void FormChuyenDi_Load(object sender, EventArgs e)
         {
-            LoadDSChuyenDi_dgv();
+            LoadDSChuyenDi_dgv(tasks.Load_dgvDSChuyenDi());
+        }
+
+        private void btn_ChiTiet_Click(object sender, EventArgs e)
+        {
+            FormChiTietChuyenDi ctcd = new FormChiTietChuyenDi(this.maTaiKhoan,this.maChuyenDi,this.ngayBatDau);
+            this.Hide();
+            ctcd.ShowDialog();
+            this.Show();
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            string destination = tb_DiemDen.Text;
+            DateTime startDay = (cbUseDateTime.Checked) ? dateTimePicker_KhoiHanh.Value : new DateTime(1000, 1, 1);
+            int price = (tb_Gia.Text == String.Empty) ? 0: int.Parse(tb_Gia.Text);
+            int rate = Convert.ToInt32(nudSao.Value);
+            LoadDSChuyenDi_dgv(tasks.FindTour(destination,startDay,price,rate));
+        }
+
+        private void cbUseDateTime_CheckedChanged(object sender, EventArgs e)
+        {
+            this.dateTimePicker_KhoiHanh.Enabled = (this.dateTimePicker_KhoiHanh.Enabled == false) ? true : false;
         }
     }
 }

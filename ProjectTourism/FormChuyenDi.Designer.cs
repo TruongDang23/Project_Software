@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChuyenDi));
             this.btn_LienHe = new System.Windows.Forms.Button();
             this.btn_ChiTiet = new System.Windows.Forms.Button();
@@ -44,14 +46,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nudSao = new System.Windows.Forms.NumericUpDown();
             this.tb_Gia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.nudSao = new System.Windows.Forms.NumericUpDown();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.cbUseDateTime = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSChuyenDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSao)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_LienHe
@@ -77,11 +81,31 @@
             this.btn_ChiTiet.TabIndex = 56;
             this.btn_ChiTiet.Text = "Chi tiết";
             this.btn_ChiTiet.UseVisualStyleBackColor = false;
+            this.btn_ChiTiet.Click += new System.EventHandler(this.btn_ChiTiet_Click);
             // 
             // dgv_DSChuyenDi
             // 
+            this.dgv_DSChuyenDi.AllowUserToAddRows = false;
+            this.dgv_DSChuyenDi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_DSChuyenDi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgv_DSChuyenDi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DSChuyenDi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_DSChuyenDi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_DSChuyenDi.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_DSChuyenDi.Location = new System.Drawing.Point(35, 183);
             this.dgv_DSChuyenDi.Name = "dgv_DSChuyenDi";
             this.dgv_DSChuyenDi.RowHeadersWidth = 51;
@@ -105,7 +129,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(1014, 77);
+            this.label9.Location = new System.Drawing.Point(997, 60);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 36);
             this.label9.TabIndex = 51;
@@ -117,7 +141,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(778, 75);
+            this.label8.Location = new System.Drawing.Point(778, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 36);
             this.label8.TabIndex = 48;
@@ -127,11 +151,12 @@
             // dateTimePicker_KhoiHanh
             // 
             this.dateTimePicker_KhoiHanh.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.dateTimePicker_KhoiHanh.Enabled = false;
             this.dateTimePicker_KhoiHanh.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_KhoiHanh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker_KhoiHanh.Location = new System.Drawing.Point(478, 77);
+            this.dateTimePicker_KhoiHanh.Location = new System.Drawing.Point(479, 66);
             this.dateTimePicker_KhoiHanh.Name = "dateTimePicker_KhoiHanh";
-            this.dateTimePicker_KhoiHanh.Size = new System.Drawing.Size(293, 31);
+            this.dateTimePicker_KhoiHanh.Size = new System.Drawing.Size(255, 31);
             this.dateTimePicker_KhoiHanh.TabIndex = 47;
             // 
             // label7
@@ -139,7 +164,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(314, 75);
+            this.label7.Location = new System.Drawing.Point(310, 61);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 36);
             this.label7.TabIndex = 46;
@@ -150,7 +175,7 @@
             // 
             this.tb_DiemDen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_DiemDen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DiemDen.Location = new System.Drawing.Point(130, 72);
+            this.tb_DiemDen.Location = new System.Drawing.Point(146, 61);
             this.tb_DiemDen.Multiline = true;
             this.tb_DiemDen.Name = "tb_DiemDen";
             this.tb_DiemDen.Size = new System.Drawing.Size(158, 36);
@@ -161,7 +186,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(26, 72);
+            this.label11.Location = new System.Drawing.Point(26, 60);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(114, 36);
             this.label11.TabIndex = 45;
@@ -207,7 +232,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 23);
+            this.label2.Location = new System.Drawing.Point(25, 12);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 31);
@@ -217,6 +242,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.cbUseDateTime);
+            this.panel2.Controls.Add(this.btnFind);
             this.panel2.Controls.Add(this.nudSao);
             this.panel2.Controls.Add(this.btn_LienHe);
             this.panel2.Controls.Add(this.btn_ChiTiet);
@@ -230,17 +257,25 @@
             this.panel2.Controls.Add(this.tb_DiemDen);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(36, 124);
+            this.panel2.Location = new System.Drawing.Point(36, 105);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1240, 417);
+            this.panel2.Size = new System.Drawing.Size(1240, 436);
             this.panel2.TabIndex = 1;
+            // 
+            // nudSao
+            // 
+            this.nudSao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSao.Location = new System.Drawing.Point(1103, 64);
+            this.nudSao.Name = "nudSao";
+            this.nudSao.Size = new System.Drawing.Size(99, 34);
+            this.nudSao.TabIndex = 58;
             // 
             // tb_Gia
             // 
             this.tb_Gia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_Gia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Gia.Location = new System.Drawing.Point(833, 75);
+            this.tb_Gia.Location = new System.Drawing.Point(840, 62);
             this.tb_Gia.Multiline = true;
             this.tb_Gia.Name = "tb_Gia";
             this.tb_Gia.Size = new System.Drawing.Size(151, 36);
@@ -258,12 +293,28 @@
             this.panel1.Size = new System.Drawing.Size(1312, 567);
             this.panel1.TabIndex = 12;
             // 
-            // nudSao
+            // btnFind
             // 
-            this.nudSao.Location = new System.Drawing.Point(1104, 86);
-            this.nudSao.Name = "nudSao";
-            this.nudSao.Size = new System.Drawing.Size(120, 22);
-            this.nudSao.TabIndex = 58;
+            this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.Color.White;
+            this.btnFind.Location = new System.Drawing.Point(1084, 124);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(118, 45);
+            this.btnFind.TabIndex = 59;
+            this.btnFind.Text = "Tìm Kiếm";
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // cbUseDateTime
+            // 
+            this.cbUseDateTime.AutoSize = true;
+            this.cbUseDateTime.Location = new System.Drawing.Point(754, 75);
+            this.cbUseDateTime.Name = "cbUseDateTime";
+            this.cbUseDateTime.Size = new System.Drawing.Size(18, 17);
+            this.cbUseDateTime.TabIndex = 60;
+            this.cbUseDateTime.UseVisualStyleBackColor = true;
+            this.cbUseDateTime.CheckedChanged += new System.EventHandler(this.cbUseDateTime_CheckedChanged);
             // 
             // FormChuyenDi
             // 
@@ -280,9 +331,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSao)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,5 +358,7 @@
         private System.Windows.Forms.TextBox tb_Gia;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown nudSao;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.CheckBox cbUseDateTime;
     }
 }

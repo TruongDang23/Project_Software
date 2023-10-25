@@ -118,7 +118,7 @@ namespace ProjectTourism.BSLayer
             dt.Columns.Add("Ten", typeof(string));
             dt.Columns.Add("BinhLuan", typeof(string));
             dt.Columns.Add("Sao", typeof(int));
-            
+
             foreach (var ct in danhgia)
             {
                 dt.Rows.Add(ct.Ten, ct.BinhLuan, ct.Sao);
@@ -140,11 +140,21 @@ namespace ProjectTourism.BSLayer
         public DataTable Load_dgvDSChuyenDi()
         {
             DataTable dt = new DataTable();
+
+            var average_star = from dg in entity.DanhGias
+                               group dg by new { dg.MaChuyenDi } into g
+                               select new
+                               {
+                                   MaChuyenDi = g.Key.MaChuyenDi,
+                                   Sao = g.Average(dg => dg.Sao)
+                               };
+
             var chuyendi = from cd in entity.ChuyenDis
                            join lt in entity.LichTrinhs on cd.MaChuyenDi equals lt.MaChuyenDi
-                           join dg in entity.DanhGias on cd.MaChuyenDi equals dg.MaChuyenDi
-                           where cd.MaChuyenDi == lt.MaChuyenDi && lt.NgayBatDau == lt.NgayBatDau
-                           select new { cd.MaChuyenDi,cd.TenChuyenDi, cd.HanhTrinh, lt.NgayBatDau, cd.SoNgayDi, cd.SoLuong, cd.Gia, dg.Sao };
+                           join avg_s in average_star on cd.MaChuyenDi equals avg_s.MaChuyenDi
+                           where cd.MaChuyenDi == lt.MaChuyenDi && cd.MaChuyenDi == avg_s.MaChuyenDi
+                           select new { cd.MaChuyenDi, cd.TenChuyenDi, cd.HanhTrinh, lt.NgayBatDau, cd.SoNgayDi, cd.SoLuong, cd.Gia, avg_s.Sao };
+
             dt.Columns.Add("Mã Tour", typeof(string));
             dt.Columns.Add("Tên Tour", typeof(string));
             dt.Columns.Add("Hành Trình", typeof(string));
@@ -156,52 +166,63 @@ namespace ProjectTourism.BSLayer
 
             foreach (var data in chuyendi)
             {
-                dt.Rows.Add( data.MaChuyenDi,data.TenChuyenDi, data.HanhTrinh,data.NgayBatDau, data.SoNgayDi, data.SoLuong, data.Gia, data.Sao);
+                dt.Rows.Add(data.MaChuyenDi, data.TenChuyenDi, data.HanhTrinh, data.NgayBatDau, data.SoNgayDi, data.SoLuong, data.Gia, data.Sao);
             }
             return dt;
         }
-        public DataTable FilterData(string diemden ,DateTime ngaybatdau, string gia, int sao, bool not_eligible)
+
+        public DataTable FindTour(string dest, DateTime start, int price, int rate)
         {
             DataTable dt = new DataTable();
+            dt.Columns.Add("Mã Tour", typeof(string));
+            dt.Columns.Add("Tên Tour", typeof(string));
+            dt.Columns.Add("Hành Trình", typeof(string));
+            dt.Columns.Add("Khởi Hành", typeof(string));
+            dt.Columns.Add("Số Ngày Đi", typeof(int));
+            dt.Columns.Add("Số Lượng", typeof(int));
+            dt.Columns.Add("Giá", typeof(string));
+            dt.Columns.Add("Số sao", typeof(string));
 
-            var list_passenger =
-                from dk in entity.DanhSachDuKhaches
-                group dk by new { dk.MaChuyenDi, dk.NgayBatDau } into g
-                select new
-                {
-                    MaChuyenDi = g.Key.MaChuyenDi,
-                    NgayBatDau = g.Key.NgayBatDau,
-                    SoLuongHienTai = g.Count()
-                };
 
-            var information =
-                from l in entity.LichTrinhs
-                join cd in entity.ChuyenDis
-                on l.MaChuyenDi equals cd.MaChuyenDi
-                select new
-                {
-                    MaChuyenDi = l.MaChuyenDi,
-                    NgayBatDau = l.NgayBatDau,
-                    MaHDV = l.MaHDV,
-                    SoLuongToiDa = cd.SoLuong
-                };
+            var average_star = from dg in entity.DanhGias
+                               group dg by new { dg.MaChuyenDi } into g
+                               select new
+                               {
+                                   MaChuyenDi = g.Key.MaChuyenDi,
+                                   Sao = g.Average(dg => dg.Sao)
+                               };
 
-            var datas =
-                from i in information
-                join lp in list_passenger
-                on new { i.MaChuyenDi, i.NgayBatDau } equals new { lp.MaChuyenDi, lp.NgayBatDau } into g
-                from lp in g.DefaultIfEmpty()
-                where i.SoLuongToiDa <= quantity
+            var chuyendi = from cd in entity.ChuyenDis
+                           join lt in entity.LichTrinhs on cd.MaChuyenDi equals lt.MaChuyenDi
+                           join avg_s in average_star on cd.MaChuyenDi equals avg_s.MaChuyenDi
+                           where cd.MaChuyenDi == lt.MaChuyenDi && cd.MaChuyenDi == avg_s.MaChuyenDi
+                           select new { cd.MaChuyenDi, cd.TenChuyenDi, cd.HanhTrinh, lt.NgayBatDau, cd.SoNgayDi, cd.SoLuong, cd.Gia, avg_s.Sao };
 
-                select new
-                {
-                    i.MaChuyenDi,
-                    i.NgayBatDau,
-                    MaHDV = i.MaHDV ?? "",
-                    SoLuongHienTai = (int?)lp.SoLuongHienTai ?? 0,
-                    i.SoLuongToiDa
-                };
+            if (!string.IsNullOrEmpty(dest))
+            {
+                chuyendi = chuyendi.Where(cd => cd.HanhTrinh.Contains(dest));
+            }
 
-            
+            if (rate != 0)
+            {
+                chuyendi = chuyendi.Where(avg_s => avg_s.Sao <= rate);
+            }
+
+            if (start != new DateTime(1000,1,1))
+            {
+                chuyendi = chuyendi.Where(lt => start.Day == lt.NgayBatDau.Day && start.Month == lt.NgayBatDau.Month && start.Year == lt.NgayBatDau.Year);
+            }
+
+            //if (price != 0)
+            //{
+            //    chuyendi = chuyendi.Where(cd => int.Parse(cd.Gia) <= price);
+            //}
+
+            foreach (var data in chuyendi)
+            {
+                dt.Rows.Add(data.MaChuyenDi, data.TenChuyenDi, data.HanhTrinh, data.NgayBatDau, data.SoNgayDi, data.SoLuong, data.Gia, data.Sao);
+            }
+            return dt;
+        }
     }
 }

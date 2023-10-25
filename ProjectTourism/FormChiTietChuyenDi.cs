@@ -69,7 +69,7 @@ namespace ProjectTourism
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            FormChuyenDi formChuyenDi = new FormChuyenDi();
+            FormChuyenDi formChuyenDi = new FormChuyenDi(this.MaTaiKhoan);
             this.Hide();
             formChuyenDi.ShowDialog();
             Close();
