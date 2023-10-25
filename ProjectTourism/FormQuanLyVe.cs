@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ProjectTourism
 {
@@ -143,6 +144,11 @@ namespace ProjectTourism
         private void btn_reload_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btn_find_Click(object sender, EventArgs e)
+        {
+            this.dgvTicket.DataSource = tasks.FindPassenger("", new DateTime(1,1,1), this.txtCCCD.Text, this.txtName.Text, this.txtSDT.Text);
         }
     }
 }

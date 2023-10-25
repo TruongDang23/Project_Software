@@ -371,6 +371,7 @@
       <DependentUpon>DichVuDuLich.edmx</DependentUpon>
       <LastGenOutput>DichVuDuLich.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\kinhlup.jpg" />
     <None Include="Resources\reload.png" />
   </ItemGroup>
   <ItemGroup>
