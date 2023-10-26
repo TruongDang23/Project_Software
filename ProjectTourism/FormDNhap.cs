@@ -66,7 +66,6 @@ namespace ProjectTourism
 
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
-
             string tk = txtUser.Text;
             string mk = txtPass.Text;
             if (rdbMag.Checked)

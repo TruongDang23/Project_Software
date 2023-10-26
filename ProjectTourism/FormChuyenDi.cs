@@ -43,6 +43,9 @@ namespace ProjectTourism
 
         private void btn_ChiTiet_Click(object sender, EventArgs e)
         {
+            int r = this.dgv_DSChuyenDi.CurrentCell.RowIndex;
+            this.maChuyenDi = dgv_DSChuyenDi.Rows[r].Cells[0].Value.ToString();
+            this.ngayBatDau = DateTime.Parse(dgv_DSChuyenDi.Rows[r].Cells[3].Value.ToString());
             FormChiTietChuyenDi ctcd = new FormChiTietChuyenDi(this.maTaiKhoan,this.maChuyenDi,this.ngayBatDau);
             this.Hide();
             ctcd.ShowDialog();

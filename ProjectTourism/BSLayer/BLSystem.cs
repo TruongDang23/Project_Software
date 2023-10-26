@@ -26,10 +26,11 @@ namespace ProjectTourism.BSLayer
                           select tk).FirstOrDefault();
             return tkComp != null;
         }
+
         public bool GetLoginUser(string UserName, string Pass)
         {
             var tkEmp = (from tk in entity.TaiKhoans
-                         where tk.TenDangNhap == UserName && tk.MatKhau == Pass && tk.MaTaiKhoan.Substring(0, 1) == "E"
+                         where tk.TenDangNhap == UserName && tk.MatKhau == Pass && tk.MaTaiKhoan.Substring(0, 1) == "U"
                          select tk).FirstOrDefault();
             return tkEmp != null;
         }
@@ -42,6 +43,7 @@ namespace ProjectTourism.BSLayer
                         select tk.MatKhau).FirstOrDefault();
             return pass;
         }
+
         public bool AddUser(string tk, string mk, string nhaplaimk, ref string err)
         {
             if (mk == nhaplaimk)
@@ -61,6 +63,7 @@ namespace ProjectTourism.BSLayer
             else { return false; }
             
         }
+
         public bool AddThongTin(string hovaten, string sdt, string diachi, string email, ref string err)
         {
             
@@ -78,9 +81,8 @@ namespace ProjectTourism.BSLayer
                 entity.ThongTinCaNhans.Add(thongTinCaNhan);
                 entity.SaveChanges();
                 return true;
-            
-
         }
+
         public long CountUser()
         {
             var user = (from tk in entity.TaiKhoans
@@ -88,6 +90,7 @@ namespace ProjectTourism.BSLayer
                        select tk.MaTaiKhoan).Count();
             return user;
         }
+
         public bool ExistAccount(string UserName)
         {
             var acc = (from tk in entity.TaiKhoans
