@@ -14,10 +14,10 @@ namespace ProjectTourism
     public partial class FormDNhap : Form
     {
         BLSystem blSystem = new BLSystem();
-        public void Dangnhapquanly(string tk, string mk)
+        public void DangNhapQuanLy(string tk, string mk)
         {
 
-            if (blSystem.Getdangnhapquanly(tk, mk))
+            if (blSystem.GetDangNhapQuanLy(tk, mk))
             {
                 FormTrangChu manag = new FormTrangChu();
                 manag.ShowDialog();
@@ -26,11 +26,11 @@ namespace ProjectTourism
                 MessageBox.Show("Account/Password is incorrect!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        public void Dangnhapnguoidung(string tk, string mk)
+        public void DangNhapNguoiDung(string tk, string mk)
         {
-            if (blSystem.Getdangnhapnguoidung(tk, mk))
+            if (blSystem.GetDangNhapNguoiDung(tk, mk))
             {
-                string ID = blSystem.Getmataikhoan(tk, mk);
+                string ID = blSystem.GetMaTaiKhoan(tk, mk);
                 FormChuyenDi emp = new FormChuyenDi(ID);
                 emp.ShowDialog();
             }
@@ -70,9 +70,9 @@ namespace ProjectTourism
             string tk = txtUser.Text;
             string mk = txtPass.Text;
             if (rdbMag.Checked)
-                Dangnhapquanly(tk, mk);
+                DangNhapQuanLy(tk, mk);
             else if (rdbUser.Checked)
-                Dangnhapnguoidung(tk, mk);
+                DangNhapNguoiDung(tk, mk);
         }
     }
 }

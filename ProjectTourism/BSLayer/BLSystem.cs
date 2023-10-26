@@ -11,7 +11,7 @@ namespace ProjectTourism.BSLayer
     {
         private software2023Entities entity = new software2023Entities();
         public BLSystem() { }
-        public string Getmataikhoan(string tendangnhap, string matkhau)
+        public string GetMaTaiKhoan(string tendangnhap, string matkhau)
         {
             var id = (from tk in entity.TaiKhoans
                       where tk.TenDangNhap == tendangnhap && tk.MatKhau == matkhau
@@ -19,14 +19,14 @@ namespace ProjectTourism.BSLayer
             return id.ToString();
         }
 
-        public bool Getdangnhapquanly(string tendangnhap, string matkhau)
+        public bool GetDangNhapQuanLy(string tendangnhap, string matkhau)
         {
             var tkComp = (from tk in entity.TaiKhoans
                           where tk.TenDangNhap == tendangnhap && tk.MatKhau == matkhau && tk.MaTaiKhoan.Substring(0, 1) == "M"
                           select tk).FirstOrDefault();
             return tkComp != null;
         }
-        public bool Getdangnhapnguoidung(string tendangnhap, string matkhau)
+        public bool GetDangNhapNguoiDung(string tendangnhap, string matkhau)
         {
             var tkEmp = (from tk in entity.TaiKhoans
                          where tk.TenDangNhap == tendangnhap && tk.MatKhau == matkhau && tk.MaTaiKhoan.Substring(0, 1) == "U"
@@ -34,7 +34,7 @@ namespace ProjectTourism.BSLayer
             return tkEmp != null;
         }
 
-        public string Getmatkhau(string tendangnhap, string Email)
+        public string GetMatKhau(string tendangnhap, string Email)
         {
             var pass = (from tk in entity.TaiKhoans
                         join ttcn in entity.ThongTinCaNhans on tk.MaTaiKhoan equals ttcn.MaTaiKhoan
@@ -42,16 +42,16 @@ namespace ProjectTourism.BSLayer
                         select tk.MatKhau).FirstOrDefault();
             return pass;
         }
-        public bool Addnguoidung(string tk, string mk, string nhaplaimk, ref string err)
+        public bool AddNguoiDung(string tk, string mk, string nhaplaimk, ref string err)
         {
             if (mk == nhaplaimk)
             {
-                long id = Demnguoidung() + 1;
+                long id = DemNguoiDung() + 1;
                 TaiKhoan taikhoan = new TaiKhoan()
                 {
                     TenDangNhap = tk,
                     MatKhau = mk,
-                    MaTaiKhoan = Taikhoanmoi(id),
+                    MaTaiKhoan = TaiKhoanMoi(id),
                 };
 
                 entity.TaiKhoans.Add(taikhoan);
@@ -61,7 +61,7 @@ namespace ProjectTourism.BSLayer
             else { return false; }
             
         }
-        public string Taikhoanmoi(long id)
+        public string TaiKhoanMoi(long id)
         {
             string mataikhoan;
             if (id < 10)
@@ -80,13 +80,13 @@ namespace ProjectTourism.BSLayer
             return mataikhoan;
 
         }
-        public bool Addthongtin(string hovaten, string sdt, string diachi, string email, ref string err)
+        public bool AddThongTin(string hovaten, string sdt, string diachi, string email, ref string err)
         {
             
-                long id = Demnguoidung() + 1;
+                long id = DemNguoiDung() + 1;
                 ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan()
                 {
-                    MaTaiKhoan = Taikhoanmoi(id),
+                    MaTaiKhoan = TaiKhoanMoi(id),
                     Ten=hovaten,
                     SDT=sdt,
                     DiaChi=diachi,
@@ -100,7 +100,7 @@ namespace ProjectTourism.BSLayer
             
 
         }
-        public long Demnguoidung()
+        public long DemNguoiDung()
         {
             var user = (from tk in entity.TaiKhoans
                        where tk.MaTaiKhoan.Substring(0, 1) == "U"
