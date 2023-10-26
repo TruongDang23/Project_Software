@@ -25,10 +25,10 @@ namespace ProjectTourism
             //MaChuyenDi = maChuyenDi;
             //NgayBatDau = ngayBatDau;
         }
-        public FormTaoChuyenDiMoi(string MaTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
+        public FormTaoChuyenDiMoi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
         {
             InitializeComponent();
-            this.MaTaiKhoan = MaTaiKhoan;
+            this.MaTaiKhoan = maTaiKhoan;
             this.MaChuyenDi = maChuyenDi;
             this.NgayBatDau = ngayBatDau;
         }
