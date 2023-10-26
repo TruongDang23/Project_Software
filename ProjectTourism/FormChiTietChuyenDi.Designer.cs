@@ -187,7 +187,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(675, 113);
+            this.label7.Location = new System.Drawing.Point(694, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 36);
             this.label7.TabIndex = 68;
@@ -223,7 +223,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(511, 160);
+            this.label3.Location = new System.Drawing.Point(500, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 36);
             this.label3.TabIndex = 60;
@@ -307,7 +307,7 @@
             this.lb_SoSao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lb_SoSao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SoSao.ForeColor = System.Drawing.Color.Black;
-            this.lb_SoSao.Location = new System.Drawing.Point(764, 117);
+            this.lb_SoSao.Location = new System.Drawing.Point(787, 117);
             this.lb_SoSao.Name = "lb_SoSao";
             this.lb_SoSao.Size = new System.Drawing.Size(79, 28);
             this.lb_SoSao.TabIndex = 113;
@@ -355,7 +355,7 @@
             this.lb_HinhThuc.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lb_HinhThuc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_HinhThuc.ForeColor = System.Drawing.Color.Black;
-            this.lb_HinhThuc.Location = new System.Drawing.Point(631, 164);
+            this.lb_HinhThuc.Location = new System.Drawing.Point(621, 164);
             this.lb_HinhThuc.Name = "lb_HinhThuc";
             this.lb_HinhThuc.Size = new System.Drawing.Size(99, 28);
             this.lb_HinhThuc.TabIndex = 109;

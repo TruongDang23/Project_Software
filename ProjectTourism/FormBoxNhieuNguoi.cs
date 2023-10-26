@@ -14,25 +14,23 @@ namespace ProjectTourism
     public partial class FormBoxNhieuNguoi : Form
     {
         private BLUser tasks = new BLUser();
-        private string MaTaiKhoan;
-        private string MaChuyenDi;
-        private DateTime NgayBatDau;
-        private int SoLuong;
-        private string CCCD;
+        private string maTaiKhoan;
+        private string maChuyenDi;
+        private DateTime ngayBatDau;
+        private int soLuong;
 
-        public FormBoxNhieuNguoi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong, string CCCD)
+        public FormBoxNhieuNguoi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong)
         {
             InitializeComponent();
-            this.MaTaiKhoan = maTaiKhoan;
-            this.MaChuyenDi = maChuyenDi;
-            this.NgayBatDau = ngayBatDau;
-            this.SoLuong = soLuong;
-            this.CCCD = CCCD;
+            this.maTaiKhoan = maTaiKhoan;
+            this.maChuyenDi = maChuyenDi;
+            this.ngayBatDau = ngayBatDau;
+            this.soLuong = soLuong;
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
-            FormNhieuNguoiDi formNhieuNguoiDi = new FormNhieuNguoiDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, this.CCCD);
+            FormNhieuNguoiDi formNhieuNguoiDi = new FormNhieuNguoiDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong);
             this.Hide();
             formNhieuNguoiDi.ShowDialog();
             Close();
@@ -40,7 +38,7 @@ namespace ProjectTourism
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau); 
+            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau); 
             this.Hide();
             formDatChuyenDi.ShowDialog();
             Close();

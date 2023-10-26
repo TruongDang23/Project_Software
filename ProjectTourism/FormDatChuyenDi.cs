@@ -15,18 +15,17 @@ namespace ProjectTourism
     public partial class FormDatChuyenDi : Form
     {
         private BLUser tasks = new BLUser();
-        private string MaChuyenDi;
-        private DateTime NgayBatDau;
-        private string MaTaiKhoan;
-        private int SoLuong;
-        private string CCCD;
+        private string maChuyenDi;
+        private DateTime ngayBatDau;
+        private string maTaiKhoan;
+        private int soLuong;
 
-        public FormDatChuyenDi(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
+        public FormDatChuyenDi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
         {
             InitializeComponent();
-            this.MaChuyenDi = MaChuyenDi;
-            this.NgayBatDau = NgayBatDau;
-            this.MaTaiKhoan = MaTaiKhoan;
+            this.maChuyenDi = maChuyenDi;
+            this.ngayBatDau = ngayBatDau;
+            this.maTaiKhoan = maTaiKhoan;
             btn_Dien.Enabled = false;
             Loadata();
         }
@@ -34,7 +33,7 @@ namespace ProjectTourism
         private void Loadata()
         {
             DataTable dt = new DataTable();
-            dt = tasks.layChiTietChuyenDi(this.MaChuyenDi, this.NgayBatDau);
+            dt = tasks.LayChiTietChuyenDi(this.maChuyenDi, this.ngayBatDau);
             lb_Ten.Text = dt.Rows[0][0].ToString();
             lb_HanhTrinh.Text = dt.Rows[0][1].ToString();
             lb_HinhThuc.Text = dt.Rows[0][2].ToString();
@@ -52,19 +51,19 @@ namespace ProjectTourism
                 string ten = this.tb_HoVaTen.Text;
                 string cccd = this.tb_CCCD.Text;
                 string sdt = this.tb_SDT.Text;
-                SoLuong = Int32.Parse(this.tb_SoLuongNguoi.Text);
+                soLuong = Int32.Parse(this.tb_SoLuongNguoi.Text);
                 if (string.IsNullOrEmpty(ten) || string.IsNullOrEmpty(cccd) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(this.tb_SoLuongNguoi.Text) || this.tb_SoLuongNguoi.Text == "0")
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
                 }
                 else
                 {
-                    if(this.SoLuong == 1)
+                    if(this.soLuong == 1)
                     {
-                        tasks.ThemDuKhachDK(this.MaChuyenDi, this.NgayBatDau, cccd, ten, sdt);
-                        tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, "Chưa thanh toán");
+                        tasks.ThemDuKhachDK(this.maChuyenDi, this.ngayBatDau, cccd, ten, sdt);
+                        tasks.ThemDanhSachDK(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong, "Chưa thanh toán");
                         ResetData();
-                        FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau,this.SoLuong);
+                        FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.maTaiKhoan,this.maChuyenDi,this.ngayBatDau,this.soLuong);
                         this.Hide();
                         formBoxThanhToan.ShowDialog();
                         Close();
@@ -90,7 +89,7 @@ namespace ProjectTourism
 
         private void btn_Dien_Click(object sender, EventArgs e)
         {
-            FormBoxNhieuNguoi formBoxNhieuNguoi = new FormBoxNhieuNguoi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, this.CCCD);
+            FormBoxNhieuNguoi formBoxNhieuNguoi = new FormBoxNhieuNguoi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong);
             this.Hide();
             formBoxNhieuNguoi.ShowDialog();
             Close();
@@ -99,7 +98,7 @@ namespace ProjectTourism
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan,this.MaChuyenDi,this.NgayBatDau);
+            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.maTaiKhoan,this.maChuyenDi,this.ngayBatDau);
             this.Hide();
             formChiTietChuyenDi.ShowDialog(); 
             Close();

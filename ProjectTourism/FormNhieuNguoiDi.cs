@@ -19,21 +19,19 @@ namespace ProjectTourism
     public partial class FormNhieuNguoiDi : Form
     {
         private BLUser tasks = new BLUser();
-        private string MaTaiKhoan;
-        private string MaChuyenDi;
-        private DateTime NgayBatDau;
-        private int SoLuong;
-        private string cCCD;
+        private string maTaiKhoan;
+        private string maChuyenDi;
+        private DateTime ngayBatDau;
+        private int soLuong;
         private int dem = 0;
 
-        public FormNhieuNguoiDi(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau, int SoLuong, string CCCD)
+        public FormNhieuNguoiDi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong)
         {
             InitializeComponent();
-            this.MaTaiKhoan = MaTaiKhoan;
-            this.MaChuyenDi = MaChuyenDi;
-            this.NgayBatDau = NgayBatDau;
-            this.SoLuong = SoLuong;
-            this.cCCD = CCCD;
+            this.maTaiKhoan = maTaiKhoan;
+            this.maChuyenDi = maChuyenDi;
+            this.ngayBatDau = ngayBatDau;
+            this.soLuong = soLuong;
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -58,7 +56,7 @@ namespace ProjectTourism
                     dtgv_DanhSachNguoiDi.Rows.Add(row);
                     ResetData();
                     dem += 1;
-                    if (dem == SoLuong)
+                    if (dem == soLuong)
                         btn_Them.Enabled = false;
                 }
             }
@@ -139,12 +137,12 @@ namespace ProjectTourism
                     string cccd = row.Cells["ccd"].Value.ToString();
                     string sdt = row.Cells["SDT"].Value.ToString();
 
-                    tasks.ThemDuKhachDK(this.MaChuyenDi, this.NgayBatDau,cccd,ten,sdt);
+                    tasks.ThemDuKhachDK(this.maChuyenDi, this.ngayBatDau,cccd,ten,sdt);
                 }
             }
             
-            tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong, "Chưa thanh toán");
-            FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau, this.SoLuong);
+            tasks.ThemDanhSachDK(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong, "Chưa thanh toán");
+            FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong);
             this.Hide();
             formBoxThanhToan.ShowDialog();
             Close();
@@ -152,7 +150,7 @@ namespace ProjectTourism
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             this.Hide();
             formDatChuyenDi.ShowDialog();
             Close();
