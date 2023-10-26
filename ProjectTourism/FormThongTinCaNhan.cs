@@ -29,7 +29,8 @@ namespace ProjectTourism
             string diachi=txtDiaChi.Text;
             string email=txtemail.Text;
             try
-            {             
+            {          
+                
                     DialogResult check;
                     check = MessageBox.Show("Do you want to add ?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (check == DialogResult.Yes)

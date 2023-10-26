@@ -109,9 +109,9 @@
             this.txtPass.ForeColor = System.Drawing.Color.DarkGray;
             this.txtPass.Location = new System.Drawing.Point(111, 278);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(292, 27);
             this.txtPass.TabIndex = 8;
-            this.txtPass.Text = "Mật khẩu";
             // 
             // pictureBox6
             // 
