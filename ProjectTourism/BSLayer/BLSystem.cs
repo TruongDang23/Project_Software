@@ -11,6 +11,7 @@ namespace ProjectTourism.BSLayer
     {
         private software2023Entities entity = new software2023Entities();
         public BLSystem() { }
+
         public string GetMaTaiKhoan(string tendangnhap, string matkhau)
         {
             var id = (from tk in entity.TaiKhoans
@@ -26,6 +27,7 @@ namespace ProjectTourism.BSLayer
                           select tk).FirstOrDefault();
             return tkComp != null;
         }
+
         public bool GetDangNhapNguoiDung(string tendangnhap, string matkhau)
         {
             var tkEmp = (from tk in entity.TaiKhoans
@@ -42,6 +44,7 @@ namespace ProjectTourism.BSLayer
                         select tk.MatKhau).FirstOrDefault();
             return pass;
         }
+
         public bool AddNguoiDung(string tk, string mk, string nhaplaimk, ref string err)
         {
             if (mk == nhaplaimk)
@@ -61,6 +64,7 @@ namespace ProjectTourism.BSLayer
             else { return false; }
             
         }
+
         public string TaiKhoanMoi(long id)
         {
             string mataikhoan;
@@ -80,6 +84,7 @@ namespace ProjectTourism.BSLayer
             return mataikhoan;
 
         }
+
         public bool AddThongTin(string hovaten, string sdt, string diachi, string email, ref string err)
         {
             
@@ -99,7 +104,6 @@ namespace ProjectTourism.BSLayer
                 return true;
         }
 
-        }
         public long DemNguoiDung()
         {
             var user = (from tk in entity.TaiKhoans

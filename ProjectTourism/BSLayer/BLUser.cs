@@ -127,6 +127,7 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+
         public void ThemDanhGia(string MaTaiKhoan, string MaChuyenDi, string BinhLuan, int Sao)
         {
             DanhGia dg = new DanhGia();
@@ -139,6 +140,7 @@ namespace ProjectTourism.BSLayer
             entity.DanhGias.Add(dg);
             entity.SaveChanges();
         }
+
         public DataTable Load_dgvDSChuyenDi()
         {
             DataTable dt = new DataTable();
