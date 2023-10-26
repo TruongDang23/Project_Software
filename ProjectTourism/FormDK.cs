@@ -43,7 +43,7 @@ namespace ProjectTourism
                     check = MessageBox.Show("Do you want to add this Account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (check == DialogResult.Yes)
                     {
-                        blSystem.AddUser(tk, mk,nhaplaimk, ref err);
+                        blSystem.Addnguoidung(tk, mk,nhaplaimk, ref err);
                         MessageBox.Show("Added Successfully!");
                         FormThongTinCaNhan form = new FormThongTinCaNhan();
                         form.ShowDialog();

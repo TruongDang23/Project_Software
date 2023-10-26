@@ -34,7 +34,7 @@ namespace ProjectTourism
                     check = MessageBox.Show("Do you want to add ?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (check == DialogResult.Yes)
                     {
-                        blSystem.AddThongTin(hovaten, sdt, diachi, email, ref err);
+                        blSystem.Addthongtin(hovaten, sdt, diachi, email, ref err);
                         MessageBox.Show("Added Successfully!");
                         FormDNhap form = new FormDNhap();
                         form.ShowDialog();

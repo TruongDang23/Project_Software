@@ -77,9 +77,10 @@
             this.txtPass.ForeColor = System.Drawing.Color.DarkGray;
             this.txtPass.Location = new System.Drawing.Point(103, 248);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(293, 27);
             this.txtPass.TabIndex = 13;
-            this.txtPass.Text = "Mật khẩu";
+            this.txtPass.Tag = "";
             // 
             // txtNhapLaiMatKhau
             // 
@@ -90,9 +91,9 @@
             this.txtNhapLaiMatKhau.ForeColor = System.Drawing.Color.DarkGray;
             this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(103, 309);
             this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
+            this.txtNhapLaiMatKhau.PasswordChar = '*';
             this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(293, 27);
             this.txtNhapLaiMatKhau.TabIndex = 18;
-            this.txtNhapLaiMatKhau.Text = "Nhập lại mật khẩu";
             // 
             // btnDangky
             // 

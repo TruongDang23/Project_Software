@@ -11,47 +11,47 @@ namespace ProjectTourism.BSLayer
     {
         private software2023Entities entity = new software2023Entities();
         public BLSystem() { }
-        public string GetID(string UserName, string Pass)
+        public string Getmataikhoan(string tendangnhap, string matkhau)
         {
             var id = (from tk in entity.TaiKhoans
-                      where tk.TenDangNhap == UserName && tk.MatKhau == Pass
+                      where tk.TenDangNhap == tendangnhap && tk.MatKhau == matkhau
                       select tk.MaTaiKhoan).FirstOrDefault();
             return id.ToString();
         }
 
-        public bool GetLoginMag(string UserName, string Pass)
+        public bool Getdangnhapquanly(string tendangnhap, string matkhau)
         {
             var tkComp = (from tk in entity.TaiKhoans
-                          where tk.TenDangNhap == UserName && tk.MatKhau == Pass && tk.MaTaiKhoan.Substring(0, 1) == "M"
+                          where tk.TenDangNhap == tendangnhap && tk.MatKhau == matkhau && tk.MaTaiKhoan.Substring(0, 1) == "M"
                           select tk).FirstOrDefault();
             return tkComp != null;
         }
-        public bool GetLoginUser(string UserName, string Pass)
+        public bool Getdangnhapnguoidung(string tendangnhap, string matkhau)
         {
             var tkEmp = (from tk in entity.TaiKhoans
-                         where tk.TenDangNhap == UserName && tk.MatKhau == Pass && tk.MaTaiKhoan.Substring(0, 1) == "E"
+                         where tk.TenDangNhap == tendangnhap && tk.MatKhau == matkhau && tk.MaTaiKhoan.Substring(0, 1) == "U"
                          select tk).FirstOrDefault();
             return tkEmp != null;
         }
 
-        public string GetPass(string UserName, string Email)
+        public string Getmatkhau(string tendangnhap, string Email)
         {
             var pass = (from tk in entity.TaiKhoans
                         join ttcn in entity.ThongTinCaNhans on tk.MaTaiKhoan equals ttcn.MaTaiKhoan
-                        where tk.TenDangNhap == UserName && ttcn.Email == Email
+                        where tk.TenDangNhap == tendangnhap && ttcn.Email == Email
                         select tk.MatKhau).FirstOrDefault();
             return pass;
         }
-        public bool AddUser(string tk, string mk, string nhaplaimk, ref string err)
+        public bool Addnguoidung(string tk, string mk, string nhaplaimk, ref string err)
         {
             if (mk == nhaplaimk)
             {
-                long id = CountUser() + 1;
+                long id = Demnguoidung() + 1;
                 TaiKhoan taikhoan = new TaiKhoan()
                 {
                     TenDangNhap = tk,
                     MatKhau = mk,
-                    MaTaiKhoan = "U" + id.ToString(),
+                    MaTaiKhoan = Taikhoanmoi(id),
                 };
 
                 entity.TaiKhoans.Add(taikhoan);
@@ -61,13 +61,32 @@ namespace ProjectTourism.BSLayer
             else { return false; }
             
         }
-        public bool AddThongTin(string hovaten, string sdt, string diachi, string email, ref string err)
+        public string Taikhoanmoi(long id)
+        {
+            string mataikhoan;
+            if (id < 10)
+            {
+                mataikhoan="U00"+id.ToString();
+            }
+            else if (id >= 10 || id < 100)
+            {
+                mataikhoan = "U0" + id.ToString();
+            }
+            else
+            {
+                mataikhoan = "U" + id.ToString();
+            }
+
+            return mataikhoan;
+
+        }
+        public bool Addthongtin(string hovaten, string sdt, string diachi, string email, ref string err)
         {
             
-                long id = CountUser() + 1;
+                long id = Demnguoidung() + 1;
                 ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan()
                 {
-                    MaTaiKhoan = "U" + id.ToString(),
+                    MaTaiKhoan = Taikhoanmoi(id),
                     Ten=hovaten,
                     SDT=sdt,
                     DiaChi=diachi,
@@ -81,7 +100,7 @@ namespace ProjectTourism.BSLayer
             
 
         }
-        public long CountUser()
+        public long Demnguoidung()
         {
             var user = (from tk in entity.TaiKhoans
                        where tk.MaTaiKhoan.Substring(0, 1) == "U"
