@@ -112,11 +112,12 @@ namespace ProjectTourism.BSLayer
         public DataTable DanhSachDanhGia(string MaChuyenDi, DateTime NgayBatDau)
         {
             DataTable dt = new DataTable();
-            // Gộp hai bảng ThongTinCaNhan và DanhGia, để lấy các cột Ten, BinhLuan, Sao
+            // Gộp hai bảng ThongTinCaNhan và DanhGia, để lấy các cột Ten, BinhLuan, Sao với điều kiện là hai bảng có cùng MaTaiKhoan
             var danhgia = from dg in entity.DanhGias
-                          join ttcn in entity.ThongTinCaNhans on dg.MaTaiKhoan equals ttcn.MaTaiKhoan
-                          where dg.MaChuyenDi == MaChuyenDi
-                          select new { ttcn.Ten, dg.BinhLuan, dg.Sao };
+                          join tk in entity.TaiKhoans on dg.MaTaiKhoan equals tk.MaTaiKhoan
+                          join tt in entity.ThongTinCaNhans on tk.MaTaiKhoan equals tt.MaTaiKhoan
+                          where dg.MaTaiKhoan == tk.MaTaiKhoan && tk.MaTaiKhoan == tt.MaTaiKhoan
+                          select new { tt.Ten, dg.BinhLuan, dg.Sao };
             dt.Columns.Add("Ten", typeof(string));
             dt.Columns.Add("BinhLuan", typeof(string));
             dt.Columns.Add("Sao", typeof(int));

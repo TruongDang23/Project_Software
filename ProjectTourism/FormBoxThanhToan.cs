@@ -30,9 +30,8 @@ namespace ProjectTourism
 
         private void LoadSoTien()
         {
-            DataTable dt = tasks.LayChiTietChuyenDi(this.maChuyenDi, this.ngayBatDau);
-            int gia = int.Parse(dt.Rows[0]["Gia"].ToString());
-            int tongTien = gia * soLuong;
+            int tongTien = 0;
+            tongTien = tasks.SoTienThanhToan(maChuyenDi, ngayBatDau, soLuong);
             lb_SoTien.Text = tongTien.ToString();
         }
 
