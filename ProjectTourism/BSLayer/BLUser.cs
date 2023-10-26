@@ -95,6 +95,7 @@ namespace ProjectTourism.BSLayer
             entity.DanhSachDuKhaches.Remove(dk);
             entity.SaveChanges();
         }
+
         public int SoTienThanhToan(string MaChuyenDi, DateTime NgayBatDau, int SoLuong)
         {
             int gia = 0;
@@ -103,10 +104,11 @@ namespace ProjectTourism.BSLayer
                            select new { cd.Gia };
             foreach (var ct in chuyendi)
             {
-                gia = Int32.Parse(ct.Gia);
+                gia = (int)ct.Gia;
             }
             return gia * SoLuong;
         }
+
         public DataTable DanhSachDanhGia(string MaChuyenDi, DateTime NgayBatDau)
         {
             DataTable dt = new DataTable();
@@ -177,11 +179,11 @@ namespace ProjectTourism.BSLayer
             dt.Columns.Add("Mã Tour", typeof(string));
             dt.Columns.Add("Tên Tour", typeof(string));
             dt.Columns.Add("Hành Trình", typeof(string));
-            dt.Columns.Add("Khởi Hành", typeof(string));
+            dt.Columns.Add("Khởi Hành", typeof(DateTime));
             dt.Columns.Add("Số Ngày Đi", typeof(int));
             dt.Columns.Add("Số Lượng", typeof(int));
-            dt.Columns.Add("Giá", typeof(string));
-            dt.Columns.Add("Số sao", typeof(string));
+            dt.Columns.Add("Giá", typeof(int));
+            dt.Columns.Add("Số sao", typeof(Double));
 
 
             var average_star = from dg in entity.DanhGias
@@ -196,7 +198,15 @@ namespace ProjectTourism.BSLayer
                            join lt in entity.LichTrinhs on cd.MaChuyenDi equals lt.MaChuyenDi
                            join avg_s in average_star on cd.MaChuyenDi equals avg_s.MaChuyenDi
                            where cd.MaChuyenDi == lt.MaChuyenDi && cd.MaChuyenDi == avg_s.MaChuyenDi
-                           select new { cd.MaChuyenDi, cd.TenChuyenDi, cd.HanhTrinh, lt.NgayBatDau, cd.SoNgayDi, cd.SoLuong, cd.Gia, avg_s.Sao };
+                           select new { 
+                               cd.MaChuyenDi, 
+                               cd.TenChuyenDi, 
+                               cd.HanhTrinh, 
+                               lt.NgayBatDau, 
+                               cd.SoNgayDi, 
+                               cd.SoLuong, 
+                               cd.Gia,
+                               avg_s.Sao };
 
             if (!string.IsNullOrEmpty(dest))
             {
@@ -213,10 +223,10 @@ namespace ProjectTourism.BSLayer
                 chuyendi = chuyendi.Where(lt => start.Day == lt.NgayBatDau.Day && start.Month == lt.NgayBatDau.Month && start.Year == lt.NgayBatDau.Year);
             }
 
-            //if (price != 0)
-            //{
-            //    chuyendi = chuyendi.Where(cd => int.Parse(cd.Gia) <= price);
-            //}
+            if (price != 0)
+            {
+                chuyendi = chuyendi.Where(cd => cd.Gia <= price);
+            }
 
             foreach (var data in chuyendi)
             {

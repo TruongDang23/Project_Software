@@ -26,7 +26,7 @@ namespace ProjectTourism
         public string HinhThuc { get; set; }
         public string HanhTrinh { get; set; }
         public Nullable<int> SoNgayDi { get; set; }
-        public string Gia { get; set; }
+        public Nullable<int> Gia { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public string ChiTiet { get; set; }
     
