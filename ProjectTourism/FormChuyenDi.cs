@@ -15,8 +15,8 @@ namespace ProjectTourism
     public partial class FormChuyenDi : Form
     {
         private BLUser tasks = new BLUser();
-        private string maChuyenDi;
-        private DateTime ngayBatDau;
+        private string maChuyenDi = "";
+        private DateTime ngayBatDau = DateTime.Now;
         private string maTaiKhoan;
         public FormChuyenDi(string mataikhoan)
         {
