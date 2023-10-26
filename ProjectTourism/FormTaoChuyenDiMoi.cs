@@ -43,7 +43,7 @@ namespace ProjectTourism
         {
             DateTime ngayBatDau = dateTimePicker_KhoiHanh.Value;
             int soLuong = int.Parse(tb_SoLuong.Text);
-            tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, ngayBatDau, soLuong, "ChuaDuyet");
+            tasks.ThemDanhSachDKy(this.MaTaiKhoan, this.MaChuyenDi, ngayBatDau, soLuong, "ChuaDuyet");
             MessageBox.Show("Đã gửi yêu cầu thành công!");
 
             FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);

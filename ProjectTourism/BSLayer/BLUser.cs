@@ -57,6 +57,19 @@ namespace ProjectTourism.BSLayer
         public void ThemDanhSachDK(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau, int SoLuong, string TrangThai)
         {
             DanhSachDangKy dky = new DanhSachDangKy();
+
+            dky.MaTaiKhoan = MaTaiKhoan;
+            dky.MaChuyenDi = MaChuyenDi;
+            dky.NgayBatDau = NgayBatDau;
+            dky.SoLuong = SoLuong;
+            dky.TrangThai = TrangThai;
+
+            entity.DanhSachDangKies.Add(dky);
+            entity.SaveChanges();
+        }
+        public void ThemDanhSachDKy(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau, int SoLuong, string TrangThai)
+        {
+            DanhSachDangKy dky = new DanhSachDangKy();
             LichTrinh lt = new LichTrinh();
 
             dky.MaTaiKhoan = MaTaiKhoan;
@@ -73,6 +86,7 @@ namespace ProjectTourism.BSLayer
             entity.DanhSachDangKies.Add(dky);
             entity.SaveChanges();
         }
+
 
         public void XoaDanhSachDK(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
         {
