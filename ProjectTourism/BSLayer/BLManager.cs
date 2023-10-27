@@ -492,7 +492,7 @@ namespace ProjectTourism.BSLayer
             new_tour.HinhThuc = HinhThuc;
             new_tour.HanhTrinh = HanhTrinh;
             new_tour.SoNgayDi = SoNgayDi;
-            new_tour.Gia = Gia;
+            new_tour.Gia = int.Parse(Gia);
             new_tour.SoLuong = SoLuong;
             new_tour.ChiTiet = ChiTiet;
 
@@ -602,7 +602,7 @@ namespace ProjectTourism.BSLayer
                 tpQuery.HinhThuc = HinhThuc;
                 tpQuery.HanhTrinh = HanhTrinh;
                 tpQuery.SoNgayDi = SoNgayDi;
-                tpQuery.Gia = Gia;
+                tpQuery.Gia = int.Parse(Gia);
                 tpQuery.SoLuong = SoLuong;
                 entity.SaveChanges();
             }

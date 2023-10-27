@@ -25,14 +25,13 @@ namespace ProjectTourism
             this.maChuyenDi = maChuyenDi;
             this.ngayBatDau = ngayBatDau;
             this.soLuong = soLuong;
-            //LoadSoTien();
+            LoadSoTien();
         }
+
         private void LoadSoTien()
         {
-            
-            DataTable dt = tasks.LayChiTietChuyenDi(this.maChuyenDi, this.ngayBatDau);
-            int gia = int.Parse(dt.Rows[0]["Gia"].ToString());
-            int tongTien = gia * soLuong;
+            int tongTien = 0;
+            tongTien = tasks.SoTienThanhToan(maChuyenDi, ngayBatDau, soLuong);
             lb_SoTien.Text = tongTien.ToString();
         }
 
@@ -46,19 +45,12 @@ namespace ProjectTourism
 
         private void btn_XacNhan_Click(object sender, EventArgs e)
         {
-            tasks.ThemDanhSachDK(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong, "ChuaDuyet");
-            MessageBox.Show("Đã gửi yêu cầu thành công!");
+            MessageBox.Show("Chúc quý khách có một chuyến du lịch vui vẻ!");
 
             FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             this.Hide();
             formChiTietChuyenDi.ShowDialog();
             this.Close();
-        }
-
-        private void FormBoxThanhToan_Load(object sender, EventArgs e)
-        {
-            FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong);
-            
         }
     }
 }

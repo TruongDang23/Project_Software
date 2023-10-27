@@ -14,7 +14,7 @@
           <Property Name="HinhThuc" Type="nvarchar" MaxLength="20" />
           <Property Name="HanhTrinh" Type="nvarchar" MaxLength="200" />
           <Property Name="SoNgayDi" Type="int" />
-          <Property Name="Gia" Type="varchar" MaxLength="10" />
+          <Property Name="Gia" Type="int" />
           <Property Name="SoLuong" Type="int" />
           <Property Name="ChiTiet" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -221,7 +221,7 @@ warning 6035: The relationship 'FK__YeuCau__MaTaiKho__619B8048' has columns that
           <Property Name="HinhThuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="HanhTrinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="SoNgayDi" Type="Int32" />
-          <Property Name="Gia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Gia" Type="Int32" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="ChiTiet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DanhGias" Relationship="Self.FK__DanhGia__MaChuye__60A75C0F" FromRole="ChuyenDi" ToRole="DanhGia" />

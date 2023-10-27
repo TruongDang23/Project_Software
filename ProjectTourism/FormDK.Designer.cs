@@ -62,7 +62,7 @@
             this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.Location = new System.Drawing.Point(103, 187);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(293, 27);
@@ -74,12 +74,13 @@
             this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.Location = new System.Drawing.Point(103, 248);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(293, 27);
             this.txtPass.TabIndex = 13;
-            this.txtPass.Text = "Mật khẩu";
+            this.txtPass.Tag = "";
             // 
             // txtNhapLaiMatKhau
             // 
@@ -87,12 +88,12 @@
             this.txtNhapLaiMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtNhapLaiMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNhapLaiMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapLaiMatKhau.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtNhapLaiMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(103, 309);
             this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
+            this.txtNhapLaiMatKhau.PasswordChar = '*';
             this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(293, 27);
             this.txtNhapLaiMatKhau.TabIndex = 18;
-            this.txtNhapLaiMatKhau.Text = "Nhập lại mật khẩu";
             // 
             // btnDangky
             // 

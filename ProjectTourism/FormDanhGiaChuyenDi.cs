@@ -39,7 +39,7 @@ namespace ProjectTourism
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
+            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaChuyenDi, this.MaTaiKhoan, this.NgayBatDau);
             this.Hide();
             formChiTietChuyenDi.ShowDialog();
             this.Close();
@@ -49,12 +49,8 @@ namespace ProjectTourism
         {
             int sao = Int32.Parse(tbSoSao.Text);
             string BinhLuan = rtbNhanXet.Text;
-            task.ThemDanhGia(MaTaiKhoan, MaChuyenDi, BinhLuan, sao);
+            task.ThemDanhGia(this.MaChuyenDi, this.MaTaiKhoan, BinhLuan, sao);
             MessageBox.Show("Đã gửi đánh giá thành công!");
-            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
-            this.Hide();
-            formChiTietChuyenDi.ShowDialog();
-            this.Close();
         }
     }
 }

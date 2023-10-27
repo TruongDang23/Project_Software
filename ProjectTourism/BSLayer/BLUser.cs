@@ -67,6 +67,26 @@ namespace ProjectTourism.BSLayer
             entity.DanhSachDangKies.Add(dky);
             entity.SaveChanges();
         }
+        public void ThemDanhSachDKy(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau, int SoLuong, string TrangThai)
+        {
+            DanhSachDangKy dky = new DanhSachDangKy();
+            LichTrinh lt = new LichTrinh();
+
+            dky.MaTaiKhoan = MaTaiKhoan;
+            dky.MaChuyenDi = MaChuyenDi;
+            dky.NgayBatDau = NgayBatDau;
+            dky.SoLuong = SoLuong;
+            dky.TrangThai = TrangThai;
+
+            lt.MaChuyenDi = MaChuyenDi;
+            lt.NgayBatDau = NgayBatDau;
+            lt.MaHDV = null;
+
+            entity.LichTrinhs.Add(lt);
+            entity.DanhSachDangKies.Add(dky);
+            entity.SaveChanges();
+        }
+
 
         public void XoaDanhSachDK(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
         {
@@ -95,6 +115,7 @@ namespace ProjectTourism.BSLayer
             entity.DanhSachDuKhaches.Remove(dk);
             entity.SaveChanges();
         }
+
         public int SoTienThanhToan(string MaChuyenDi, DateTime NgayBatDau, int SoLuong)
         {
             int gia = 0;
@@ -103,18 +124,20 @@ namespace ProjectTourism.BSLayer
                            select new { cd.Gia };
             foreach (var ct in chuyendi)
             {
-                gia = Int32.Parse(ct.Gia);
+                gia = (int)ct.Gia;
             }
             return gia * SoLuong;
         }
+
         public DataTable DanhSachDanhGia(string MaChuyenDi, DateTime NgayBatDau)
         {
             DataTable dt = new DataTable();
-            // Gộp hai bảng ThongTinCaNhan và DanhGia, để lấy các cột Ten, BinhLuan, Sao
+            // Gộp hai bảng ThongTinCaNhan và DanhGia, để lấy các cột Ten, BinhLuan, Sao với điều kiện là hai bảng có cùng MaTaiKhoan
             var danhgia = from dg in entity.DanhGias
-                          join ttcn in entity.ThongTinCaNhans on dg.MaTaiKhoan equals ttcn.MaTaiKhoan
-                          where dg.MaChuyenDi == MaChuyenDi
-                          select new { ttcn.Ten, dg.BinhLuan, dg.Sao };
+                          join tk in entity.TaiKhoans on dg.MaTaiKhoan equals tk.MaTaiKhoan
+                          join tt in entity.ThongTinCaNhans on tk.MaTaiKhoan equals tt.MaTaiKhoan
+                          where dg.MaTaiKhoan == tk.MaTaiKhoan && tk.MaTaiKhoan == tt.MaTaiKhoan
+                          select new { tt.Ten, dg.BinhLuan, dg.Sao };
             dt.Columns.Add("Ten", typeof(string));
             dt.Columns.Add("BinhLuan", typeof(string));
             dt.Columns.Add("Sao", typeof(int));
@@ -125,6 +148,7 @@ namespace ProjectTourism.BSLayer
             }
             return dt;
         }
+
         public void ThemDanhGia(string MaTaiKhoan, string MaChuyenDi, string BinhLuan, int Sao)
         {
             DanhGia dg = new DanhGia();
@@ -137,6 +161,7 @@ namespace ProjectTourism.BSLayer
             entity.DanhGias.Add(dg);
             entity.SaveChanges();
         }
+
         public DataTable Load_dgvDSChuyenDi()
         {
             DataTable dt = new DataTable();
@@ -177,11 +202,11 @@ namespace ProjectTourism.BSLayer
             dt.Columns.Add("Mã Tour", typeof(string));
             dt.Columns.Add("Tên Tour", typeof(string));
             dt.Columns.Add("Hành Trình", typeof(string));
-            dt.Columns.Add("Khởi Hành", typeof(string));
+            dt.Columns.Add("Khởi Hành", typeof(DateTime));
             dt.Columns.Add("Số Ngày Đi", typeof(int));
             dt.Columns.Add("Số Lượng", typeof(int));
-            dt.Columns.Add("Giá", typeof(string));
-            dt.Columns.Add("Số sao", typeof(string));
+            dt.Columns.Add("Giá", typeof(int));
+            dt.Columns.Add("Số sao", typeof(Double));
 
 
             var average_star = from dg in entity.DanhGias
@@ -196,7 +221,15 @@ namespace ProjectTourism.BSLayer
                            join lt in entity.LichTrinhs on cd.MaChuyenDi equals lt.MaChuyenDi
                            join avg_s in average_star on cd.MaChuyenDi equals avg_s.MaChuyenDi
                            where cd.MaChuyenDi == lt.MaChuyenDi && cd.MaChuyenDi == avg_s.MaChuyenDi
-                           select new { cd.MaChuyenDi, cd.TenChuyenDi, cd.HanhTrinh, lt.NgayBatDau, cd.SoNgayDi, cd.SoLuong, cd.Gia, avg_s.Sao };
+                           select new { 
+                               cd.MaChuyenDi, 
+                               cd.TenChuyenDi, 
+                               cd.HanhTrinh, 
+                               lt.NgayBatDau, 
+                               cd.SoNgayDi, 
+                               cd.SoLuong, 
+                               cd.Gia,
+                               avg_s.Sao };
 
             if (!string.IsNullOrEmpty(dest))
             {
@@ -213,10 +246,10 @@ namespace ProjectTourism.BSLayer
                 chuyendi = chuyendi.Where(lt => start.Day == lt.NgayBatDau.Day && start.Month == lt.NgayBatDau.Month && start.Year == lt.NgayBatDau.Year);
             }
 
-            //if (price != 0)
-            //{
-            //    chuyendi = chuyendi.Where(cd => int.Parse(cd.Gia) <= price);
-            //}
+            if (price != 0)
+            {
+                chuyendi = chuyendi.Where(cd => cd.Gia <= price);
+            }
 
             foreach (var data in chuyendi)
             {

@@ -25,10 +25,10 @@ namespace ProjectTourism
             //MaChuyenDi = maChuyenDi;
             //NgayBatDau = ngayBatDau;
         }
-        public FormTaoChuyenDiMoi(string MaTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
+        public FormTaoChuyenDiMoi(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
         {
             InitializeComponent();
-            this.MaTaiKhoan = MaTaiKhoan;
+            this.MaTaiKhoan = maTaiKhoan;
             this.MaChuyenDi = maChuyenDi;
             this.NgayBatDau = ngayBatDau;
         }
@@ -43,7 +43,7 @@ namespace ProjectTourism
         {
             DateTime ngayBatDau = dateTimePicker_KhoiHanh.Value;
             int soLuong = int.Parse(tb_SoLuong.Text);
-            tasks.ThemDanhSachDK(this.MaTaiKhoan, this.MaChuyenDi, ngayBatDau, soLuong, "ChuaDuyet");
+            tasks.ThemDanhSachDKy(this.MaTaiKhoan, this.MaChuyenDi, ngayBatDau, soLuong, "ChuaDuyet");
             MessageBox.Show("Đã gửi yêu cầu thành công!");
 
             FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);

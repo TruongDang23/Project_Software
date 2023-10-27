@@ -63,13 +63,12 @@
             this.txtDiaChi.AcceptsReturn = true;
             this.txtDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtDiaChi.Location = new System.Drawing.Point(286, 347);
+            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
+            this.txtDiaChi.Location = new System.Drawing.Point(301, 347);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(309, 27);
+            this.txtDiaChi.Size = new System.Drawing.Size(294, 20);
             this.txtDiaChi.TabIndex = 37;
-            this.txtDiaChi.Text = "Địa chỉ";
             // 
             // pictureBox9
             // 
@@ -93,13 +92,12 @@
             // 
             this.txtSoDienThoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDienThoai.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSoDienThoai.Location = new System.Drawing.Point(286, 286);
+            this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDienThoai.ForeColor = System.Drawing.Color.Black;
+            this.txtSoDienThoai.Location = new System.Drawing.Point(301, 286);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(318, 27);
+            this.txtSoDienThoai.Size = new System.Drawing.Size(303, 20);
             this.txtSoDienThoai.TabIndex = 33;
-            this.txtSoDienThoai.Text = "Số điện thoại";
             // 
             // pictureBox4
             // 
@@ -123,13 +121,12 @@
             // 
             this.txtHoVaTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtHoVaTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHoVaTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoVaTen.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtHoVaTen.Location = new System.Drawing.Point(286, 220);
+            this.txtHoVaTen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoVaTen.ForeColor = System.Drawing.Color.Black;
+            this.txtHoVaTen.Location = new System.Drawing.Point(301, 228);
             this.txtHoVaTen.Name = "txtHoVaTen";
-            this.txtHoVaTen.Size = new System.Drawing.Size(318, 27);
+            this.txtHoVaTen.Size = new System.Drawing.Size(303, 20);
             this.txtHoVaTen.TabIndex = 29;
-            this.txtHoVaTen.Text = "Họ và tên";
             // 
             // pictureBox5
             // 
@@ -194,10 +191,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 229);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(186, 228);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 43;
             this.label1.Text = "Họ và tên:";
             // 
@@ -205,10 +202,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(186, 295);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(186, 286);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 17);
+            this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 44;
             this.label2.Text = "Số điện thoại:";
             // 
@@ -216,10 +213,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(186, 356);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(186, 347);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 17);
+            this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 45;
             this.label3.Text = "Địa chỉ:";
             // 
@@ -227,10 +224,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(186, 430);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(186, 420);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 46;
             this.label4.Text = "Email:";
             // 
@@ -239,13 +236,12 @@
             this.txtemail.AcceptsReturn = true;
             this.txtemail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtemail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtemail.Location = new System.Drawing.Point(286, 420);
+            this.txtemail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtemail.ForeColor = System.Drawing.Color.Black;
+            this.txtemail.Location = new System.Drawing.Point(301, 420);
             this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(309, 27);
+            this.txtemail.Size = new System.Drawing.Size(294, 20);
             this.txtemail.TabIndex = 47;
-            this.txtemail.Text = "Email";
             // 
             // FormThongTinCaNhan
             // 
