@@ -85,35 +85,40 @@ namespace ProjectTourism
             int r = dgv_dataacc.CurrentCell.RowIndex;
             if (r < dgv_dataacc.Rows.Count - 1 && r >= 0)
             {
-                DataTable data_per = bl.GetDataPersonal(dgv_dataacc.Rows[r].Cells[2].Value.ToString());
-                DataRow row_data = data_per.Rows[0];
-                lb_value_ten.Text = row_data[1].ToString();
-                lb_value_sdt.Text = row_data[2].ToString();
-                lb_value_diachi.Text = row_data[3].ToString();
-                lb_value_email.Text = row_data[4].ToString();
+                if (bl.Is_InfoPersonal_Exist(dgv_dataacc.Rows[r].Cells[2].Value.ToString()))
+                {
+                    DataTable data_per = bl.GetDataPersonal(dgv_dataacc.Rows[r].Cells[2].Value.ToString());
+                    DataRow row_data = data_per.Rows[0];
+                    lb_value_ten.Text = row_data[1].ToString();
+                    lb_value_sdt.Text = row_data[2].ToString();
+                    lb_value_diachi.Text = row_data[3].ToString();
+                    lb_value_email.Text = row_data[4].ToString();
 
-                try
-                {
-                    dgv_dangky.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-                    dgv_dangky.AutoResizeColumns();
-                    dgv_dangky.AllowUserToResizeColumns = false;
-                    dgv_dangky.AllowUserToOrderColumns = false;
-                    dgv_dangky.DataSource = bl.GetDataJoinTour(dgv_dataacc.Rows[r].Cells[2].Value.ToString());
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không lấy được nội dung!");
-                }
-                if (state == Modify.Sua)
-                {
-                    tb_modify_tendn.Text = dgv_dataacc.Rows[r].Cells[0].Value.ToString();
-                    tb_modify_mk.Text = dgv_dataacc.Rows[r].Cells[1].Value.ToString();
+                    try
+                    {
+                        dgv_dangky.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                        dgv_dangky.AutoResizeColumns();
+                        dgv_dangky.AllowUserToResizeColumns = false;
+                        dgv_dangky.AllowUserToOrderColumns = false;
+                        dgv_dangky.DataSource = bl.GetDataJoinTour(dgv_dataacc.Rows[r].Cells[2].Value.ToString());
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("Không lấy được nội dung!");
+                    }
+                    if (state == Modify.Sua)
+                    {
+                        tb_modify_tendn.Text = dgv_dataacc.Rows[r].Cells[0].Value.ToString();
+                        tb_modify_mk.Text = dgv_dataacc.Rows[r].Cells[1].Value.ToString();
 
-                    tb_ten.Text = row_data[1].ToString();
-                    tb_sdt.Text = row_data[2].ToString();
-                    tb_diachi.Text = row_data[3].ToString();
-                    tb_email.Text = row_data[4].ToString();
+                        tb_ten.Text = row_data[1].ToString();
+                        tb_sdt.Text = row_data[2].ToString();
+                        tb_diachi.Text = row_data[3].ToString();
+                        tb_email.Text = row_data[4].ToString();
+                    }
                 }
+                else { MessageBox.Show("Chưa có thông tin người dùng!"); }
+                
                 current.TenDangNhap = dgv_dataacc.Rows[r].Cells[0].Value.ToString();
                 current.MaTaiKhoan = dgv_dataacc.Rows[r].Cells[2].Value.ToString();
             }
