@@ -65,5 +65,10 @@ namespace ProjectTourism
         {
             this.dateTimePicker_KhoiHanh.Enabled = (this.dateTimePicker_KhoiHanh.Enabled == false) ? true : false;
         }
+
+        private void btn_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
