@@ -43,6 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdbUser = new System.Windows.Forms.RadioButton();
             this.rdbMag = new System.Windows.Forms.RadioButton();
+            this.cbHienThiMatKhau = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -98,8 +99,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(292, 27);
             this.txtUser.TabIndex = 7;
-            this.txtUser.Text = "Tên đăng nhập";
-            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // txtPass
             // 
@@ -140,7 +139,7 @@
             this.btnDangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btnDangnhap.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangnhap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDangnhap.Location = new System.Drawing.Point(25, 359);
+            this.btnDangnhap.Location = new System.Drawing.Point(25, 361);
             this.btnDangnhap.Name = "btnDangnhap";
             this.btnDangnhap.Size = new System.Drawing.Size(389, 50);
             this.btnDangnhap.TabIndex = 11;
@@ -160,7 +159,7 @@
             this.btnDangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangky.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangky.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnDangky.Location = new System.Drawing.Point(25, 413);
+            this.btnDangky.Location = new System.Drawing.Point(25, 415);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(94, 40);
             this.btnDangky.TabIndex = 12;
@@ -179,7 +178,7 @@
             this.btnForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgot.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(74)))), ((int)(((byte)(123)))));
-            this.btnForgot.Location = new System.Drawing.Point(259, 415);
+            this.btnForgot.Location = new System.Drawing.Point(259, 417);
             this.btnForgot.Name = "btnForgot";
             this.btnForgot.Size = new System.Drawing.Size(155, 38);
             this.btnForgot.TabIndex = 13;
@@ -201,7 +200,7 @@
             // 
             this.rdbUser.AutoSize = true;
             this.rdbUser.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbUser.Location = new System.Drawing.Point(68, 333);
+            this.rdbUser.Location = new System.Drawing.Point(227, 322);
             this.rdbUser.Name = "rdbUser";
             this.rdbUser.Size = new System.Drawing.Size(104, 21);
             this.rdbUser.TabIndex = 14;
@@ -214,7 +213,7 @@
             this.rdbMag.AutoSize = true;
             this.rdbMag.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rdbMag.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMag.Location = new System.Drawing.Point(276, 333);
+            this.rdbMag.Location = new System.Drawing.Point(337, 322);
             this.rdbMag.Name = "rdbMag";
             this.rdbMag.Size = new System.Drawing.Size(77, 21);
             this.rdbMag.TabIndex = 15;
@@ -222,12 +221,25 @@
             this.rdbMag.Text = "Quản lý";
             this.rdbMag.UseVisualStyleBackColor = false;
             // 
+            // cbHienThiMatKhau
+            // 
+            this.cbHienThiMatKhau.AutoSize = true;
+            this.cbHienThiMatKhau.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHienThiMatKhau.Location = new System.Drawing.Point(25, 323);
+            this.cbHienThiMatKhau.Name = "cbHienThiMatKhau";
+            this.cbHienThiMatKhau.Size = new System.Drawing.Size(142, 21);
+            this.cbHienThiMatKhau.TabIndex = 16;
+            this.cbHienThiMatKhau.Text = "Hiển thị mật khẩu";
+            this.cbHienThiMatKhau.UseVisualStyleBackColor = true;
+            this.cbHienThiMatKhau.CheckStateChanged += new System.EventHandler(this.cbHienThiMatKhau_CheckStateChanged);
+            // 
             // FormDNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(438, 476);
+            this.ClientSize = new System.Drawing.Size(438, 471);
+            this.Controls.Add(this.cbHienThiMatKhau);
             this.Controls.Add(this.rdbMag);
             this.Controls.Add(this.rdbUser);
             this.Controls.Add(this.btnForgot);
@@ -272,5 +284,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton rdbUser;
         private System.Windows.Forms.RadioButton rdbMag;
+        private System.Windows.Forms.CheckBox cbHienThiMatKhau;
     }
 }

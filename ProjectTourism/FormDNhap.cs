@@ -19,8 +19,10 @@ namespace ProjectTourism
 
             if (blSystem.GetDangNhapQuanLy(tk, mk))
             {
+                this.Hide();
                 FormTrangChu manag = new FormTrangChu();
                 manag.ShowDialog();
+                this.Close();
             }
             else
                 MessageBox.Show("Account/Password is incorrect!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -31,8 +33,10 @@ namespace ProjectTourism
             if (blSystem.GetDangNhapNguoiDung(tk, mk))
             {
                 string ID = blSystem.GetMaTaiKhoan(tk, mk);
+                this.Hide();
                 FormChuyenDi emp = new FormChuyenDi(ID);
                 emp.ShowDialog();
+                this.Close();
             }
             else
                 MessageBox.Show("Account/Password is incorrect!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -45,8 +49,6 @@ namespace ProjectTourism
         private void FormLogin_Load(object sender, EventArgs e) {
             
         }
-
-        private void txtUser_TextChanged(object sender, EventArgs e) { }
 
         private void btnDangky_Click(object sender, EventArgs e)
         {
@@ -72,6 +74,13 @@ namespace ProjectTourism
                 DangNhapQuanLy(tk, mk);
             else if (rdbUser.Checked)
                 DangNhapNguoiDung(tk, mk);
+
+            
+        }
+        private void cbHienThiMatKhau_CheckStateChanged(object sender, EventArgs e)
+        {
+            if(cbHienThiMatKhau.Checked) { txtPass.PasswordChar = '\0'; }
+            else { txtPass.PasswordChar = '*'; }
         }
     }
 }

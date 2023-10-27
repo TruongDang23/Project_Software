@@ -65,7 +65,7 @@
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.txtDiaChi.Location = new System.Drawing.Point(301, 347);
+            this.txtDiaChi.Location = new System.Drawing.Point(305, 316);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(294, 20);
             this.txtDiaChi.TabIndex = 37;
@@ -73,7 +73,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.pictureBox9.Location = new System.Drawing.Point(174, 340);
+            this.pictureBox9.Location = new System.Drawing.Point(178, 309);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(442, 40);
             this.pictureBox9.TabIndex = 36;
@@ -82,7 +82,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(177)))), ((int)(((byte)(212)))));
-            this.pictureBox8.Location = new System.Drawing.Point(174, 340);
+            this.pictureBox8.Location = new System.Drawing.Point(178, 309);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(442, 45);
             this.pictureBox8.TabIndex = 35;
@@ -94,7 +94,7 @@
             this.txtSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDienThoai.ForeColor = System.Drawing.Color.Black;
-            this.txtSoDienThoai.Location = new System.Drawing.Point(301, 286);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(305, 255);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(303, 20);
             this.txtSoDienThoai.TabIndex = 33;
@@ -102,7 +102,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.pictureBox4.Location = new System.Drawing.Point(174, 279);
+            this.pictureBox4.Location = new System.Drawing.Point(178, 248);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(442, 40);
             this.pictureBox4.TabIndex = 32;
@@ -111,7 +111,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(177)))), ((int)(((byte)(212)))));
-            this.pictureBox2.Location = new System.Drawing.Point(174, 279);
+            this.pictureBox2.Location = new System.Drawing.Point(178, 248);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(442, 45);
             this.pictureBox2.TabIndex = 31;
@@ -123,7 +123,7 @@
             this.txtHoVaTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHoVaTen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoVaTen.ForeColor = System.Drawing.Color.Black;
-            this.txtHoVaTen.Location = new System.Drawing.Point(301, 228);
+            this.txtHoVaTen.Location = new System.Drawing.Point(305, 197);
             this.txtHoVaTen.Name = "txtHoVaTen";
             this.txtHoVaTen.Size = new System.Drawing.Size(303, 20);
             this.txtHoVaTen.TabIndex = 29;
@@ -131,7 +131,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.pictureBox5.Location = new System.Drawing.Point(174, 219);
+            this.pictureBox5.Location = new System.Drawing.Point(178, 188);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(442, 40);
             this.pictureBox5.TabIndex = 28;
@@ -140,7 +140,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(177)))), ((int)(((byte)(212)))));
-            this.pictureBox3.Location = new System.Drawing.Point(174, 219);
+            this.pictureBox3.Location = new System.Drawing.Point(178, 188);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(442, 45);
             this.pictureBox3.TabIndex = 27;
@@ -149,7 +149,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(286, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(277, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(231, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,7 +172,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.pictureBox12.Location = new System.Drawing.Point(174, 414);
+            this.pictureBox12.Location = new System.Drawing.Point(178, 383);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(442, 40);
             this.pictureBox12.TabIndex = 41;
@@ -181,7 +181,7 @@
             // pictureBox13
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(177)))), ((int)(((byte)(212)))));
-            this.pictureBox13.Location = new System.Drawing.Point(174, 414);
+            this.pictureBox13.Location = new System.Drawing.Point(178, 383);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(442, 45);
             this.pictureBox13.TabIndex = 40;
@@ -191,10 +191,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 228);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(190, 197);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.Size = new System.Drawing.Size(109, 28);
             this.label1.TabIndex = 43;
             this.label1.Text = "Họ và tên:";
             // 
@@ -202,10 +202,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(186, 286);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(190, 255);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.Size = new System.Drawing.Size(143, 28);
             this.label2.TabIndex = 44;
             this.label2.Text = "Số điện thoại:";
             // 
@@ -213,10 +213,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(186, 347);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(190, 316);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 20);
+            this.label3.Size = new System.Drawing.Size(83, 28);
             this.label3.TabIndex = 45;
             this.label3.Text = "Địa chỉ:";
             // 
@@ -224,10 +224,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(186, 420);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(190, 389);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.Size = new System.Drawing.Size(69, 28);
             this.label4.TabIndex = 46;
             this.label4.Text = "Email:";
             // 
@@ -238,7 +238,7 @@
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtemail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtemail.ForeColor = System.Drawing.Color.Black;
-            this.txtemail.Location = new System.Drawing.Point(301, 420);
+            this.txtemail.Location = new System.Drawing.Point(305, 389);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(294, 20);
             this.txtemail.TabIndex = 47;

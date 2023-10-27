@@ -59,5 +59,14 @@ namespace ProjectTourism
                 MessageBox.Show("ERROR");
             }
         }
+
+        private void cbHienThiMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbHienThiMatKhau.Checked) { 
+                txtPass.PasswordChar = '\0';
+                txtNhapLaiMatKhau.PasswordChar = '\0';
+            }
+            else { txtPass.PasswordChar = '*';txtNhapLaiMatKhau.PasswordChar = '*'; }
+        }
     }
 }
