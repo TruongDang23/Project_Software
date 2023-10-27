@@ -226,7 +226,7 @@ namespace ProjectTourism
         }
         private void btn_Xem_Click(object sender, EventArgs e)
         {
-            this.monthCalendar_hdv.Refresh();
+            monthCalendar_hdv.RemoveAllBoldedDates();
             Highlight();
             monthCalendar_hdv.UpdateBoldedDates();
         }
