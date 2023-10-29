@@ -64,7 +64,7 @@ namespace ProjectTourism.BSLayer
             else { return false; }
             
         }
-        
+
         public string TaiKhoanMoi(long id)
         {
             string mataikhoan;
