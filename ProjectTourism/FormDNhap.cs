@@ -50,10 +50,20 @@ namespace ProjectTourism
 
         private void btnDangky_Click(object sender, EventArgs e)
         {
-            FormDK formRegister = new FormDK();
-            this.Hide();
-            formRegister.ShowDialog();
-            Close();
+            if (rdbUser.Checked)
+            {
+                FormDK formRegister = new FormDK();
+                this.Hide();
+                formRegister.ShowDialog();
+                this.Close();
+            }
+            else 
+            {
+                FormDKQuanLy formRegister = new FormDKQuanLy();
+                this.Hide();
+                formRegister.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btnForgot_Click(object sender, EventArgs e)
@@ -72,6 +82,16 @@ namespace ProjectTourism
                 DangNhapQuanLy(tk, mk);
             else if (rdbUser.Checked)
                 DangNhapNguoiDung(tk, mk);
+        }
+
+        private void cbHienThiMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbHienThiMatKhau.Checked)
+            {
+                txtPass.PasswordChar = '\0';
+                
+            }
+            else { txtPass.PasswordChar = '*';  }
         }
     }
 }
