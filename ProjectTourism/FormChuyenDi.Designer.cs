@@ -46,11 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbUseDateTime = new System.Windows.Forms.CheckBox();
+            this.btnFind = new System.Windows.Forms.Button();
             this.nudSao = new System.Windows.Forms.NumericUpDown();
             this.tb_Gia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.cbUseDateTime = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSChuyenDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -63,7 +63,7 @@
             this.btn_LienHe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btn_LienHe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LienHe.ForeColor = System.Drawing.Color.White;
-            this.btn_LienHe.Location = new System.Drawing.Point(1084, 360);
+            this.btn_LienHe.Location = new System.Drawing.Point(1083, 522);
             this.btn_LienHe.Name = "btn_LienHe";
             this.btn_LienHe.Size = new System.Drawing.Size(118, 45);
             this.btn_LienHe.TabIndex = 57;
@@ -75,7 +75,7 @@
             this.btn_ChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
             this.btn_ChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btn_ChiTiet.Location = new System.Drawing.Point(954, 360);
+            this.btn_ChiTiet.Location = new System.Drawing.Point(959, 522);
             this.btn_ChiTiet.Name = "btn_ChiTiet";
             this.btn_ChiTiet.Size = new System.Drawing.Size(118, 45);
             this.btn_ChiTiet.TabIndex = 56;
@@ -106,18 +106,18 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_DSChuyenDi.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgv_DSChuyenDi.Location = new System.Drawing.Point(35, 183);
+            this.dgv_DSChuyenDi.Location = new System.Drawing.Point(35, 148);
             this.dgv_DSChuyenDi.Name = "dgv_DSChuyenDi";
             this.dgv_DSChuyenDi.RowHeadersWidth = 51;
             this.dgv_DSChuyenDi.RowTemplate.Height = 24;
-            this.dgv_DSChuyenDi.Size = new System.Drawing.Size(1167, 160);
+            this.dgv_DSChuyenDi.Size = new System.Drawing.Size(1167, 368);
             this.dgv_DSChuyenDi.TabIndex = 55;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(25, 130);
+            this.label10.Location = new System.Drawing.Point(25, 103);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(235, 31);
@@ -129,7 +129,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(997, 60);
+            this.label9.Location = new System.Drawing.Point(997, 48);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 36);
             this.label9.TabIndex = 51;
@@ -141,7 +141,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(778, 60);
+            this.label8.Location = new System.Drawing.Point(778, 48);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 36);
             this.label8.TabIndex = 48;
@@ -154,7 +154,7 @@
             this.dateTimePicker_KhoiHanh.Enabled = false;
             this.dateTimePicker_KhoiHanh.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_KhoiHanh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker_KhoiHanh.Location = new System.Drawing.Point(479, 66);
+            this.dateTimePicker_KhoiHanh.Location = new System.Drawing.Point(479, 54);
             this.dateTimePicker_KhoiHanh.Name = "dateTimePicker_KhoiHanh";
             this.dateTimePicker_KhoiHanh.Size = new System.Drawing.Size(255, 31);
             this.dateTimePicker_KhoiHanh.TabIndex = 47;
@@ -164,7 +164,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(310, 61);
+            this.label7.Location = new System.Drawing.Point(310, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 36);
             this.label7.TabIndex = 46;
@@ -175,7 +175,7 @@
             // 
             this.tb_DiemDen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_DiemDen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DiemDen.Location = new System.Drawing.Point(146, 61);
+            this.tb_DiemDen.Location = new System.Drawing.Point(146, 49);
             this.tb_DiemDen.Multiline = true;
             this.tb_DiemDen.Name = "tb_DiemDen";
             this.tb_DiemDen.Size = new System.Drawing.Size(158, 36);
@@ -186,7 +186,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(26, 60);
+            this.label11.Location = new System.Drawing.Point(26, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(114, 36);
             this.label11.TabIndex = 45;
@@ -198,7 +198,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(445, 73);
+            this.label6.Location = new System.Drawing.Point(441, 55);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(487, 28);
@@ -221,7 +221,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(347, 27);
+            this.label1.Location = new System.Drawing.Point(343, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(719, 45);
@@ -232,7 +232,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 12);
+            this.label2.Location = new System.Drawing.Point(29, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 31);
@@ -257,16 +257,39 @@
             this.panel2.Controls.Add(this.tb_DiemDen);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(36, 105);
+            this.panel2.Location = new System.Drawing.Point(36, 87);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1240, 436);
+            this.panel2.Size = new System.Drawing.Size(1240, 605);
             this.panel2.TabIndex = 1;
+            // 
+            // cbUseDateTime
+            // 
+            this.cbUseDateTime.AutoSize = true;
+            this.cbUseDateTime.Location = new System.Drawing.Point(754, 63);
+            this.cbUseDateTime.Name = "cbUseDateTime";
+            this.cbUseDateTime.Size = new System.Drawing.Size(18, 17);
+            this.cbUseDateTime.TabIndex = 60;
+            this.cbUseDateTime.UseVisualStyleBackColor = true;
+            this.cbUseDateTime.CheckedChanged += new System.EventHandler(this.cbUseDateTime_CheckedChanged);
+            // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
+            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.Color.White;
+            this.btnFind.Location = new System.Drawing.Point(1083, 97);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(118, 45);
+            this.btnFind.TabIndex = 59;
+            this.btnFind.Text = "Tìm Kiếm";
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // nudSao
             // 
             this.nudSao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudSao.Location = new System.Drawing.Point(1103, 64);
+            this.nudSao.Location = new System.Drawing.Point(1103, 52);
             this.nudSao.Name = "nudSao";
             this.nudSao.Size = new System.Drawing.Size(99, 34);
             this.nudSao.TabIndex = 58;
@@ -275,7 +298,7 @@
             // 
             this.tb_Gia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.tb_Gia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Gia.Location = new System.Drawing.Point(840, 62);
+            this.tb_Gia.Location = new System.Drawing.Point(840, 50);
             this.tb_Gia.Multiline = true;
             this.tb_Gia.Name = "tb_Gia";
             this.tb_Gia.Size = new System.Drawing.Size(151, 36);
@@ -290,38 +313,15 @@
             this.panel1.Location = new System.Drawing.Point(-2, 105);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1312, 567);
+            this.panel1.Size = new System.Drawing.Size(1312, 718);
             this.panel1.TabIndex = 12;
-            // 
-            // btnFind
-            // 
-            this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.ForeColor = System.Drawing.Color.White;
-            this.btnFind.Location = new System.Drawing.Point(1084, 124);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(118, 45);
-            this.btnFind.TabIndex = 59;
-            this.btnFind.Text = "Tìm Kiếm";
-            this.btnFind.UseVisualStyleBackColor = false;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
-            // cbUseDateTime
-            // 
-            this.cbUseDateTime.AutoSize = true;
-            this.cbUseDateTime.Location = new System.Drawing.Point(754, 75);
-            this.cbUseDateTime.Name = "cbUseDateTime";
-            this.cbUseDateTime.Size = new System.Drawing.Size(18, 17);
-            this.cbUseDateTime.TabIndex = 60;
-            this.cbUseDateTime.UseVisualStyleBackColor = true;
-            this.cbUseDateTime.CheckedChanged += new System.EventHandler(this.cbUseDateTime_CheckedChanged);
             // 
             // FormChuyenDi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1309, 670);
+            this.ClientSize = new System.Drawing.Size(1309, 825);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Name = "FormChuyenDi";

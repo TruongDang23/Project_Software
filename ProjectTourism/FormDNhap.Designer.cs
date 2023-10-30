@@ -43,6 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdbUser = new System.Windows.Forms.RadioButton();
             this.rdbMag = new System.Windows.Forms.RadioButton();
+            this.cbHienThiMatKhau = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -98,7 +99,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(292, 27);
             this.txtUser.TabIndex = 7;
-            this.txtUser.Text = "Tên đăng nhập";
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // txtPass
@@ -200,8 +200,9 @@
             // rdbUser
             // 
             this.rdbUser.AutoSize = true;
+            this.rdbUser.Checked = true;
             this.rdbUser.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbUser.Location = new System.Drawing.Point(68, 333);
+            this.rdbUser.Location = new System.Drawing.Point(198, 332);
             this.rdbUser.Name = "rdbUser";
             this.rdbUser.Size = new System.Drawing.Size(104, 21);
             this.rdbUser.TabIndex = 14;
@@ -214,13 +215,24 @@
             this.rdbMag.AutoSize = true;
             this.rdbMag.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rdbMag.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMag.Location = new System.Drawing.Point(276, 333);
+            this.rdbMag.Location = new System.Drawing.Point(319, 332);
             this.rdbMag.Name = "rdbMag";
             this.rdbMag.Size = new System.Drawing.Size(77, 21);
             this.rdbMag.TabIndex = 15;
-            this.rdbMag.TabStop = true;
             this.rdbMag.Text = "Quản lý";
             this.rdbMag.UseVisualStyleBackColor = false;
+            // 
+            // cbHienThiMatKhau
+            // 
+            this.cbHienThiMatKhau.AutoSize = true;
+            this.cbHienThiMatKhau.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHienThiMatKhau.Location = new System.Drawing.Point(25, 332);
+            this.cbHienThiMatKhau.Name = "cbHienThiMatKhau";
+            this.cbHienThiMatKhau.Size = new System.Drawing.Size(142, 21);
+            this.cbHienThiMatKhau.TabIndex = 16;
+            this.cbHienThiMatKhau.Text = "Hiển thị mật khẩu";
+            this.cbHienThiMatKhau.UseVisualStyleBackColor = true;
+            this.cbHienThiMatKhau.CheckedChanged += new System.EventHandler(this.cbHienThiMatKhau_CheckedChanged);
             // 
             // FormDNhap
             // 
@@ -228,6 +240,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(438, 476);
+            this.Controls.Add(this.cbHienThiMatKhau);
             this.Controls.Add(this.rdbMag);
             this.Controls.Add(this.rdbUser);
             this.Controls.Add(this.btnForgot);
@@ -272,5 +285,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton rdbUser;
         private System.Windows.Forms.RadioButton rdbMag;
+        private System.Windows.Forms.CheckBox cbHienThiMatKhau;
     }
 }

@@ -45,16 +45,16 @@ namespace ProjectTourism.BSLayer
             return pass;
         }
 
-        public bool AddNguoiDung(string tk, string mk, string nhaplaimk, ref string err)
+        public bool AddNguoiDung(string tk, string mk, string nhaplaimk,string matk, ref string err)
         {
             if (mk == nhaplaimk)
             {
-                long id = DemNguoiDung() + 1;
+                
                 TaiKhoan taikhoan = new TaiKhoan()
                 {
                     TenDangNhap = tk,
                     MatKhau = mk,
-                    MaTaiKhoan = TaiKhoanMoi(id),
+                    MaTaiKhoan = matk,
                 };
 
                 entity.TaiKhoans.Add(taikhoan);
@@ -64,34 +64,32 @@ namespace ProjectTourism.BSLayer
             else { return false; }
             
         }
-
-        public string TaiKhoanMoi(long id)
+        public bool AddQuanLy(string tk, string mk, string nhaplaimk,string mataotk, ref string err)
         {
-            string mataikhoan;
-            if (id < 10)
+            string mataotaikhoan = "software2023";
+            if (mk == nhaplaimk && mataotk==mataotaikhoan)
             {
-                mataikhoan="U00"+id.ToString();
-            }
-            else if (id >= 10 || id < 100)
-            {
-                mataikhoan = "U0" + id.ToString();
-            }
-            else
-            {
-                mataikhoan = "U" + id.ToString();
-            }
+                
+                TaiKhoan taikhoan = new TaiKhoan()
+                {
+                    TenDangNhap = tk,
+                    MatKhau = mk,
+                    MaTaiKhoan = TaiKhoanMoiQuanLy(),
+                };
 
-            return mataikhoan;
+                entity.TaiKhoans.Add(taikhoan);
+                entity.SaveChanges();
+                return true;
+            }
+            else { return false; }
 
         }
-
-        public bool AddThongTin(string hovaten, string sdt, string diachi, string email, ref string err)
-        {
-            
-                long id = DemNguoiDung() + 1;
+        
+        public bool AddThongTin(string matk,string hovaten, string sdt, string diachi, string email, ref string err)
+        { 
                 ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan()
                 {
-                    MaTaiKhoan = TaiKhoanMoi(id),
+                    MaTaiKhoan = matk,
                     Ten=hovaten,
                     SDT=sdt,
                     DiaChi=diachi,
@@ -104,14 +102,7 @@ namespace ProjectTourism.BSLayer
                 return true;
         }
 
-        public long DemNguoiDung()
-        {
-            var user = (from tk in entity.TaiKhoans
-                       where tk.MaTaiKhoan.Substring(0, 1) == "U"
-                       select tk.MaTaiKhoan).Count();
-            return user;
-        }
-
+        
         public bool ExistAccount(string UserName)
         {
             var acc = (from tk in entity.TaiKhoans
@@ -121,5 +112,59 @@ namespace ProjectTourism.BSLayer
                 return true;
             return false;
         }
-    }
+        public bool IsExist(string id)
+        {
+            var acc = (from tk in entity.TaiKhoans
+                       where tk.TenDangNhap == id 
+                       select tk).SingleOrDefault();
+            if (acc == null) { return false; }
+            return true;
+        }
+        public string TaiKhoanMoiQuanLy()
+        {
+            int[] id_num = { 0, 0, 1 };
+            while (true)
+            {
+                string matk = "M" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
+                var tpQuery = (from info_per in entity.ThongTinCaNhans
+                               where info_per.MaTaiKhoan == matk
+                               select info_per).SingleOrDefault();
+                if (tpQuery != null)
+                {
+                    id_num[2] = id_num[2] + 1;
+                    id_num[1] = id_num[1] + id_num[2] / 10;
+                    id_num[0] = id_num[0] + id_num[1] / 10;
+
+                    id_num[2] = id_num[2] % 10;
+                    id_num[1] = id_num[1] % 10;
+                    id_num[0] = id_num[0] % 10;
+                }
+                else { break; }
+            }
+            return "M" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
+        }
+        public string TaiKhoanMoiNguoiDung()
+        {
+            int[] id_num = { 0, 0, 1 };
+            while (true)
+            {
+                string matk = "U" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
+                var tpQuery = (from info_per in entity.ThongTinCaNhans
+                               where info_per.MaTaiKhoan == matk
+                               select info_per).SingleOrDefault();
+                if (tpQuery != null)
+                {
+                    id_num[2] = id_num[2] + 1;
+                    id_num[1] = id_num[1] + id_num[2] / 10;
+                    id_num[0] = id_num[0] + id_num[1] / 10;
+
+                    id_num[2] = id_num[2] % 10;
+                    id_num[1] = id_num[1] % 10;
+                    id_num[0] = id_num[0] % 10;
+                }
+                else { break; }
+            }
+            return "U" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
+        }
+        }
 }
