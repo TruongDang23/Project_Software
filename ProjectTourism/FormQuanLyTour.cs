@@ -216,26 +216,6 @@ namespace ProjectTourism
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static void DeleteDirectory(string path)
-        {
-            foreach (string directory in Directory.GetDirectories(path))
-            {
-                DeleteDirectory(directory);
-            }
-            try
-            {
-                Directory.Delete(path, true);
-            }
-            catch (IOException)
-            {
-                Directory.Delete(path, true);
-            }
-            catch (UnauthorizedAccessException)
-            {
-                Directory.Delete(path, true);
-            }
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -243,9 +223,10 @@ namespace ProjectTourism
                 int n = this.dgvQLTour.CurrentCell.RowIndex;
                 string IDTour = dgvQLTour.Rows[n].Cells[0].Value.ToString();
                 string path = dgvQLTour.Rows[n].Cells[7].Value.ToString();
-                DeleteDirectory(@"../../../Details/DaNang001");
                 tasks.Delete(IDTour);
                 MessageBox.Show("Xóa tour thành công");
+
+
             }
             catch (DbUpdateException ex)
             {
