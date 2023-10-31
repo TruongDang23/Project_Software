@@ -76,7 +76,10 @@ namespace ProjectTourism
                 }
                 
             }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+            catch (Exception ex) {
+                MessageBox.Show("Bạn đã đặt chuyến đi này rồi");
+                return;
+            }
         }
 
         private void ResetData()

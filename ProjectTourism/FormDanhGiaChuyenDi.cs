@@ -47,10 +47,42 @@ namespace ProjectTourism
 
         private void btnDanhGia_Click(object sender, EventArgs e)
         {
-            int sao = Int32.Parse(tbSoSao.Text);
+            int sao;
             string BinhLuan = rtbNhanXet.Text;
-            task.ThemDanhGia(this.MaChuyenDi, this.MaTaiKhoan, BinhLuan, sao);
-            MessageBox.Show("Đã gửi đánh giá thành công!");
+
+            try
+            {
+                sao = Int32.Parse(tbSoSao.Text);
+                if (sao < 1 || sao > 5)
+                {
+                    MessageBox.Show("Số sao phải từ 1 đến 5!");
+                    return;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Số sao phải là số!");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(BinhLuan))
+            {
+                MessageBox.Show("Vui lòng nhập nhận xét!");
+                return;
+            }
+
+            try
+            {
+                task.ThemDanhGia(this.MaChuyenDi, this.MaTaiKhoan, BinhLuan, sao);
+                MessageBox.Show("Đã gửi đánh giá thành công!");
+            }
+            catch (Exception ex)
+            {
+                
+                MessageBox.Show("Bạn đã đánh giá chuyến đi rồi!");
+            }
+            //task.ThemDanhGia(this.MaChuyenDi, this.MaTaiKhoan, BinhLuan, sao);
+            //MessageBox.Show("Đã gửi đánh giá thành công!");
         }
     }
 }
