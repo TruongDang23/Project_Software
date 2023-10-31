@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ProjectTourism
 {
-    public partial class FormDK : Form
+    public partial class FormDKQuanLy : Form
     {
         private BLSystem blSystem = new BLSystem();
         private string err = "";
-        public FormDK()
+        public FormDKQuanLy()
         {
             InitializeComponent();
         }
@@ -31,10 +31,10 @@ namespace ProjectTourism
 
         private void btnDangky_Click(object sender, EventArgs e)
         {
-            string tk = txtUser.Text;
-            string mk = txtPass.Text;
+            string tk = txtTaiKhoan.Text;
+            string mk = txtMatKhau.Text;
             string nhaplaimk = txtNhapLaiMatKhau.Text;
-            string matk = blSystem.TaiKhoanMoiNguoiDung();
+            string mataotk = txtMaTaoTaiKhoan.Text;
             try
             {
                 if (blSystem.IsExist(tk) == false)
@@ -43,17 +43,17 @@ namespace ProjectTourism
                     check = MessageBox.Show("Do you want to add this Account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (check == DialogResult.Yes)
                     {
-                        blSystem.AddNguoiDung(tk, mk,nhaplaimk,matk, ref err);
+                        blSystem.AddQuanLy(tk, mk, nhaplaimk, mataotk, ref err);
                         MessageBox.Show("Added Successfully!");
-                        FormThongTinCaNhan form = new FormThongTinCaNhan(matk);
+                        FormDNhap form = new FormDNhap();
                         form.ShowDialog();
                         this.Close();
                     }
                 }
-                else
-                    MessageBox.Show("Account/Email is exist!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
+
+
+
             catch (SqlException)
             {
                 MessageBox.Show("ERROR");
@@ -64,10 +64,11 @@ namespace ProjectTourism
         {
             if (cbHienThiMatKhau.Checked)
             {
-                txtPass.PasswordChar = '\0';
+                txtMatKhau.PasswordChar = '\0';
                 txtNhapLaiMatKhau.PasswordChar = '\0';
+                txtMaTaoTaiKhoan.PasswordChar = '\0';
             }
-            else { txtPass.PasswordChar = '*'; txtNhapLaiMatKhau.PasswordChar = '*'; }
+            else { txtMatKhau.PasswordChar = '*'; txtNhapLaiMatKhau.PasswordChar = '*';txtMaTaoTaiKhoan.PasswordChar = '*'; }
         }
     }
 }

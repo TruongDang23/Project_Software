@@ -105,10 +105,12 @@ namespace ProjectTourism
                 }
             }
         }
+
         private void status_btn()
         {
             this.txtMaTour.Enabled = true;
         }
+
         private void status_txt()
         {
             this.txtMaTour.Text = String.Empty;
@@ -177,9 +179,6 @@ namespace ProjectTourism
             }
         }
 
-
-
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
@@ -247,9 +246,6 @@ namespace ProjectTourism
                 DeleteDirectory(@"../../../Details/DaNang001");
                 tasks.Delete(IDTour);
                 MessageBox.Show("Xóa tour thành công");
-                
-
-
             }
             catch (DbUpdateException ex)
             {

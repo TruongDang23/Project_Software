@@ -675,6 +675,14 @@ namespace ProjectTourism.BSLayer
             if (acc == null) { return  false; }
             return true;
         }
+        public bool Is_InfoPersonal_Exist(string matk)
+        {
+            var acc = (from tk in entity.ThongTinCaNhans
+                       where tk.MaTaiKhoan == matk
+                       select tk).SingleOrDefault();
+            if (acc == null) { return false; }
+            return true;
+        }
         public void AddInfoPersonal(string matk, string ten, string sdt, string diachi, string email)
         {
             ThongTinCaNhan new_tt = new ThongTinCaNhan();
