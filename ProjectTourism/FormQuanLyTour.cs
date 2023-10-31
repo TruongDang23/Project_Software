@@ -13,6 +13,8 @@ using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Collections;
 using System.Data.Entity.Infrastructure;
+using System.Xml.Linq;
+using System.Threading;
 
 namespace ProjectTourism
 {
@@ -215,6 +217,7 @@ namespace ProjectTourism
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -222,8 +225,12 @@ namespace ProjectTourism
             {
                 int n = this.dgvQLTour.CurrentCell.RowIndex;
                 string IDTour = dgvQLTour.Rows[n].Cells[0].Value.ToString();
+                string path = dgvQLTour.Rows[n].Cells[7].Value.ToString();
                 tasks.Delete(IDTour);
                 MessageBox.Show("Xóa tour thành công");
+                
+
+
             }
             catch (DbUpdateException ex)
             {
@@ -267,7 +274,7 @@ namespace ProjectTourism
                 }
             }
         }
-
+        
         private void btnThemAnh2_Click(object sender, EventArgs e)
         {
             OpenFileDialog sourceDialog = new OpenFileDialog();

@@ -45,6 +45,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.cbHienThiMatKhau = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -67,7 +68,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(293, 27);
             this.txtUser.TabIndex = 9;
-            this.txtUser.Text = "Tên đăng nhập";
             // 
             // txtPass
             // 
@@ -236,12 +236,25 @@
             this.pictureBox10.TabIndex = 25;
             this.pictureBox10.TabStop = false;
             // 
+            // cbHienThiMatKhau
+            // 
+            this.cbHienThiMatKhau.AutoSize = true;
+            this.cbHienThiMatKhau.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHienThiMatKhau.Location = new System.Drawing.Point(44, 363);
+            this.cbHienThiMatKhau.Name = "cbHienThiMatKhau";
+            this.cbHienThiMatKhau.Size = new System.Drawing.Size(142, 21);
+            this.cbHienThiMatKhau.TabIndex = 26;
+            this.cbHienThiMatKhau.Text = "Hiển thị mật khẩu";
+            this.cbHienThiMatKhau.UseVisualStyleBackColor = true;
+            this.cbHienThiMatKhau.CheckedChanged += new System.EventHandler(this.cbHienThiMatKhau_CheckedChanged);
+            // 
             // FormDK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(457, 509);
+            this.Controls.Add(this.cbHienThiMatKhau);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.btnDangnhap);
             this.Controls.Add(this.label1);
@@ -293,5 +306,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDangnhap;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.CheckBox cbHienThiMatKhau;
     }
 }
