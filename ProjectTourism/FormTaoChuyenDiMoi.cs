@@ -60,10 +60,18 @@ namespace ProjectTourism
                 return;
             }
 
-            DateTime ngayBatDau = dateTimePicker_KhoiHanh.Value;
-            int soLuong = int.Parse(tb_SoLuong.Text);
-            tasks.ThemDanhSachDKy(this.MaTaiKhoan, this.MaChuyenDi, ngayBatDau, soLuong, "ChuaDuyet");
-            MessageBox.Show("Đã gửi yêu cầu thành công!");
+            try
+            {
+                DateTime ngayBatDau = dateTimePicker_KhoiHanh.Value;
+                int soLuong = int.Parse(tb_SoLuong.Text);
+                tasks.ThemDanhSachDKy(this.MaTaiKhoan, this.MaChuyenDi, ngayBatDau, soLuong, "ChuaDuyet");
+                MessageBox.Show("Đã gửi yêu cầu thành công!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã gửi yêu cẩu rồi!");
+            }
+
 
             FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
             this.Hide();
