@@ -411,11 +411,11 @@
             // 
             // cbb_cccd
             // 
-            this.cbb_cccd.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_cccd.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cbb_cccd.FormattingEnabled = true;
             this.cbb_cccd.Location = new System.Drawing.Point(114, 137);
             this.cbb_cccd.Name = "cbb_cccd";
-            this.cbb_cccd.Size = new System.Drawing.Size(167, 25);
+            this.cbb_cccd.Size = new System.Drawing.Size(167, 31);
             this.cbb_cccd.TabIndex = 52;
             // 
             // label10
@@ -444,11 +444,11 @@
             // 
             // cbb_idtour
             // 
-            this.cbb_idtour.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_idtour.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_idtour.FormattingEnabled = true;
             this.cbb_idtour.Location = new System.Drawing.Point(114, 56);
             this.cbb_idtour.Name = "cbb_idtour";
-            this.cbb_idtour.Size = new System.Drawing.Size(167, 25);
+            this.cbb_idtour.Size = new System.Drawing.Size(167, 31);
             this.cbb_idtour.TabIndex = 49;
             // 
             // label12
@@ -465,11 +465,11 @@
             // 
             // cbb_ten
             // 
-            this.cbb_ten.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ten.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cbb_ten.FormattingEnabled = true;
             this.cbb_ten.Location = new System.Drawing.Point(114, 177);
             this.cbb_ten.Name = "cbb_ten";
-            this.cbb_ten.Size = new System.Drawing.Size(167, 25);
+            this.cbb_ten.Size = new System.Drawing.Size(167, 31);
             this.cbb_ten.TabIndex = 50;
             // 
             // btn_loc
@@ -499,11 +499,11 @@
             // 
             // cbb_date
             // 
-            this.cbb_date.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_date.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cbb_date.FormattingEnabled = true;
             this.cbb_date.Location = new System.Drawing.Point(114, 100);
             this.cbb_date.Name = "cbb_date";
-            this.cbb_date.Size = new System.Drawing.Size(167, 25);
+            this.cbb_date.Size = new System.Drawing.Size(167, 31);
             this.cbb_date.TabIndex = 51;
             // 
             // label14
@@ -535,11 +535,11 @@
             // 
             // cbb_ngaydi_tk
             // 
-            this.cbb_ngaydi_tk.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ngaydi_tk.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cbb_ngaydi_tk.FormattingEnabled = true;
             this.cbb_ngaydi_tk.Location = new System.Drawing.Point(122, 118);
             this.cbb_ngaydi_tk.Name = "cbb_ngaydi_tk";
-            this.cbb_ngaydi_tk.Size = new System.Drawing.Size(109, 25);
+            this.cbb_ngaydi_tk.Size = new System.Drawing.Size(109, 31);
             this.cbb_ngaydi_tk.TabIndex = 55;
             this.cbb_ngaydi_tk.SelectedValueChanged += new System.EventHandler(this.cbb_ngaydi_tk_SelectedValueChanged);
             // 
@@ -604,11 +604,11 @@
             // 
             // cbb_id_tk
             // 
-            this.cbb_id_tk.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_id_tk.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cbb_id_tk.FormattingEnabled = true;
             this.cbb_id_tk.Location = new System.Drawing.Point(122, 59);
             this.cbb_id_tk.Name = "cbb_id_tk";
-            this.cbb_id_tk.Size = new System.Drawing.Size(109, 25);
+            this.cbb_id_tk.Size = new System.Drawing.Size(109, 31);
             this.cbb_id_tk.TabIndex = 53;
             this.cbb_id_tk.SelectedValueChanged += new System.EventHandler(this.cbb_id_tk_SelectedValueChanged);
             // 
