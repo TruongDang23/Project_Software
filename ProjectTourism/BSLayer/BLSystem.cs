@@ -126,7 +126,7 @@ namespace ProjectTourism.BSLayer
             while (true)
             {
                 string matk = "M" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
-                var tpQuery = (from info_per in entity.ThongTinCaNhans
+                var tpQuery = (from info_per in entity.TaiKhoans
                                where info_per.MaTaiKhoan == matk
                                select info_per).SingleOrDefault();
                 if (tpQuery != null)
@@ -149,7 +149,7 @@ namespace ProjectTourism.BSLayer
             while (true)
             {
                 string matk = "U" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
-                var tpQuery = (from info_per in entity.ThongTinCaNhans
+                var tpQuery = (from info_per in entity.TaiKhoans
                                where info_per.MaTaiKhoan == matk
                                select info_per).SingleOrDefault();
                 if (tpQuery != null)
