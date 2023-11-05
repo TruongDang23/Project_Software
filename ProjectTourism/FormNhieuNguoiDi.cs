@@ -149,8 +149,15 @@ namespace ProjectTourism
                     tasks.ThemDuKhachDK(this.maChuyenDi, this.ngayBatDau,cccd,ten,sdt);
                 }
             }
-            
-            tasks.ThemDanhSachDK(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong, "Chưa thanh toán");
+            try
+            {
+                tasks.ThemDanhSachDK(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong, "Chưa thanh toán");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bạn đã đặt chuyến đi này rồi");
+                return;
+            }
             FormBoxThanhToan formBoxThanhToan = new FormBoxThanhToan(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong);
             this.Hide();
             formBoxThanhToan.ShowDialog();

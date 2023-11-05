@@ -138,11 +138,11 @@
             // 
             // cbb_idacc
             // 
-            this.cbb_idacc.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_idacc.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cbb_idacc.FormattingEnabled = true;
             this.cbb_idacc.Location = new System.Drawing.Point(241, 71);
             this.cbb_idacc.Name = "cbb_idacc";
-            this.cbb_idacc.Size = new System.Drawing.Size(146, 25);
+            this.cbb_idacc.Size = new System.Drawing.Size(146, 31);
             this.cbb_idacc.TabIndex = 54;
             // 
             // label21

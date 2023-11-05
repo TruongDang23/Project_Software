@@ -41,10 +41,37 @@ namespace ProjectTourism
 
         private void btn_GuiYeuCau_Click(object sender, EventArgs e)
         {
-            DateTime ngayBatDau = dateTimePicker_KhoiHanh.Value;
-            int soLuong = int.Parse(tb_SoLuong.Text);
-            tasks.ThemDanhSachDKy(this.MaTaiKhoan, this.MaChuyenDi, ngayBatDau, soLuong, "ChuaDuyet");
-            MessageBox.Show("Đã gửi yêu cầu thành công!");
+            try
+            {
+                if (tb_SoLuong.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng người tham gia!");
+                    return;
+                }
+                if (int.Parse(tb_SoLuong.Text) < 2)
+                {
+                    MessageBox.Show("Số lượng người tham gia phải lớn hơn 1!");
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Số lượng người tham gia phải là số!");
+                return;
+            }
+
+            try
+            {
+                DateTime ngayBatDau = dateTimePicker_KhoiHanh.Value;
+                int soLuong = int.Parse(tb_SoLuong.Text);
+                tasks.ThemDanhSachDKy(this.MaTaiKhoan, this.MaChuyenDi, ngayBatDau, soLuong, "ChuaDuyet");
+                MessageBox.Show("Đã gửi yêu cầu thành công!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã gửi yêu cẩu rồi!");
+            }
+
 
             FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaTaiKhoan, this.MaChuyenDi, this.NgayBatDau);
             this.Hide();

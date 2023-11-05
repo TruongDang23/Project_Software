@@ -77,7 +77,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_LogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -174,7 +173,7 @@
             this.txtSoLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuong.Location = new System.Drawing.Point(15, 475);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(222, 29);
             this.txtSoLuong.TabIndex = 31;
@@ -221,7 +220,7 @@
             this.txtGiaVe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtGiaVe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaVe.Location = new System.Drawing.Point(13, 366);
-            this.txtGiaVe.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGiaVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGiaVe.Name = "txtGiaVe";
             this.txtGiaVe.Size = new System.Drawing.Size(223, 29);
             this.txtGiaVe.TabIndex = 27;
@@ -261,7 +260,7 @@
             this.txtHanhTrinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtHanhTrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHanhTrinh.Location = new System.Drawing.Point(14, 420);
-            this.txtHanhTrinh.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHanhTrinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHanhTrinh.Name = "txtHanhTrinh";
             this.txtHanhTrinh.Size = new System.Drawing.Size(222, 29);
             this.txtHanhTrinh.TabIndex = 22;
@@ -338,7 +337,7 @@
             this.txtSoNgayDi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtSoNgayDi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoNgayDi.Location = new System.Drawing.Point(13, 312);
-            this.txtSoNgayDi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSoNgayDi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSoNgayDi.Name = "txtSoNgayDi";
             this.txtSoNgayDi.Size = new System.Drawing.Size(223, 29);
             this.txtSoNgayDi.TabIndex = 18;
@@ -359,7 +358,7 @@
             this.txtLoaiHinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtLoaiHinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoaiHinh.Location = new System.Drawing.Point(14, 258);
-            this.txtLoaiHinh.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoaiHinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLoaiHinh.Name = "txtLoaiHinh";
             this.txtLoaiHinh.Size = new System.Drawing.Size(222, 29);
             this.txtLoaiHinh.TabIndex = 16;
@@ -380,7 +379,7 @@
             this.txtTenTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtTenTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTour.Location = new System.Drawing.Point(14, 202);
-            this.txtTenTour.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenTour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenTour.Name = "txtTenTour";
             this.txtTenTour.Size = new System.Drawing.Size(222, 29);
             this.txtTenTour.TabIndex = 14;
@@ -401,7 +400,7 @@
             this.txtMaTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtMaTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaTour.Location = new System.Drawing.Point(13, 148);
-            this.txtMaTour.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaTour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaTour.Name = "txtMaTour";
             this.txtMaTour.Size = new System.Drawing.Size(223, 29);
             this.txtMaTour.TabIndex = 12;
@@ -490,7 +489,7 @@
             this.txtHanhTrinhttt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.txtHanhTrinhttt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHanhTrinhttt.Location = new System.Drawing.Point(226, 353);
-            this.txtHanhTrinhttt.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHanhTrinhttt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHanhTrinhttt.Multiline = true;
             this.txtHanhTrinhttt.Name = "txtHanhTrinhttt";
             this.txtHanhTrinhttt.Size = new System.Drawing.Size(430, 153);
@@ -665,29 +664,13 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "QUẢN LÝ TOUR";
             // 
-            // btn_LogOut
-            // 
-            this.btn_LogOut.BackColor = System.Drawing.Color.White;
-            this.btn_LogOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_LogOut.BackgroundImage")));
-            this.btn_LogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_LogOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LogOut.ForeColor = System.Drawing.Color.White;
-            this.btn_LogOut.Location = new System.Drawing.Point(268, 9);
-            this.btn_LogOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_LogOut.Name = "btn_LogOut";
-            this.btn_LogOut.Size = new System.Drawing.Size(45, 37);
-            this.btn_LogOut.TabIndex = 108;
-            this.btn_LogOut.UseVisualStyleBackColor = false;
-            this.btn_LogOut.Click += new System.EventHandler(this.btn_LogOut_Click);
-            // 
             // FormQuanLyTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(100)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(989, 729);
-            this.Controls.Add(this.btn_LogOut);
+            this.ClientSize = new System.Drawing.Size(989, 719);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -764,6 +747,5 @@
         public System.Windows.Forms.Button btnThemAnh1;
         public System.Windows.Forms.Button btnThemAnh3;
         public System.Windows.Forms.Button btnThemAnh2;
-        private System.Windows.Forms.Button btn_LogOut;
     }
 }

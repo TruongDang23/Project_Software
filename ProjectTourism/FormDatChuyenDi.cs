@@ -81,7 +81,11 @@ namespace ProjectTourism
                         MessageBox.Show("Vui lòng chọn ĐIỀN để điền thông tin cho nhiều du khách");
                 }              
             }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+            catch
+            {
+                MessageBox.Show("Bạn đã đặt chuyến đi này rồi");
+                return;
+            }
         }
 
         private void ResetData()

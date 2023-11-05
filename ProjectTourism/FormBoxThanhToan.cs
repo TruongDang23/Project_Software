@@ -45,12 +45,21 @@ namespace ProjectTourism
 
         private void btn_XacNhan_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chúc quý khách có một chuyến du lịch vui vẻ!");
+            try
+            {
+                MessageBox.Show("Chúc quý khách có một chuyến du lịch vui vẻ!");
 
-            FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
-            this.Hide();
-            formChiTietChuyenDi.ShowDialog();
-            this.Close();
+                FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
+                this.Hide();
+                formChiTietChuyenDi.ShowDialog();
+                this.Close();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thanh toán thất bại!");
+                return;
+            }
         }
     }
 }

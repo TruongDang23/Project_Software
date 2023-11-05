@@ -94,5 +94,15 @@ namespace ProjectTourism
             tasks.DeleteItinerary(IDTour, StartDay);
             LoadItinerary(DateTime.Now.Date, DateTime.Now.Date.AddMonths(1));
         }
+
+        private void btn_reload_Click(object sender, EventArgs e)
+        {
+            LoadItinerary(DateTime.Now.Date, DateTime.Now.Date.AddMonths(1));
+            this.lbl_IDTour.Text = String.Empty;
+            this.lbl_NameTour.Text = String.Empty;
+            this.lbl_Type.Text = String.Empty;
+            this.lbl_Quantity.Text = String.Empty;
+            this.dt_InfoTour.Value = DateTime.Now;
+        }
     }
 }

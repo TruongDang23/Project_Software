@@ -122,6 +122,12 @@
     <Compile Include="FormDatChuyenDi.Designer.cs">
       <DependentUpon>FormDatChuyenDi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDKQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDKQuanLy.Designer.cs">
+      <DependentUpon>FormDKQuanLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNhieuNguoiDi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     <EmbeddedResource Include="FormDatChuyenDi.resx">
       <DependentUpon>FormDatChuyenDi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDKQuanLy.resx">
+      <DependentUpon>FormDKQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +370,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Iconlock.png" />
     <Content Include="DichVuDuLich.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DichVuDuLich.Context.cs</LastGenOutput>
@@ -377,8 +387,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
