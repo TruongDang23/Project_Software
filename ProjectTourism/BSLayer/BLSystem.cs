@@ -166,5 +166,19 @@ namespace ProjectTourism.BSLayer
             }
             return "U" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
         }
+        public string GetIDAccount(string username)
+        {
+            var datas = (from tk in entity.TaiKhoans
+                         where tk.TenDangNhap == username
+                         select tk.MaTaiKhoan).SingleOrDefault();
+            return datas;
         }
+        public string GetEmail(string matk)
+        {
+            var datas = (from tk in entity.ThongTinCaNhans
+                         where tk.MaTaiKhoan == matk
+                         select tk.Email).SingleOrDefault();
+            return datas;
+        }
+    }
 }

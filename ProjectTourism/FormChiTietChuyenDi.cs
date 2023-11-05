@@ -61,32 +61,32 @@ namespace ProjectTourism
 
         private void btn_Dat_Click(object sender, EventArgs e)
         {
-            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             this.Hide();
+            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             formDatChuyenDi.ShowDialog();
             Close();
         }
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            FormChuyenDi formChuyenDi = new FormChuyenDi(maTaiKhoan);
             this.Hide();
+            FormChuyenDi formChuyenDi = new FormChuyenDi(maTaiKhoan);
             formChuyenDi.ShowDialog();
             Close();
         }
 
         private void btn_DanhGia_Click(object sender, EventArgs e)
         {
-            FormDanhGiaChuyenDi formDanhGiaChuyenDi = new FormDanhGiaChuyenDi(this.maTaiKhoan,this.maChuyenDi,this.ngayBatDau);
             this.Hide();
+            FormDanhGiaChuyenDi formDanhGiaChuyenDi = new FormDanhGiaChuyenDi(this.maTaiKhoan,this.maChuyenDi,this.ngayBatDau);
             formDanhGiaChuyenDi.ShowDialog();
             Close();
         }
 
         private void btn_Tao_Click(object sender, EventArgs e)
         {
-            FormTaoChuyenDiMoi formTaoChuyenDiMoi = new FormTaoChuyenDiMoi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             this.Hide();
+            FormTaoChuyenDiMoi formTaoChuyenDiMoi = new FormTaoChuyenDiMoi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau);
             formTaoChuyenDiMoi.ShowDialog();
             Close();
         }
