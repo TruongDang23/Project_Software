@@ -32,11 +32,6 @@ namespace ProjectTourism
             dgvCacDanhGia.DataSource = dt;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             FormChiTietChuyenDi formChiTietChuyenDi = new FormChiTietChuyenDi(this.MaChuyenDi, this.MaTaiKhoan, this.NgayBatDau);
@@ -76,13 +71,11 @@ namespace ProjectTourism
                 task.ThemDanhGia(this.MaChuyenDi, this.MaTaiKhoan, BinhLuan, sao);
                 MessageBox.Show("Đã gửi đánh giá thành công!");
             }
-            catch (Exception ex)
+            catch
             {
                 
                 MessageBox.Show("Bạn đã đánh giá chuyến đi rồi!");
             }
-            //task.ThemDanhGia(this.MaChuyenDi, this.MaTaiKhoan, BinhLuan, sao);
-            //MessageBox.Show("Đã gửi đánh giá thành công!");
         }
     }
 }

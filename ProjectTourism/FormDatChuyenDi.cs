@@ -76,7 +76,8 @@ namespace ProjectTourism
                 }
                 
             }
-            catch (Exception ex) {
+            catch
+            {
                 MessageBox.Show("Bạn đã đặt chuyến đi này rồi");
                 return;
             }
