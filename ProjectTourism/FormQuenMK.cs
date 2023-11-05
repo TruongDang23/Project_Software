@@ -34,7 +34,8 @@ namespace ProjectTourism
 
         private void btnXacnhan_Click(object sender, EventArgs e)
         {
-            if (bl.GetEmail(bl.GetIDAccount(txtTenDangNhap.Text)) == txtMail.Text || bl.ExistAccount(txtTenDangNhap.Text))
+            string mk = bl.GetMatKhau(txtTenDangNhap.Text);
+            if (bl.GetEmail(bl.GetIDAccount(txtTenDangNhap.Text)) == txtMail.Text && bl.ExistAccount(txtTenDangNhap.Text))
             {
                 SmtpClient smtpClient = new SmtpClient();
                 smtpClient.Host = "smtp.gmail.com";
@@ -46,7 +47,7 @@ namespace ProjectTourism
                 mailMessage.From = new MailAddress("nckh211103@gmail.com");
                 mailMessage.To.Add(new MailAddress(bl.GetEmail(bl.GetIDAccount(txtTenDangNhap.Text))));
                 mailMessage.Subject = "Mail lấy lại mật khẩu";
-                mailMessage.Body = "Mật khẩu của bạn là: " + bl.GetMatKhau(txtTenDangNhap.Text, txtMail.Text);
+                mailMessage.Body = "Mật khẩu của bạn là: " + mk;
 
                 try
                 {

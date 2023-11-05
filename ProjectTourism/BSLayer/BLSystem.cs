@@ -36,20 +36,17 @@ namespace ProjectTourism.BSLayer
             return tkEmp != null;
         }
 
-        public string GetMatKhau(string tendangnhap, string Email)
+        public string GetMatKhau(string tendangnhap)
         {
             var pass = (from tk in entity.TaiKhoans
-                        join ttcn in entity.ThongTinCaNhans on tk.MaTaiKhoan equals ttcn.MaTaiKhoan
-                        where tk.TenDangNhap == tendangnhap && ttcn.Email == Email
+                        where tk.TenDangNhap == tendangnhap
                         select tk.MatKhau).FirstOrDefault();
             return pass;
         }
 
-        public bool AddNguoiDung(string tk, string mk, string nhaplaimk,string matk, ref string err)
+        public bool AddNguoiDung(string tk, string mk, string matk, ref string err)
         {
-            if (mk == nhaplaimk)
-            {
-                
+            try {
                 TaiKhoan taikhoan = new TaiKhoan()
                 {
                     TenDangNhap = tk,
@@ -61,7 +58,7 @@ namespace ProjectTourism.BSLayer
                 entity.SaveChanges();
                 return true;
             }
-            else { return false; }
+            catch { return false; }
             
         }
         public bool AddQuanLy(string tk, string mk, string nhaplaimk,string mataotk, ref string err)

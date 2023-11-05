@@ -15,7 +15,7 @@ namespace ProjectTourism
     public partial class FormDK : Form
     {
         private BLSystem blSystem = new BLSystem();
-        private string err = "";
+        private TaiKhoan new_tk = new TaiKhoan();
         public FormDK()
         {
             InitializeComponent();
@@ -39,19 +39,25 @@ namespace ProjectTourism
             {
                 if (blSystem.IsExist(tk) == false)
                 {
-                    DialogResult check;
-                    check = MessageBox.Show("Do you want to add this Account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (check == DialogResult.Yes)
+                    if (mk == nhaplaimk)
                     {
-                        blSystem.AddNguoiDung(tk, mk,nhaplaimk,matk, ref err);
-                        MessageBox.Show("Added Successfully!");
-                        FormThongTinCaNhan form = new FormThongTinCaNhan(matk);
-                        form.ShowDialog();
-                        this.Close();
-                    }
+                        DialogResult check;
+                        check = MessageBox.Show("Do you want to add this Account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (check == DialogResult.Yes)
+                        {
+                            new_tk.TenDangNhap = tk;
+                            new_tk.MatKhau = mk;
+                            new_tk.MaTaiKhoan = matk;
+                            MessageBox.Show("Added Successfully!");
+                            FormThongTinCaNhan form = new FormThongTinCaNhan(new_tk);
+                            this.Hide();
+                            form.ShowDialog();
+                            this.Close();
+                        }
+                    }else MessageBox.Show("Mật khẩu không khớp!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
-                    MessageBox.Show("Account/Email is exist!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Account is exist!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             catch (SqlException)
