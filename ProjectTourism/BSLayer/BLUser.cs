@@ -15,13 +15,13 @@ namespace ProjectTourism.BSLayer
         private software2023Entities entity = new software2023Entities();
         public BLUser() { }
 
-        public DataTable LayChiTietChuyenDi(string MaChuyenDi, DateTime NgayBatDau)
+        public DataTable LayChiTietChuyenDi(string maChuyenDi, DateTime ngayBatDau)
         {
             DataTable dt = new DataTable();
             var chuyendi = from cd in entity.ChuyenDis
                            join lt in entity.LichTrinhs on cd.MaChuyenDi equals lt.MaChuyenDi
                            join dg in entity.DanhGias on cd.MaChuyenDi equals dg.MaChuyenDi
-                           where cd.MaChuyenDi == MaChuyenDi && lt.NgayBatDau == NgayBatDau
+                           where cd.MaChuyenDi == maChuyenDi && lt.NgayBatDau == ngayBatDau
                            select new { cd.TenChuyenDi, cd.HanhTrinh, cd.HinhThuc, cd.SoNgayDi, cd.SoLuong, cd.Gia, dg.Sao, lt.NgayBatDau, cd.ChiTiet };
             dt.Columns.Add("TenChuyenDi", typeof(string));
             dt.Columns.Add("HanhTrinh", typeof(string));
@@ -40,46 +40,59 @@ namespace ProjectTourism.BSLayer
             return dt;
         }
 
-        public void ThemDuKhachDK(string MaChuyenDi, DateTime NgayBatDau, string CCCD, string Ten, string SDT)
+        public void ThemDuKhachDK(string maChuyenDi, DateTime ngayBatDau, string cCCD, string ten, string sDT)
         {
             DanhSachDuKhach dukhach = new DanhSachDuKhach();
 
-            dukhach.MaChuyenDi = MaChuyenDi;
-            dukhach.NgayBatDau = NgayBatDau;
-            dukhach.CCCD = CCCD;
-            dukhach.Ten = Ten;
-            dukhach.SDT = SDT;
+            dukhach.MaChuyenDi = maChuyenDi;
+            dukhach.NgayBatDau = ngayBatDau;
+            dukhach.CCCD = cCCD;
+            dukhach.Ten = ten;
+            dukhach.SDT = sDT;
 
             entity.DanhSachDuKhaches.Add(dukhach);
             entity.SaveChanges();
         }
 
-        public void ThemDanhSachDK(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau, int SoLuong, string TrangThai)
+        public void ThemDanhSachDK(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong, string trangThai)
         {
             DanhSachDangKy dky = new DanhSachDangKy();
 
-            dky.MaTaiKhoan = MaTaiKhoan;
-            dky.MaChuyenDi = MaChuyenDi;
-            dky.NgayBatDau = NgayBatDau;
-            dky.SoLuong = SoLuong;
-            dky.TrangThai = TrangThai;
+            dky.MaTaiKhoan = maTaiKhoan;
+            dky.MaChuyenDi = maChuyenDi;
+            dky.NgayBatDau = ngayBatDau;
+            dky.SoLuong = soLuong;
+            dky.TrangThai = trangThai;
 
-            entity.DanhSachDangKies.Add(dky);
-            entity.SaveChanges();
+            var tpQuery = (from dk in entity.DanhSachDangKies
+                           where dk.MaTaiKhoan == maTaiKhoan && dk.MaChuyenDi == maChuyenDi && dk.NgayBatDau == ngayBatDau
+                           select dk).SingleOrDefault();
+
+            if(tpQuery == null)
+            {
+                entity.DanhSachDangKies.Add(dky);
+                entity.SaveChanges();
+            }
+            else
+            {
+                tpQuery.SoLuong = tpQuery.SoLuong + soLuong;
+                entity.SaveChanges();
+            }
         }
-        public void ThemDanhSachDKy(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau, int SoLuong, string TrangThai)
+
+        public void ThemDanhSachDKy(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong, string trangThai)
         {
             DanhSachDangKy dky = new DanhSachDangKy();
             LichTrinh lt = new LichTrinh();
 
-            dky.MaTaiKhoan = MaTaiKhoan;
-            dky.MaChuyenDi = MaChuyenDi;
-            dky.NgayBatDau = NgayBatDau;
-            dky.SoLuong = SoLuong;
-            dky.TrangThai = TrangThai;
+            dky.MaTaiKhoan = maTaiKhoan;
+            dky.MaChuyenDi = maChuyenDi;
+            dky.NgayBatDau = ngayBatDau;
+            dky.SoLuong = soLuong;
+            dky.TrangThai = trangThai;
 
-            lt.MaChuyenDi = MaChuyenDi;
-            lt.NgayBatDau = NgayBatDau;
+            lt.MaChuyenDi = maChuyenDi;
+            lt.NgayBatDau = ngayBatDau;
             lt.MaHDV = null;
 
             entity.LichTrinhs.Add(lt);
@@ -88,13 +101,13 @@ namespace ProjectTourism.BSLayer
         }
 
 
-        public void XoaDanhSachDK(string MaTaiKhoan, string MaChuyenDi, DateTime NgayBatDau)
+        public void XoaDanhSachDK(string maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
         {
             DanhSachDangKy dk = new DanhSachDangKy
             {
-                MaTaiKhoan = MaTaiKhoan,
-                MaChuyenDi = MaChuyenDi,
-                NgayBatDau = NgayBatDau,
+                MaTaiKhoan = maTaiKhoan,
+                MaChuyenDi = maChuyenDi,
+                NgayBatDau = ngayBatDau,
             };
 
             entity.DanhSachDangKies.Attach(dk);
@@ -102,13 +115,13 @@ namespace ProjectTourism.BSLayer
             entity.SaveChanges();
         }
 
-        public void XoaDuKhachDK(string MaChuyenDi, DateTime NgayBatDau, string CCCD)
+        public void XoaDuKhachDK(string maChuyenDi, DateTime ngayBatDau, string cCCD)
         {
             DanhSachDuKhach dk = new DanhSachDuKhach
             {
-                MaChuyenDi = MaChuyenDi,
-                NgayBatDau = NgayBatDau,
-                CCCD = CCCD,
+                MaChuyenDi = maChuyenDi,
+                NgayBatDau = ngayBatDau,
+                CCCD = cCCD,
             };
 
             entity.DanhSachDuKhaches.Attach(dk);
@@ -116,17 +129,17 @@ namespace ProjectTourism.BSLayer
             entity.SaveChanges();
         }
 
-        public int SoTienThanhToan(string MaChuyenDi, DateTime NgayBatDau, int SoLuong)
+        public int SoTienThanhToan(string maChuyenDi, DateTime ngayBatDau, int soLuong)
         {
             int gia = 0;
             var chuyendi = from cd in entity.ChuyenDis
-                           where cd.MaChuyenDi == MaChuyenDi
+                           where cd.MaChuyenDi == maChuyenDi
                            select new { cd.Gia };
             foreach (var ct in chuyendi)
             {
                 gia = (int)ct.Gia;
             }
-            return gia * SoLuong;
+            return gia * soLuong;
         }
 
         public DataTable DanhSachDanhGia(string MaChuyenDi, DateTime NgayBatDau)
@@ -149,14 +162,14 @@ namespace ProjectTourism.BSLayer
             return dt;
         }
 
-        public void ThemDanhGia(string MaTaiKhoan, string MaChuyenDi, string BinhLuan, int Sao)
+        public void ThemDanhGia(string maTaiKhoan, string maChuyenDi, string binhLuan, int sao)
         {
             DanhGia dg = new DanhGia();
 
-            dg.MaTaiKhoan = MaTaiKhoan;
-            dg.MaChuyenDi = MaChuyenDi;
-            dg.BinhLuan = BinhLuan;
-            dg.Sao = Sao;
+            dg.MaTaiKhoan = maTaiKhoan;
+            dg.MaChuyenDi = maChuyenDi;
+            dg.BinhLuan = binhLuan;
+            dg.Sao = sao;
 
             entity.DanhGias.Add(dg);
             entity.SaveChanges();

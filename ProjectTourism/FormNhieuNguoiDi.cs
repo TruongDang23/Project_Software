@@ -19,6 +19,7 @@ namespace ProjectTourism
     public partial class FormNhieuNguoiDi : Form
     {
         private BLUser tasks = new BLUser();
+        private BLManager bl = new BLManager();
         private string maTaiKhoan;
         private string maChuyenDi;
         private DateTime ngayBatDau;
@@ -46,18 +47,26 @@ namespace ProjectTourism
             }
             else
             {
-                if(kiemTraCCCDDataGridview(cccd))
+                if(bl.Is_Customer_Exist(this.maChuyenDi, this.ngayBatDau, cccd) == true)
                 {
                     MessageBox.Show("Du khách này đã được được ký!");
                     ResetData();
                 }
                 else
                 {
-                    dtgv_DanhSachNguoiDi.Rows.Add(row);
-                    ResetData();
-                    dem += 1;
-                    if (dem == soLuong)
-                        btn_Them.Enabled = false;
+                    if(kiemTraCCCDDataGridview(cccd))
+                    {
+                        MessageBox.Show("Du khách này đã được được ký!");
+                        ResetData();
+                    }
+                    else
+                    {
+                        dtgv_DanhSachNguoiDi.Rows.Add(row);
+                        ResetData();
+                        dem += 1;
+                        if (dem == this.soLuong)
+                            btn_Them.Enabled = false;
+                    }
                 }
             }
         }

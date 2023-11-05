@@ -30,6 +30,7 @@ namespace ProjectTourism
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
+            
             FormNhieuNguoiDi formNhieuNguoiDi = new FormNhieuNguoiDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau, this.soLuong);
             this.Hide();
             formNhieuNguoiDi.ShowDialog();
@@ -38,8 +39,8 @@ namespace ProjectTourism
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau); 
             this.Hide();
+            FormDatChuyenDi formDatChuyenDi = new FormDatChuyenDi(this.maTaiKhoan, this.maChuyenDi, this.ngayBatDau); 
             formDatChuyenDi.ShowDialog();
             Close();
         }
