@@ -88,6 +88,7 @@ namespace ProjectTourism
             }
         }
 
+
         private void ResetData()
         {
             tb_CCCD.ResetText();
