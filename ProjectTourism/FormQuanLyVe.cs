@@ -109,12 +109,19 @@ namespace ProjectTourism
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string CCCD = this.txtCCCD.Text;
-            string name = this.txtName.Text;
-            string sdt = this.txtSDT.Text;
-            tasks.AddPassenger(this.IDTour, this.date, CCCD, name, sdt);
-            StatisticsTickets(this.IDTour, this.date);
-            StatictisQuantity(this.IDTour, this.date);
+            if(this.lblNow.Text == "0")
+            {
+                MessageBox.Show("Bạn chưa chọn Chuyến đi !");
+            }
+            else
+            {
+                string CCCD = this.txtCCCD.Text;
+                string name = this.txtName.Text;
+                string sdt = this.txtSDT.Text;
+                tasks.AddPassenger(this.IDTour, this.date, CCCD, name, sdt);
+                StatisticsTickets(this.IDTour, this.date);
+                StatictisQuantity(this.IDTour, this.date);
+            }
         }
 
         private void btnFind_Click(object sender, EventArgs e)
