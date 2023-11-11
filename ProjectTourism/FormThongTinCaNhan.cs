@@ -17,11 +17,11 @@ namespace ProjectTourism
     {
         private BLSystem blSystem = new BLSystem();
         private string err = "";
-        private string matk;
-        public FormThongTinCaNhan(string matk)
+        private TaiKhoan new_tk;
+        public FormThongTinCaNhan(TaiKhoan new_tk)
         {
             InitializeComponent();
-            this.matk = matk;
+            this.new_tk = new_tk;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -37,17 +37,16 @@ namespace ProjectTourism
                     check = MessageBox.Show("Do you want to add ?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (check == DialogResult.Yes)
                     {
-                        blSystem.AddThongTin(this.matk,hovaten, sdt, diachi, email, ref err);
+                        blSystem.AddNguoiDung(new_tk.TenDangNhap, new_tk.MatKhau, new_tk.MaTaiKhoan, ref err);
+                        blSystem.AddThongTin(new_tk.MaTaiKhoan, hovaten, sdt, diachi, email, ref err);
                         MessageBox.Show("Added Successfully!");
-                        FormDNhap form = new FormDNhap();
-                        form.ShowDialog();
-                        this.Close();
                     }
             }
             catch (SqlException)
             {
                 MessageBox.Show("ERROR");
             }
+            this.Close();
         }
     }
 }

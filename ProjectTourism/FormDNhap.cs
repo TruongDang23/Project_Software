@@ -56,14 +56,14 @@ namespace ProjectTourism
                 FormDK formRegister = new FormDK();
                 this.Hide();
                 formRegister.ShowDialog();
-                this.Close();
+                this.Show();
             }
             else 
             {
                 FormDKQuanLy formRegister = new FormDKQuanLy();
                 this.Hide();
                 formRegister.ShowDialog();
-                this.Close();
+                this.Show();
             }
         }
 

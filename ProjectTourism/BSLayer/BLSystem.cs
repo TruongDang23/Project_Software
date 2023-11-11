@@ -36,20 +36,17 @@ namespace ProjectTourism.BSLayer
             return tkEmp != null;
         }
 
-        public string GetMatKhau(string tendangnhap, string Email)
+        public string GetMatKhau(string tendangnhap)
         {
             var pass = (from tk in entity.TaiKhoans
-                        join ttcn in entity.ThongTinCaNhans on tk.MaTaiKhoan equals ttcn.MaTaiKhoan
-                        where tk.TenDangNhap == tendangnhap && ttcn.Email == Email
+                        where tk.TenDangNhap == tendangnhap
                         select tk.MatKhau).FirstOrDefault();
             return pass;
         }
 
-        public bool AddNguoiDung(string tk, string mk, string nhaplaimk,string matk, ref string err)
+        public bool AddNguoiDung(string tk, string mk, string matk, ref string err)
         {
-            if (mk == nhaplaimk)
-            {
-                
+            try {
                 TaiKhoan taikhoan = new TaiKhoan()
                 {
                     TenDangNhap = tk,
@@ -61,7 +58,7 @@ namespace ProjectTourism.BSLayer
                 entity.SaveChanges();
                 return true;
             }
-            else { return false; }
+            catch { return false; }
             
         }
         public bool AddQuanLy(string tk, string mk, string nhaplaimk,string mataotk, ref string err)
@@ -126,7 +123,7 @@ namespace ProjectTourism.BSLayer
             while (true)
             {
                 string matk = "M" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
-                var tpQuery = (from info_per in entity.ThongTinCaNhans
+                var tpQuery = (from info_per in entity.TaiKhoans
                                where info_per.MaTaiKhoan == matk
                                select info_per).SingleOrDefault();
                 if (tpQuery != null)
@@ -149,7 +146,7 @@ namespace ProjectTourism.BSLayer
             while (true)
             {
                 string matk = "U" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
-                var tpQuery = (from info_per in entity.ThongTinCaNhans
+                var tpQuery = (from info_per in entity.TaiKhoans
                                where info_per.MaTaiKhoan == matk
                                select info_per).SingleOrDefault();
                 if (tpQuery != null)
@@ -166,5 +163,19 @@ namespace ProjectTourism.BSLayer
             }
             return "U" + id_num[0].ToString() + id_num[1].ToString() + id_num[2].ToString();
         }
+        public string GetIDAccount(string username)
+        {
+            var datas = (from tk in entity.TaiKhoans
+                         where tk.TenDangNhap == username
+                         select tk.MaTaiKhoan).SingleOrDefault();
+            return datas;
         }
+        public string GetEmail(string matk)
+        {
+            var datas = (from tk in entity.ThongTinCaNhans
+                         where tk.MaTaiKhoan == matk
+                         select tk.Email).SingleOrDefault();
+            return datas;
+        }
+    }
 }
