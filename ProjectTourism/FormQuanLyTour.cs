@@ -24,6 +24,7 @@ namespace ProjectTourism
         private BLManager tasks = new BLManager();
         private string path;
         private bool capnhat = false;
+        private bool them = false;
         public FormQuanLyTour()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace ProjectTourism
             try
             {
                 dgvQLTour.DataSource = tasks.Load_dgvQLTour();
+                status_enabled_false();
             }
             catch (Exception ex)
             {
@@ -50,13 +52,6 @@ namespace ProjectTourism
             int n = this.dgvQLTour.CurrentCell.RowIndex;
             DataTable nametype = tasks.GetNameOfTour(dgvQLTour.Rows[n].Cells[0].Value.ToString());
             // Panel tạo tour
-            this.txtMaTour.Text = dgvQLTour.Rows[n].Cells[0].Value.ToString();
-            this.txtTenTour.Text = dgvQLTour.Rows[n].Cells[1].Value.ToString();
-            this.txtLoaiHinh.Text = dgvQLTour.Rows[n].Cells[2].Value.ToString();
-            this.txtSoNgayDi.Text = dgvQLTour.Rows[n].Cells[4].Value.ToString();
-            this.txtGiaVe.Text = dgvQLTour.Rows[n].Cells[5].Value.ToString();
-            this.txtHanhTrinh.Text = dgvQLTour.Rows[n].Cells[3].Value.ToString();
-            this.txtSoLuong.Text = dgvQLTour.Rows[n].Cells[6].Value.ToString();
             // Panel thông tin chi tiết tour
             this.txtMaTourttt.Text = dgvQLTour.Rows[n].Cells[0].Value.ToString();
             this.txtTenTourttt.Text = dgvQLTour.Rows[n].Cells[1].Value.ToString();
@@ -106,14 +101,28 @@ namespace ProjectTourism
             }
         }
 
-        private void status_btn()
+
+        private void status_enabled_false()
         {
-            this.txtMaTour.Enabled = true;
+            this.txtTenTour.Enabled = false;
+            this.txtLoaiHinh.Enabled = false;
+            this.txtSoNgayDi.Enabled = false;
+            this.txtGiaVe.Enabled = false;
+            this.txtHanhTrinh.Enabled = false;
+            this.txtSoLuong.Enabled = false;
+        }
+        private void status_enabled_true()
+        {
+            this.txtTenTour.Enabled = true;
+            this.txtLoaiHinh.Enabled = true;
+            this.txtSoNgayDi.Enabled = true;
+            this.txtGiaVe.Enabled = true;
+            this.txtHanhTrinh.Enabled = true;
+            this.txtSoLuong.Enabled = true;
         }
 
-        private void status_txt()
+        private void status_empty()
         {
-            this.txtMaTour.Text = String.Empty;
             this.txtTenTour.Text = String.Empty;
             this.txtLoaiHinh.Text = String.Empty;
             this.txtSoNgayDi.Text = String.Empty;
@@ -154,7 +163,7 @@ namespace ProjectTourism
 
         private void btnThem0_Click(object sender, EventArgs e)
         {
-            status_btn();
+            this.txtMaTour.Enabled = true;
             string Ma_Tour = txtMaTour.Text;
             string dirPath = "../../../Details/";
             this.path = dirPath + Ma_Tour + "/";
@@ -164,14 +173,11 @@ namespace ProjectTourism
             if (!exist)
             {
                 // Tạo thư mục.
+                them = true;
                 Directory.CreateDirectory(path);
                 MessageBox.Show("Đã tạo thư mục thành công");
-                this.txtTenTour.Text = string.Empty;
-                this.txtLoaiHinh.Text = string.Empty;
-                this.txtSoNgayDi.Text = string.Empty; ;
-                this.txtGiaVe.Text = string.Empty; ;
-                this.txtHanhTrinh.Text = string.Empty;
-                this.txtSoLuong.Text = string.Empty;
+                status_empty();
+                status_enabled_true();
             }
             else
             {
@@ -196,19 +202,20 @@ namespace ProjectTourism
                     tasks.Update_Tour(IDTour, TenTour, HinhThuc, HanhTrinh, SoNgayDi, Gia, SoLuong);
                     MessageBox.Show("Cập nhật thành công");
                     LoadTour_dgv();
+                    status_empty();
+                    txtMaTour.Text = string.Empty;
+                    txtMaTour.Enabled = true;
                     capnhat = false;
                 }
-                else
+                if(them == true)
                 {
                     tasks.Add_QLTour(IDTour, TenTour, HinhThuc, HanhTrinh, SoNgayDi, Gia, SoLuong, ChiTiet);
                     MessageBox.Show("Lưu thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadTour_dgv();
-                    status_txt();
-                    if (capnhat == true)
-                    {
-                        tasks.Update_Tour(IDTour, TenTour, HinhThuc, HanhTrinh, SoNgayDi, Gia, SoLuong);
-                        MessageBox.Show("Cập nhật thành công");
-                    }
+                    status_empty();
+                    txtMaTour.Text = string.Empty;
+                    txtMaTour.Enabled = true;
+                    them = false;
                 }
             }
             catch (Exception ex)
@@ -333,9 +340,22 @@ namespace ProjectTourism
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            int n = this.dgvQLTour.CurrentCell.RowIndex;
+            DataTable nametype = tasks.GetNameOfTour(dgvQLTour.Rows[n].Cells[0].Value.ToString());
+            // Panel tạo tour
+            // Panel thông tin chi tiết tour
+            this.txtMaTour.Text = dgvQLTour.Rows[n].Cells[0].Value.ToString();
+            this.txtTenTour.Text = dgvQLTour.Rows[n].Cells[1].Value.ToString();
+            this.txtLoaiHinh.Text = dgvQLTour.Rows[n].Cells[2].Value.ToString();
+            this.txtSoNgayDi.Text = dgvQLTour.Rows[n].Cells[4].Value.ToString();
+            this.txtGiaVe.Text = dgvQLTour.Rows[n].Cells[5].Value.ToString();
+            this.txtHanhTrinh.Text = dgvQLTour.Rows[n].Cells[3].Value.ToString();
+            this.txtSoLuong.Text = dgvQLTour.Rows[n].Cells[6].Value.ToString();
             try
             {
+                
                 this.capnhat = true;
+                status_enabled_true();
                 this.txtMaTour.Enabled = false;
             }
             catch (Exception ex)
