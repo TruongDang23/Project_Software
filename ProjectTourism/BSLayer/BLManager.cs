@@ -585,6 +585,7 @@ namespace ProjectTourism.BSLayer
             var LichTrinhToRemove = entity.LichTrinhs.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
             entity.LichTrinhs.RemoveRange(LichTrinhToRemove);
 
+
             var ChuyenDiToRemove = entity.ChuyenDis.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
             entity.ChuyenDis.RemoveRange(ChuyenDiToRemove);
 
