@@ -398,6 +398,15 @@ namespace ProjectTourism.BSLayer
 
         public void DeleteDataGuide(string MaHDV)
         {
+
+
+            var lt = entity.LichTrinhs.Where(x => x.MaHDV == MaHDV).ToList();
+            foreach (var item in lt)
+            {
+                item.MaHDV = null;
+            }
+            entity.SaveChanges();
+
             HuongDanVien hdv = entity.HuongDanViens.Where(x => x.MaHDV == MaHDV).Single<HuongDanVien>();
             entity.HuongDanViens.Remove(hdv);
             entity.SaveChanges();
@@ -572,23 +581,26 @@ namespace ProjectTourism.BSLayer
 
             var danhSachDuKhachToRemove = entity.DanhSachDuKhaches.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
             entity.DanhSachDuKhaches.RemoveRange(danhSachDuKhachToRemove);
+            entity.SaveChanges();
 
             var danhSachDangKiToRemove = entity.DanhSachDangKies.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
             entity.DanhSachDangKies.RemoveRange(danhSachDangKiToRemove);
+            entity.SaveChanges();
 
             var YeuCauToRemove = entity.YeuCaus.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
             entity.YeuCaus.RemoveRange(YeuCauToRemove);
+            entity.SaveChanges();
 
             var DanhGiaToRemove = entity.DanhGias.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
             entity.DanhGias.RemoveRange(DanhGiaToRemove);
+            entity.SaveChanges();
 
             var LichTrinhToRemove = entity.LichTrinhs.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
             entity.LichTrinhs.RemoveRange(LichTrinhToRemove);
-
+            entity.SaveChanges();
 
             var ChuyenDiToRemove = entity.ChuyenDis.Where(x => x.MaChuyenDi == MaChuyenDi).ToList();
             entity.ChuyenDis.RemoveRange(ChuyenDiToRemove);
-
             entity.SaveChanges();
         }
         public void Update_Tour(string MaTour, string TenTour, string HinhThuc, string HanhTrinh, int SoNgayDi, string Gia, int SoLuong)

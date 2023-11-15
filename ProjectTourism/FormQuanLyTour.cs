@@ -225,8 +225,7 @@ namespace ProjectTourism
                 string path = dgvQLTour.Rows[n].Cells[7].Value.ToString();
                 tasks.Delete(IDTour);
                 MessageBox.Show("Xóa tour thành công");
-
-
+                LoadTour_dgv();
             }
             catch (DbUpdateException ex)
             {
